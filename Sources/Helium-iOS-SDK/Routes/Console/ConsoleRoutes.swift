@@ -12,5 +12,6 @@ struct ConsoleRoutes {
     static let transactionForHash = "api/v1/organization"
     static let devicesList = "api/v1/devices"
     static let devicesByAppEuiAppKeyDevEui = "api/v1/devices"
-    static let deviceByUUID
+    static let deviceByUUID = "api/v1/devices/%@"
+    
 }
