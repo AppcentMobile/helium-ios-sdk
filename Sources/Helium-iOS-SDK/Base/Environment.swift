@@ -7,9 +7,15 @@
 
 import UIKit
 
-enum Environment: String {
+enum Environment {
 
-    case BETA = "https://api.helium.wtf"
-    case SCALABLE = "https://api.helium.io"
+    enum BLOCKCHAIN: String {
+        case BETA = "https://api.helium.wtf"
+        case SCALABLE = "https://api.helium.io"
+    }
+
+    enum CONSOLE: String {
+        case BASE = "https://console.helium.com"
+    }
 
 }
