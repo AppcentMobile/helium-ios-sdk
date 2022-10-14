@@ -7,14 +7,14 @@
 
 import UIKit
 
-enum Environment {
+public enum HeliumEnvironment {
 
-    enum BLOCKCHAIN: String {
+    public enum BLOCKCHAIN: String {
         case BETA = "https://api.helium.wtf"
         case SCALABLE = "https://api.helium.io"
     }
 
-    enum CONSOLE: String {
+    public enum CONSOLE: String {
         case BASE = "https://console.helium.com"
     }
 
