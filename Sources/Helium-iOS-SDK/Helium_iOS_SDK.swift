@@ -1,6 +1,5 @@
 public struct Helium_iOS_SDK {
-    public private(set) var text = "Hello, World!"
-
-    public init() {
+    public init(apiKey: String) {
+        Constants.API_KEY = apiKey
     }
 }
