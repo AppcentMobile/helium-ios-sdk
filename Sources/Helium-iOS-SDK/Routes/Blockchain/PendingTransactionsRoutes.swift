@@ -9,7 +9,7 @@ import UIKit
 
 struct PendingTransactionsRoutes {
 
-    static let pendingTransactionStatus = "v1/pending_transactions/%@"
-    static let submitANewTransaction = "v1/pending_transactions/%@"
+    static let pendingTransactionStatus = BaseRoute(method: .get, path: "v1/pending_transactions/%@")
+    static let submitANewTransaction = BaseRoute(method: .post, path: "v1/pending_transactions/%@")
 
 }

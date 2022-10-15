@@ -9,12 +9,12 @@ import UIKit
 
 struct OraclePricesRoutes {
 
-    static let currentOraclePrice = "v1/oracle/prices/current"
-    static let currentAndHistoricalOraclePrices = "v1/oracle/prices"
-    static let oraclePriceStats = "v1/oracle/prices/stats"
-    static let oraclePriceAtASpecificBlock = "v1/oracle/prices/%@"
-    static let listOracleActivity = "v1/oracle/activity"
-    static let listActivityForASpecificOracle = "v1/oracle/%@/activity"
-    static let getPredictedHNTOraclePrices = "v1/oracle/predictions"
+    static let currentOraclePrice = BaseRoute(method: .get, path: "v1/oracle/prices/current")
+    static let currentAndHistoricalOraclePrices = BaseRoute(method: .get, path: "v1/oracle/prices")
+    static let oraclePriceStats = BaseRoute(method: .get, path: "v1/oracle/prices/stats")
+    static let oraclePriceAtASpecificBlock = BaseRoute(method: .get, path: "v1/oracle/prices/%@")
+    static let listOracleActivity = BaseRoute(method: .get, path: "v1/oracle/activity")
+    static let listActivityForASpecificOracle = BaseRoute(method: .get, path: "v1/oracle/%@/activity")
+    static let getPredictedHNTOraclePrices = BaseRoute(method: .get, path: "v1/oracle/predictions")
 
 }

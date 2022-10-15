@@ -9,6 +9,6 @@ import UIKit
 
 struct ChallengesRoutes {
 
-    static let listChallengereceipts = "v1/challenges"
+    static let listChallengereceipts = BaseRoute(method: .get, path: "v1/challenges")
 
 }

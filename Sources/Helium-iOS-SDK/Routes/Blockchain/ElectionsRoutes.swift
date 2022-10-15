@@ -9,6 +9,6 @@ import UIKit
 
 struct ElectionsRoutes {
 
-    static let listElections = "v1/elections"
+    static let listElections = BaseRoute(method: .get, path: "v1/elections")
 
 }

@@ -9,8 +9,8 @@ import UIKit
 
 struct DCBurnsRoutes {
 
-    static let dCBurnTotals = "v1/dc_burns/sum"
-    static let dCBurnStats = "v1/dc_burns/stats"
-    static let dCBurnEvents = "v1/dc_burns"
+    static let dCBurnTotals = BaseRoute(method: .get, path: "v1/dc_burns/sum")
+    static let dCBurnStats = BaseRoute(method: .get, path: "v1/dc_burns/stats")
+    static let dCBurnEvents = BaseRoute(method: .get, path: "v1/dc_burns")
 
 }

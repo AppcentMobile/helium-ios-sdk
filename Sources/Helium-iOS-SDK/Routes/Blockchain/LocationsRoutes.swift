@@ -9,6 +9,6 @@ import UIKit
 
 struct LocationsRoutes {
 
-    static let listHotspotCities = "v1/locations/%@"
+    static let listHotspotCities = BaseRoute(method: .get, path: "v1/locations/%@")
 
 }

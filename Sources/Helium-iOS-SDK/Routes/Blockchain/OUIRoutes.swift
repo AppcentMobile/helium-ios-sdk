@@ -9,9 +9,9 @@ import UIKit
 
 struct OUIRoutes {
 
-    static let listOUIs = "v1/ouis"
-    static let getAnOUI = "v1/ouis/%@"
-    static let getLastAssignedOUI = "v1/ouis/last"
-    static let getOUIStats = "v1/ouis/stats"
+    static let listOUIs = BaseRoute(method: .get, path: "v1/ouis")
+    static let getAnOUI = BaseRoute(method: .get, path: "v1/ouis/%@")
+    static let getLastAssignedOUI = BaseRoute(method: .get, path: "v1/ouis/last")
+    static let getOUIStats = BaseRoute(method: .get, path: "v1/ouis/stats")
 
 }

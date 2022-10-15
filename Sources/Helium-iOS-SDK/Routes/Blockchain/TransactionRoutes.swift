@@ -9,6 +9,6 @@ import UIKit
 
 struct TransactionRoutes {
 
-    static let transactionForHash = "v1/transactions/%@"
+    static let transactionForHash = BaseRoute(method: .get, path: "v1/transactions/%@")
 
 }

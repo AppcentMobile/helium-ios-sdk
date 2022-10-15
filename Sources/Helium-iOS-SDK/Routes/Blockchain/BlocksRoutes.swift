@@ -11,12 +11,12 @@ import UIKit
 
 struct BlocksRoutes {
 
-    static let blocksHeight = "v1/blocks/height"
-    static let blocksStats = "v1/blocks/stats"
-    static let blocksDescription = "v1/blocks"
-    static let blockAtHeight = "v1/blocks/%d"
-    static let blockAtHeightTransactions = "v1/blocks/%d/transactions"
-    static let blockAtHash = "v1/blocks/hash/%@"
-    static let blockAtHashTransactions = "v1/blocks/hash/:hash/transactions"
+    static let blocksHeight = BaseRoute(method: .get, path: "v1/blocks/height")
+    static let blocksStats = BaseRoute(method: .get, path: "v1/blocks/stats")
+    static let blocksDescription = BaseRoute(method: .get, path: "v1/blocks")
+    static let blockAtHeight = BaseRoute(method: .get, path: "v1/blocks/%d")
+    static let blockAtHeightTransactions = BaseRoute(method: .get, path: "v1/blocks/%d/transactions")
+    static let blockAtHash = BaseRoute(method: .get, path: "v1/blocks/hash/%@")
+    static let blockAtHashTransactions = BaseRoute(method: .get, path: "v1/blocks/hash/:hash/transactions")
 
 }

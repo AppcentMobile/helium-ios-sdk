@@ -9,6 +9,6 @@ import UIKit
 
 struct RewardsRoutes {
 
-    static let rewardTotals = "v1/rewards/sum"
+    static let rewardTotals = BaseRoute(method: .get, path: "v1/rewards/sum")
 
 }

@@ -9,6 +9,6 @@ import UIKit
 
 struct AssertLocationsRoutes {
 
-    static let listAssertLocations = "v1/assert_locations"
+    static let listAssertLocations = BaseRoute(method: .get, path: "v1/assert_locations")
 
 }

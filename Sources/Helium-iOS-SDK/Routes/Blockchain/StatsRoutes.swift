@@ -11,7 +11,7 @@ import UIKit
 
 struct StatsRoutes {
 
-    static let stats = "v1/stats"
-    static let tokenSupply = "v1/stats/token_supply"
+    static let stats = BaseRoute(method: .get, path: "v1/stats")
+    static let tokenSupply = BaseRoute(method: .get, path: "v1/stats/token_supply")
 
 }

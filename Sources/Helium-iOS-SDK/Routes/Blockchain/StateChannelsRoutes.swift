@@ -9,6 +9,6 @@ import UIKit
 
 struct StateChannelsRoutes {
 
-    static let stateChannelCloses = "v1/elections"
+    static let stateChannelCloses = BaseRoute(method: .get, path: "v1/state_channels")
 
 }

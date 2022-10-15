@@ -9,8 +9,8 @@ import UIKit
 
 struct CitiesRoutes {
 
-    static let listHotspotCities = "v1/cities"
-    static let cityForCityID = "v1/cities/%@"
-    static let listHotspotsForACity = "v1/cities/%@/hotspots"
+    static let listHotspotCities = BaseRoute(method: .get, path: "v1/cities")
+    static let cityForCityID = BaseRoute(method: .get, path: "v1/cities/%@")
+    static let listHotspotsForACity = BaseRoute(method: .get, path: "v1/cities/%@/hotspots")
 
 }
