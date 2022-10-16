@@ -13,14 +13,14 @@ public class HeliumBlockChainAccountsManager: BaseManager {
 
     public static let shared = HeliumBlockChainAccountsManager()
 
-    public func listAccounts(onSuccess: HeliumBlockChainListAccountsCallback, onError: HeliumErrorCallback) {
+    public func listAccounts(onSuccess: BlockchainCallbacks.ListAccountsCallback, onError: GenericCallbacks.ErrorCallback) {
         let route = AccountsRoutes.listAccounts
         let endpoint = BaseEndpoint(
             path: route.path,
             method: route.method
         )
 
-        self.request(to: endpoint) { (r: BaseResult<HeliumBlockChainListAccountsResponse?, Error>) in
+        self.request(to: endpoint) { (r: BaseResult<ListAccountsResponse?, Error>) in
             switch r {
             case .success(let r):
                 onSuccess?(r)

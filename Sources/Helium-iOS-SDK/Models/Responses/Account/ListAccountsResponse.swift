@@ -7,9 +7,9 @@
 
 import UIKit
 
-public struct HeliumBlockChainListAccountsResponse : Codable {
+public struct ListAccountsResponse : Codable {
 
-    let data : [HeliumBlockChainListAccountsDataResponse]?
+    let data : [ListAccountsDataResponse]?
     let cursor : String?
 
     enum CodingKeys: String, CodingKey {
@@ -19,13 +19,13 @@ public struct HeliumBlockChainListAccountsResponse : Codable {
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
-        data = try values.decodeIfPresent([HeliumBlockChainListAccountsDataResponse].self, forKey: .data)
+        data = try values.decodeIfPresent([ListAccountsDataResponse].self, forKey: .data)
         cursor = try values.decodeIfPresent(String.self, forKey: .cursor)
     }
 
 }
 
-public struct HeliumBlockChainListAccountsDataResponse : Codable {
+public struct ListAccountsDataResponse : Codable {
 
     let sec_nonce : Int?
     let sec_balance : Int?

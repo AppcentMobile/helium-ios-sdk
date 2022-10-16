@@ -7,8 +7,12 @@
 
 import UIKit
 
-public typealias HeliumVoidCallback = (() -> ())?
-public typealias HeliumErrorCallback = ((Error?) -> ())?
+public struct GenericCallbacks {
+    public typealias VoidCallback = (() -> ())?
+    public typealias ErrorCallback = ((Error?) -> ())?
+}
 
-//MARK: Accounts
-public typealias HeliumBlockChainListAccountsCallback = ((HeliumBlockChainListAccountsResponse?) -> ())?
+public struct BlockchainCallbacks {
+    //MARK: Accounts
+    public typealias ListAccountsCallback = ((ListAccountsResponse?) -> ())?
+}
