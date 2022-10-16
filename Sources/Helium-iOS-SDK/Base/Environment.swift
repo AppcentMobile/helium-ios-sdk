@@ -10,12 +10,12 @@ import UIKit
 public enum HeliumEnvironment {
 
     public enum BLOCKCHAIN: String {
-        case BETA = "https://api.helium.wtf"
-        case SCALABLE = "https://api.helium.io"
+        case BETA = "api.helium.wtf"
+        case SCALABLE = "api.helium.io"
     }
 
     public enum CONSOLE: String {
-        case BASE = "https://console.helium.com"
+        case BASE = "console.helium.com"
     }
 
 }
