@@ -8,67 +8,64 @@
 import UIKit
 
 struct BaseEndpoint {
-    var provider: BaseProvider?
+
+    //MARK: This is the main switch for base url of blockchain and console, change CONSOLE to use console endpoints
+    var provider: BaseProvider = .BLOCKCHAIN
 
     enum Scheme: String {
         case http = "http", https = "https"
     }
 
-    /// API host, Default https
+    //MARK: API host, Default https
     var scheme: Scheme = .https
 
-    /// Base Url of the API
+    //MARK: Base Url of the API
     var host: String {
         switch provider {
         case .BLOCKCHAIN:
             return Constants.BLOCKHAIN_ENVIRONMENT.rawValue
         case .CONSOLE:
             return Constants.CONSOLE_ENVIRONMENT.rawValue
-        case .none:
-            return ""
         }
     }
 
+    //MARK: The path for api access
     var path = ""
 
-    /// Url Parameters
+    //MARK: Url Parameters
     var queryItems: [URLQueryItem]?
 
+    //MARK: Request parameters
     var params: [String: Any?]?
 
+    //MARK: Headers
     var headers: NSMutableDictionary? {
         let list = NSMutableDictionary()
 
         return list
     }
 
-    /// Default GET
+    //MARK: Default method: GET
     var method: BaseMethod = .get
 
+    //MARK: Generated URL for making request
     var url: URL? {
         get {
             var components = URLComponents()
-            if path.contains("https") || path.contains("http") {
-                let url = URL(string: path)
-                components.scheme = url?.scheme
-                components.host = url?.host
-                components.path = url!.path
-                components.queryItems = queryItems
-            } else {
-                components.scheme = scheme.rawValue
-                components.host = self.host
-                components.path = path
-                components.queryItems = queryItems
-            }
+            components.scheme = scheme.rawValue
+            components.host = host
+            components.path = path
+            components.queryItems = queryItems
             return components.url
         }
     }
 
-    /// TODO: Auth header is ready for making authorization
+    //TODO: Auth header is ready for making authorization
     var authHeader: String? {
         return nil
     }
 
+    //MARK: Generated url request
     var urlRequest: URLRequest? {
         get {
             guard let url = url else {
@@ -101,7 +98,7 @@ struct BaseEndpoint {
         }
     }
 
-    init(path: String, method: BaseMethod = .get, queryItems: [URLQueryItem]? = nil, params: [String: Any?]? = nil, provider: BaseProvider? = .none) {
+    init(path: String, method: BaseMethod = .get, queryItems: [URLQueryItem]? = nil, params: [String: Any?]? = nil, provider: BaseProvider = .BLOCKCHAIN) {
         self.path = path
         self.method = method
         self.queryItems = queryItems
