@@ -54,7 +54,7 @@ struct BaseEndpoint {
             var components = URLComponents()
             components.scheme = scheme.rawValue
             components.host = host
-            components.path = path
+            components.path = updatedPath
             components.queryItems = queryItems
             return components.url
         }
@@ -104,5 +104,15 @@ struct BaseEndpoint {
         self.queryItems = queryItems
         self.params = params
         self.provider = provider
+    }
+}
+
+private extension BaseEndpoint {
+    var updatedPath: String {
+        if path.starts(with: "/") {
+            return path
+        }else {
+            return String(format:"/%@", path)
+        }
     }
 }
