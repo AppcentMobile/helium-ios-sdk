@@ -9,8 +9,8 @@ import UIKit
 
 public struct ListAccountsResponse : Codable {
 
-    let data : [ListAccountsDataResponse]?
-    let cursor : String?
+    public let data : [ListAccountsDataResponse]?
+    public let cursor : String?
 
     enum CodingKeys: String, CodingKey {
         case data = "data"
