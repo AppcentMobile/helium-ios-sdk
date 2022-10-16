@@ -1,5 +1,5 @@
 //
-//  HotspotRoutes.swift
+//  HotspotsRoutes.swift
 //  
 //
 //  Created by Burak Colak on 13.10.2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct HotspotRoutes {
+struct HotspotsRoutes {
 
     static let listHotspots = BaseRoute(method: .get, path: "v1/hotspots")
     static let hotspotForAddress = BaseRoute(method: .get, path: "v1/hotspots/%@")

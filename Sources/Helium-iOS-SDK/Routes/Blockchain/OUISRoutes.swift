@@ -1,5 +1,5 @@
 //
-//  OUIRoutes.swift
+//  OUISRoutes.swift
 //  
 //
 //  Created by Burak Colak on 14.10.2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct OUIRoutes {
+struct OUISRoutes {
 
     static let listOUIs = BaseRoute(method: .get, path: "v1/ouis")
     static let getAnOUI = BaseRoute(method: .get, path: "v1/ouis/%@")

@@ -1,5 +1,5 @@
 //
-//  AccountRoutes.swift
+//  AccountsRoutes.swift
 //  
 //
 //  Created by Burak Colak on 13.10.2022.
@@ -9,7 +9,7 @@ import UIKit
 
 //MARK: https://docs.helium.com/api/blockchain/blocks
 
-struct AccountRoutes {
+struct AccountsRoutes {
 
     static let listAccounts = BaseRoute(method: .get, path: "v1/accounts")
     static let listRichestAccounts = BaseRoute(method: .get, path: "v1/accounts/rich")

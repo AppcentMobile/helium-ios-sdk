@@ -7,7 +7,11 @@
 
 import UIKit
 
-class BaseManager {
+final class BaseManager {
+
+    private init() {}
+
+    static let shared = BaseManager()
 
     public var errorMessage = "An error occurred."
     public var responseInfoMessage = "RESPONSE:"
