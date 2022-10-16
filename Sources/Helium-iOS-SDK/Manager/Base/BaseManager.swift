@@ -44,11 +44,11 @@ public class BaseManager {
             BaseLogger.info(self.httpAuthHeadersMessage + "\(authHeader)")
         }
 
-        if let data = endpoint.headers {
+        if let data = endpoint.headers, data.count > 0 {
             BaseLogger.info(self.httpHeadersMessage + "\(data)")
         }
 
-        if let data = endpoint.queryItems {
+        if let data = endpoint.queryItems, data.count > 0 {
             BaseLogger.info(self.httpQueryItemsMessage + "\(data)")
         }
 
