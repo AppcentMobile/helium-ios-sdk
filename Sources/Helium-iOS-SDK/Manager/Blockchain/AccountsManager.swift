@@ -13,12 +13,19 @@ public class HeliumBlockChainAccountsManager: BaseManager {
 
     public static let shared = HeliumBlockChainAccountsManager()
 
-    public func listAccounts(onSuccess: BlockchainCallbacks.ListAccountsCallback, onError: GenericCallbacks.ErrorCallback) {
+}
+
+public extension HeliumBlockChainAccountsManager {
+    func listAccounts(cursor: String? = nil, onSuccess: BlockchainCallbacks.ListAccountsCallback, onError: GenericCallbacks.ErrorCallback) {
         let route = AccountsRoutes.listAccounts
-        let endpoint = BaseEndpoint(
+        var endpoint = BaseEndpoint(
             path: route.path,
             method: route.method
         )
+
+        if let cursor = cursor {
+            endpoint.queryItems = [URLQueryItem(name: "cursor", value: cursor)]
+        }
 
         self.request(to: endpoint) { (r: BaseResult<ListAccountsResponse?, Error>) in
             switch r {
@@ -30,4 +37,24 @@ public class HeliumBlockChainAccountsManager: BaseManager {
         }
     }
 
+    func listRichestAccounts(limit: String? = nil, onSuccess: BlockchainCallbacks.ListAccountsCallback, onError: GenericCallbacks.ErrorCallback) {
+        let route = AccountsRoutes.listRichestAccounts
+        var endpoint = BaseEndpoint(
+            path: route.path,
+            method: route.method
+        )
+
+        if let limit = limit {
+            endpoint.queryItems = [URLQueryItem(name: "limit", value: limit)]
+        }
+
+        self.request(to: endpoint) { (r: BaseResult<ListAccountsResponse?, Error>) in
+            switch r {
+            case .success(let r):
+                onSuccess?(r)
+            case .failure(let e):
+                onError?(e)
+            }
+        }
+    }
 }
