@@ -7,24 +7,20 @@
 
 import UIKit
 
-final class BaseManager {
+public class BaseManager {
 
-    private init() {}
-
-    static let shared = BaseManager()
-
-    public var errorMessage = "An error occurred."
-    public var responseInfoMessage = "RESPONSE:"
-    public var responseNullMessage = "Response null"
-    public var dataNullMessage = "Data null"
-    public var dataParseSuccessMessage = "Data parsed successfully"
-    public var dataParseErrorMessage = "Data parsing error : %@"
-    public var urlRequestErrorMessage = "URL Request Error"
-    public var httpURLMessage = "HTTP URL:"
-    public var httpAuthHeadersMessage = "HTTP AUTH HEADERS:"
-    public var httpHeadersMessage = "HTTP HEADERS:"
-    public var httpQueryItemsMessage = "HTTP QUERYITEMS:"
-    public var httpBodyMessage = "HTTP BODY:"
+    open var errorMessage = "An error occurred."
+    open var responseInfoMessage = "RESPONSE:"
+    open var responseNullMessage = "Response null"
+    open var dataNullMessage = "Data null"
+    open var dataParseSuccessMessage = "Data parsed successfully"
+    open var dataParseErrorMessage = "Data parsing error : %@"
+    open var urlRequestErrorMessage = "URL Request Error"
+    open var httpURLMessage = "HTTP URL:"
+    open var httpAuthHeadersMessage = "HTTP AUTH HEADERS:"
+    open var httpHeadersMessage = "HTTP HEADERS:"
+    open var httpQueryItemsMessage = "HTTP QUERYITEMS:"
+    open var httpBodyMessage = "HTTP BODY:"
 
     private var session: URLSession {
         let configuration = URLSessionConfiguration.default

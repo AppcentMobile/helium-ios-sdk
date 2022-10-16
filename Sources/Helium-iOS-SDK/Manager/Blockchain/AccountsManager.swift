@@ -7,7 +7,11 @@
 
 import UIKit
 
-public class HeliumBlockChainAccountsManager {
+public class HeliumBlockChainAccountsManager: BaseManager {
+
+    private override init() {}
+
+    static let shared = HeliumBlockChainAccountsManager()
 
     public func listAccounts(onSuccess: HeliumBlockChainListAccountsCallback, onError: HeliumErrorCallback) {
         let route = AccountsRoutes.listAccounts
@@ -16,7 +20,7 @@ public class HeliumBlockChainAccountsManager {
             method: route.method
         )
 
-        BaseManager.shared.request(to: endpoint) { (r: BaseResult<HeliumBlockChainListAccountsResponse?, Error>) in
+        self.request(to: endpoint) { (r: BaseResult<HeliumBlockChainListAccountsResponse?, Error>) in
             switch r {
             case .success(let r):
                 onSuccess?(r)
