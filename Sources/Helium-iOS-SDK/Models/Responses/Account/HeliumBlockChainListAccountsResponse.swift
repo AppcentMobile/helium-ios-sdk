@@ -7,8 +7,8 @@
 
 import UIKit
 
-struct HeliumBlockChainListAccountsResponse : Codable {
-    
+public struct HeliumBlockChainListAccountsResponse : Codable {
+
     let data : [HeliumBlockChainListAccountsDataResponse]?
     let cursor : String?
 
@@ -17,7 +17,7 @@ struct HeliumBlockChainListAccountsResponse : Codable {
         case cursor = "cursor"
     }
 
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         data = try values.decodeIfPresent([HeliumBlockChainListAccountsDataResponse].self, forKey: .data)
         cursor = try values.decodeIfPresent(String.self, forKey: .cursor)
@@ -25,7 +25,7 @@ struct HeliumBlockChainListAccountsResponse : Codable {
 
 }
 
-struct HeliumBlockChainListAccountsDataResponse : Codable {
+public struct HeliumBlockChainListAccountsDataResponse : Codable {
 
     let sec_nonce : Int?
     let sec_balance : Int?
@@ -49,7 +49,7 @@ struct HeliumBlockChainListAccountsDataResponse : Codable {
 
     }
 
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
 
         let values = try decoder.container(keyedBy: CodingKeys.self)
         sec_nonce = try values.decodeIfPresent(Int.self, forKey: .sec_nonce)

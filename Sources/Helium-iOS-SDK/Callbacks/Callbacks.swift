@@ -7,8 +7,8 @@
 
 import UIKit
 
-typealias HeliumVoidCallback = (() -> ())?
-typealias HeliumErrorCallback = ((Error?) -> ())?
+public typealias HeliumVoidCallback = (() -> ())?
+public typealias HeliumErrorCallback = ((Error?) -> ())?
 
 //MARK: Accounts
-typealias HeliumListBlockChainAccountsCallback = ((HeliumBlockChainListAccountsResponse?) -> ())?
+public typealias HeliumBlockChainListAccountsCallback = ((HeliumBlockChainListAccountsResponse?) -> ())?

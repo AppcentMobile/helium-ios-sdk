@@ -7,9 +7,9 @@
 
 import UIKit
 
-class AccountsManager {
+public class HeliumBlockChainAccountsManager {
 
-    func listAccounts(onSuccess: HeliumListBlockChainAccountsCallback, onError: HeliumErrorCallback) {
+    public func listAccounts(onSuccess: HeliumBlockChainListAccountsCallback, onError: HeliumErrorCallback) {
         let route = AccountsRoutes.listAccounts
         let endpoint = BaseEndpoint(
             path: route.path,
