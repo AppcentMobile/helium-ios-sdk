@@ -11,7 +11,7 @@ public class HeliumBlockChainAccountsManager: BaseManager {
 
     private override init() {}
 
-    static let shared = HeliumBlockChainAccountsManager()
+    public static let shared = HeliumBlockChainAccountsManager()
 
     public func listAccounts(onSuccess: HeliumBlockChainListAccountsCallback, onError: HeliumErrorCallback) {
         let route = AccountsRoutes.listAccounts
