@@ -35,6 +35,17 @@ extension BlockchainCallbacks {
 }
 
 extension BlockchainCallbacks {
-    //MARK: Accounts
+    //MARK: Assert Locations
     public typealias ListAssertLocations = ((ListAssertLocationsResponse?) -> ())?
+}
+
+extension BlockchainCallbacks {
+    //MARK: Assert Locations
+    public typealias BlocksHeight = ((BlocksHeightResponse?) -> ())?
+    public typealias BlocksStats = ((BlocksStatsResponse?) -> ())?
+    public typealias BlocksDescription = ((BlocksDescriptionResponse?) -> ())?
+    public typealias BlockAtHeight = ((BlockAtHeightResponse?) -> ())?
+    public typealias BlockAtHeightTransactions = ((BlockAtHeightTransactionsResponse?) -> ())?
+    public typealias BlockAtHash = ((BlockAtHashResponse?) -> ())?
+    public typealias BlockAtHashTransactions = ((BlockAtHashTransactionsResponse?) -> ())?
 }
