@@ -268,4 +268,110 @@ public extension HeliumBlockChainAccountsManager {
             }
         }
     }
+
+    func pendingTransactionsForAccount(address: String, cursor: String? = nil, onSuccess: BlockchainCallbacks.PendingTransactionsForAccount, onError: GenericCallbacks.ErrorCallback) {
+        var endpoint = AccountsRoutes.pendingTransactionsForAccount.endpoint(address)
+
+        if let cursor = cursor {
+            endpoint.queryItems = [URLQueryItem(name: "cursor", value: cursor)]
+        }
+
+        self.request(to: endpoint) { (r: BaseResult<PendingTransactionsForAccountResponse?, Error>) in
+            switch r {
+            case .success(let r):
+                onSuccess?(r)
+            case .failure(let e):
+                onError?(e)
+            }
+        }
+    }
+
+    func rewardsForAnAccount(address: String, cursor: String? = nil, min_time: String? = nil, max_time: String? = nil, onSuccess: BlockchainCallbacks.RewardsForAnAccount, onError: GenericCallbacks.ErrorCallback) {
+        var endpoint = AccountsRoutes.rewardsForAnAccount.endpoint(address)
+
+        var queryItems = [URLQueryItem]()
+
+        if let cursor = cursor {
+            queryItems.append(URLQueryItem(name: "cursor", value: cursor))
+        }
+
+        if let min_time = min_time {
+            queryItems.append(URLQueryItem(name: "min_time", value: min_time))
+        }
+
+        if let max_time = max_time {
+            queryItems.append(URLQueryItem(name: "max_time", value: max_time))
+        }
+
+        if queryItems.count > 0 {
+            endpoint.queryItems = queryItems
+        }
+
+        self.request(to: endpoint) { (r: BaseResult<RewardsForAnAccountResponse?, Error>) in
+            switch r {
+            case .success(let r):
+                onSuccess?(r)
+            case .failure(let e):
+                onError?(e)
+            }
+        }
+    }
+
+    func rewardsInARewardsBlockForAnAccount(address: String, cursor: String? = nil, min_time: String? = nil, max_time: String? = nil, onSuccess: BlockchainCallbacks.RewardsInARewardsBlockForAnAccount, onError: GenericCallbacks.ErrorCallback) {
+        let endpoint = AccountsRoutes.rewardsInARewardsBlockForAnAccount.endpoint(address)
+
+        self.request(to: endpoint) { (r: BaseResult<RewardsInARewardsBlockForAnAccountResponse?, Error>) in
+            switch r {
+            case .success(let r):
+                onSuccess?(r)
+            case .failure(let e):
+                onError?(e)
+            }
+        }
+    }
+
+    func rewardTotalsForAnAccount(address: String, min_time: String? = nil, max_time: String? = nil, bucket: String? = nil, onSuccess: BlockchainCallbacks.RewardTotalsForAnAccount, onError: GenericCallbacks.ErrorCallback) {
+        var endpoint = AccountsRoutes.rewardTotalsForAnAccount.endpoint(address)
+
+        var queryItems = [URLQueryItem]()
+
+        if let min_time = min_time {
+            queryItems.append(URLQueryItem(name: "min_time", value: min_time))
+        }
+
+        if let max_time = max_time {
+            queryItems.append(URLQueryItem(name: "max_time", value: max_time))
+        }
+
+        if let bucket = bucket {
+            queryItems.append(URLQueryItem(name: "bucket", value: bucket))
+        }
+
+        if queryItems.count > 0 {
+            endpoint.queryItems = queryItems
+        }
+
+        self.request(to: endpoint) { (r: BaseResult<RewardTotalsForAnAccountResponse?, Error>) in
+            switch r {
+            case .success(let r):
+                onSuccess?(r)
+            case .failure(let e):
+                onError?(e)
+            }
+        }
+    }
+
+    func statsForAccount(address: String, onSuccess: BlockchainCallbacks.StatsForAccount, onError: GenericCallbacks.ErrorCallback) {
+        let endpoint = AccountsRoutes.statsForAccount.endpoint(address)
+
+        self.request(to: endpoint) { (r: BaseResult<StatsForAccountResponse?, Error>) in
+            switch r {
+            case .success(let r):
+                onSuccess?(r)
+            case .failure(let e):
+                onError?(e)
+            }
+        }
+    }
+
 }

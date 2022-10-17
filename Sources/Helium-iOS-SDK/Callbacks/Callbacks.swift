@@ -25,4 +25,9 @@ public struct BlockchainCallbacks {
     public typealias RolesCountsForAccount = ((RolesCountsForAccountResponse?) -> ())?
     public typealias ElectionsForAccount = ((ElectionsForAccountResponse?) -> ())?
     public typealias ChallengesForAccount = ((ChallengesForAccountResponse?) -> ())?
+    public typealias PendingTransactionsForAccount = ((PendingTransactionsForAccountResponse?) -> ())?
+    public typealias RewardsForAnAccount = ((RewardsForAnAccountResponse?) -> ())?
+    public typealias RewardsInARewardsBlockForAnAccount = ((RewardsInARewardsBlockForAnAccountResponse?) -> ())?
+    public typealias RewardTotalsForAnAccount = ((RewardTotalsForAnAccountResponse?) -> ())?
+    public typealias StatsForAccount = ((StatsForAccountResponse?) -> ())?
 }
