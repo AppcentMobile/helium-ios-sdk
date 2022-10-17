@@ -12,7 +12,9 @@ public struct GenericCallbacks {
     public typealias ErrorCallback = ((Error?) -> ())?
 }
 
-public struct BlockchainCallbacks {
+public struct BlockchainCallbacks {}
+
+extension BlockchainCallbacks {
     //MARK: Accounts
     public typealias ListAccounts = ((ListAccountsResponse?) -> ())?
     public typealias ListRichestAccounts = ((ListRichestAccountsResponse?) -> ())?
@@ -30,4 +32,9 @@ public struct BlockchainCallbacks {
     public typealias RewardsInARewardsBlockForAnAccount = ((RewardsInARewardsBlockForAnAccountResponse?) -> ())?
     public typealias RewardTotalsForAnAccount = ((RewardTotalsForAnAccountResponse?) -> ())?
     public typealias StatsForAccount = ((StatsForAccountResponse?) -> ())?
+}
+
+extension BlockchainCallbacks {
+    //MARK: Accounts
+    public typealias ListAssertLocations = ((ListAssertLocationsResponse?) -> ())?
 }
