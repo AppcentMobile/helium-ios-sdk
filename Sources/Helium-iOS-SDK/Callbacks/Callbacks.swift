@@ -14,5 +14,10 @@ public struct GenericCallbacks {
 
 public struct BlockchainCallbacks {
     //MARK: Accounts
-    public typealias ListAccountsCallback = ((ListAccountsResponse?) -> ())?
+    public typealias ListAccounts = ((ListAccountsResponse?) -> ())?
+    public typealias ListRichestAccounts = ((ListRichestAccountsResponse?) -> ())?
+    public typealias AccountForAddress = ((AccountForAddressResponse?) -> ())?
+    public typealias HotspotsForAccount = ((HotspotsForAccountResponse?) -> ())?
+    public typealias ValidatorsForAccount = ((ValidatorsForAccountResponse?) -> ())?
+    public typealias OUISForAccount = ((OUISForAccountResponse?) -> ())?
 }

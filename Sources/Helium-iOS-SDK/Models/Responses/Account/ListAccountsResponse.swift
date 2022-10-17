@@ -8,7 +8,6 @@
 import UIKit
 
 public struct ListAccountsResponse : Codable {
-
     public let data : [ListAccountsDataResponse]?
     public let cursor : String?
 
@@ -22,11 +21,9 @@ public struct ListAccountsResponse : Codable {
         data = try values.decodeIfPresent([ListAccountsDataResponse].self, forKey: .data)
         cursor = try values.decodeIfPresent(String.self, forKey: .cursor)
     }
-
 }
 
 public struct ListAccountsDataResponse : Codable {
-
     let sec_nonce : Int?
     let sec_balance : Int?
     let nonce : Int?
@@ -37,7 +34,6 @@ public struct ListAccountsDataResponse : Codable {
     let address : String?
 
     enum CodingKeys: String, CodingKey {
-
         case sec_nonce = "sec_nonce"
         case sec_balance = "sec_balance"
         case nonce = "nonce"
@@ -46,11 +42,9 @@ public struct ListAccountsDataResponse : Codable {
         case block = "block"
         case balance = "balance"
         case address = "address"
-
     }
 
     public init(from decoder: Decoder) throws {
-
         let values = try decoder.container(keyedBy: CodingKeys.self)
         sec_nonce = try values.decodeIfPresent(Int.self, forKey: .sec_nonce)
         sec_balance = try values.decodeIfPresent(Int.self, forKey: .sec_balance)
@@ -61,5 +55,4 @@ public struct ListAccountsDataResponse : Codable {
         balance = try values.decodeIfPresent(Int.self, forKey: .balance)
         address = try values.decodeIfPresent(String.self, forKey: .address)
     }
-
 }
