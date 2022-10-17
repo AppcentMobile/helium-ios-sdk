@@ -1,3 +1,10 @@
 # Helium-iOS-SDK
+People-Powered Networks.
 
-A description of this package.
+Start a Wireless Revolution
+
+Powered by the Helium Blockchain, The People’s Network represents a paradigm shift for decentralized wireless infrastructure.
+
+This is an iOS SDK that helps developers to use Helium APIs'.
+
+Thanks for using it.
