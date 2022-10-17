@@ -8,11 +8,9 @@
 import UIKit
 
 public class HeliumBlockChainAccountsManager: BaseManager {
-
     private override init() {}
 
     public static let shared = HeliumBlockChainAccountsManager()
-
 }
 
 public extension HeliumBlockChainAccountsManager {
@@ -112,6 +110,156 @@ public extension HeliumBlockChainAccountsManager {
         }
 
         self.request(to: endpoint) { (r: BaseResult<OUISForAccountResponse?, Error>) in
+            switch r {
+            case .success(let r):
+                onSuccess?(r)
+            case .failure(let e):
+                onError?(e)
+            }
+        }
+    }
+
+    @available(*, deprecated, message: "'activityForAccount' is deprecated: The /activity route will be deprecated on May 1, 2022 and will be replaced by /roles, described below")
+    func activityForAccount(address: String, filter_types: String? = nil, min_time: String? = nil, max_time: String? = nil, limit: Int? = nil, onSuccess: BlockchainCallbacks.ActivityForAccount, onError: GenericCallbacks.ErrorCallback) {
+        var endpoint = AccountsRoutes.activityForAccount.endpoint(address)
+
+        var queryItems = [URLQueryItem]()
+
+        if let filter_types = filter_types {
+            queryItems.append(URLQueryItem(name: "filter_types", value: filter_types))
+        }
+
+        if let min_time = min_time {
+            queryItems.append(URLQueryItem(name: "min_time", value: min_time))
+        }
+
+        if let max_time = max_time {
+            queryItems.append(URLQueryItem(name: "max_time", value: max_time))
+        }
+
+        if let limit = limit {
+            queryItems.append(URLQueryItem(name: "limit", value: String(format: "%d", limit)))
+        }
+
+        if queryItems.count > 0 {
+            endpoint.queryItems = queryItems
+        }
+
+        self.request(to: endpoint) { (r: BaseResult<ActivityForAccountResponse?, Error>) in
+            switch r {
+            case .success(let r):
+                onSuccess?(r)
+            case .failure(let e):
+                onError?(e)
+            }
+        }
+    }
+
+    func rolesForAccount(address: String, filter_types: String? = nil, min_time: String? = nil, max_time: String? = nil, limit: Int? = nil, onSuccess: BlockchainCallbacks.RolesForAccount, onError: GenericCallbacks.ErrorCallback) {
+        var endpoint = AccountsRoutes.rolesForAccount.endpoint(address)
+
+        var queryItems = [URLQueryItem]()
+
+        if let filter_types = filter_types {
+            queryItems.append(URLQueryItem(name: "filter_types", value: filter_types))
+        }
+
+        if let min_time = min_time {
+            queryItems.append(URLQueryItem(name: "min_time", value: min_time))
+        }
+
+        if let max_time = max_time {
+            queryItems.append(URLQueryItem(name: "max_time", value: max_time))
+        }
+
+        if let limit = limit {
+            queryItems.append(URLQueryItem(name: "limit", value: String(format: "%d", limit)))
+        }
+
+        if queryItems.count > 0 {
+            endpoint.queryItems = queryItems
+        }
+
+        self.request(to: endpoint) { (r: BaseResult<RolesForAccountResponse?, Error>) in
+            switch r {
+            case .success(let r):
+                onSuccess?(r)
+            case .failure(let e):
+                onError?(e)
+            }
+        }
+    }
+
+    func rolesCountsForAccount(address: String, filter_types: String? = nil, onSuccess: BlockchainCallbacks.RolesCountsForAccount, onError: GenericCallbacks.ErrorCallback) {
+        var endpoint = AccountsRoutes.rolesCountsForAccount.endpoint(address)
+
+        if let filter_types = filter_types {
+            endpoint.queryItems = [URLQueryItem(name: "filter_types", value: filter_types)]
+        }
+
+        self.request(to: endpoint) { (r: BaseResult<RolesCountsForAccountResponse?, Error>) in
+            switch r {
+            case .success(let r):
+                onSuccess?(r)
+            case .failure(let e):
+                onError?(e)
+            }
+        }
+    }
+
+    func electionsForAccount(address: String, min_time: String? = nil, max_time: String? = nil, limit: Int? = nil, onSuccess: BlockchainCallbacks.ElectionsForAccount, onError: GenericCallbacks.ErrorCallback) {
+        var endpoint = AccountsRoutes.electionsForAccount.endpoint(address)
+
+        var queryItems = [URLQueryItem]()
+
+        if let min_time = min_time {
+            queryItems.append(URLQueryItem(name: "min_time", value: min_time))
+        }
+
+        if let max_time = max_time {
+            queryItems.append(URLQueryItem(name: "max_time", value: max_time))
+        }
+
+        if let limit = limit {
+            queryItems.append(URLQueryItem(name: "limit", value: String(format: "%d", limit)))
+        }
+
+        if queryItems.count > 0 {
+            endpoint.queryItems = queryItems
+        }
+
+        self.request(to: endpoint) { (r: BaseResult<ElectionsForAccountResponse?, Error>) in
+            switch r {
+            case .success(let r):
+                onSuccess?(r)
+            case .failure(let e):
+                onError?(e)
+            }
+        }
+    }
+
+    func challengesForAccount(address: String, min_time: String? = nil, max_time: String? = nil, limit: Int? = nil, onSuccess: BlockchainCallbacks.ChallengesForAccount, onError: GenericCallbacks.ErrorCallback) {
+        var endpoint = AccountsRoutes.challengesForAccount.endpoint(address)
+
+        var queryItems = [URLQueryItem]()
+
+        if let min_time = min_time {
+            queryItems.append(URLQueryItem(name: "min_time", value: min_time))
+        }
+
+        if let max_time = max_time {
+            queryItems.append(URLQueryItem(name: "max_time", value: max_time))
+        }
+
+        if let limit = limit {
+            queryItems.append(URLQueryItem(name: "limit", value: String(format: "%d", limit)))
+        }
+
+        if queryItems.count > 0 {
+            endpoint.queryItems = queryItems
+        }
+
+        self.request(to: endpoint) { (r: BaseResult<ChallengesForAccountResponse?, Error>) in
             switch r {
             case .success(let r):
                 onSuccess?(r)

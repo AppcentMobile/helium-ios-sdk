@@ -20,4 +20,9 @@ public struct BlockchainCallbacks {
     public typealias HotspotsForAccount = ((HotspotsForAccountResponse?) -> ())?
     public typealias ValidatorsForAccount = ((ValidatorsForAccountResponse?) -> ())?
     public typealias OUISForAccount = ((OUISForAccountResponse?) -> ())?
+    public typealias ActivityForAccount = ((ActivityForAccountResponse?) -> ())?
+    public typealias RolesForAccount = ((RolesForAccountResponse?) -> ())?
+    public typealias RolesCountsForAccount = ((RolesCountsForAccountResponse?) -> ())?
+    public typealias ElectionsForAccount = ((ElectionsForAccountResponse?) -> ())?
+    public typealias ChallengesForAccount = ((ChallengesForAccountResponse?) -> ())?
 }
