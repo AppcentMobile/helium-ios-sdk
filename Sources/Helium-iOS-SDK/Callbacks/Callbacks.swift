@@ -40,7 +40,7 @@ extension BlockchainCallbacks {
 }
 
 extension BlockchainCallbacks {
-    //MARK: Assert Locations
+    //MARK: Blocks
     public typealias BlocksHeight = ((BlocksHeightResponse?) -> ())?
     public typealias BlocksStats = ((BlocksStatsResponse?) -> ())?
     public typealias BlocksDescription = ((BlocksDescriptionResponse?) -> ())?
@@ -49,3 +49,9 @@ extension BlockchainCallbacks {
     public typealias BlockAtHash = ((BlockAtHashResponse?) -> ())?
     public typealias BlockAtHashTransactions = ((BlockAtHashTransactionsResponse?) -> ())?
 }
+
+extension BlockchainCallbacks {
+    //MARK: Chain Variables
+    public typealias GetChainVariables = ((GetChainVariablesResponse?) -> ())?
+    public typealias GetTheValueOfAchainVariable = ((GetTheValueOfAchainVariableResponse?) -> ())?
+    public typealias ListChainVariableActivity = ((ListChainVariableActivityResponse?) -> ())?}
