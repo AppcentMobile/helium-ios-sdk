@@ -18,7 +18,7 @@ SDK Coverage status
 - [x] Challenges
 - [x] Cities
 - [x] DCBurns
-- [ ] Elections
+- [x] Elections
 - [ ] Hotspots
 - [ ] Locations
 - [ ] OraclePrices

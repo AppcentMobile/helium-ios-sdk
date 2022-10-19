@@ -75,3 +75,8 @@ extension BlockchainCallbacks {
     public typealias DCBurnStats = ((DCBurnStatsResponse?) -> ())?
     public typealias DCBurnEvents = ((DCBurnEventsResponse?) -> ())?
 }
+
+extension BlockchainCallbacks {
+    //MARK: Elections
+    public typealias ListElections = ((ListElectionsResponse?) -> ())?
+}
