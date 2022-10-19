@@ -8,12 +8,7 @@
 import UIKit
 
 public class HeliumBlockChainAccountsManager: BaseManager {
-    private override init() {}
-
-    public static let shared = HeliumBlockChainAccountsManager()
-}
-
-public extension HeliumBlockChainAccountsManager {
+    
     func listAccounts(cursor: String? = nil, onSuccess: BlockchainCallbacks.ListAccounts, onError: GenericCallbacks.ErrorCallback) {
         var endpoint = AccountsRoutes.listAccounts.endpoint()
 
