@@ -102,3 +102,8 @@ extension BlockchainCallbacks {
     public typealias WitnessesForAHotspot = ((WitnessesForAHotspotResponse?) -> ())?
     public typealias WitnessedForAHotspot = ((WitnessedForAHotspotResponse?) -> ())?
 }
+
+extension BlockchainCallbacks {
+    //MARK: Elections
+    public typealias GetLocation = ((GetLocationResponse?) -> ())?
+}

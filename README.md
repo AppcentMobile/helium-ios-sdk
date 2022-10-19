@@ -20,7 +20,7 @@ SDK Coverage status
 - [x] DCBurns
 - [x] Elections
 - [x] Hotspots
-- [ ] Locations
+- [x] Locations
 - [ ] OraclePrices
 - [ ] OUIS
 - [ ] PendingTransactions
