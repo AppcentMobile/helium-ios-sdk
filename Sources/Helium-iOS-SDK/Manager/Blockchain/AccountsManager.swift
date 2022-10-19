@@ -8,8 +8,8 @@
 import UIKit
 
 public class HeliumBlockChainAccountsManager: BaseManager {
-    
-    func listAccounts(cursor: String? = nil, onSuccess: BlockchainCallbacks.ListAccounts, onError: GenericCallbacks.ErrorCallback) {
+
+    public func listAccounts(cursor: String? = nil, onSuccess: BlockchainCallbacks.ListAccounts, onError: GenericCallbacks.ErrorCallback) {
         var endpoint = AccountsRoutes.listAccounts.endpoint()
 
         if let cursor = cursor {
@@ -26,7 +26,7 @@ public class HeliumBlockChainAccountsManager: BaseManager {
         }
     }
 
-    func listRichestAccounts(limit: String? = nil, onSuccess: BlockchainCallbacks.ListRichestAccounts, onError: GenericCallbacks.ErrorCallback) {
+    public func listRichestAccounts(limit: String? = nil, onSuccess: BlockchainCallbacks.ListRichestAccounts, onError: GenericCallbacks.ErrorCallback) {
         var endpoint = AccountsRoutes.listRichestAccounts.endpoint()
 
         if let limit = limit {
@@ -43,7 +43,7 @@ public class HeliumBlockChainAccountsManager: BaseManager {
         }
     }
 
-    func accountForAddress(address: String, onSuccess: BlockchainCallbacks.AccountForAddress, onError: GenericCallbacks.ErrorCallback) {
+    public func accountForAddress(address: String, onSuccess: BlockchainCallbacks.AccountForAddress, onError: GenericCallbacks.ErrorCallback) {
         let endpoint = AccountsRoutes.accountForAddress.endpoint(address)
 
         self.request(to: endpoint) { (r: BaseResult<AccountForAddressResponse?, Error>) in
@@ -59,7 +59,7 @@ public class HeliumBlockChainAccountsManager: BaseManager {
     /**
      The filter_modes parameter can be used to filter hotspot by how they were added to the blockchain. Supported values are full, dataonly, or light. A comma separated list (no whitespace) can be used to filter for multiple modes.
     */
-    func hotspotAccounts(address: String, cursor: String? = nil, filter_modes: String? = nil, onSuccess: BlockchainCallbacks.HotspotsForAccount, onError: GenericCallbacks.ErrorCallback) {
+    public func hotspotAccounts(address: String, cursor: String? = nil, filter_modes: String? = nil, onSuccess: BlockchainCallbacks.HotspotsForAccount, onError: GenericCallbacks.ErrorCallback) {
         var endpoint = AccountsRoutes.hotspotsForAccount.endpoint(address)
 
         if let cursor = cursor {
@@ -80,7 +80,7 @@ public class HeliumBlockChainAccountsManager: BaseManager {
         }
     }
 
-    func validatorsForAccount(address: String, cursor: String? = nil, onSuccess: BlockchainCallbacks.ValidatorsForAccount, onError: GenericCallbacks.ErrorCallback) {
+    public func validatorsForAccount(address: String, cursor: String? = nil, onSuccess: BlockchainCallbacks.ValidatorsForAccount, onError: GenericCallbacks.ErrorCallback) {
         var endpoint = AccountsRoutes.validatorsForAccount.endpoint(address)
 
         if let cursor = cursor {
@@ -97,7 +97,7 @@ public class HeliumBlockChainAccountsManager: BaseManager {
         }
     }
 
-    func OUISForAccount(address: String, cursor: String? = nil, onSuccess: BlockchainCallbacks.OUISForAccount, onError: GenericCallbacks.ErrorCallback) {
+    public func OUISForAccount(address: String, cursor: String? = nil, onSuccess: BlockchainCallbacks.OUISForAccount, onError: GenericCallbacks.ErrorCallback) {
         var endpoint = AccountsRoutes.ouisForAccount.endpoint(address)
 
         if let cursor = cursor {
@@ -115,7 +115,7 @@ public class HeliumBlockChainAccountsManager: BaseManager {
     }
 
     @available(*, deprecated, message: "'activityForAccount' is deprecated: The /activity route will be deprecated on May 1, 2022 and will be replaced by /roles, described below")
-    func activityForAccount(address: String, filter_types: String? = nil, min_time: String? = nil, max_time: String? = nil, limit: Int? = nil, onSuccess: BlockchainCallbacks.ActivityForAccount, onError: GenericCallbacks.ErrorCallback) {
+    public func activityForAccount(address: String, filter_types: String? = nil, min_time: String? = nil, max_time: String? = nil, limit: Int? = nil, onSuccess: BlockchainCallbacks.ActivityForAccount, onError: GenericCallbacks.ErrorCallback) {
         var endpoint = AccountsRoutes.activityForAccount.endpoint(address)
 
         var queryItems = [URLQueryItem]()
@@ -150,7 +150,7 @@ public class HeliumBlockChainAccountsManager: BaseManager {
         }
     }
 
-    func rolesForAccount(address: String, filter_types: String? = nil, min_time: String? = nil, max_time: String? = nil, limit: Int? = nil, onSuccess: BlockchainCallbacks.RolesForAccount, onError: GenericCallbacks.ErrorCallback) {
+    public func rolesForAccount(address: String, filter_types: String? = nil, min_time: String? = nil, max_time: String? = nil, limit: Int? = nil, onSuccess: BlockchainCallbacks.RolesForAccount, onError: GenericCallbacks.ErrorCallback) {
         var endpoint = AccountsRoutes.rolesForAccount.endpoint(address)
 
         var queryItems = [URLQueryItem]()
@@ -185,7 +185,7 @@ public class HeliumBlockChainAccountsManager: BaseManager {
         }
     }
 
-    func rolesCountsForAccount(address: String, filter_types: String? = nil, onSuccess: BlockchainCallbacks.RolesCountsForAccount, onError: GenericCallbacks.ErrorCallback) {
+    public func rolesCountsForAccount(address: String, filter_types: String? = nil, onSuccess: BlockchainCallbacks.RolesCountsForAccount, onError: GenericCallbacks.ErrorCallback) {
         var endpoint = AccountsRoutes.rolesCountsForAccount.endpoint(address)
 
         if let filter_types = filter_types {
@@ -202,7 +202,7 @@ public class HeliumBlockChainAccountsManager: BaseManager {
         }
     }
 
-    func electionsForAccount(address: String, min_time: String? = nil, max_time: String? = nil, limit: Int? = nil, onSuccess: BlockchainCallbacks.ElectionsForAccount, onError: GenericCallbacks.ErrorCallback) {
+    public func electionsForAccount(address: String, min_time: String? = nil, max_time: String? = nil, limit: Int? = nil, onSuccess: BlockchainCallbacks.ElectionsForAccount, onError: GenericCallbacks.ErrorCallback) {
         var endpoint = AccountsRoutes.electionsForAccount.endpoint(address)
 
         var queryItems = [URLQueryItem]()
@@ -233,7 +233,7 @@ public class HeliumBlockChainAccountsManager: BaseManager {
         }
     }
 
-    func challengesForAccount(address: String, min_time: String? = nil, max_time: String? = nil, limit: Int? = nil, onSuccess: BlockchainCallbacks.ChallengesForAccount, onError: GenericCallbacks.ErrorCallback) {
+    public func challengesForAccount(address: String, min_time: String? = nil, max_time: String? = nil, limit: Int? = nil, onSuccess: BlockchainCallbacks.ChallengesForAccount, onError: GenericCallbacks.ErrorCallback) {
         var endpoint = AccountsRoutes.challengesForAccount.endpoint(address)
 
         var queryItems = [URLQueryItem]()
@@ -264,7 +264,7 @@ public class HeliumBlockChainAccountsManager: BaseManager {
         }
     }
 
-    func pendingTransactionsForAccount(address: String, cursor: String? = nil, onSuccess: BlockchainCallbacks.PendingTransactionsForAccount, onError: GenericCallbacks.ErrorCallback) {
+    public func pendingTransactionsForAccount(address: String, cursor: String? = nil, onSuccess: BlockchainCallbacks.PendingTransactionsForAccount, onError: GenericCallbacks.ErrorCallback) {
         var endpoint = AccountsRoutes.pendingTransactionsForAccount.endpoint(address)
 
         if let cursor = cursor {
@@ -281,7 +281,7 @@ public class HeliumBlockChainAccountsManager: BaseManager {
         }
     }
 
-    func rewardsForAnAccount(address: String, cursor: String? = nil, min_time: String? = nil, max_time: String? = nil, onSuccess: BlockchainCallbacks.RewardsForAnAccount, onError: GenericCallbacks.ErrorCallback) {
+    public func rewardsForAnAccount(address: String, cursor: String? = nil, min_time: String? = nil, max_time: String? = nil, onSuccess: BlockchainCallbacks.RewardsForAnAccount, onError: GenericCallbacks.ErrorCallback) {
         var endpoint = AccountsRoutes.rewardsForAnAccount.endpoint(address)
 
         var queryItems = [URLQueryItem]()
@@ -312,7 +312,7 @@ public class HeliumBlockChainAccountsManager: BaseManager {
         }
     }
 
-    func rewardsInARewardsBlockForAnAccount(address: String, cursor: String? = nil, min_time: String? = nil, max_time: String? = nil, onSuccess: BlockchainCallbacks.RewardsInARewardsBlockForAnAccount, onError: GenericCallbacks.ErrorCallback) {
+    public func rewardsInARewardsBlockForAnAccount(address: String, cursor: String? = nil, min_time: String? = nil, max_time: String? = nil, onSuccess: BlockchainCallbacks.RewardsInARewardsBlockForAnAccount, onError: GenericCallbacks.ErrorCallback) {
         let endpoint = AccountsRoutes.rewardsInARewardsBlockForAnAccount.endpoint(address)
 
         self.request(to: endpoint) { (r: BaseResult<RewardsInARewardsBlockForAnAccountResponse?, Error>) in
@@ -325,7 +325,7 @@ public class HeliumBlockChainAccountsManager: BaseManager {
         }
     }
 
-    func rewardTotalsForAnAccount(address: String, min_time: String? = nil, max_time: String? = nil, bucket: String? = nil, onSuccess: BlockchainCallbacks.RewardTotalsForAnAccount, onError: GenericCallbacks.ErrorCallback) {
+    public func rewardTotalsForAnAccount(address: String, min_time: String? = nil, max_time: String? = nil, bucket: String? = nil, onSuccess: BlockchainCallbacks.RewardTotalsForAnAccount, onError: GenericCallbacks.ErrorCallback) {
         var endpoint = AccountsRoutes.rewardTotalsForAnAccount.endpoint(address)
 
         var queryItems = [URLQueryItem]()
@@ -356,7 +356,7 @@ public class HeliumBlockChainAccountsManager: BaseManager {
         }
     }
 
-    func statsForAccount(address: String, onSuccess: BlockchainCallbacks.StatsForAccount, onError: GenericCallbacks.ErrorCallback) {
+    public func statsForAccount(address: String, onSuccess: BlockchainCallbacks.StatsForAccount, onError: GenericCallbacks.ErrorCallback) {
         let endpoint = AccountsRoutes.statsForAccount.endpoint(address)
 
         self.request(to: endpoint) { (r: BaseResult<StatsForAccountResponse?, Error>) in
