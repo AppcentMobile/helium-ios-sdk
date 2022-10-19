@@ -54,4 +54,10 @@ extension BlockchainCallbacks {
     //MARK: Chain Variables
     public typealias GetChainVariables = ((GetChainVariablesResponse?) -> ())?
     public typealias GetTheValueOfAchainVariable = ((GetTheValueOfAchainVariableResponse?) -> ())?
-    public typealias ListChainVariableActivity = ((ListChainVariableActivityResponse?) -> ())?}
+    public typealias ListChainVariableActivity = ((ListChainVariableActivityResponse?) -> ())?
+}
+
+extension BlockchainCallbacks {
+    //MARK: Challenges
+    public typealias ListChallengeReceipts = ((ListChallengeReceiptsResponse?) -> ())?
+}
