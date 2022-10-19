@@ -80,7 +80,7 @@ public class BaseManager {
 
             do {
                 let responseObject = try JSONDecoder().decode(T.self, from: data)
-                BaseLogger.warning(self?.dataParseSuccessMessage)
+                BaseLogger.info(self?.dataParseSuccessMessage)
                 completion(.success(responseObject))
             } catch let e {
                 let errorMessage = String(format: self?.dataParseErrorMessage ?? "", e.localizedDescription)
