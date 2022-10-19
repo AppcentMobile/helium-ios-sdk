@@ -68,3 +68,10 @@ extension BlockchainCallbacks {
     public typealias CityForCityID = ((CityForCityIDResponse?) -> ())?
     public typealias ListHotspotsForACity = ((ListHotspotsForACityResponse?) -> ())?
 }
+
+extension BlockchainCallbacks {
+    //MARK: DCBurns
+    public typealias DCBurnTotals = ((DCBurnTotalsResponse?) -> ())?
+    public typealias DCBurnStats = ((DCBurnStatsResponse?) -> ())?
+    public typealias DCBurnEvents = ((DCBurnEventsResponse?) -> ())?
+}
