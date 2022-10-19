@@ -16,7 +16,7 @@ SDK Coverage status
 - [x] Blocks
 - [x] ChainVariables
 - [x] Challenges
-- [ ] Cities
+- [x] Cities
 - [ ] DCBurns
 - [ ] Elections
 - [ ] Hotspots

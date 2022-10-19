@@ -61,3 +61,10 @@ extension BlockchainCallbacks {
     //MARK: Challenges
     public typealias ListChallengeReceipts = ((ListChallengeReceiptsResponse?) -> ())?
 }
+
+extension BlockchainCallbacks {
+    //MARK: Cities
+    public typealias ListHotspotCities = ((ListHotspotCitiesResponse?) -> ())?
+    public typealias CityForCityID = ((CityForCityIDResponse?) -> ())?
+    public typealias ListHotspotsForACity = ((ListHotspotsForACityResponse?) -> ())?
+}
