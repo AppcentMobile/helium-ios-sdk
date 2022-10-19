@@ -8,13 +8,7 @@
 import UIKit
 
 public class AssertLocationsManager: BaseManager {
-    private override init() {}
-
-    public static let shared = AssertLocationsManager()
-}
-
-public extension AssertLocationsManager {
-    func listAssertLocations(cursor: String? = nil, min_time: String? = nil, max_time: String? = nil, limit: Int? = nil, onSuccess: BlockchainCallbacks.ListAssertLocations, onError: GenericCallbacks.ErrorCallback) {
+    public func listAssertLocations(cursor: String? = nil, min_time: String? = nil, max_time: String? = nil, limit: Int? = nil, onSuccess: BlockchainCallbacks.ListAssertLocations, onError: GenericCallbacks.ErrorCallback) {
         var endpoint = AssertLocationsRoutes.listAssertLocations.endpoint()
 
         var queryItems = [URLQueryItem]()

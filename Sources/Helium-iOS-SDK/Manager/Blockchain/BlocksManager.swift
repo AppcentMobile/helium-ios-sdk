@@ -8,13 +8,7 @@
 import UIKit
 
 public class BlocksManager: BaseManager {
-    private override init() {}
-
-    public static let shared = BlocksManager()
-}
-
-public extension BlocksManager {
-    func blocksHeight(max_time: String? = nil, onSuccess: BlockchainCallbacks.BlocksHeight, onError: GenericCallbacks.ErrorCallback) {
+    public func blocksHeight(max_time: String? = nil, onSuccess: BlockchainCallbacks.BlocksHeight, onError: GenericCallbacks.ErrorCallback) {
         var endpoint = BlocksRoutes.blocksHeight.endpoint()
 
         if let max_time = max_time {
@@ -31,7 +25,7 @@ public extension BlocksManager {
         }
     }
 
-    func blocksStats(onSuccess: BlockchainCallbacks.BlocksStats, onError: GenericCallbacks.ErrorCallback) {
+    public func blocksStats(onSuccess: BlockchainCallbacks.BlocksStats, onError: GenericCallbacks.ErrorCallback) {
         let endpoint = BlocksRoutes.blocksStats.endpoint()
 
         self.request(to: endpoint) { (r: BaseResult<BlocksStatsResponse?, Error>) in
@@ -44,7 +38,7 @@ public extension BlocksManager {
         }
     }
 
-    func blocksDescription(cursor: String? = nil, onSuccess: BlockchainCallbacks.BlocksDescription, onError: GenericCallbacks.ErrorCallback) {
+    public func blocksDescription(cursor: String? = nil, onSuccess: BlockchainCallbacks.BlocksDescription, onError: GenericCallbacks.ErrorCallback) {
         var endpoint = BlocksRoutes.blocksDescription.endpoint()
 
         if let cursor = cursor {
@@ -61,7 +55,7 @@ public extension BlocksManager {
         }
     }
 
-    func blockAtHeight(height: String, onSuccess: BlockchainCallbacks.BlockAtHeight, onError: GenericCallbacks.ErrorCallback) {
+    public func blockAtHeight(height: String, onSuccess: BlockchainCallbacks.BlockAtHeight, onError: GenericCallbacks.ErrorCallback) {
         let endpoint = BlocksRoutes.blockAtHeight.endpoint(height)
 
         self.request(to: endpoint) { (r: BaseResult<BlockAtHeightResponse?, Error>) in
@@ -74,7 +68,7 @@ public extension BlocksManager {
         }
     }
 
-    func blockAtHeightTransactions(height: String, cursor: String? = nil, onSuccess: BlockchainCallbacks.BlockAtHeightTransactions, onError: GenericCallbacks.ErrorCallback) {
+    public func blockAtHeightTransactions(height: String, cursor: String? = nil, onSuccess: BlockchainCallbacks.BlockAtHeightTransactions, onError: GenericCallbacks.ErrorCallback) {
         var endpoint = BlocksRoutes.blockAtHeightTransactions.endpoint(height)
 
         if let cursor = cursor {
@@ -91,7 +85,7 @@ public extension BlocksManager {
         }
     }
 
-    func blockAtHash(hash: String, onSuccess: BlockchainCallbacks.BlockAtHash, onError: GenericCallbacks.ErrorCallback) {
+    public func blockAtHash(hash: String, onSuccess: BlockchainCallbacks.BlockAtHash, onError: GenericCallbacks.ErrorCallback) {
         let endpoint = BlocksRoutes.blockAtHash.endpoint(hash)
 
         self.request(to: endpoint) { (r: BaseResult<BlockAtHashResponse?, Error>) in
@@ -104,7 +98,7 @@ public extension BlocksManager {
         }
     }
 
-    func blockAtHashTransactions(hash: String, cursor: String? = nil, onSuccess: BlockchainCallbacks.BlockAtHashTransactions, onError: GenericCallbacks.ErrorCallback) {
+    public func blockAtHashTransactions(hash: String, cursor: String? = nil, onSuccess: BlockchainCallbacks.BlockAtHashTransactions, onError: GenericCallbacks.ErrorCallback) {
         var endpoint = BlocksRoutes.blockAtHashTransactions.endpoint(hash)
 
         if let cursor = cursor {

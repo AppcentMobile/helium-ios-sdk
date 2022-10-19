@@ -8,13 +8,7 @@
 import UIKit
 
 public class ChainVariablesManager: BaseManager {
-    private override init() {}
-
-    public static let shared = ChainVariablesManager()
-}
-
-public extension ChainVariablesManager {
-    func getChainVariables(min_time: String? = nil, max_time: String? = nil, limit: Int? = nil, onSuccess: BlockchainCallbacks.BlocksHeight, onError: GenericCallbacks.ErrorCallback) {
+    public func getChainVariables(min_time: String? = nil, max_time: String? = nil, limit: Int? = nil, onSuccess: BlockchainCallbacks.BlocksHeight, onError: GenericCallbacks.ErrorCallback) {
         var endpoint = ChainVariablesRoutes.getChainVariables.endpoint()
 
         var queryItems = [URLQueryItem]()
@@ -45,7 +39,7 @@ public extension ChainVariablesManager {
         }
     }
 
-    func getTheValueOfAchainVariable(name: String, onSuccess: BlockchainCallbacks.GetTheValueOfAchainVariable, onError: GenericCallbacks.ErrorCallback) {
+    public func getTheValueOfAchainVariable(name: String, onSuccess: BlockchainCallbacks.GetTheValueOfAchainVariable, onError: GenericCallbacks.ErrorCallback) {
         let endpoint = ChainVariablesRoutes.getTheValueOfAChainVariable.endpoint(name)
 
         self.request(to: endpoint) { (r: BaseResult<GetTheValueOfAchainVariableResponse?, Error>) in
@@ -58,7 +52,7 @@ public extension ChainVariablesManager {
         }
     }
 
-    func listChainVariableActivity(cursor: String? = nil, onSuccess: BlockchainCallbacks.ListChainVariableActivity, onError: GenericCallbacks.ErrorCallback) {
+    public func listChainVariableActivity(cursor: String? = nil, onSuccess: BlockchainCallbacks.ListChainVariableActivity, onError: GenericCallbacks.ErrorCallback) {
         var endpoint = ChainVariablesRoutes.listChainVariableActivity.endpoint()
 
         if let cursor = cursor {
