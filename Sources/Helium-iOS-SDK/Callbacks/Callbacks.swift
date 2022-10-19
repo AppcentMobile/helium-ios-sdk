@@ -80,3 +80,25 @@ extension BlockchainCallbacks {
     //MARK: Elections
     public typealias ListElections = ((ListElectionsResponse?) -> ())?
 }
+
+extension BlockchainCallbacks {
+    //MARK: Hotspots
+    public typealias ListHotspots = ((ListHotspotsResponse?) -> ())?
+    public typealias HotspotForAddress = ((HotspotForAddressResponse?) -> ())?
+    public typealias HotspotsForName = ((HotspotsForNameResponse?) -> ())?
+    public typealias HotspotNameSearch = ((HotspotNameSearchResponse?) -> ())?
+    public typealias HotspotLocationDistanceSearch = ((HotspotLocationDistanceSearchResponse?) -> ())?
+    public typealias HotspotLocationBoxSearch = ((HotspotLocationBoxSearchResponse?) -> ())?
+    public typealias HotspotsForH3Index = ((HotspotsForH3IndexResponse?) -> ())?
+    public typealias HotspotActivity = ((HotspotActivityResponse?) -> ())?
+    public typealias HotspotRoles = ((HotspotRolesResponse?) -> ())?
+    public typealias HotspotRolesCounts = ((HotspotRolesCountsResponse?) -> ())?
+    public typealias HotspotElections = ((HotspotElectionsResponse?) -> ())?
+    public typealias CurrentlyElectedHotspots = ((CurrentlyElectedHotspotsResponse?) -> ())?
+    public typealias HotspotChallenges = ((HotspotChallengesResponse?) -> ())?
+    public typealias RewardsForAHotspot = ((RewardsForAHotspotResponse?) -> ())?
+    public typealias RewardsInARewardsBlockForAHotspot = ((RewardsInARewardsBlockForAHotspotResponse?) -> ())?
+    public typealias RewardTotalForAHotspot = ((RewardTotalForAHotspotResponse?) -> ())?
+    public typealias WitnessesForAHotspot = ((WitnessesForAHotspotResponse?) -> ())?
+    public typealias WitnessedForAHotspot = ((WitnessedForAHotspotResponse?) -> ())?
+}

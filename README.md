@@ -19,7 +19,7 @@ SDK Coverage status
 - [x] Cities
 - [x] DCBurns
 - [x] Elections
-- [ ] Hotspots
+- [x] Hotspots
 - [ ] Locations
 - [ ] OraclePrices
 - [ ] OUIS

@@ -8,7 +8,6 @@
 import UIKit
 
 public class HeliumBlockChainAccountsManager: BaseManager {
-
     public func listAccounts(cursor: String? = nil, onSuccess: BlockchainCallbacks.ListAccounts, onError: GenericCallbacks.ErrorCallback) {
         var endpoint = AccountsRoutes.listAccounts.endpoint()
 
@@ -368,5 +367,4 @@ public class HeliumBlockChainAccountsManager: BaseManager {
             }
         }
     }
-
 }
