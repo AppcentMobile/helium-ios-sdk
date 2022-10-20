@@ -25,7 +25,7 @@ SDK Coverage status
 - [x] OUIS
 - [x] PendingTransactions
 - [x] Rewards
-- [ ] StateChannels
+- [x] StateChannels
 - [ ] Stats
 - [ ] Transaction
 - [ ] Validators

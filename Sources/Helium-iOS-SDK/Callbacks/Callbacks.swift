@@ -137,3 +137,8 @@ extension BlockchainCallbacks {
     //MARK: Rewards
     public typealias RewardTotals = ((RewardTotalsResponse?) -> ())?
 }
+
+extension BlockchainCallbacks {
+    //MARK: Statechannels
+    public typealias StateChannelsCloses = ((StateChannelClosesResponse?) -> ())?
+}
