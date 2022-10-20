@@ -148,3 +148,8 @@ extension BlockchainCallbacks {
     public typealias Stats = ((StatsResponse?) -> ())?
     public typealias TokenSupply = ((TokenSupplyResponse?) -> ())?
 }
+
+extension BlockchainCallbacks {
+    //MARK: Transaction
+    public typealias TransactionForHash = ((TransactionForHashResponse?) -> ())?
+}

@@ -27,5 +27,5 @@ SDK Coverage status
 - [x] Rewards
 - [x] StateChannels
 - [x] Stats
-- [ ] Transaction
+- [x] Transactions
 - [ ] Validators

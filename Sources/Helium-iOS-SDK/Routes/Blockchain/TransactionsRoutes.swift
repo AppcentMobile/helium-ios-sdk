@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct TransactionRoutes {
+struct TransactionsRoutes {
 
     static let transactionForHash = BaseRoute(method: .get, path: "v1/transactions/%@")
 
