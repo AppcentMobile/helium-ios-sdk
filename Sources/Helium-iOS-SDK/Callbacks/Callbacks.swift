@@ -142,3 +142,9 @@ extension BlockchainCallbacks {
     //MARK: Statechannels
     public typealias StateChannelsCloses = ((StateChannelClosesResponse?) -> ())?
 }
+
+extension BlockchainCallbacks {
+    //MARK: Stats
+    public typealias Stats = ((StatsResponse?) -> ())?
+    public typealias TokenSupply = ((TokenSupplyResponse?) -> ())?
+}
