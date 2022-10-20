@@ -29,7 +29,7 @@ struct AccountsRoutes {
 
     //MARK: For older reward results, if the type is null the amount is a total for that account or hotspot in the given block.
     static let rewardsForAnAccount = BaseRoute(method: .get, path: "v1/accounts/%@/rewards")
-    static let rewardsInARewardsBlockForAnAccount = BaseRoute(method: .get, path: "v1/accounts/:address/rewards/%@")
+    static let rewardsInARewardsBlockForAnAccount = BaseRoute(method: .get, path: "v1/accounts/%@/rewards/%@")
     static let rewardTotalsForAnAccount = BaseRoute(method: .get, path: "v1/accounts/%@/rewards/sum")
 
     static let statsForAccount = BaseRoute(method: .get, path: "v1/accounts/%@/stats")

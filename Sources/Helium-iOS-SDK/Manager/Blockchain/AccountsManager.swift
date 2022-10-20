@@ -311,8 +311,13 @@ public class HeliumBlockChainAccountsManager: BaseManager {
         }
     }
 
-    public func rewardsInARewardsBlockForAnAccount(address: String, cursor: String? = nil, min_time: String? = nil, max_time: String? = nil, onSuccess: BlockchainCallbacks.RewardsInARewardsBlockForAnAccount, onError: GenericCallbacks.ErrorCallback) {
-        let endpoint = AccountsRoutes.rewardsInARewardsBlockForAnAccount.endpoint(address)
+    public func rewardsInARewardsBlockForAnAccount(address: String, block: String? = nil, cursor: String? = nil, min_time: String? = nil, max_time: String? = nil, onSuccess: BlockchainCallbacks.RewardsInARewardsBlockForAnAccount, onError: GenericCallbacks.ErrorCallback) {
+        let route = AccountsRoutes.rewardsInARewardsBlockForAnAccount
+
+        var endpoint = BaseEndpoint(path: String(format: route.path, address), method: route.method)
+        if let block = block {
+            endpoint = BaseEndpoint(path: String(format: route.path, address, block), method: route.method)
+        }
 
         self.request(to: endpoint) { (r: BaseResult<RewardsInARewardsBlockForAnAccountResponse?, Error>) in
             switch r {

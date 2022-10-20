@@ -150,6 +150,24 @@ extension BlockchainCallbacks {
 }
 
 extension BlockchainCallbacks {
-    //MARK: Transaction
+    //MARK: Transactions
     public typealias TransactionForHash = ((TransactionForHashResponse?) -> ())?
+}
+
+extension BlockchainCallbacks {
+    //MARK: Validators
+    public typealias ListValidators = ((ListValidatorsResponse?) -> ())?
+    public typealias ValidatorForAddress = ((ValidatorForAddressResponse?) -> ())?
+    public typealias ValidatorsForName = ((ValidatorsForNameResponse?) -> ())?
+    public typealias ValidatorNameSearch = ((ValidatorNameSearchResponse?) -> ())?
+    public typealias ValidatorActivity = ((ValidatorActivityResponse?) -> ())?
+    public typealias ValidatorRoles = ((ValidatorRolesResponse?) -> ())?
+    public typealias ValidatorRolesCounts = ((ValidatorRolesCountsResponse?) -> ())?
+    public typealias StatsForValidators = ((StatsForValidatorsResponse?) -> ())?
+    public typealias CurrentlyElectedValidators = ((CurrentlyElectedValidatorsResponse?) -> ())?
+    public typealias ElectedValidatorsAtABlock = ((ElectedValidatorsAtABlockResponse?) -> ())?
+    public typealias ElectedValidatorsInAnElection = ((ElectedValidatorsInAnElectionResponse?) -> ())?
+    public typealias RewardsForAValidator = ((RewardsForAValidatorResponse?) -> ())?
+    public typealias RewardTotalForAValidator = ((RewardTotalForAValidatorResponse?) -> ())?
+    public typealias RewardTotalForAllValidators = ((RewardTotalForAllValidatorsResponse?) -> ())?
 }

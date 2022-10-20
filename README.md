@@ -28,4 +28,4 @@ SDK Coverage status
 - [x] StateChannels
 - [x] Stats
 - [x] Transactions
-- [ ] Validators
+- [x] Validators

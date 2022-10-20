@@ -16,7 +16,6 @@ struct ValidatorsRoutes {
     static let validatorsForName = BaseRoute(method: .get, path: "v1/validators/name/%@")
     static let validatorNameSearch = BaseRoute(method: .get, path: "validators/name")
 
-    @available(*, deprecated, message: "The /activity route will be deprecated on May 1, 2022 and will be replaced by /roles")
     static let validatorActivity = BaseRoute(method: .get, path: "v1/validators/%@/activity")
 
     static let validatorRoles = BaseRoute(method: .get, path: "v1/validators/%@/roles")
