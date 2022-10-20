@@ -120,8 +120,15 @@ extension BlockchainCallbacks {
 }
 
 extension BlockchainCallbacks {
+    //MARK: OOUIs
     public typealias ListOUIs = ((ListOUIsResponse?) -> ())?
     public typealias GetAnOUI = ((GetAnOUIResponse?) -> ())?
     public typealias GetLastAssignedOUI = ((GetLastAssignedOUIResponse?) -> ())?
     public typealias GetOUIStats = ((GetOUIStatsResponse?) -> ())?
+}
+
+extension BlockchainCallbacks {
+    //MARK: PendingTransactions
+    public typealias PendingTransactionStatus = ((PendingTransactionStatusResponse?) -> ())?
+    public typealias SubmitANewTransaction = ((SubmitANewTransactionResponse?) -> ())?
 }
