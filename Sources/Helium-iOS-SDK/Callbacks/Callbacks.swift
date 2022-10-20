@@ -132,3 +132,8 @@ extension BlockchainCallbacks {
     public typealias PendingTransactionStatus = ((PendingTransactionStatusResponse?) -> ())?
     public typealias SubmitANewTransaction = ((SubmitANewTransactionResponse?) -> ())?
 }
+
+extension BlockchainCallbacks {
+    //MARK: Rewards
+    public typealias RewardTotals = ((RewardTotalsResponse?) -> ())?
+}
