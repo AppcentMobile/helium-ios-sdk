@@ -22,7 +22,7 @@ SDK Coverage status
 - [x] Hotspots
 - [x] Locations
 - [x] OraclePrices
-- [ ] OUIS
+- [x] OUIS
 - [ ] PendingTransactions
 - [ ] Rewards
 - [ ] StateChannels

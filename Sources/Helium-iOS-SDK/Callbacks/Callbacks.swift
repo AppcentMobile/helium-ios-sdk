@@ -118,3 +118,10 @@ extension BlockchainCallbacks {
     public typealias ListActivityForASpecificOracle = ((ListActivityForASpecificOracleResponse?) -> ())?
     public typealias GetPredictedHNTOraclePrices = ((GetPredictedHNTOraclePricesResponse?) -> ())?
 }
+
+extension BlockchainCallbacks {
+    public typealias ListOUIs = ((ListOUIsResponse?) -> ())?
+    public typealias GetAnOUI = ((GetAnOUIResponse?) -> ())?
+    public typealias GetLastAssignedOUI = ((GetLastAssignedOUIResponse?) -> ())?
+    public typealias GetOUIStats = ((GetOUIStatsResponse?) -> ())?
+}
