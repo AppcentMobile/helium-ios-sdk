@@ -10,7 +10,7 @@ This is an iOS SDK that helps developers to use Helium APIs'.
 Thanks for using it.
 
 SDK Coverage status
--Blockchain-
+#Blockchain
 - [x] Accounts
 - [x] AssertLocations
 - [x] Blocks
