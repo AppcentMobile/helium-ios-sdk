@@ -7,7 +7,7 @@
 
 import UIKit
 
-public struct ChallengesForAccountResponse : Codable {
+public struct ChallengesForAccountResponse: Codable {
     public let data : [ChallengesForAccountDataResponse]?
 
     enum CodingKeys: String, CodingKey {
@@ -72,7 +72,7 @@ public struct ChallengesForAccountDataResponse: Codable {
     }
 }
 
-public struct ChallengesForAccountPathResponse : Codable {
+public struct ChallengesForAccountPathResponse: Codable {
     public let witnesses : [ChallengesForAccountWitnessesResponse]?
     public let receipt : ChallengesForAccountReceiptResponse?
     public let geocode : ChallengesForAccountGeocodeResponse?
@@ -106,7 +106,7 @@ public struct ChallengesForAccountPathResponse : Codable {
     }
 }
 
-public struct ChallengesForAccountWitnessesResponse : Codable {
+public struct ChallengesForAccountWitnessesResponse: Codable {
     public let timestamp : Int?
     public let snr : Int?
     public let signal : Int?
@@ -149,7 +149,7 @@ public struct ChallengesForAccountWitnessesResponse : Codable {
     }
 }
 
-public struct ChallengesForAccountReceiptResponse : Codable {
+public struct ChallengesForAccountReceiptResponse: Codable {
     public let timestamp : Int?
     public let snr : Int?
     public let signal : Int?

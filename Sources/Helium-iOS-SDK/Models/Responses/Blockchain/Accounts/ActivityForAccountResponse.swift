@@ -7,7 +7,7 @@
 
 import UIKit
 
-public struct ActivityForAccountResponse : Codable {
+public struct ActivityForAccountResponse: Codable {
     public let data : [ActivityForAccountDataResponse]?
 
     enum CodingKeys: String, CodingKey {
@@ -20,7 +20,7 @@ public struct ActivityForAccountResponse : Codable {
     }
 }
 
-public struct ActivityForAccountDataResponse : Codable {
+public struct ActivityForAccountDataResponse: Codable {
     public let type : String?
     public let time : Int?
     public let start_epoch : Int?
@@ -51,7 +51,7 @@ public struct ActivityForAccountDataResponse : Codable {
     }
 }
 
-public struct ActivityForAccountRewardsResponse : Codable {
+public struct ActivityForAccountRewardsResponse: Codable {
     public let type : String?
     public let gateway : String?
     public let amount : Int?

@@ -7,8 +7,7 @@
 
 import UIKit
 
-
-public struct AccountForAddressResponse : Codable {
+public struct AccountForAddressResponse: Codable {
     public let data : ListAccountsDataResponse?
 
     enum CodingKeys: String, CodingKey {
