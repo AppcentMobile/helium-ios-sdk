@@ -21,7 +21,7 @@ SDK Coverage status
 - [x] Elections
 - [x] Hotspots
 - [x] Locations
-- [ ] OraclePrices
+- [x] OraclePrices
 - [ ] OUIS
 - [ ] PendingTransactions
 - [ ] Rewards

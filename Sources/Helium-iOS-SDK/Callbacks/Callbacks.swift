@@ -107,3 +107,14 @@ extension BlockchainCallbacks {
     //MARK: Elections
     public typealias GetLocation = ((GetLocationResponse?) -> ())?
 }
+
+extension BlockchainCallbacks {
+    //MARK: OraclePrices
+    public typealias CurrentOraclePrice = ((CurrentOraclePriceResponse?) -> ())?
+    public typealias CurrentAndHistoricalOraclePrices = ((CurrentAndHistoricalOraclePricesResponse?) -> ())?
+    public typealias OraclePriceStats = ((OraclePriceStatsResponse?) -> ())?
+    public typealias OraclePriceAtASpecificBlock = ((OraclePriceAtASpecificBlockResponse?) -> ())?
+    public typealias ListOracleActivity = ((ListOracleActivityResponse?) -> ())?
+    public typealias ListActivityForASpecificOracle = ((ListActivityForASpecificOracleResponse?) -> ())?
+    public typealias GetPredictedHNTOraclePrices = ((GetPredictedHNTOraclePricesResponse?) -> ())?
+}
