@@ -28,3 +28,6 @@ Thanks for using it.
 - [x] Stats
 - [x] Transactions
 - [x] Validators
+
+# SDK Coverage status - Console
+-  1 / 32 endpoints covered
