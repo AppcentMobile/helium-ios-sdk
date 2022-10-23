@@ -30,4 +30,4 @@ Thanks for using it.
 - [x] Validators
 
 # SDK Coverage status - Console
--  1 / 32 endpoints covered
+-  8 / 32 endpoints covered
