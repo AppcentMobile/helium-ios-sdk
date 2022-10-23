@@ -42,6 +42,10 @@ struct BaseEndpoint {
     var headers: NSMutableDictionary? {
         let list = NSMutableDictionary()
 
+        if provider == .CONSOLE {
+            list.setValue(Constants.API_KEY, forKey: "key")
+        }
+
         return list
     }
 

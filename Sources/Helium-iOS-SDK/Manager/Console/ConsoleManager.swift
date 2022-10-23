@@ -7,6 +7,4 @@
 
 import UIKit
 
-public class ConsoleManager: BaseManager {
-
-}
+public class ConsoleManager: BaseManager {}

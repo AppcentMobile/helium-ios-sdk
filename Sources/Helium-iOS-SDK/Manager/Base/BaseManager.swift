@@ -91,4 +91,51 @@ public class BaseManager {
         dataTask.resume()
     }
 
+    func request(to endpoint: BaseEndpoint, completion: GenericCallbacks.InfoCallback) {
+        guard let urlRequest = endpoint.urlRequest else {
+            BaseLogger.error(urlRequestErrorMessage)
+            return
+        }
+
+        if let data = endpoint.url {
+            BaseLogger.info(self.httpURLMessage + "\(data)")
+        }
+
+        if let authHeader = endpoint.authHeader, authHeader.count > 0 {
+            BaseLogger.info(self.httpAuthHeadersMessage + "\(authHeader)")
+        }
+
+        if let data = endpoint.headers, data.count > 0 {
+            BaseLogger.info(self.httpHeadersMessage + "\(data)")
+        }
+
+        if let data = endpoint.queryItems, data.count > 0 {
+            BaseLogger.info(self.httpQueryItemsMessage + "\(data)")
+        }
+
+        if let data = urlRequest.httpBody {
+            BaseLogger.info(self.httpBodyMessage + String(decoding: data, as: UTF8.self))
+        }
+
+        let dataTask = session.dataTask(with: urlRequest) { [weak self] data, response, error in
+            guard error == nil else {
+                completion?(false, BaseNetworkError(message: self?.errorMessage, log: error?.localizedDescription, endpoint: endpoint))
+                return
+            }
+            guard response != nil else {
+                completion?(false, BaseNetworkError(message: self?.errorMessage, log: self?.responseNullMessage, endpoint: endpoint))
+                return
+            }
+
+            if error?.isConnectivityError ?? false {
+                completion?(false, BaseNetworkError(message: self?.errorMessage, log: self?.dataNullMessage, endpoint: endpoint))
+                return
+            }
+
+            BaseLogger.info(self?.dataParseSuccessMessage)
+            completion?(true, nil)
+        }
+        dataTask.resume()
+    }
+
 }
