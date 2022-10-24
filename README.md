@@ -9,6 +9,19 @@ This is an iOS SDK that helps developers to use Helium APIs'.
 
 Thanks for using it.
 
+# Usage
+    SPM
+    Add new package and type the library url below;
+    ```swift
+    https://github.com/AppcentMobile/helium-ios-sdk.git
+    ```
+
+# Example
+    You can access sample app through;
+    ```swift
+    https://github.com/AppcentMobile/helium-ios-sample-app
+    ```
+
 # SDK Coverage status - Blockchain
 - [x] Accounts
 - [x] AssertLocations
@@ -31,3 +44,4 @@ Thanks for using it.
 
 # SDK Coverage status - Console
 -  32 / 32 endpoints covered
+
