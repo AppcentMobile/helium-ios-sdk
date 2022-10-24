@@ -5,8 +5,6 @@
 //  Created by Burak Colak on 24.10.2022.
 //
 
-import UIKit
-
 struct CreateACustomAWSIoTCoreIntegrationRequest: Encodable {
     var name: String
     var type: String

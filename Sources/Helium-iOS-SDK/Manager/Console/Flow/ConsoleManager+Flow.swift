@@ -5,8 +5,6 @@
 //  Created by Burak Colak on 24.10.2022.
 //
 
-import UIKit
-
 extension ConsoleManager {
     public func viewAllFlowsForAnIntegration(integration_id: String, onSuccess: ConsoleCallbacks.ViewAllFlowsForAnIntegration, onError: GenericCallbacks.ErrorCallback) {
         let endpoint = ConsoleRoutes.viewAllFlowsForAnIntegration.consoleEndpoint(integration_id)

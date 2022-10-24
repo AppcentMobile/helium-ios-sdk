@@ -5,8 +5,6 @@
 //  Created by Burak Colak on 24.10.2022.
 //
 
-import UIKit
-
 extension ConsoleManager {
     public func updateDeviceConfigProfile(device_id: String, config_profile_id: String, onSuccess: ConsoleCallbacks.UpdateDeviceConfigProfile, onError: GenericCallbacks.ErrorCallback) {
         let request = UpdateDeviceConfigProfileRequest(config_profile_id: config_profile_id)

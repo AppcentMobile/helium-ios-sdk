@@ -5,7 +5,7 @@
 //  Created by Burak Colak on 24.10.2022.
 //
 
-import UIKit
+import Foundation
 
 extension ConsoleManager {
     public func updateDeviceActiveStatus(device_id: String, active: String, onSuccess: ConsoleCallbacks.DeleteDeviceByUUID, onError: GenericCallbacks.ErrorCallback) {
