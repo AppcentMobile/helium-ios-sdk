@@ -5,7 +5,7 @@
 //  Created by Burak Colak on 13.10.2022.
 //
 
-import UIKit
+
 
 struct HotspotsRoutes {
 

@@ -5,7 +5,7 @@
 //  Created by Burak Colak on 23.10.2022.
 //
 
-import UIKit
+
 
 public struct DeviceByUUIDResponse : Codable {
     public let id : String?

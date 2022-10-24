@@ -5,7 +5,7 @@
 //  Created by Burak Colak on 18.10.2022.
 //
 
-import UIKit
+import Foundation
 
 public class ChainVariablesManager: BaseManager {
     public func getChainVariables(min_time: String? = nil, max_time: String? = nil, limit: Int? = nil, onSuccess: BlockchainCallbacks.BlocksHeight, onError: GenericCallbacks.ErrorCallback) {

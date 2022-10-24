@@ -5,7 +5,7 @@
 //  Created by Burak Colak on 17.10.2022.
 //
 
-import UIKit
+
 
 public struct ActivityForAccountResponse: Codable {
     public let data : [ActivityForAccountDataResponse]?

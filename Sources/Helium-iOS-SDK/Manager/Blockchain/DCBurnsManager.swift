@@ -5,7 +5,7 @@
 //  Created by Burak Colak on 19.10.2022.
 //
 
-import UIKit
+import Foundation
 
 public class DCBurnsManager: BaseManager {
     public func dCBurnTotals(min_time: String? = nil, max_time: String? = nil, bucket: String? = nil, onSuccess: BlockchainCallbacks.DCBurnTotals, onError: GenericCallbacks.ErrorCallback) {

@@ -5,7 +5,7 @@
 //  Created by Burak Colak on 17.10.2022.
 //
 
-import UIKit
+
 
 public struct RewardsForAnAccountResponse: Codable {
     public let data : RewardsForAnAccountDataResponse?

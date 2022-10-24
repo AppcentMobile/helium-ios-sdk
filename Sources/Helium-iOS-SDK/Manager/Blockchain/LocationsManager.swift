@@ -5,7 +5,7 @@
 //  Created by Burak Colak on 20.10.2022.
 //
 
-import UIKit
+
 
 class LocationsManager: BaseManager {
     public func listHotspots(location: String, onSuccess: BlockchainCallbacks.GetLocation, onError: GenericCallbacks.ErrorCallback) {

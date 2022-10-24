@@ -5,7 +5,7 @@
 //  Created by Burak Colak on 23.10.2022.
 //
 
-import UIKit
+
 
 struct CreateDeviceRequest: Encodable {
     var name: String

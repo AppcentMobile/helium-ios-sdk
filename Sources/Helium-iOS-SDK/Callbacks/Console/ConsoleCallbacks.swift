@@ -5,7 +5,7 @@
 //  Created by Burak Colak on 21.10.2022.
 //
 
-import UIKit
+
 
 public struct ConsoleCallbacks {}
 
@@ -23,4 +23,14 @@ extension ConsoleCallbacks {
     public typealias DeviceIntegrationEvents = ((DeviceIntegrationEventsResponse?) -> ())?
     public typealias CreateDevice = ((Bool?) -> ())?
     public typealias DeleteDeviceByUUID = ((Bool?) -> ())?
+}
+
+extension ConsoleCallbacks {
+    //MARK: Labels
+    public typealias Labels = ((LabelsResponse?) -> ())?
+    public typealias CreateLabel = ((Bool?) -> ())?
+    public typealias DeleteLabel = ((Bool?) -> ())?
+    public typealias SearchForLabel = ((SearchForLabelResponse?) -> ())?
+    public typealias AddDeviceLabel = ((Bool?) -> ())?
+    public typealias RemoveDeviceLabel = ((Bool?) -> ())?
 }

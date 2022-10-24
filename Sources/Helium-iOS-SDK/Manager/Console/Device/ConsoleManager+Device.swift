@@ -5,7 +5,7 @@
 //  Created by Burak Colak on 23.10.2022.
 //
 
-import UIKit
+import Foundation
 
 extension ConsoleManager {
     public func devicesList(onSuccess: ConsoleCallbacks.DevicesList, onError: GenericCallbacks.ErrorCallback) {

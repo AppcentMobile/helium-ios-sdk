@@ -5,7 +5,7 @@
 //  Created by Burak Colak on 18.10.2022.
 //
 
-import UIKit
+
 
 public struct BlocksDescriptionResponse : Codable {
     public let data : [BlocksDescriptionDataResponse]?

@@ -5,7 +5,7 @@
 //  Created by Burak Colak on 13.10.2022.
 //
 
-import UIKit
+
 
 //MARK: These docs reflect the Validator Mainnet API. If you would like to use the Testnet API, please use the following base url: https://testnet-api.helium.wtf/v1
 

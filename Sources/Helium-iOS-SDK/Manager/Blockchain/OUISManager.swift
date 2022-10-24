@@ -5,7 +5,7 @@
 //  Created by Burak Colak on 20.10.2022.
 //
 
-import UIKit
+import Foundation
 
 class OUISManager: BaseManager {
     public func listOUIs(cursor: String? = nil, onSuccess: BlockchainCallbacks.ListOUIs, onError: GenericCallbacks.ErrorCallback) {

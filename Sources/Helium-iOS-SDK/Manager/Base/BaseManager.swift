@@ -5,7 +5,7 @@
 //  Created by Burak Colak on 15.10.2022.
 //
 
-import UIKit
+import Foundation
 
 public class BaseManager {
     public init() {}
@@ -17,6 +17,7 @@ public class BaseManager {
     open var dataParseSuccessMessage = "Data parsed successfully"
     open var dataParseErrorMessage = "Data parsing error : %@"
     open var urlRequestErrorMessage = "URL Request Error"
+    open var httpStatusError = "HTTP Status error"
     open var httpURLMessage = "HTTP URL:"
     open var httpAuthHeadersMessage = "HTTP AUTH HEADERS:"
     open var httpHeadersMessage = "HTTP HEADERS:"
@@ -31,10 +32,10 @@ public class BaseManager {
         return URLSession(configuration: configuration, delegate: nil, delegateQueue: OperationQueue.main)
     }
 
-    func request<T: Decodable>(to endpoint: BaseEndpoint, completion: @escaping (BaseResult<T, Error>) -> ()) {
+    private func baseRequest(to endpoint: BaseEndpoint) -> URLRequest? {
         guard let urlRequest = endpoint.urlRequest else {
             BaseLogger.error(urlRequestErrorMessage)
-            return
+            return nil
         }
 
         if let data = endpoint.url {
@@ -55,6 +56,15 @@ public class BaseManager {
 
         if let data = urlRequest.httpBody {
             BaseLogger.info(self.httpBodyMessage + String(decoding: data, as: UTF8.self))
+        }
+
+        return urlRequest
+    }
+
+    func request<T: Decodable>(to endpoint: BaseEndpoint, completion: @escaping (BaseResult<T, Error>) -> ()) {
+        guard let urlRequest = self.baseRequest(to: endpoint) else {
+            BaseLogger.error(urlRequestErrorMessage)
+            return
         }
 
         let dataTask = session.dataTask(with: urlRequest) { [weak self] data, response, error in
@@ -76,6 +86,11 @@ public class BaseManager {
                 return
             }
 
+            guard let httpResponse = response as? HTTPURLResponse, 200 ..< 300 ~= httpResponse.statusCode else {
+                completion(.failure(BaseNetworkError(message: self?.errorMessage, log: self?.httpStatusError, endpoint: endpoint)))
+                return
+            }
+
             BaseLogger.info(self?.responseInfoMessage ?? "" + String(decoding: data, as: UTF8.self))
 
             do {
@@ -92,29 +107,9 @@ public class BaseManager {
     }
 
     func request(to endpoint: BaseEndpoint, completion: GenericCallbacks.InfoCallback) {
-        guard let urlRequest = endpoint.urlRequest else {
+        guard let urlRequest = self.baseRequest(to: endpoint) else {
             BaseLogger.error(urlRequestErrorMessage)
             return
-        }
-
-        if let data = endpoint.url {
-            BaseLogger.info(self.httpURLMessage + "\(data)")
-        }
-
-        if let authHeader = endpoint.authHeader, authHeader.count > 0 {
-            BaseLogger.info(self.httpAuthHeadersMessage + "\(authHeader)")
-        }
-
-        if let data = endpoint.headers, data.count > 0 {
-            BaseLogger.info(self.httpHeadersMessage + "\(data)")
-        }
-
-        if let data = endpoint.queryItems, data.count > 0 {
-            BaseLogger.info(self.httpQueryItemsMessage + "\(data)")
-        }
-
-        if let data = urlRequest.httpBody {
-            BaseLogger.info(self.httpBodyMessage + String(decoding: data, as: UTF8.self))
         }
 
         let dataTask = session.dataTask(with: urlRequest) { [weak self] data, response, error in
@@ -132,10 +127,14 @@ public class BaseManager {
                 return
             }
 
+            guard let httpResponse = response as? HTTPURLResponse, 200 ..< 300 ~= httpResponse.statusCode else {
+                completion?(false, BaseNetworkError(message: self?.errorMessage, log: self?.httpStatusError, endpoint: endpoint))
+                return
+            }
+
             BaseLogger.info(self?.dataParseSuccessMessage)
             completion?(true, nil)
         }
         dataTask.resume()
     }
-
 }

@@ -5,7 +5,7 @@
 //  Created by Burak Colak on 20.10.2022.
 //
 
-import UIKit
+import Foundation
 
 class ValidatorsManager: BaseManager {
     public func listValidators(cursor: String? = nil, onSuccess: BlockchainCallbacks.ListValidators, onError: GenericCallbacks.ErrorCallback) {

@@ -5,7 +5,7 @@
 //  Created by Burak Colak on 20.10.2022.
 //
 
-import UIKit
+import Foundation
 
 class RewardsManager: BaseManager {
     public func rewardTotals(min_time: String, max_time: String, bucket: String? = nil, onSuccess: BlockchainCallbacks.RewardTotals, onError: GenericCallbacks.ErrorCallback) {

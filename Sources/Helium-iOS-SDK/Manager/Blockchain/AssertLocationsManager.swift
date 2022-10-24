@@ -5,7 +5,7 @@
 //  Created by Burak Colak on 17.10.2022.
 //
 
-import UIKit
+import Foundation
 
 public class AssertLocationsManager: BaseManager {
     public func listAssertLocations(cursor: String? = nil, min_time: String? = nil, max_time: String? = nil, limit: Int? = nil, onSuccess: BlockchainCallbacks.ListAssertLocations, onError: GenericCallbacks.ErrorCallback) {

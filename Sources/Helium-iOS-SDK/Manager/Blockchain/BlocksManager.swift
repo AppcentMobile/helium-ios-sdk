@@ -5,7 +5,7 @@
 //  Created by Burak Colak on 18.10.2022.
 //
 
-import UIKit
+import Foundation
 
 public class BlocksManager: BaseManager {
     public func blocksHeight(max_time: String? = nil, onSuccess: BlockchainCallbacks.BlocksHeight, onError: GenericCallbacks.ErrorCallback) {

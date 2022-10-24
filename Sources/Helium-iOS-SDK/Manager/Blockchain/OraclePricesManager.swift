@@ -5,7 +5,7 @@
 //  Created by Burak Colak on 20.10.2022.
 //
 
-import UIKit
+import Foundation
 
 class OraclePricesManager: BaseManager {
     public func currentOraclePrice(onSuccess: BlockchainCallbacks.CurrentOraclePrice, onError: GenericCallbacks.ErrorCallback) {

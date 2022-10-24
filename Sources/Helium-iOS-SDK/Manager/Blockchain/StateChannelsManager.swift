@@ -5,7 +5,7 @@
 //  Created by Burak Colak on 20.10.2022.
 //
 
-import UIKit
+import Foundation
 
 class StateChannelsManager: BaseManager {
     public func stateChannelCloses(cursor: String? = nil, min_time: String? = nil, max_time: String? = nil, limit: Int? = nil, onSuccess: BlockchainCallbacks.StateChannelsCloses, onError: GenericCallbacks.ErrorCallback) {

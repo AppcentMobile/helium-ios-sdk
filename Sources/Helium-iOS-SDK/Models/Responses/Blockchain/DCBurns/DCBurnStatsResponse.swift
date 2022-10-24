@@ -5,7 +5,7 @@
 //  Created by Burak Colak on 19.10.2022.
 //
 
-import UIKit
+
 
 public struct DCBurnStatsResponse: Codable {
     public let data : DCBurnStatsDataResponse?

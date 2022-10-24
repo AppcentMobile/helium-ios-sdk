@@ -5,7 +5,7 @@
 //  Created by Burak Colak on 19.10.2022.
 //
 
-import UIKit
+import Foundation
 
 public class CitiesManager: BaseManager {
     public func listHotspotCities(search: String? = nil, cursor: String? = nil, onSuccess: BlockchainCallbacks.ListChallengeReceipts, onError: GenericCallbacks.ErrorCallback) {

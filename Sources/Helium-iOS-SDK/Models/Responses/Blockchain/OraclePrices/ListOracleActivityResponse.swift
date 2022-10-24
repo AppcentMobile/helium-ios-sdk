@@ -5,7 +5,7 @@
 //  Created by Burak Colak on 20.10.2022.
 //
 
-import UIKit
+
 
 public struct ListOracleActivityResponse : Codable {
     public let cursor : String?

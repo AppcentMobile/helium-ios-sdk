@@ -5,7 +5,7 @@
 //  Created by Burak Colak on 18.10.2022.
 //
 
-import UIKit
+
 
 public struct GetTheValueOfAchainVariableResponse : Codable {
     public let data : Int?

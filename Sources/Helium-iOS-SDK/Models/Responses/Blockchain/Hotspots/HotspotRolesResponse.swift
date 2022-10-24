@@ -5,7 +5,7 @@
 //  Created by Burak Colak on 19.10.2022.
 //
 
-import UIKit
+
 
 public struct HotspotRolesResponse: Codable {
     public let data : [HotspotRolesDataResponse]?

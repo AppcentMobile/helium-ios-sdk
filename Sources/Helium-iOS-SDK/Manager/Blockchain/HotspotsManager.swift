@@ -5,7 +5,7 @@
 //  Created by Burak Colak on 19.10.2022.
 //
 
-import UIKit
+import Foundation
 
 class HotspotsManager: BaseManager {
     public func listHotspots(cursor: String? = nil, filter_modes: String? = nil, onSuccess: BlockchainCallbacks.ListHotspots, onError: GenericCallbacks.ErrorCallback) {
