@@ -5,8 +5,6 @@
 //  Created by Burak Colak on 21.10.2022.
 //
 
-
-
 public struct ConsoleCallbacks {}
 
 extension ConsoleCallbacks {
@@ -33,4 +31,23 @@ extension ConsoleCallbacks {
     public typealias SearchForLabel = ((SearchForLabelResponse?) -> ())?
     public typealias AddDeviceLabel = ((Bool?) -> ())?
     public typealias RemoveDeviceLabel = ((Bool?) -> ())?
+}
+
+extension ConsoleCallbacks {
+    //MARK: Integration
+    public typealias CreateAPrebuiltIntegration = ((CreateAPrebuiltIntegrationResponse?) -> ())?
+    public typealias CreateACustomHTTPIntegration = ((CreateACustomHTTPIntegrationResponse?) -> ())?
+    public typealias CreateACustomMQTTIntegration = ((CreateACustomMQTTIntegrationResponse?) -> ())?
+    public typealias CreateACustomAzureIoTHubIntegration = ((CreateACustomAzureIoTHubIntegrationResponse?) -> ())?
+    public typealias CreateACustomAWSIoTCoreIntegration = ((CreateACustomAWSIoTCoreIntegrationResponse?) -> ())?
+    public typealias DeleteAnIntegration = ((Bool?) -> ())?
+    public typealias ListIntegrations = ((ListIntegrationsResponse?) -> ())?
+    public typealias SearchForAnIntegrationByUUID = ((SearchForAnIntegrationByUUIDResponse?) -> ())?
+    public typealias SearchForAnIntegrationByName = ((SearchForAnIntegrationByNameResponse?) -> ())?
+}
+
+extension ConsoleCallbacks {
+    //MARK: Flow
+    public typealias ViewAllFlowsForAnIntegration = ((ViewAllFlowsForAnIntegrationResponse?) -> ())?
+    public typealias CreateAFlowForAnIntegration = ((CreateAFlowForAnIntegrationResponse?) -> ())?
 }
