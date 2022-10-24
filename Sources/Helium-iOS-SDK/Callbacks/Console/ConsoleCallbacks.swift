@@ -52,3 +52,9 @@ extension ConsoleCallbacks {
     public typealias CreateAFlowForAnIntegration = ((CreateAFlowForAnIntegrationResponse?) -> ())?
     public typealias DeleteFlow = ((Bool?) -> ())?
 }
+
+extension ConsoleCallbacks {
+    //MARK: Config
+    public typealias UpdateDeviceConfigProfile = ((Bool?) -> ())?
+    public typealias UpdateLabelConfigProfile = ((Bool?) -> ())?
+}

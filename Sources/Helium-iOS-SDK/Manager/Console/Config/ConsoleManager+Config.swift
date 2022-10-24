@@ -8,8 +8,9 @@
 import UIKit
 
 extension ConsoleManager {
-    public func updateDeviceConfigProfile(id: String, onSuccess: ConsoleCallbacks.DeleteDeviceByUUID, onError: GenericCallbacks.ErrorCallback) {
-        let endpoint = ConsoleRoutes.deleteDeviceByUUID.consoleEndpoint(id)
+    public func updateDeviceConfigProfile(device_id: String, config_profile_id: String, onSuccess: ConsoleCallbacks.UpdateDeviceConfigProfile, onError: GenericCallbacks.ErrorCallback) {
+        let request = UpdateDeviceConfigProfileRequest(config_profile_id: config_profile_id)
+        let endpoint = ConsoleRoutes.updateDeviceConfigProfile.consoleEndpoint(device_id, params: request.dictionary)
 
         self.request(to: endpoint) { success, error in
             if let error = error {
@@ -20,8 +21,9 @@ extension ConsoleManager {
         }
     }
 
-    public func updateLabelConfigProfile(id: String, onSuccess: ConsoleCallbacks.DeleteDeviceByUUID, onError: GenericCallbacks.ErrorCallback) {
-        let endpoint = ConsoleRoutes.deleteDeviceByUUID.consoleEndpoint(id)
+    public func updateLabelConfigProfile(label_id: String, config_profile_id: String, onSuccess: ConsoleCallbacks.UpdateLabelConfigProfile, onError: GenericCallbacks.ErrorCallback) {
+        let request = UpdateDeviceConfigProfileRequest(config_profile_id: config_profile_id)
+        let endpoint = ConsoleRoutes.updateLabelConfigProfile.consoleEndpoint(label_id)
 
         self.request(to: endpoint) { success, error in
             if let error = error {
