@@ -50,4 +50,5 @@ extension ConsoleCallbacks {
     //MARK: Flow
     public typealias ViewAllFlowsForAnIntegration = ((ViewAllFlowsForAnIntegrationResponse?) -> ())?
     public typealias CreateAFlowForAnIntegration = ((CreateAFlowForAnIntegrationResponse?) -> ())?
+    public typealias DeleteFlow = ((Bool?) -> ())?
 }
