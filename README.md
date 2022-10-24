@@ -12,15 +12,17 @@ Thanks for using it.
 # Usage
     SPM
     Add new package and type the library url below;
-    ```swift
+    
+```
     https://github.com/AppcentMobile/helium-ios-sdk.git
-    ```
+```
 
 # Example
     You can access sample app through;
-    ```swift
+    
+```
     https://github.com/AppcentMobile/helium-ios-sample-app
-    ```
+```
 
 # SDK Coverage status - Blockchain
 - [x] Accounts
