@@ -5,8 +5,6 @@
 //  Created by Burak Colak on 20.10.2022.
 //
 
-
-
 class StatsManager: BaseManager {
     public func stats(onSuccess: BlockchainCallbacks.Stats, onError: GenericCallbacks.ErrorCallback) {
         let endpoint = StatsRoutes.stats.endpoint()

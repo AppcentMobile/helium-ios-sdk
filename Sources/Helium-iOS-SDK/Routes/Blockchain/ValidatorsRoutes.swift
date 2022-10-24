@@ -5,12 +5,7 @@
 //  Created by Burak Colak on 13.10.2022.
 //
 
-
-
-//MARK: These docs reflect the Validator Mainnet API. If you would like to use the Testnet API, please use the following base url: https://testnet-api.helium.wtf/v1
-
 struct ValidatorsRoutes {
-
     static let listValidators = BaseRoute(method: .get, path: "v1/validators")
     static let validatorForAddress = BaseRoute(method: .get, path: "v1/validators/%@")
     static let validatorsForName = BaseRoute(method: .get, path: "v1/validators/name/%@")
@@ -27,5 +22,4 @@ struct ValidatorsRoutes {
     static let rewardsForAValidator = BaseRoute(method: .get, path: "v1/validators/%@/rewards")
     static let rewardTotalForAValidator = BaseRoute(method: .get, path: "v1/validators/%@/rewards/sum")
     static let rewardTotalForAllValidators = BaseRoute(method: .get, path: "v1/validators/%@/sum")
-
 }

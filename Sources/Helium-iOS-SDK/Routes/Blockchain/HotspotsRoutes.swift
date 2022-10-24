@@ -5,10 +5,7 @@
 //  Created by Burak Colak on 13.10.2022.
 //
 
-
-
 struct HotspotsRoutes {
-
     static let listHotspots = BaseRoute(method: .get, path: "v1/hotspots")
     static let hotspotForAddress = BaseRoute(method: .get, path: "v1/hotspots/%@")
     static let hotspotsForName = BaseRoute(method: .get, path: "v1/hotspots/name/%@")
@@ -17,7 +14,6 @@ struct HotspotsRoutes {
     static let hotspotLocationBoxSearch = BaseRoute(method: .get, path: "v1/hotspots/location/box")
     static let hotspotsForH3Index = BaseRoute(method: .get, path: "v1/hotspots/hex/%@")
 
-    @available(*, deprecated, message: "The /activity route will be deprecated on May 1, 2022 and will be replaced by /roles")
     static let hotspotActivity = BaseRoute(method: .get, path: "v1/hotspots/%@/activity")
 
     static let hotspotRoles = BaseRoute(method: .get, path: "v1/hotspots/%@/roles")
@@ -30,5 +26,4 @@ struct HotspotsRoutes {
     static let rewardTotalForAHotspot = BaseRoute(method: .get, path: "v1/hotspots/%@/rewards/sum")
     static let witnessesForAHotspot = BaseRoute(method: .get, path: "v1/hotspots/%@/witnesses")
     static let witnessedForAHotspot = BaseRoute(method: .get, path: "v1/hotspots/%@/witnessed")
-
 }

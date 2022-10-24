@@ -5,8 +5,6 @@
 //  Created by Burak Colak on 19.10.2022.
 //
 
-
-
 public struct DCBurnEventsResponse : Codable {
     public let cursor : String?
     public let data : [DCBurnEventsDataResponse]?

@@ -5,12 +5,7 @@
 //  Created by Burak Colak on 13.10.2022.
 //
 
-
-
-//MARK: https://docs.helium.com/api/blockchain/blocks
-
 struct BlocksRoutes {
-
     static let blocksHeight = BaseRoute(method: .get, path: "v1/blocks/height")
     static let blocksStats = BaseRoute(method: .get, path: "v1/blocks/stats")
     static let blocksDescription = BaseRoute(method: .get, path: "v1/blocks")
@@ -18,5 +13,4 @@ struct BlocksRoutes {
     static let blockAtHeightTransactions = BaseRoute(method: .get, path: "v1/blocks/%d/transactions")
     static let blockAtHash = BaseRoute(method: .get, path: "v1/blocks/hash/%@")
     static let blockAtHashTransactions = BaseRoute(method: .get, path: "v1/blocks/hash/:hash/transactions")
-
 }

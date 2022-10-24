@@ -5,8 +5,6 @@
 //  Created by Burak Colak on 20.10.2022.
 //
 
-
-
 public struct CurrentOraclePriceResponse : Codable {
     public let data : CurrentOraclePriceDataResponse?
 

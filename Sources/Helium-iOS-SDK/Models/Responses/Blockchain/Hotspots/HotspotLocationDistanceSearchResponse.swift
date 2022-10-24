@@ -5,8 +5,6 @@
 //  Created by Burak Colak on 19.10.2022.
 //
 
-
-
 public struct HotspotLocationDistanceSearchResponse : Codable {
     public let data : [HotspotLocationDistanceSearchDataResponse]?
 

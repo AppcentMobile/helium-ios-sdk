@@ -5,8 +5,6 @@
 //  Created by Burak Colak on 17.10.2022.
 //
 
-
-
 public struct RewardsInARewardsBlockForAnAccountResponse: Codable {
     public let data : RewardsInARewardsBlockForAnAccountDataResponse?
 

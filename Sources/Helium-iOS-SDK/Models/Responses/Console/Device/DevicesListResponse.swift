@@ -5,8 +5,6 @@
 //  Created by Burak Colak on 23.10.2022.
 //
 
-
-
 public struct DevicesListResponse : Codable {
     public let active : Bool?
     public let adr_allowed : String?

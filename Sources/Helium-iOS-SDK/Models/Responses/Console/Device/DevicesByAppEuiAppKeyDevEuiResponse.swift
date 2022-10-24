@@ -5,8 +5,6 @@
 //  Created by Burak Colak on 23.10.2022.
 //
 
-
-
 public struct DevicesByAppEuiAppKeyDevEuiResponse : Codable {
     public let app_eui : String?
     public let app_key : String?

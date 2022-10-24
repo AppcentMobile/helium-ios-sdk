@@ -5,8 +5,6 @@
 //  Created by Burak Colak on 18.10.2022.
 //
 
-
-
 public struct BlocksHeightResponse : Codable {
     public let data : [BlocksHeightDataResponse]?
 

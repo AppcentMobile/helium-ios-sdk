@@ -5,8 +5,6 @@
 //  Created by Burak Colak on 20.10.2022.
 //
 
-
-
 class TransactionsManager: BaseManager {
     public func transactionForHash(hash: String, onSuccess: BlockchainCallbacks.TransactionForHash, onError: GenericCallbacks.ErrorCallback) {
         let endpoint = TransactionsRoutes.transactionForHash.endpoint(hash)

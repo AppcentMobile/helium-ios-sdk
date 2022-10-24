@@ -5,8 +5,6 @@
 //  Created by Burak Colak on 23.10.2022.
 //
 
-
-
 struct CreateDeviceRequest: Encodable {
     var name: String
     var app_eui: String

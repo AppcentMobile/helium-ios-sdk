@@ -10,4 +10,3 @@ public struct GenericCallbacks {
     public typealias ErrorCallback = ((Error?) -> ())?
     public typealias InfoCallback = ((Bool?, Error?) -> ())?
 }
-

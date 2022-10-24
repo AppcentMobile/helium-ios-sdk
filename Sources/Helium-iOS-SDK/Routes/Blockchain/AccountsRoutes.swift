@@ -5,12 +5,7 @@
 //  Created by Burak Colak on 13.10.2022.
 //
 
-
-
-//MARK: https://docs.helium.com/api/blockchain/blocks
-
 struct AccountsRoutes {
-
     static let listAccounts = BaseRoute(method: .get, path: "v1/accounts")
     static let listRichestAccounts = BaseRoute(method: .get, path: "v1/accounts/rich")
     static let accountForAddress = BaseRoute(method: .get, path: "v1/accounts/%@")
@@ -18,7 +13,6 @@ struct AccountsRoutes {
     static let validatorsForAccount = BaseRoute(method: .get, path: "v1/accounts/%@/validators")
     static let ouisForAccount = BaseRoute(method: .get, path: "v1/accounts/%@/ouis")
 
-    @available(*, deprecated, message: "The /activity route will be deprecated on May 1, 2022 and will be replaced by /roles, described below")
     static let activityForAccount = BaseRoute(method: .get, path: "v1/accounts/%@/activity")
 
     static let rolesForAccount = BaseRoute(method: .get, path: "v1/accounts/%@/roles")
@@ -33,5 +27,4 @@ struct AccountsRoutes {
     static let rewardTotalsForAnAccount = BaseRoute(method: .get, path: "v1/accounts/%@/rewards/sum")
 
     static let statsForAccount = BaseRoute(method: .get, path: "v1/accounts/%@/stats")
-
 }

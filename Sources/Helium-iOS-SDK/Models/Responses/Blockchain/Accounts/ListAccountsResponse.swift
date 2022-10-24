@@ -5,8 +5,6 @@
 //  Created by Burak Colak on 16.10.2022.
 //
 
-
-
 public struct ListAccountsResponse : Codable {
     public let data : [ListAccountsDataResponse]?
     public let cursor : String?

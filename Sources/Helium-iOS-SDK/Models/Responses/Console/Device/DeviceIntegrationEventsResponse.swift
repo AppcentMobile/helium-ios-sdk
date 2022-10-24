@@ -5,8 +5,6 @@
 //  Created by Burak Colak on 23.10.2022.
 //
 
-
-
 public struct DeviceIntegrationEventsResponse : Codable {
     public let category : String?
     public let data : DeviceIntegrationEventsDataResponse?

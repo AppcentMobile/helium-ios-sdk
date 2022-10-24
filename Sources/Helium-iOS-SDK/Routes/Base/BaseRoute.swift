@@ -5,8 +5,6 @@
 //  Created by Burak Colak on 15.10.2022.
 //
 
-
-
 struct BaseRoute {
     var method: BaseMethod
     var path: String

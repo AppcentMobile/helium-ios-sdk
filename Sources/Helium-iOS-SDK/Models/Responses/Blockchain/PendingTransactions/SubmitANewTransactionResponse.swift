@@ -5,8 +5,6 @@
 //  Created by Burak Colak on 20.10.2022.
 //
 
-
-
 public struct SubmitANewTransactionResponse : Codable {
     public let data : SubmitANewTransactionDataResponse?
 

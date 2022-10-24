@@ -5,8 +5,6 @@
 //  Created by Burak Colak on 20.10.2022.
 //
 
-
-
 public struct RewardsForAHotspotResponse : Codable {
     public let data : [RewardsForAHotspotDataResponse]?
 

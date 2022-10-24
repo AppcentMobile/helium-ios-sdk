@@ -5,8 +5,6 @@
 //  Created by Burak Colak on 19.10.2022.
 //
 
-
-
 public struct DCBurnStatsResponse: Codable {
     public let data : DCBurnStatsDataResponse?
     public let meta : DCBurnStatsMetaResponse?
