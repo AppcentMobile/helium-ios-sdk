@@ -17,6 +17,13 @@ Add new package and type the library url below;
 https://github.com/AppcentMobile/helium-ios-sdk.git
 ```
 
+Cocodapos
+Add the pod below;
+
+```
+pod HeliumSDK
+```
+
 # Example
 You can access sample app through;
     
