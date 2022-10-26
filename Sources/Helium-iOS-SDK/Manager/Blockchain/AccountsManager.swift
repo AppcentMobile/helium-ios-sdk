@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class HeliumBlockChainAccountsManager: BaseManager {
+public class AccountsManager: BaseManager {
     public func listAccounts(cursor: String? = nil, onSuccess: BlockchainCallbacks.ListAccounts, onError: GenericCallbacks.ErrorCallback) {
         var endpoint = AccountsRoutes.listAccounts.endpoint()
 

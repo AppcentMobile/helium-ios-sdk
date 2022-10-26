@@ -8,7 +8,7 @@
 import Foundation
 
 public class BaseManager {
-    public init() {}
+    public required init() {}
 
     open var errorMessage = "An error occurred."
     open var responseInfoMessage = "RESPONSE:"
