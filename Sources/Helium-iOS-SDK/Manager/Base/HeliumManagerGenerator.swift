@@ -7,8 +7,8 @@
 
 import UIKit
 
-class HeliumManagerGenerator {
-    func generate<T: BaseManager>(_ item: T.Type) -> T {
+public class HeliumManagerGenerator {
+    public func generate<T: BaseManager>(_ item: T.Type) -> T {
         return item.init()
     }
 }
