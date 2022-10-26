@@ -5,7 +5,7 @@
 //  Created by Burak Colak on 23.10.2022.
 //
 
-extension ConsoleManager {
+extension HeliumConsoleManager {
     public func dataCreditBalance(cursor: String? = nil, onSuccess: ConsoleCallbacks.DataCreditBalance, onError: GenericCallbacks.ErrorCallback) {
         let endpoint = ConsoleRoutes.dataCreditBalance.consoleEndpoint()
 

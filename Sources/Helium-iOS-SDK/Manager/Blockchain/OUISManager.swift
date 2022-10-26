@@ -7,7 +7,7 @@
 
 import Foundation
 
-class OUISManager: BaseManager {
+class HeliumOUISManager: BaseManager {
     public func listOUIs(cursor: String? = nil, onSuccess: BlockchainCallbacks.ListOUIs, onError: GenericCallbacks.ErrorCallback) {
         var endpoint = OUISRoutes.listOUIs.endpoint()
 

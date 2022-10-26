@@ -7,7 +7,7 @@
 
 import Foundation
 
-class OraclePricesManager: BaseManager {
+class HeliumOraclePricesManager: BaseManager {
     public func currentOraclePrice(onSuccess: BlockchainCallbacks.CurrentOraclePrice, onError: GenericCallbacks.ErrorCallback) {
         let endpoint = OraclePricesRoutes.currentOraclePrice.endpoint()
 

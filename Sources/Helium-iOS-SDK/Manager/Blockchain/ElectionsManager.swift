@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ElectionsManager: BaseManager {
+class HeliumElectionsManager: BaseManager {
     public func listElections(cursor: String? = nil, min_time: String? = nil, max_time: String? = nil, limit: String? = nil, onSuccess: BlockchainCallbacks.ListElections, onError: GenericCallbacks.ErrorCallback) {
         var endpoint = ElectionsRoutes.listElections.endpoint()
 

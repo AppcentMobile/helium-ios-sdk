@@ -5,7 +5,7 @@
 //  Created by Burak Colak on 24.10.2022.
 //
 
-extension ConsoleManager {
+extension HeliumConsoleManager {
     public func labels(onSuccess: ConsoleCallbacks.DevicesList, onError: GenericCallbacks.ErrorCallback) {
         let endpoint = ConsoleRoutes.devicesList.consoleEndpoint()
 

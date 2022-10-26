@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class BlocksManager: BaseManager {
+public class HeliumBlocksManager: BaseManager {
     public func blocksHeight(max_time: String? = nil, onSuccess: BlockchainCallbacks.BlocksHeight, onError: GenericCallbacks.ErrorCallback) {
         var endpoint = BlocksRoutes.blocksHeight.endpoint()
 

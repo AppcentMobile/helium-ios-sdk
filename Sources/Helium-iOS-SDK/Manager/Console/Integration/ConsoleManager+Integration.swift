@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension ConsoleManager {
+extension HeliumConsoleManager {
     public func createAPrebuiltIntegration(token: String, name: String, type: String, onSuccess: ConsoleCallbacks.CreateAPrebuiltIntegration, onError: GenericCallbacks.ErrorCallback) {
         let request = CreateAPrebuiltIntegrationRequest(token: token, name: name, type: type)
         let endpoint = ConsoleRoutes.createAPrebuiltIntegration.consoleEndpoint(params: request.dictionary)

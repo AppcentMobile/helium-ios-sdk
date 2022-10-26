@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ValidatorsManager: BaseManager {
+class HeliumValidatorsManager: BaseManager {
     public func listValidators(cursor: String? = nil, onSuccess: BlockchainCallbacks.ListValidators, onError: GenericCallbacks.ErrorCallback) {
         var endpoint = ValidatorsRoutes.listValidators.endpoint()
 

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class StateChannelsManager: BaseManager {
+class HeliumStateChannelsManager: BaseManager {
     public func stateChannelCloses(cursor: String? = nil, min_time: String? = nil, max_time: String? = nil, limit: Int? = nil, onSuccess: BlockchainCallbacks.StateChannelsCloses, onError: GenericCallbacks.ErrorCallback) {
         var endpoint = StateChannelsRoutes.stateChannelCloses.endpoint()
 

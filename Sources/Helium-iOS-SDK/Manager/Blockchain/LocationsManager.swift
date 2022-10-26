@@ -5,7 +5,7 @@
 //  Created by Burak Colak on 20.10.2022.
 //
 
-class LocationsManager: BaseManager {
+class HeliumLocationsManager: BaseManager {
     public func listHotspots(location: String, onSuccess: BlockchainCallbacks.GetLocation, onError: GenericCallbacks.ErrorCallback) {
         let endpoint = LocationsRoutes.getLocation.endpoint(location)
 

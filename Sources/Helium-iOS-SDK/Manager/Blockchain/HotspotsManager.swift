@@ -7,7 +7,7 @@
 
 import Foundation
 
-class HotspotsManager: BaseManager {
+class HeliumHotspotsManager: BaseManager {
     public func listHotspots(cursor: String? = nil, filter_modes: String? = nil, onSuccess: BlockchainCallbacks.ListHotspots, onError: GenericCallbacks.ErrorCallback) {
         var endpoint = ElectionsRoutes.listElections.endpoint()
 

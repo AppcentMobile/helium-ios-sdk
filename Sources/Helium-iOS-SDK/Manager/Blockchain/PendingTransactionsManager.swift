@@ -5,7 +5,7 @@
 //  Created by Burak Colak on 20.10.2022.
 //
 
-class PendingTransactionsManager: BaseManager {
+class HeliumPendingTransactionsManager: BaseManager {
     public func pendingTransactionStatus(hash: String, cursor: String? = nil, onSuccess: BlockchainCallbacks.PendingTransactionStatus, onError: GenericCallbacks.ErrorCallback) {
         let endpoint = PendingTransactionsRoutes.pendingTransactionStatus.endpoint()
 

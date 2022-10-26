@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension ConsoleManager {
+extension HeliumConsoleManager {
     public func updateDeviceActiveStatus(device_id: String, active: String, onSuccess: ConsoleCallbacks.DeleteDeviceByUUID, onError: GenericCallbacks.ErrorCallback) {
         let request = UpdateDeviceActiveStatusRequest(active: active)
         let endpoint = ConsoleRoutes.updateDeviceActiveStatus.consoleEndpoint(device_id, params: request.dictionary)

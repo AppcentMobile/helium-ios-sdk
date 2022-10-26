@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class CitiesManager: BaseManager {
+public class HeliumCitiesManager: BaseManager {
     public func listHotspotCities(search: String? = nil, cursor: String? = nil, onSuccess: BlockchainCallbacks.ListChallengeReceipts, onError: GenericCallbacks.ErrorCallback) {
         var endpoint = CitiesRoutes.listHotspotCities.endpoint()
 

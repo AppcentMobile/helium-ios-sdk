@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class ChainVariablesManager: BaseManager {
+public class HeliumChainVariablesManager: BaseManager {
     public func getChainVariables(min_time: String? = nil, max_time: String? = nil, limit: Int? = nil, onSuccess: BlockchainCallbacks.BlocksHeight, onError: GenericCallbacks.ErrorCallback) {
         var endpoint = ChainVariablesRoutes.getChainVariables.endpoint()
 

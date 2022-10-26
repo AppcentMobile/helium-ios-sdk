@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension ConsoleManager {
+extension HeliumConsoleManager {
     public func devicesList(onSuccess: ConsoleCallbacks.DevicesList, onError: GenericCallbacks.ErrorCallback) {
         let endpoint = ConsoleRoutes.devicesList.consoleEndpoint()
 

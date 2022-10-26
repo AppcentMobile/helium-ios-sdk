@@ -5,7 +5,7 @@
 //  Created by Burak Colak on 24.10.2022.
 //
 
-extension ConsoleManager {
+extension HeliumConsoleManager {
     public func updateDeviceConfigProfile(device_id: String, config_profile_id: String, onSuccess: ConsoleCallbacks.UpdateDeviceConfigProfile, onError: GenericCallbacks.ErrorCallback) {
         let request = UpdateDeviceConfigProfileRequest(config_profile_id: config_profile_id)
         let endpoint = ConsoleRoutes.updateDeviceConfigProfile.consoleEndpoint(device_id, params: request.dictionary)
