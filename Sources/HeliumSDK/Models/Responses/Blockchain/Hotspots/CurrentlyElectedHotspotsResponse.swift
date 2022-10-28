@@ -13,25 +13,25 @@ public struct CurrentlyElectedHotspotsResponse : Codable {
     }
 
     public init(from decoder: Decoder) throws {
-        let values = try decoder.container(keyedBy: CodingKeys.self)
+        public let values = try decoder.container(keyedBy: CodingKeys.self)
         data = try values.decodeIfPresent([CurrentlyElectedHotspotsDataResponse].self, forKey: .data)
     }
 }
 
 public struct CurrentlyElectedHotspotsDataResponse : Codable {
-    let lng : Double?
-    let lat : Double?
-    let status : CurrentlyElectedHotspotsStatusResponse?
-    let score_update_height : Int?
-    let score : Double?
-    let owner : String?
-    let nonce : Int?
-    let name : String?
-    let location : String?
-    let geocode : CurrentlyElectedHotspotsGeocodeResponse?
-    let block_added : Int?
-    let block : Int?
-    let address : String?
+    public let lng : Double?
+    public let lat : Double?
+    public let status : CurrentlyElectedHotspotsStatusResponse?
+    public let score_update_height : Int?
+    public let score : Double?
+    public let owner : String?
+    public let nonce : Int?
+    public let name : String?
+    public let location : String?
+    public let geocode : CurrentlyElectedHotspotsGeocodeResponse?
+    public let block_added : Int?
+    public let block : Int?
+    public let address : String?
 
     enum CodingKeys: String, CodingKey {
         case lng = "lng"
@@ -50,7 +50,7 @@ public struct CurrentlyElectedHotspotsDataResponse : Codable {
     }
 
     public init(from decoder: Decoder) throws {
-        let values = try decoder.container(keyedBy: CodingKeys.self)
+        public let values = try decoder.container(keyedBy: CodingKeys.self)
         lng = try values.decodeIfPresent(Double.self, forKey: .lng)
         lat = try values.decodeIfPresent(Double.self, forKey: .lat)
         status = try values.decodeIfPresent(CurrentlyElectedHotspotsStatusResponse.self, forKey: .status)

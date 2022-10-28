@@ -19,11 +19,11 @@ public struct RolesForAccountResponse : Codable {
 }
 
 public struct RolesForAccountDataResponse: Codable {
-    let type : String?
-    let time : Int?
-    let role : String?
-    let height : Int?
-    let hash : String?
+    public let type : String?
+    public let time : Int?
+    public let role : String?
+    public let height : Int?
+    public let hash : String?
 
     enum CodingKeys: String, CodingKey {
         case type = "type"

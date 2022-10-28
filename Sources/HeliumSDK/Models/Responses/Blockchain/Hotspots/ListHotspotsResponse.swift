@@ -87,15 +87,15 @@ public struct ListHotspotsStatusResponse: Codable {
 }
 
 public struct ListHotspotsGeocodeResponse: Codable {
-    let short_street : String?
-    let short_state : String?
-    let short_country : String?
-    let short_city : String?
-    let long_street : String?
-    let long_state : String?
-    let long_country : String?
-    let long_city : String?
-    let city_id : String?
+    public let short_street : String?
+    public let short_state : String?
+    public let short_country : String?
+    public let short_city : String?
+    public let long_street : String?
+    public let long_state : String?
+    public let long_country : String?
+    public let long_city : String?
+    public let city_id : String?
 
     enum CodingKeys: String, CodingKey {
         case short_street = "short_street"

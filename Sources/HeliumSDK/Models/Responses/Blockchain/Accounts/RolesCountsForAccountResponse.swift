@@ -19,8 +19,8 @@ public struct RolesCountsForAccountResponse : Codable {
 }
 
 public struct RolesCountsForAccountDataResponse: Codable {
-    let add_gateway_v1 : Int?
-    let assert_location_v1 : Int?
+    public let add_gateway_v1 : Int?
+    public let assert_location_v1 : Int?
 
     enum CodingKeys: String, CodingKey {
         case add_gateway_v1 = "add_gateway_v1"

@@ -22,14 +22,14 @@ public struct ListAccountsResponse : Codable {
 }
 
 public struct ListAccountsDataResponse : Codable {
-    let sec_nonce : Int?
-    let sec_balance : Int?
-    let nonce : Int?
-    let dc_nonce : Int?
-    let dc_balance : Int?
-    let block : Int?
-    let balance : Int?
-    let address : String?
+    public let sec_nonce : Int?
+    public let sec_balance : Int?
+    public let nonce : Int?
+    public let dc_nonce : Int?
+    public let dc_balance : Int?
+    public let block : Int?
+    public let balance : Int?
+    public let address : String?
 
     enum CodingKeys: String, CodingKey {
         case sec_nonce = "sec_nonce"

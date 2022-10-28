@@ -19,22 +19,21 @@ public struct HotspotsForAccountResponse : Codable {
 }
 
 public struct HotspotsForAccountDataResponse : Codable {
-    let lng : Double?
-    let lat : Double?
-    let status : HotspotsForAccountStatusResponse?
-    let score_update_height : Int?
-    let score : Double?
-    let owner : String?
-    let nonce : Int?
-    let name : String?
-    let location : String?
-    let geocode : HotspotsForAccountGeocodeResponse?
-    let block_added : Int?
-    let block : Int?
-    let address : String?
+    public let lng : Double?
+    public let lat : Double?
+    public let status : HotspotsForAccountStatusResponse?
+    public let score_update_height : Int?
+    public let score : Double?
+    public let owner : String?
+    public let nonce : Int?
+    public let name : String?
+    public let location : String?
+    public let geocode : HotspotsForAccountGeocodeResponse?
+    public let block_added : Int?
+    public let block : Int?
+    public let address : String?
 
     enum CodingKeys: String, CodingKey {
-
         case lng = "lng"
         case lat = "lat"
         case status = "status"
@@ -69,9 +68,9 @@ public struct HotspotsForAccountDataResponse : Codable {
 }
 
 public struct HotspotsForAccountStatusResponse: Codable {
-    let online : String?
-    let height : Int?
-    let gps : String?
+    public let online : String?
+    public let height : Int?
+    public let gps : String?
 
     enum CodingKeys: String, CodingKey {
         case online = "online"
@@ -88,15 +87,15 @@ public struct HotspotsForAccountStatusResponse: Codable {
 }
 
 public struct HotspotsForAccountGeocodeResponse : Codable {
-    let short_street : String?
-    let short_state : String?
-    let short_country : String?
-    let short_city : String?
-    let long_street : String?
-    let long_state : String?
-    let long_country : String?
-    let long_city : String?
-    let city_id : String?
+    public let short_street : String?
+    public let short_state : String?
+    public let short_country : String?
+    public let short_city : String?
+    public let long_street : String?
+    public let long_state : String?
+    public let long_country : String?
+    public let long_city : String?
+    public let city_id : String?
 
     enum CodingKeys: String, CodingKey {
         case short_street = "short_street"
