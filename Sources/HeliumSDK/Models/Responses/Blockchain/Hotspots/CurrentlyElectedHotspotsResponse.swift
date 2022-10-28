@@ -13,7 +13,7 @@ public struct CurrentlyElectedHotspotsResponse : Codable {
     }
 
     public init(from decoder: Decoder) throws {
-        public let values = try decoder.container(keyedBy: CodingKeys.self)
+        let values = try decoder.container(keyedBy: CodingKeys.self)
         data = try values.decodeIfPresent([CurrentlyElectedHotspotsDataResponse].self, forKey: .data)
     }
 }
@@ -50,7 +50,7 @@ public struct CurrentlyElectedHotspotsDataResponse : Codable {
     }
 
     public init(from decoder: Decoder) throws {
-        public let values = try decoder.container(keyedBy: CodingKeys.self)
+        let values = try decoder.container(keyedBy: CodingKeys.self)
         lng = try values.decodeIfPresent(Double.self, forKey: .lng)
         lat = try values.decodeIfPresent(Double.self, forKey: .lat)
         status = try values.decodeIfPresent(CurrentlyElectedHotspotsStatusResponse.self, forKey: .status)
