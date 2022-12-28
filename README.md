@@ -21,7 +21,7 @@ Cocodapos
 Add the pod below;
 
 ```
-pod 'HeliumSDK', :git=> 'https://github.com/AppcentMobile/helium-ios-sdk.git'
+pod 'HeliumSDK'
 ```
 
 # Example
