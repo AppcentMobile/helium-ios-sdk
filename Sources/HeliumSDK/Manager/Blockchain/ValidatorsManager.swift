@@ -1,6 +1,6 @@
 //
 //  ValidatorsManager.swift
-//  
+//
 //
 //  Created by Burak Colak on 20.10.2022.
 //
@@ -15,11 +15,11 @@ class HeliumValidatorsManager: BaseManager {
             endpoint.queryItems = [URLQueryItem(name: "cursor", value: cursor)]
         }
 
-        self.request(to: endpoint) { (r: BaseResult<ListValidatorsResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<ListValidatorsResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }
@@ -28,11 +28,11 @@ class HeliumValidatorsManager: BaseManager {
     public func validatorForAddress(address: String, onSuccess: BlockchainCallbacks.ValidatorForAddress, onError: GenericCallbacks.ErrorCallback) {
         let endpoint = ValidatorsRoutes.validatorForAddress.endpoint(address)
 
-        self.request(to: endpoint) { (r: BaseResult<ValidatorForAddressResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<ValidatorForAddressResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }
@@ -41,11 +41,11 @@ class HeliumValidatorsManager: BaseManager {
     public func validatorsForName(name: String, onSuccess: BlockchainCallbacks.ValidatorsForName, onError: GenericCallbacks.ErrorCallback) {
         let endpoint = ValidatorsRoutes.validatorsForName.endpoint(name)
 
-        self.request(to: endpoint) { (r: BaseResult<ValidatorsForNameResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<ValidatorsForNameResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }
@@ -56,11 +56,11 @@ class HeliumValidatorsManager: BaseManager {
 
         endpoint.queryItems = [URLQueryItem(name: "search", value: search)]
 
-        self.request(to: endpoint) { (r: BaseResult<ValidatorNameSearchResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<ValidatorNameSearchResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }
@@ -96,11 +96,11 @@ class HeliumValidatorsManager: BaseManager {
             endpoint.queryItems = queryItems
         }
 
-        self.request(to: endpoint) { (r: BaseResult<ValidatorActivityResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<ValidatorActivityResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }
@@ -135,11 +135,11 @@ class HeliumValidatorsManager: BaseManager {
             endpoint.queryItems = queryItems
         }
 
-        self.request(to: endpoint) { (r: BaseResult<ValidatorRolesResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<ValidatorRolesResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }
@@ -150,11 +150,11 @@ class HeliumValidatorsManager: BaseManager {
 
         endpoint.queryItems = [URLQueryItem(name: "filter_types", value: filter_types)]
 
-        self.request(to: endpoint) { (r: BaseResult<ValidatorRolesCountsResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<ValidatorRolesCountsResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }
@@ -163,11 +163,11 @@ class HeliumValidatorsManager: BaseManager {
     public func statsForValidators(onSuccess: BlockchainCallbacks.StatsForValidators, onError: GenericCallbacks.ErrorCallback) {
         let endpoint = ValidatorsRoutes.statsForValidators.endpoint()
 
-        self.request(to: endpoint) { (r: BaseResult<StatsForValidatorsResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<StatsForValidatorsResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }
@@ -176,11 +176,11 @@ class HeliumValidatorsManager: BaseManager {
     public func currentlyElectedValidators(onSuccess: BlockchainCallbacks.CurrentlyElectedValidators, onError: GenericCallbacks.ErrorCallback) {
         let endpoint = ValidatorsRoutes.currentlyElectedValidators.endpoint()
 
-        self.request(to: endpoint) { (r: BaseResult<CurrentlyElectedValidatorsResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<CurrentlyElectedValidatorsResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }
@@ -189,11 +189,11 @@ class HeliumValidatorsManager: BaseManager {
     public func electedValidatorsAtABlock(height: String, onSuccess: BlockchainCallbacks.ElectedValidatorsAtABlock, onError: GenericCallbacks.ErrorCallback) {
         let endpoint = ValidatorsRoutes.electedValidatorsAtABlock.endpoint(height)
 
-        self.request(to: endpoint) { (r: BaseResult<ElectedValidatorsAtABlockResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<ElectedValidatorsAtABlockResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }
@@ -202,11 +202,11 @@ class HeliumValidatorsManager: BaseManager {
     public func electedValidatorsInAnElection(hash: String, onSuccess: BlockchainCallbacks.ElectedValidatorsInAnElection, onError: GenericCallbacks.ErrorCallback) {
         let endpoint = ValidatorsRoutes.electedValidatorsInAnElection.endpoint(hash)
 
-        self.request(to: endpoint) { (r: BaseResult<ElectedValidatorsInAnElectionResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<ElectedValidatorsInAnElectionResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }
@@ -227,11 +227,11 @@ class HeliumValidatorsManager: BaseManager {
             endpoint.queryItems = queryItems
         }
 
-        self.request(to: endpoint) { (r: BaseResult<RewardsForAValidatorResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<RewardsForAValidatorResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }
@@ -252,11 +252,11 @@ class HeliumValidatorsManager: BaseManager {
             endpoint.queryItems = queryItems
         }
 
-        self.request(to: endpoint) { (r: BaseResult<RewardTotalForAValidatorResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<RewardTotalForAValidatorResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }
@@ -271,11 +271,11 @@ class HeliumValidatorsManager: BaseManager {
 
         endpoint.queryItems = queryItems
 
-        self.request(to: endpoint) { (r: BaseResult<RewardTotalForAllValidatorsResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<RewardTotalForAllValidatorsResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }

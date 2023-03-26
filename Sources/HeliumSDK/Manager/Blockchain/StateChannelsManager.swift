@@ -1,6 +1,6 @@
 //
 //  StateChannelsManager.swift
-//  
+//
 //
 //  Created by Burak Colak on 20.10.2022.
 //
@@ -33,11 +33,11 @@ class HeliumStateChannelsManager: BaseManager {
             endpoint.queryItems = queryItems
         }
 
-        self.request(to: endpoint) { (r: BaseResult<StateChannelClosesResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<StateChannelClosesResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }

@@ -1,17 +1,17 @@
 //
 //  DCBurnTotalsResponse.swift
-//  
+//
 //
 //  Created by Burak Colak on 19.10.2022.
 //
 
-public struct DCBurnTotalsResponse : Codable {
-    public let data : [DCBurnTotalsDataResponse]?
-    public let meta : DCBurnTotalsMetaResponse?
+public struct DCBurnTotalsResponse: Codable {
+    public let data: [DCBurnTotalsDataResponse]?
+    public let meta: DCBurnTotalsMetaResponse?
 
     enum CodingKeys: String, CodingKey {
-        case data = "data"
-        case meta = "meta"
+        case data
+        case meta
     }
 
     public init(from decoder: Decoder) throws {
@@ -22,18 +22,18 @@ public struct DCBurnTotalsResponse : Codable {
 }
 
 public struct DCBurnTotalsDataResponse: Codable {
-    public let add_gateway : Int?
-    public let assert_location : Int?
-    public let fee : Int?
-    public let state_channel : Int?
-    public let total : Int?
+    public let add_gateway: Int?
+    public let assert_location: Int?
+    public let fee: Int?
+    public let state_channel: Int?
+    public let total: Int?
 
     enum CodingKeys: String, CodingKey {
-        case add_gateway = "add_gateway"
-        case assert_location = "assert_location"
-        case fee = "fee"
-        case state_channel = "state_channel"
-        case total = "total"
+        case add_gateway
+        case assert_location
+        case fee
+        case state_channel
+        case total
     }
 
     public init(from decoder: Decoder) throws {
@@ -46,15 +46,15 @@ public struct DCBurnTotalsDataResponse: Codable {
     }
 }
 
-public struct DCBurnTotalsMetaResponse : Codable {
-    public let bucket : String?
-    public let max_time : String?
-    public let min_time : String?
+public struct DCBurnTotalsMetaResponse: Codable {
+    public let bucket: String?
+    public let max_time: String?
+    public let min_time: String?
 
     enum CodingKeys: String, CodingKey {
-        case bucket = "bucket"
-        case max_time = "max_time"
-        case min_time = "min_time"
+        case bucket
+        case max_time
+        case min_time
     }
 
     public init(from decoder: Decoder) throws {

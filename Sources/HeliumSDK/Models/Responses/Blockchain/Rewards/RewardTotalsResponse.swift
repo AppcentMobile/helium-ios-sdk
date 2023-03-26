@@ -1,17 +1,17 @@
 //
 //  RewardTotalsResponse.swift
-//  
+//
 //
 //  Created by Burak Colak on 20.10.2022.
 //
 
 public struct RewardTotalsResponse: Codable {
-    public let meta : RewardTotalsMetaResponse?
-    public let data : [RewardTotalsDataResponse]?
+    public let meta: RewardTotalsMetaResponse?
+    public let data: [RewardTotalsDataResponse]?
 
     enum CodingKeys: String, CodingKey {
-        case meta = "meta"
-        case data = "data"
+        case meta
+        case data
     }
 
     public init(from decoder: Decoder) throws {
@@ -22,24 +22,24 @@ public struct RewardTotalsResponse: Codable {
 }
 
 public struct RewardTotalsDataResponse: Codable {
-    public let total : Double?
-    public let timestamp : String?
-    public let sum : Int?
-    public let stddev : Double?
-    public let min : Double?
-    public let median : Double?
-    public let max : Double?
-    public let avg : Double?
+    public let total: Double?
+    public let timestamp: String?
+    public let sum: Int?
+    public let stddev: Double?
+    public let min: Double?
+    public let median: Double?
+    public let max: Double?
+    public let avg: Double?
 
     enum CodingKeys: String, CodingKey {
-        case total = "total"
-        case timestamp = "timestamp"
-        case sum = "sum"
-        case stddev = "stddev"
-        case min = "min"
-        case median = "median"
-        case max = "max"
-        case avg = "avg"
+        case total
+        case timestamp
+        case sum
+        case stddev
+        case min
+        case median
+        case max
+        case avg
     }
 
     public init(from decoder: Decoder) throws {
@@ -55,15 +55,15 @@ public struct RewardTotalsDataResponse: Codable {
     }
 }
 
-public struct RewardTotalsMetaResponse : Codable {
-    public let min_time : String?
-    public let max_time : String?
-    public let bucket : String?
+public struct RewardTotalsMetaResponse: Codable {
+    public let min_time: String?
+    public let max_time: String?
+    public let bucket: String?
 
     enum CodingKeys: String, CodingKey {
-        case min_time = "min_time"
-        case max_time = "max_time"
-        case bucket = "bucket"
+        case min_time
+        case max_time
+        case bucket
     }
 
     public init(from decoder: Decoder) throws {

@@ -1,17 +1,17 @@
 //
 //  ValidatorsForAccountResponse.swift
-//  
+//
 //
 //  Created by Burak Colak on 17.10.2022.
 //
 
-public struct ValidatorsForAccountResponse : Codable {
-    public let data : [ValidatorsForAccountDataResponse]?
-    public let cursor : String?
+public struct ValidatorsForAccountResponse: Codable {
+    public let data: [ValidatorsForAccountDataResponse]?
+    public let cursor: String?
 
     enum CodingKeys: String, CodingKey {
-        case data = "data"
-        case cursor = "cursor"
+        case data
+        case cursor
     }
 
     public init(from decoder: Decoder) throws {
@@ -21,33 +21,33 @@ public struct ValidatorsForAccountResponse : Codable {
     }
 }
 
-public struct ValidatorsForAccountDataResponse : Codable {
-    public let version_heartbeat : Int?
-    public let status : ValidatorsForAccountStatusResponse?
-    public let stake_status : String?
-    public let stake : Int?
-    public let penalty : Double?
-    public let penalties : [ValidatorsForAccountPenaltiesResponse]?
-    public let owner : String?
-    public let name : String?
-    public let last_heartbeat : Int?
-    public let block_added : Int?
-    public let block : Int?
-    public let address : String?
+public struct ValidatorsForAccountDataResponse: Codable {
+    public let version_heartbeat: Int?
+    public let status: ValidatorsForAccountStatusResponse?
+    public let stake_status: String?
+    public let stake: Int?
+    public let penalty: Double?
+    public let penalties: [ValidatorsForAccountPenaltiesResponse]?
+    public let owner: String?
+    public let name: String?
+    public let last_heartbeat: Int?
+    public let block_added: Int?
+    public let block: Int?
+    public let address: String?
 
     enum CodingKeys: String, CodingKey {
-        case version_heartbeat = "version_heartbeat"
-        case status = "status"
-        case stake_status = "stake_status"
-        case stake = "stake"
-        case penalty = "penalty"
-        case penalties = "penalties"
-        case owner = "owner"
-        case name = "name"
-        case last_heartbeat = "last_heartbeat"
-        case block_added = "block_added"
-        case block = "block"
-        case address = "address"
+        case version_heartbeat
+        case status
+        case stake_status
+        case stake
+        case penalty
+        case penalties
+        case owner
+        case name
+        case last_heartbeat
+        case block_added
+        case block
+        case address
     }
 
     public init(from decoder: Decoder) throws {
@@ -65,18 +65,17 @@ public struct ValidatorsForAccountDataResponse : Codable {
         block = try values.decodeIfPresent(Int.self, forKey: .block)
         address = try values.decodeIfPresent(String.self, forKey: .address)
     }
-
 }
 
 public struct ValidatorsForAccountStatusResponse: Codable {
-    public let online : String?
-    public let listen_addrs : [String]?
-    public let height : Int?
+    public let online: String?
+    public let listen_addrs: [String]?
+    public let height: Int?
 
     enum CodingKeys: String, CodingKey {
-        case online = "online"
-        case listen_addrs = "listen_addrs"
-        case height = "height"
+        case online
+        case listen_addrs
+        case height
     }
 
     public init(from decoder: Decoder) throws {
@@ -87,15 +86,15 @@ public struct ValidatorsForAccountStatusResponse: Codable {
     }
 }
 
-public struct ValidatorsForAccountPenaltiesResponse : Codable {
-    public let type : String?
-    public let height : Int?
-    public let amount : Int?
+public struct ValidatorsForAccountPenaltiesResponse: Codable {
+    public let type: String?
+    public let height: Int?
+    public let amount: Int?
 
     enum CodingKeys: String, CodingKey {
-        case type = "type"
-        case height = "height"
-        case amount = "amount"
+        case type
+        case height
+        case amount
     }
 
     public init(from decoder: Decoder) throws {
@@ -104,5 +103,4 @@ public struct ValidatorsForAccountPenaltiesResponse : Codable {
         height = try values.decodeIfPresent(Int.self, forKey: .height)
         amount = try values.decodeIfPresent(Int.self, forKey: .amount)
     }
-
 }

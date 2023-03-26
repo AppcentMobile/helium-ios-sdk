@@ -1,121 +1,135 @@
 //
 //  AccountsManager.swift
-//  
+//
 //
 //  Created by Burak Colak on 16.10.2022.
 //
 
+import ACMNetworking
 import Foundation
 
-public class HeliumAccountsManager: BaseManager {
+public class HeliumAccountsManager {
+    var network: ACMNetworking!
+
+    public init() {
+        network = ACMNetworking()
+    }
+
     public func listAccounts(cursor: String? = nil, onSuccess: BlockchainCallbacks.ListAccounts, onError: GenericCallbacks.ErrorCallback) {
-        var endpoint = AccountsRoutes.listAccounts.endpoint()
+        let route = AccountsRoutes.listAccounts.endpoint()
+
+        var endpoint = ACMEndpoint()
+            .set(method: route.method)
+            .set(path: route.path)
 
         if let cursor = cursor {
-            endpoint.queryItems = [URLQueryItem(name: "cursor", value: cursor)]
+            endpoint = endpoint.add(queryItem: ACMQueryModel(name: "cursor", value: cursor))
         }
 
-        self.request(to: endpoint) { (r: BaseResult<ListAccountsResponse?, Error>) in
-            switch r {
-            case .success(let r):
-                onSuccess?(r)
-            case .failure(let e):
-                onError?(e)
-            }
+        network.request(to: endpoint.build()) { (r: ListAccountsResponse) in
+            onSuccess?(r)
+        } onError: { e in
+            onError?(e)
         }
     }
 
     public func listRichestAccounts(limit: String? = nil, onSuccess: BlockchainCallbacks.ListRichestAccounts, onError: GenericCallbacks.ErrorCallback) {
-        var endpoint = AccountsRoutes.listRichestAccounts.endpoint()
+        let route = AccountsRoutes.listRichestAccounts.endpoint()
+
+        var endpoint = ACMEndpoint()
+            .set(method: route.method)
+            .set(path: route.path)
 
         if let limit = limit {
-            endpoint.queryItems = [URLQueryItem(name: "limit", value: limit)]
+            endpoint = endpoint.add(queryItem: ACMQueryModel(name: "limit", value: limit))
         }
 
-        self.request(to: endpoint) { (r: BaseResult<ListRichestAccountsResponse?, Error>) in
-            switch r {
-            case .success(let r):
-                onSuccess?(r)
-            case .failure(let e):
-                onError?(e)
-            }
+        network.request(to: endpoint.build()) { (r: ListRichestAccountsResponse) in
+            onSuccess?(r)
+        } onError: { e in
+            onError?(e)
         }
     }
 
     public func accountForAddress(address: String, onSuccess: BlockchainCallbacks.AccountForAddress, onError: GenericCallbacks.ErrorCallback) {
-        let endpoint = AccountsRoutes.accountForAddress.endpoint(address)
+        let route = AccountsRoutes.accountForAddress.endpoint(address)
 
-        self.request(to: endpoint) { (r: BaseResult<AccountForAddressResponse?, Error>) in
-            switch r {
-            case .success(let r):
-                onSuccess?(r)
-            case .failure(let e):
-                onError?(e)
-            }
+        let endpoint = ACMEndpoint()
+            .set(method: route.method)
+            .set(path: route.path)
+            .build()
+
+        network.request(to: endpoint) { (r: AccountForAddressResponse) in
+            onSuccess?(r)
+        } onError: { e in
+            onError?(e)
         }
     }
 
     /**
-     The filter_modes parameter can be used to filter hotspot by how they were added to the blockchain. Supported values are full, dataonly, or light. A comma separated list (no whitespace) can be used to filter for multiple modes.
-    */
+      The filter_modes parameter can be used to filter hotspot by how they were added to the blockchain. Supported values are full, dataonly, or light. A comma separated list (no whitespace) can be used to filter for multiple modes.
+     */
     public func hotspotAccounts(address: String, cursor: String? = nil, filter_modes: String? = nil, onSuccess: BlockchainCallbacks.HotspotsForAccount, onError: GenericCallbacks.ErrorCallback) {
-        var endpoint = AccountsRoutes.hotspotsForAccount.endpoint(address)
+        let route = AccountsRoutes.hotspotsForAccount.endpoint(address)
+
+        var endpoint = ACMEndpoint()
+            .set(method: route.method)
+            .set(path: route.path)
 
         if let cursor = cursor {
-            endpoint.queryItems = [URLQueryItem(name: "cursor", value: cursor)]
+            endpoint = endpoint.add(queryItem: ACMQueryModel(name: "cursor", value: cursor))
         }
 
         if let filter_modes = filter_modes {
-            endpoint.queryItems = [URLQueryItem(name: "filter_modes", value: filter_modes)]
+            endpoint = endpoint.add(queryItem: ACMQueryModel(name: "filter_modes", value: filter_modes))
         }
 
-        self.request(to: endpoint) { (r: BaseResult<HotspotsForAccountResponse?, Error>) in
-            switch r {
-            case .success(let r):
-                onSuccess?(r)
-            case .failure(let e):
-                onError?(e)
-            }
+        network.request(to: endpoint.build()) { (r: HotspotsForAccountResponse) in
+            onSuccess?(r)
+        } onError: { e in
+            onError?(e)
         }
     }
 
     public func validatorsForAccount(address: String, cursor: String? = nil, onSuccess: BlockchainCallbacks.ValidatorsForAccount, onError: GenericCallbacks.ErrorCallback) {
-        var endpoint = AccountsRoutes.validatorsForAccount.endpoint(address)
+        let route = AccountsRoutes.validatorsForAccount.endpoint(address)
+
+        var endpoint = ACMEndpoint()
+            .set(method: route.method)
+            .set(path: route.path)
 
         if let cursor = cursor {
-            endpoint.queryItems = [URLQueryItem(name: "cursor", value: cursor)]
+            endpoint = endpoint.add(queryItem: ACMQueryModel(name: "cursor", value: cursor))
         }
 
-        self.request(to: endpoint) { (r: BaseResult<ValidatorsForAccountResponse?, Error>) in
-            switch r {
-            case .success(let r):
-                onSuccess?(r)
-            case .failure(let e):
-                onError?(e)
-            }
+        network.request(to: endpoint.build()) { (r: ValidatorsForAccountResponse) in
+            onSuccess?(r)
+        } onError: { e in
+            onError?(e)
         }
     }
 
     public func OUISForAccount(address: String, cursor: String? = nil, onSuccess: BlockchainCallbacks.OUISForAccount, onError: GenericCallbacks.ErrorCallback) {
-        var endpoint = AccountsRoutes.ouisForAccount.endpoint(address)
+        let route = AccountsRoutes.ouisForAccount.endpoint(address)
+
+        var endpoint = ACMEndpoint()
+            .set(method: route.method)
+            .set(path: route.path)
 
         if let cursor = cursor {
-            endpoint.queryItems = [URLQueryItem(name: "cursor", value: cursor)]
+            endpoint = endpoint.add(queryItem: ACMQueryModel(name: "cursor", value: cursor))
         }
 
-        self.request(to: endpoint) { (r: BaseResult<OUISForAccountResponse?, Error>) in
-            switch r {
-            case .success(let r):
-                onSuccess?(r)
-            case .failure(let e):
-                onError?(e)
-            }
+        network.request(to: endpoint.build()) { (r: OUISForAccountResponse) in
+            onSuccess?(r)
+        } onError: { e in
+            onError?(e)
         }
     }
 
     @available(*, deprecated, message: "'activityForAccount' is deprecated: The /activity route will be deprecated on May 1, 2022 and will be replaced by /roles, described below")
     public func activityForAccount(address: String, filter_types: String? = nil, min_time: String? = nil, max_time: String? = nil, limit: Int? = nil, onSuccess: BlockchainCallbacks.ActivityForAccount, onError: GenericCallbacks.ErrorCallback) {
-        var endpoint = AccountsRoutes.activityForAccount.endpoint(address)
+        let route = AccountsRoutes.activityForAccount.endpoint(address)
 
         var queryItems = [URLQueryItem]()
 
@@ -139,11 +153,11 @@ public class HeliumAccountsManager: BaseManager {
             endpoint.queryItems = queryItems
         }
 
-        self.request(to: endpoint) { (r: BaseResult<ActivityForAccountResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<ActivityForAccountResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }
@@ -174,11 +188,11 @@ public class HeliumAccountsManager: BaseManager {
             endpoint.queryItems = queryItems
         }
 
-        self.request(to: endpoint) { (r: BaseResult<RolesForAccountResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<RolesForAccountResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }
@@ -191,11 +205,11 @@ public class HeliumAccountsManager: BaseManager {
             endpoint.queryItems = [URLQueryItem(name: "filter_types", value: filter_types)]
         }
 
-        self.request(to: endpoint) { (r: BaseResult<RolesCountsForAccountResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<RolesCountsForAccountResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }
@@ -222,11 +236,11 @@ public class HeliumAccountsManager: BaseManager {
             endpoint.queryItems = queryItems
         }
 
-        self.request(to: endpoint) { (r: BaseResult<ElectionsForAccountResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<ElectionsForAccountResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }
@@ -253,11 +267,11 @@ public class HeliumAccountsManager: BaseManager {
             endpoint.queryItems = queryItems
         }
 
-        self.request(to: endpoint) { (r: BaseResult<ChallengesForAccountResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<ChallengesForAccountResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }
@@ -270,11 +284,11 @@ public class HeliumAccountsManager: BaseManager {
             endpoint.queryItems = [URLQueryItem(name: "cursor", value: cursor)]
         }
 
-        self.request(to: endpoint) { (r: BaseResult<PendingTransactionsForAccountResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<PendingTransactionsForAccountResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }
@@ -301,17 +315,17 @@ public class HeliumAccountsManager: BaseManager {
             endpoint.queryItems = queryItems
         }
 
-        self.request(to: endpoint) { (r: BaseResult<RewardsForAnAccountResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<RewardsForAnAccountResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }
     }
 
-    public func rewardsInARewardsBlockForAnAccount(address: String, block: String? = nil, cursor: String? = nil, min_time: String? = nil, max_time: String? = nil, onSuccess: BlockchainCallbacks.RewardsInARewardsBlockForAnAccount, onError: GenericCallbacks.ErrorCallback) {
+    public func rewardsInARewardsBlockForAnAccount(address: String, block: String? = nil, cursor _: String? = nil, min_time _: String? = nil, max_time _: String? = nil, onSuccess: BlockchainCallbacks.RewardsInARewardsBlockForAnAccount, onError: GenericCallbacks.ErrorCallback) {
         let route = AccountsRoutes.rewardsInARewardsBlockForAnAccount
 
         var endpoint = BaseEndpoint(path: String(format: route.path, address), method: route.method)
@@ -319,11 +333,11 @@ public class HeliumAccountsManager: BaseManager {
             endpoint = BaseEndpoint(path: String(format: route.path, address, block), method: route.method)
         }
 
-        self.request(to: endpoint) { (r: BaseResult<RewardsInARewardsBlockForAnAccountResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<RewardsInARewardsBlockForAnAccountResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }
@@ -350,11 +364,11 @@ public class HeliumAccountsManager: BaseManager {
             endpoint.queryItems = queryItems
         }
 
-        self.request(to: endpoint) { (r: BaseResult<RewardTotalsForAnAccountResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<RewardTotalsForAnAccountResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }
@@ -363,11 +377,11 @@ public class HeliumAccountsManager: BaseManager {
     public func statsForAccount(address: String, onSuccess: BlockchainCallbacks.StatsForAccount, onError: GenericCallbacks.ErrorCallback) {
         let endpoint = AccountsRoutes.statsForAccount.endpoint(address)
 
-        self.request(to: endpoint) { (r: BaseResult<StatsForAccountResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<StatsForAccountResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }

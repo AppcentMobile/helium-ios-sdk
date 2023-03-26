@@ -1,15 +1,15 @@
 //
 //  WitnessedForAHotspotResponse.swift
-//  
+//
 //
 //  Created by Burak Colak on 20.10.2022.
 //
 
-public struct WitnessedForAHotspotResponse : Codable {
-    public let data : [WitnessedForAHotspotDataResponse]?
+public struct WitnessedForAHotspotResponse: Codable {
+    public let data: [WitnessedForAHotspotDataResponse]?
 
     enum CodingKeys: String, CodingKey {
-        case data = "data"
+        case data
     }
 
     public init(from decoder: Decoder) throws {
@@ -18,49 +18,49 @@ public struct WitnessedForAHotspotResponse : Codable {
     }
 }
 
-public struct WitnessedForAHotspotDataResponse : Codable {
-    public let address : String?
-    public let block : Int?
-    public let block_added : Int?
-    public let elevation : Int?
-    public let gain : Int?
-    public let geocode : WitnessedForAHotspotGeocodeResponse?
-    public let last_change_block : Int?
-    public let last_poc_challenge : Int?
-    public let lat : Double?
-    public let lng : Double?
-    public let location : String?
-    public let location_hex : String?
-    public let mode : String?
-    public let name : String?
-    public let nonce : Int?
-    public let owner : String?
-    public let payer : String?
-    public let reward_scale : Double?
-    public let status : WitnessedForAHotspotStatusResponse?
-    public let timestamp_added : String?
+public struct WitnessedForAHotspotDataResponse: Codable {
+    public let address: String?
+    public let block: Int?
+    public let block_added: Int?
+    public let elevation: Int?
+    public let gain: Int?
+    public let geocode: WitnessedForAHotspotGeocodeResponse?
+    public let last_change_block: Int?
+    public let last_poc_challenge: Int?
+    public let lat: Double?
+    public let lng: Double?
+    public let location: String?
+    public let location_hex: String?
+    public let mode: String?
+    public let name: String?
+    public let nonce: Int?
+    public let owner: String?
+    public let payer: String?
+    public let reward_scale: Double?
+    public let status: WitnessedForAHotspotStatusResponse?
+    public let timestamp_added: String?
 
     enum CodingKeys: String, CodingKey {
-        case address = "address"
-        case block = "block"
-        case block_added = "block_added"
-        case elevation = "elevation"
-        case gain = "gain"
-        case geocode = "geocode"
-        case last_change_block = "last_change_block"
-        case last_poc_challenge = "last_poc_challenge"
-        case lat = "lat"
-        case lng = "lng"
-        case location = "location"
-        case location_hex = "location_hex"
-        case mode = "mode"
-        case name = "name"
-        case nonce = "nonce"
-        case owner = "owner"
-        case payer = "payer"
-        case reward_scale = "reward_scale"
-        case status = "status"
-        case timestamp_added = "timestamp_added"
+        case address
+        case block
+        case block_added
+        case elevation
+        case gain
+        case geocode
+        case last_change_block
+        case last_poc_challenge
+        case lat
+        case lng
+        case location
+        case location_hex
+        case mode
+        case name
+        case nonce
+        case owner
+        case payer
+        case reward_scale
+        case status
+        case timestamp_added
     }
 
     public init(from decoder: Decoder) throws {
@@ -88,17 +88,17 @@ public struct WitnessedForAHotspotDataResponse : Codable {
     }
 }
 
-public struct WitnessedForAHotspotStatusResponse : Codable {
-    public let height : Int?
-    public let listen_addrs : [String]?
-    public let online : String?
-    public let timestamp : String?
+public struct WitnessedForAHotspotStatusResponse: Codable {
+    public let height: Int?
+    public let listen_addrs: [String]?
+    public let online: String?
+    public let timestamp: String?
 
     enum CodingKeys: String, CodingKey {
-        case height = "height"
-        case listen_addrs = "listen_addrs"
-        case online = "online"
-        case timestamp = "timestamp"
+        case height
+        case listen_addrs
+        case online
+        case timestamp
     }
 
     public init(from decoder: Decoder) throws {
@@ -110,27 +110,27 @@ public struct WitnessedForAHotspotStatusResponse : Codable {
     }
 }
 
-public struct WitnessedForAHotspotGeocodeResponse : Codable {
-    public let city_id : String?
-    public let long_city : String?
-    public let long_country : String?
-    public let long_state : String?
-    public let long_street : String?
-    public let short_city : String?
-    public let short_country : String?
-    public let short_state : String?
-    public let short_street : String?
+public struct WitnessedForAHotspotGeocodeResponse: Codable {
+    public let city_id: String?
+    public let long_city: String?
+    public let long_country: String?
+    public let long_state: String?
+    public let long_street: String?
+    public let short_city: String?
+    public let short_country: String?
+    public let short_state: String?
+    public let short_street: String?
 
     enum CodingKeys: String, CodingKey {
-        case city_id = "city_id"
-        case long_city = "long_city"
-        case long_country = "long_country"
-        case long_state = "long_state"
-        case long_street = "long_street"
-        case short_city = "short_city"
-        case short_country = "short_country"
-        case short_state = "short_state"
-        case short_street = "short_street"
+        case city_id
+        case long_city
+        case long_country
+        case long_state
+        case long_street
+        case short_city
+        case short_country
+        case short_state
+        case short_street
     }
 
     public init(from decoder: Decoder) throws {

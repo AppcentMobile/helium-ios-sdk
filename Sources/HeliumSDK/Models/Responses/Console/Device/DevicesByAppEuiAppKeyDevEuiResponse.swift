@@ -1,27 +1,27 @@
 //
 //  DevicesByAppEuiAppKeyDevEuiResponse.swift
-//  
+//
 //
 //  Created by Burak Colak on 23.10.2022.
 //
 
-public struct DevicesByAppEuiAppKeyDevEuiResponse : Codable {
-    public let app_eui : String?
-    public let app_key : String?
-    public let dev_eui : String?
-    public let id : String?
-    public let name : String?
-    public let organization_id : String?
-    public let oui : Int?
+public struct DevicesByAppEuiAppKeyDevEuiResponse: Codable {
+    public let app_eui: String?
+    public let app_key: String?
+    public let dev_eui: String?
+    public let id: String?
+    public let name: String?
+    public let organization_id: String?
+    public let oui: Int?
 
     enum CodingKeys: String, CodingKey {
-        case app_eui = "app_eui"
-        case app_key = "app_key"
-        case dev_eui = "dev_eui"
-        case id = "id"
-        case name = "name"
-        case organization_id = "organization_id"
-        case oui = "oui"
+        case app_eui
+        case app_key
+        case dev_eui
+        case id
+        case name
+        case organization_id
+        case oui
     }
 
     public init(from decoder: Decoder) throws {

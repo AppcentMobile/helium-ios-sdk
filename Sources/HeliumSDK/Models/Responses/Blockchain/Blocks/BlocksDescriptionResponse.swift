@@ -1,17 +1,17 @@
 //
 //  BlocksDescriptionResponse.swift
-//  
+//
 //
 //  Created by Burak Colak on 18.10.2022.
 //
 
-public struct BlocksDescriptionResponse : Codable {
-    public let data : [BlocksDescriptionDataResponse]?
-    public let cursor : String?
+public struct BlocksDescriptionResponse: Codable {
+    public let data: [BlocksDescriptionDataResponse]?
+    public let cursor: String?
 
     enum CodingKeys: String, CodingKey {
-        case data = "data"
-        case cursor = "cursor"
+        case data
+        case cursor
     }
 
     public init(from decoder: Decoder) throws {
@@ -21,21 +21,21 @@ public struct BlocksDescriptionResponse : Codable {
     }
 }
 
-public struct BlocksDescriptionDataResponse : Codable {
-    public let transaction_count : Int?
-    public let time : Int?
-    public let snapshot_hash : String?
-    public let prev_hash : String?
-    public let height : Int?
-    public let hash : String?
+public struct BlocksDescriptionDataResponse: Codable {
+    public let transaction_count: Int?
+    public let time: Int?
+    public let snapshot_hash: String?
+    public let prev_hash: String?
+    public let height: Int?
+    public let hash: String?
 
     enum CodingKeys: String, CodingKey {
-        case transaction_count = "transaction_count"
-        case time = "time"
-        case snapshot_hash = "snapshot_hash"
-        case prev_hash = "prev_hash"
-        case height = "height"
-        case hash = "hash"
+        case transaction_count
+        case time
+        case snapshot_hash
+        case prev_hash
+        case height
+        case hash
     }
 
     public init(from decoder: Decoder) throws {

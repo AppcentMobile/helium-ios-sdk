@@ -1,11 +1,11 @@
 //
 //  AccountsRoutes.swift
-//  
+//
 //
 //  Created by Burak Colak on 13.10.2022.
 //
 
-struct AccountsRoutes {
+enum AccountsRoutes {
     static let listAccounts = BaseRoute(method: .get, path: "v1/accounts")
     static let listRichestAccounts = BaseRoute(method: .get, path: "v1/accounts/rich")
     static let accountForAddress = BaseRoute(method: .get, path: "v1/accounts/%@")
@@ -21,7 +21,8 @@ struct AccountsRoutes {
     static let challengesForAccount = BaseRoute(method: .get, path: "v1/accounts/%@/challenges")
     static let pendingTransactionsForAccount = BaseRoute(method: .get, path: "v1/accounts/%@/pending_transactions")
 
-    //MARK: For older reward results, if the type is null the amount is a total for that account or hotspot in the given block.
+    // MARK: For older reward results, if the type is null the amount is a total for that account or hotspot in the given block.
+
     static let rewardsForAnAccount = BaseRoute(method: .get, path: "v1/accounts/%@/rewards")
     static let rewardsInARewardsBlockForAnAccount = BaseRoute(method: .get, path: "v1/accounts/%@/rewards/%@")
     static let rewardTotalsForAnAccount = BaseRoute(method: .get, path: "v1/accounts/%@/rewards/sum")

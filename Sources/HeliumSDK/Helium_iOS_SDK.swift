@@ -1,12 +1,11 @@
 /**
-Helium iOS SDK
-2022
-*/
+ Helium iOS SDK
+ 2022
+ */
 
 import Foundation
 
-public struct Helium_iOS_SDK {
-
+public enum Helium_iOS_SDK {
     /**
         Initializes the helium iOS SDK;
 
@@ -28,14 +27,11 @@ public struct Helium_iOS_SDK {
      - Version:
      0.1
      */
-    static public func initialize(apiKey: String, console: HeliumEnvironment.CONSOLE? = .BASE, blockchain: HeliumEnvironment.BLOCKCHAIN? = .SCALABLE, logEnabled: Bool? = false, timeOut: TimeInterval = 120) {
-
+    public static func initialize(apiKey: String, console: HeliumEnvironment.CONSOLE? = .BASE, blockchain: HeliumEnvironment.BLOCKCHAIN? = .SCALABLE, logEnabled: Bool? = false, timeOut: TimeInterval = 120) {
         Constants.API_KEY = apiKey
         Constants.CONSOLE_ENVIRONMENT = console ?? .BASE
         Constants.BLOCKHAIN_ENVIRONMENT = blockchain ?? .SCALABLE
         Constants.LOG_ENABLED = logEnabled ?? false
         Constants.TIMEOUT = timeOut
-
     }
-
 }

@@ -1,19 +1,19 @@
 //
 //  SearchForLabelResponse.swift
-//  
+//
 //
 //  Created by Burak Colak on 24.10.2022.
 //
 
-public struct SearchForLabelResponse : Codable {
-    public let id : String?
-    public let multi_buy : Int?
-    public let name : String?
+public struct SearchForLabelResponse: Codable {
+    public let id: String?
+    public let multi_buy: Int?
+    public let name: String?
 
     enum CodingKeys: String, CodingKey {
-        case id = "id"
-        case multi_buy = "multi_buy"
-        case name = "name"
+        case id
+        case multi_buy
+        case name
     }
 
     public init(from decoder: Decoder) throws {

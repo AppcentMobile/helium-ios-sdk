@@ -1,6 +1,6 @@
 //
 //  OraclePricesManager.swift
-//  
+//
 //
 //  Created by Burak Colak on 20.10.2022.
 //
@@ -11,11 +11,11 @@ class HeliumOraclePricesManager: BaseManager {
     public func currentOraclePrice(onSuccess: BlockchainCallbacks.CurrentOraclePrice, onError: GenericCallbacks.ErrorCallback) {
         let endpoint = OraclePricesRoutes.currentOraclePrice.endpoint()
 
-        self.request(to: endpoint) { (r: BaseResult<CurrentOraclePriceResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<CurrentOraclePriceResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }
@@ -38,11 +38,11 @@ class HeliumOraclePricesManager: BaseManager {
             endpoint.queryItems = queryItems
         }
 
-        self.request(to: endpoint) { (r: BaseResult<CurrentAndHistoricalOraclePricesResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<CurrentAndHistoricalOraclePricesResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }
@@ -53,14 +53,14 @@ class HeliumOraclePricesManager: BaseManager {
 
         endpoint.queryItems = [
             URLQueryItem(name: "min_time", value: min_time),
-            URLQueryItem(name: "max_time", value: max_time)
+            URLQueryItem(name: "max_time", value: max_time),
         ]
 
-        self.request(to: endpoint) { (r: BaseResult<OraclePriceStatsResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<OraclePriceStatsResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }
@@ -69,11 +69,11 @@ class HeliumOraclePricesManager: BaseManager {
     public func oraclePriceAtASpecificBlock(block: String, onSuccess: BlockchainCallbacks.OraclePriceAtASpecificBlock, onError: GenericCallbacks.ErrorCallback) {
         let endpoint = OraclePricesRoutes.oraclePriceAtASpecificBlock.endpoint(block)
 
-        self.request(to: endpoint) { (r: BaseResult<OraclePriceAtASpecificBlockResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<OraclePriceAtASpecificBlockResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }
@@ -104,11 +104,11 @@ class HeliumOraclePricesManager: BaseManager {
             endpoint.queryItems = queryItems
         }
 
-        self.request(to: endpoint) { (r: BaseResult<ListOracleActivityResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<ListOracleActivityResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }
@@ -139,24 +139,24 @@ class HeliumOraclePricesManager: BaseManager {
             endpoint.queryItems = queryItems
         }
 
-        self.request(to: endpoint) { (r: BaseResult<ListActivityForASpecificOracleResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<ListActivityForASpecificOracleResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }
     }
 
-    public func getPredictedHNTOraclePrices(location: String, onSuccess: BlockchainCallbacks.GetPredictedHNTOraclePrices, onError: GenericCallbacks.ErrorCallback) {
+    public func getPredictedHNTOraclePrices(location _: String, onSuccess: BlockchainCallbacks.GetPredictedHNTOraclePrices, onError: GenericCallbacks.ErrorCallback) {
         let endpoint = OraclePricesRoutes.getPredictedHNTOraclePrices.endpoint()
 
-        self.request(to: endpoint) { (r: BaseResult<GetPredictedHNTOraclePricesResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<GetPredictedHNTOraclePricesResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }

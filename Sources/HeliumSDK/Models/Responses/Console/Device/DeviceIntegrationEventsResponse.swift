@@ -1,29 +1,29 @@
 //
 //  DeviceIntegrationEventsResponse.swift
-//  
+//
 //
 //  Created by Burak Colak on 23.10.2022.
 //
 
-public struct DeviceIntegrationEventsResponse : Codable {
-    public let category : String?
-    public let data : DeviceIntegrationEventsDataResponse?
-    public let description : String?
-    public let device_id : String?
-    public let organization_id : String?
-    public let reported_at : String?
-    public let router_uuid : String?
-    public let sub_category : String?
+public struct DeviceIntegrationEventsResponse: Codable {
+    public let category: String?
+    public let data: DeviceIntegrationEventsDataResponse?
+    public let description: String?
+    public let device_id: String?
+    public let organization_id: String?
+    public let reported_at: String?
+    public let router_uuid: String?
+    public let sub_category: String?
 
     enum CodingKeys: String, CodingKey {
-        case category = "category"
-        case data = "data"
-        case description = "description"
-        case device_id = "device_id"
-        case organization_id = "organization_id"
-        case reported_at = "reported_at"
-        case router_uuid = "router_uuid"
-        case sub_category = "sub_category"
+        case category
+        case data
+        case description
+        case device_id
+        case organization_id
+        case reported_at
+        case router_uuid
+        case sub_category
     }
 
     public init(from decoder: Decoder) throws {
@@ -39,13 +39,13 @@ public struct DeviceIntegrationEventsResponse : Codable {
     }
 }
 
-public struct DeviceIntegrationEventsDataResponse : Codable {
-    public let integration : DeviceIntegrationEventsIntegrationResponse?
-    public let req : DeviceIntegrationEventsReqResponse?
+public struct DeviceIntegrationEventsDataResponse: Codable {
+    public let integration: DeviceIntegrationEventsIntegrationResponse?
+    public let req: DeviceIntegrationEventsReqResponse?
 
     enum CodingKeys: String, CodingKey {
-        case integration = "integration"
-        case req = "req"
+        case integration
+        case req
     }
 
     public init(from decoder: Decoder) throws {
@@ -55,15 +55,15 @@ public struct DeviceIntegrationEventsDataResponse : Codable {
     }
 }
 
-public struct DeviceIntegrationEventsIntegrationResponse : Codable {
-    public let id : String?
-    public let name : String?
-    public let status : String?
+public struct DeviceIntegrationEventsIntegrationResponse: Codable {
+    public let id: String?
+    public let name: String?
+    public let status: String?
 
     enum CodingKeys: String, CodingKey {
-        case id = "id"
-        case name = "name"
-        case status = "status"
+        case id
+        case name
+        case status
     }
 
     public init(from decoder: Decoder) throws {
@@ -74,13 +74,13 @@ public struct DeviceIntegrationEventsIntegrationResponse : Codable {
     }
 }
 
-public struct DeviceIntegrationEventsReqResponse : Codable {
-    public let body : DeviceIntegrationEventsBodyResponse?
-    public let qos : Int?
+public struct DeviceIntegrationEventsReqResponse: Codable {
+    public let body: DeviceIntegrationEventsBodyResponse?
+    public let qos: Int?
 
     enum CodingKeys: String, CodingKey {
-        case body = "body"
-        case qos = "qos"
+        case body
+        case qos
     }
 
     public init(from decoder: Decoder) throws {
@@ -90,35 +90,35 @@ public struct DeviceIntegrationEventsReqResponse : Codable {
     }
 }
 
-public struct DeviceIntegrationEventsBodyResponse : Codable {
-    public let app_eui : String?
-    public let dev_eui : String?
-    public let devaddr : String?
-    public let fcnt : Int?
-    public let hotspots : [DeviceIntegrationEventsHotspotsResponse]?
-    public let id : String?
-    public let metadata : DeviceIntegrationEventsMetadataResponse?
-    public let name : String?
-    public let payload : String?
-    public let payload_size : Int?
-    public let port : Int?
-    public let reported_at : Int?
-    public let uuid : String?
+public struct DeviceIntegrationEventsBodyResponse: Codable {
+    public let app_eui: String?
+    public let dev_eui: String?
+    public let devaddr: String?
+    public let fcnt: Int?
+    public let hotspots: [DeviceIntegrationEventsHotspotsResponse]?
+    public let id: String?
+    public let metadata: DeviceIntegrationEventsMetadataResponse?
+    public let name: String?
+    public let payload: String?
+    public let payload_size: Int?
+    public let port: Int?
+    public let reported_at: Int?
+    public let uuid: String?
 
     enum CodingKeys: String, CodingKey {
-        case app_eui = "app_eui"
-        case dev_eui = "dev_eui"
-        case devaddr = "devaddr"
-        case fcnt = "fcnt"
-        case hotspots = "hotspots"
-        case id = "id"
-        case metadata = "metadata"
-        case name = "name"
-        case payload = "payload"
-        case payload_size = "payload_size"
-        case port = "port"
-        case reported_at = "reported_at"
-        case uuid = "uuid"
+        case app_eui
+        case dev_eui
+        case devaddr
+        case fcnt
+        case hotspots
+        case id
+        case metadata
+        case name
+        case payload
+        case payload_size
+        case port
+        case reported_at
+        case uuid
     }
 
     public init(from decoder: Decoder) throws {
@@ -139,33 +139,33 @@ public struct DeviceIntegrationEventsBodyResponse : Codable {
     }
 }
 
-public struct DeviceIntegrationEventsHotspotsResponse : Codable {
-    public let channel : Int?
-    public let frequency : Double?
-    public let hold_time : Int?
-    public let id : String?
-    public let lat : String?
-    public let long : String?
-    public let name : String?
-    public let reported_at : Int?
-    public let rssi : Double?
-    public let snr : Double?
-    public let spreading : String?
-    public let status : String?
+public struct DeviceIntegrationEventsHotspotsResponse: Codable {
+    public let channel: Int?
+    public let frequency: Double?
+    public let hold_time: Int?
+    public let id: String?
+    public let lat: String?
+    public let long: String?
+    public let name: String?
+    public let reported_at: Int?
+    public let rssi: Double?
+    public let snr: Double?
+    public let spreading: String?
+    public let status: String?
 
     enum CodingKeys: String, CodingKey {
-        case channel = "channel"
-        case frequency = "frequency"
-        case hold_time = "hold_time"
-        case id = "id"
-        case lat = "lat"
-        case long = "long"
-        case name = "name"
-        case reported_at = "reported_at"
-        case rssi = "rssi"
-        case snr = "snr"
-        case spreading = "spreading"
-        case status = "status"
+        case channel
+        case frequency
+        case hold_time
+        case id
+        case lat
+        case long
+        case name
+        case reported_at
+        case rssi
+        case snr
+        case spreading
+        case status
     }
 
     public init(from decoder: Decoder) throws {
@@ -185,17 +185,17 @@ public struct DeviceIntegrationEventsHotspotsResponse : Codable {
     }
 }
 
-public struct DeviceIntegrationEventsMetadataResponse : Codable {
-    public let adr_allowed : Bool?
-    public let cf_list_enabled : Bool?
-    public let multi_buy : Int?
-    public let organization_id : String?
+public struct DeviceIntegrationEventsMetadataResponse: Codable {
+    public let adr_allowed: Bool?
+    public let cf_list_enabled: Bool?
+    public let multi_buy: Int?
+    public let organization_id: String?
 
     enum CodingKeys: String, CodingKey {
-        case adr_allowed = "adr_allowed"
-        case cf_list_enabled = "cf_list_enabled"
-        case multi_buy = "multi_buy"
-        case organization_id = "organization_id"
+        case adr_allowed
+        case cf_list_enabled
+        case multi_buy
+        case organization_id
     }
 
     public init(from decoder: Decoder) throws {

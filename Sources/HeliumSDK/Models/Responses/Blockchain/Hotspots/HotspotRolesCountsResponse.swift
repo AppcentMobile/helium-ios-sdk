@@ -1,15 +1,15 @@
 //
 //  HotspotRolesCountsResponse.swift
-//  
+//
 //
 //  Created by Burak Colak on 19.10.2022.
 //
 
-public struct HotspotRolesCountsResponse : Codable {
-    public let data : HotspotRolesCountsDataResponse?
+public struct HotspotRolesCountsResponse: Codable {
+    public let data: HotspotRolesCountsDataResponse?
 
     enum CodingKeys: String, CodingKey {
-        case data = "data"
+        case data
     }
 
     public init(from decoder: Decoder) throws {
@@ -19,10 +19,10 @@ public struct HotspotRolesCountsResponse : Codable {
 }
 
 public struct HotspotRolesCountsDataResponse: Codable {
-    public let assert_location_v1 : Int?
+    public let assert_location_v1: Int?
 
     enum CodingKeys: String, CodingKey {
-        case assert_location_v1 = "assert_location_v1"
+        case assert_location_v1
     }
 
     public init(from decoder: Decoder) throws {

@@ -1,19 +1,19 @@
 //
 //  HotspotChallengesResponse.swift
-//  
+//
 //
 //  Created by Burak Colak on 20.10.2022.
 //
 
 import Foundation
 
-public struct HotspotChallengesResponse : Codable {
-    public let data : [Data]?
-    public let cursor : String?
+public struct HotspotChallengesResponse: Codable {
+    public let data: [Data]?
+    public let cursor: String?
 
     enum CodingKeys: String, CodingKey {
-        case data = "data"
-        case cursor = "cursor"
+        case data
+        case cursor
     }
 
     public init(from decoder: Decoder) throws {
@@ -23,35 +23,35 @@ public struct HotspotChallengesResponse : Codable {
     }
 }
 
-public struct HotspotChallengesDataResponse : Codable {
-    public let type : String?
-    public let time : Int?
-    public let secret : String?
-    public let path : [HotspotChallengesPathResponse]?
-    public let onion_key_hash : String?
-    public let height : Int?
-    public let hash : String?
-    public let fee : Int?
-    public let challenger_owner : String?
-    public let challenger_lon : Double?
-    public let challenger_location : String?
-    public let challenger_lat : Double?
-    public let challenger : String?
+public struct HotspotChallengesDataResponse: Codable {
+    public let type: String?
+    public let time: Int?
+    public let secret: String?
+    public let path: [HotspotChallengesPathResponse]?
+    public let onion_key_hash: String?
+    public let height: Int?
+    public let hash: String?
+    public let fee: Int?
+    public let challenger_owner: String?
+    public let challenger_lon: Double?
+    public let challenger_location: String?
+    public let challenger_lat: Double?
+    public let challenger: String?
 
     enum CodingKeys: String, CodingKey {
-        case type = "type"
-        case time = "time"
-        case secret = "secret"
-        case path = "path"
-        case onion_key_hash = "onion_key_hash"
-        case height = "height"
-        case hash = "hash"
-        case fee = "fee"
-        case challenger_owner = "challenger_owner"
-        case challenger_lon = "challenger_lon"
-        case challenger_location = "challenger_location"
-        case challenger_lat = "challenger_lat"
-        case challenger = "challenger"
+        case type
+        case time
+        case secret
+        case path
+        case onion_key_hash
+        case height
+        case hash
+        case fee
+        case challenger_owner
+        case challenger_lon
+        case challenger_location
+        case challenger_lat
+        case challenger
     }
 
     public init(from decoder: Decoder) throws {
@@ -73,24 +73,24 @@ public struct HotspotChallengesDataResponse : Codable {
 }
 
 public struct HotspotChallengesPathResponse: Codable {
-    public let witnesses : [HotspotChallengesWitnessesResponse]?
-    public let receipt : HotspotChallengesReceiptResponse?
-    public let geocode : HotspotChallengesGeocodeResponse?
-    public let challengee_owner : String?
-    public let challengee_lon : Double?
-    public let challengee_location : String?
-    public let challengee_lat : Double?
-    public let challengee : String?
+    public let witnesses: [HotspotChallengesWitnessesResponse]?
+    public let receipt: HotspotChallengesReceiptResponse?
+    public let geocode: HotspotChallengesGeocodeResponse?
+    public let challengee_owner: String?
+    public let challengee_lon: Double?
+    public let challengee_location: String?
+    public let challengee_lat: Double?
+    public let challengee: String?
 
     enum CodingKeys: String, CodingKey {
-        case witnesses = "witnesses"
-        case receipt = "receipt"
-        case geocode = "geocode"
-        case challengee_owner = "challengee_owner"
-        case challengee_lon = "challengee_lon"
-        case challengee_location = "challengee_location"
-        case challengee_lat = "challengee_lat"
-        case challengee = "challengee"
+        case witnesses
+        case receipt
+        case geocode
+        case challengee_owner
+        case challengee_lon
+        case challengee_location
+        case challengee_lat
+        case challengee
     }
 
     public init(from decoder: Decoder) throws {
@@ -106,19 +106,19 @@ public struct HotspotChallengesPathResponse: Codable {
     }
 }
 
-public struct HotspotChallengesReceiptResponse : Codable {
-    public let timestamp : Int?
-    public let signal : Int?
-    public let origin : String?
-    public let gateway : String?
-    public let data : String?
+public struct HotspotChallengesReceiptResponse: Codable {
+    public let timestamp: Int?
+    public let signal: Int?
+    public let origin: String?
+    public let gateway: String?
+    public let data: String?
 
     enum CodingKeys: String, CodingKey {
-        case timestamp = "timestamp"
-        case signal = "signal"
-        case origin = "origin"
-        case gateway = "gateway"
-        case data = "data"
+        case timestamp
+        case signal
+        case origin
+        case gateway
+        case data
     }
 
     public init(from decoder: Decoder) throws {
@@ -131,25 +131,25 @@ public struct HotspotChallengesReceiptResponse : Codable {
     }
 }
 
-public struct HotspotChallengesGeocodeResponse : Codable {
-    public let short_street : String?
-    public let short_state : String?
-    public let short_country : String?
-    public let short_city : String?
-    public let long_street : String?
-    public let long_state : String?
-    public let long_country : String?
-    public let long_city : String?
+public struct HotspotChallengesGeocodeResponse: Codable {
+    public let short_street: String?
+    public let short_state: String?
+    public let short_country: String?
+    public let short_city: String?
+    public let long_street: String?
+    public let long_state: String?
+    public let long_country: String?
+    public let long_city: String?
 
     enum CodingKeys: String, CodingKey {
-        case short_street = "short_street"
-        case short_state = "short_state"
-        case short_country = "short_country"
-        case short_city = "short_city"
-        case long_street = "long_street"
-        case long_state = "long_state"
-        case long_country = "long_country"
-        case long_city = "long_city"
+        case short_street
+        case short_state
+        case short_country
+        case short_city
+        case long_street
+        case long_state
+        case long_country
+        case long_city
     }
 
     public init(from decoder: Decoder) throws {
@@ -165,21 +165,21 @@ public struct HotspotChallengesGeocodeResponse : Codable {
     }
 }
 
-public struct HotspotChallengesWitnessesResponse : Codable {
-    public let timestamp : Int?
-    public let signal : Int?
-    public let packet_hash : String?
-    public let owner : String?
-    public let location : String?
-    public let gateway : String?
+public struct HotspotChallengesWitnessesResponse: Codable {
+    public let timestamp: Int?
+    public let signal: Int?
+    public let packet_hash: String?
+    public let owner: String?
+    public let location: String?
+    public let gateway: String?
 
     enum CodingKeys: String, CodingKey {
-        case timestamp = "timestamp"
-        case signal = "signal"
-        case packet_hash = "packet_hash"
-        case owner = "owner"
-        case location = "location"
-        case gateway = "gateway"
+        case timestamp
+        case signal
+        case packet_hash
+        case owner
+        case location
+        case gateway
     }
 
     public init(from decoder: Decoder) throws {

@@ -1,6 +1,6 @@
 //
 //  ChainVariablesManager.swift
-//  
+//
 //
 //  Created by Burak Colak on 18.10.2022.
 //
@@ -29,11 +29,11 @@ public class HeliumChainVariablesManager: BaseManager {
             endpoint.queryItems = queryItems
         }
 
-        self.request(to: endpoint) { (r: BaseResult<BlocksHeightResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<BlocksHeightResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }
@@ -42,11 +42,11 @@ public class HeliumChainVariablesManager: BaseManager {
     public func getTheValueOfAchainVariable(name: String, onSuccess: BlockchainCallbacks.GetTheValueOfAchainVariable, onError: GenericCallbacks.ErrorCallback) {
         let endpoint = ChainVariablesRoutes.getTheValueOfAChainVariable.endpoint(name)
 
-        self.request(to: endpoint) { (r: BaseResult<GetTheValueOfAchainVariableResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<GetTheValueOfAchainVariableResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }
@@ -59,11 +59,11 @@ public class HeliumChainVariablesManager: BaseManager {
             endpoint.queryItems = [URLQueryItem(name: "cursor", value: cursor)]
         }
 
-        self.request(to: endpoint) { (r: BaseResult<ListChainVariableActivityResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<ListChainVariableActivityResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }

@@ -1,15 +1,15 @@
 //
 //  HotspotElectionsResponse.swift
-//  
+//
 //
 //  Created by Burak Colak on 20.10.2022.
 //
 
-public struct HotspotElectionsResponse : Codable {
-    public let data : [HotspotElectionsDataResponse]?
+public struct HotspotElectionsResponse: Codable {
+    public let data: [HotspotElectionsDataResponse]?
 
     enum CodingKeys: String, CodingKey {
-        case data = "data"
+        case data
     }
 
     public init(from decoder: Decoder) throws {
@@ -18,23 +18,23 @@ public struct HotspotElectionsResponse : Codable {
     }
 }
 
-public struct HotspotElectionsDataResponse : Codable {
-    public let delay : Int?
-    public let hash : String?
-    public let height : Int?
-    public let members : [String]?
-    public let proof : String?
-    public let time : Int?
-    public let type : String?
+public struct HotspotElectionsDataResponse: Codable {
+    public let delay: Int?
+    public let hash: String?
+    public let height: Int?
+    public let members: [String]?
+    public let proof: String?
+    public let time: Int?
+    public let type: String?
 
     enum CodingKeys: String, CodingKey {
-        case delay = "delay"
-        case hash = "hash"
-        case height = "height"
-        case members = "members"
-        case proof = "proof"
-        case time = "time"
-        case type = "type"
+        case delay
+        case hash
+        case height
+        case members
+        case proof
+        case time
+        case type
     }
 
     public init(from decoder: Decoder) throws {

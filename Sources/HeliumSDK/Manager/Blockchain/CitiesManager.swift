@@ -1,6 +1,6 @@
 //
 //  CitiesManager.swift
-//  
+//
 //
 //  Created by Burak Colak on 19.10.2022.
 //
@@ -25,11 +25,11 @@ public class HeliumCitiesManager: BaseManager {
             endpoint.queryItems = queryItems
         }
 
-        self.request(to: endpoint) { (r: BaseResult<ListChallengeReceiptsResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<ListChallengeReceiptsResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }
@@ -38,11 +38,11 @@ public class HeliumCitiesManager: BaseManager {
     public func cityForCityID(city_id: String, onSuccess: BlockchainCallbacks.CityForCityID, onError: GenericCallbacks.ErrorCallback) {
         let endpoint = CitiesRoutes.cityForCityID.endpoint(city_id)
 
-        self.request(to: endpoint) { (r: BaseResult<CityForCityIDResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<CityForCityIDResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }
@@ -65,11 +65,11 @@ public class HeliumCitiesManager: BaseManager {
             endpoint.queryItems = queryItems
         }
 
-        self.request(to: endpoint) { (r: BaseResult<ListHotspotsForACityResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<ListHotspotsForACityResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }

@@ -1,6 +1,6 @@
 //
 //  BlocksManager.swift
-//  
+//
 //
 //  Created by Burak Colak on 18.10.2022.
 //
@@ -15,11 +15,11 @@ public class HeliumBlocksManager: BaseManager {
             endpoint.queryItems = [URLQueryItem(name: "max_time", value: max_time)]
         }
 
-        self.request(to: endpoint) { (r: BaseResult<BlocksHeightResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<BlocksHeightResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }
@@ -28,11 +28,11 @@ public class HeliumBlocksManager: BaseManager {
     public func blocksStats(onSuccess: BlockchainCallbacks.BlocksStats, onError: GenericCallbacks.ErrorCallback) {
         let endpoint = BlocksRoutes.blocksStats.endpoint()
 
-        self.request(to: endpoint) { (r: BaseResult<BlocksStatsResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<BlocksStatsResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }
@@ -45,11 +45,11 @@ public class HeliumBlocksManager: BaseManager {
             endpoint.queryItems = [URLQueryItem(name: "cursor", value: cursor)]
         }
 
-        self.request(to: endpoint) { (r: BaseResult<BlocksDescriptionResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<BlocksDescriptionResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }
@@ -58,11 +58,11 @@ public class HeliumBlocksManager: BaseManager {
     public func blockAtHeight(height: String, onSuccess: BlockchainCallbacks.BlockAtHeight, onError: GenericCallbacks.ErrorCallback) {
         let endpoint = BlocksRoutes.blockAtHeight.endpoint(height)
 
-        self.request(to: endpoint) { (r: BaseResult<BlockAtHeightResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<BlockAtHeightResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }
@@ -75,11 +75,11 @@ public class HeliumBlocksManager: BaseManager {
             endpoint.queryItems = [URLQueryItem(name: "cursor", value: cursor)]
         }
 
-        self.request(to: endpoint) { (r: BaseResult<BlockAtHeightTransactionsResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<BlockAtHeightTransactionsResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }
@@ -88,11 +88,11 @@ public class HeliumBlocksManager: BaseManager {
     public func blockAtHash(hash: String, onSuccess: BlockchainCallbacks.BlockAtHash, onError: GenericCallbacks.ErrorCallback) {
         let endpoint = BlocksRoutes.blockAtHash.endpoint(hash)
 
-        self.request(to: endpoint) { (r: BaseResult<BlockAtHashResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<BlockAtHashResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }
@@ -105,11 +105,11 @@ public class HeliumBlocksManager: BaseManager {
             endpoint.queryItems = [URLQueryItem(name: "cursor", value: cursor)]
         }
 
-        self.request(to: endpoint) { (r: BaseResult<BlockAtHashTransactionsResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<BlockAtHashTransactionsResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }

@@ -1,47 +1,47 @@
 //
 //  DevicesListResponse.swift
-//  
+//
 //
 //  Created by Burak Colak on 23.10.2022.
 //
 
-public struct DevicesListResponse : Codable {
-    public let active : Bool?
-    public let adr_allowed : String?
-    public let app_eui : String?
-    public let app_key : String?
-    public let dev_eui : String?
-    public let cf_list_enabled : String?
-    public let config_profile_id : String?
-    public let dc_usage : Int?
-    public let id : String?
-    public let in_xor_filter : Bool?
-    public let labels : [String]?
-    public let last_connected : String?
-    public let name : String?
-    public let organization_id : String?
-    public let oui : Int?
-    public let rx_delay : Int?
-    public let total_packets : Int?
+public struct DevicesListResponse: Codable {
+    public let active: Bool?
+    public let adr_allowed: String?
+    public let app_eui: String?
+    public let app_key: String?
+    public let dev_eui: String?
+    public let cf_list_enabled: String?
+    public let config_profile_id: String?
+    public let dc_usage: Int?
+    public let id: String?
+    public let in_xor_filter: Bool?
+    public let labels: [String]?
+    public let last_connected: String?
+    public let name: String?
+    public let organization_id: String?
+    public let oui: Int?
+    public let rx_delay: Int?
+    public let total_packets: Int?
 
     enum CodingKeys: String, CodingKey {
-        case active = "active"
-        case adr_allowed = "adr_allowed"
-        case app_eui = "app_eui"
-        case app_key = "app_key"
-        case dev_eui = "dev_eui"
-        case cf_list_enabled = "cf_list_enabled"
-        case config_profile_id = "config_profile_id"
-        case dc_usage = "dc_usage"
-        case id = "id"
-        case in_xor_filter = "in_xor_filter"
-        case labels = "labels"
-        case last_connected = "last_connected"
-        case name = "name"
-        case organization_id = "organization_id"
-        case oui = "oui"
-        case rx_delay = "rx_delay"
-        case total_packets = "total_packets"
+        case active
+        case adr_allowed
+        case app_eui
+        case app_key
+        case dev_eui
+        case cf_list_enabled
+        case config_profile_id
+        case dc_usage
+        case id
+        case in_xor_filter
+        case labels
+        case last_connected
+        case name
+        case organization_id
+        case oui
+        case rx_delay
+        case total_packets
     }
 
     public init(from decoder: Decoder) throws {

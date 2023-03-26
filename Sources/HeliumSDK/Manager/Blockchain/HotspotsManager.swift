@@ -1,6 +1,6 @@
 //
 //  HotspotsManager.swift
-//  
+//
 //
 //  Created by Burak Colak on 19.10.2022.
 //
@@ -25,11 +25,11 @@ class HeliumHotspotsManager: BaseManager {
             endpoint.queryItems = queryItems
         }
 
-        self.request(to: endpoint) { (r: BaseResult<ListHotspotsResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<ListHotspotsResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }
@@ -38,11 +38,11 @@ class HeliumHotspotsManager: BaseManager {
     public func hotspotForAddress(address: String? = nil, onSuccess: BlockchainCallbacks.HotspotForAddress, onError: GenericCallbacks.ErrorCallback) {
         let endpoint = ElectionsRoutes.listElections.endpoint(address)
 
-        self.request(to: endpoint) { (r: BaseResult<HotspotForAddressResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<HotspotForAddressResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }
@@ -51,11 +51,11 @@ class HeliumHotspotsManager: BaseManager {
     public func hotspotsForName(name: String?, onSuccess: BlockchainCallbacks.HotspotsForName, onError: GenericCallbacks.ErrorCallback) {
         let endpoint = ElectionsRoutes.listElections.endpoint(name)
 
-        self.request(to: endpoint) { (r: BaseResult<HotspotsForNameResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<HotspotsForNameResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }
@@ -66,11 +66,11 @@ class HeliumHotspotsManager: BaseManager {
 
         endpoint.queryItems = [URLQueryItem(name: "search", value: search)]
 
-        self.request(to: endpoint) { (r: BaseResult<HotspotNameSearchResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<HotspotNameSearchResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }
@@ -82,7 +82,7 @@ class HeliumHotspotsManager: BaseManager {
         var queryItems = [
             URLQueryItem(name: "lat", value: String(format: "%f", lat)),
             URLQueryItem(name: "lon", value: String(format: "%f", lon)),
-            URLQueryItem(name: "distance", value: String(format: "%d", distance))
+            URLQueryItem(name: "distance", value: String(format: "%d", distance)),
         ]
 
         if let cursor = cursor {
@@ -91,11 +91,11 @@ class HeliumHotspotsManager: BaseManager {
 
         endpoint.queryItems = queryItems
 
-        self.request(to: endpoint) { (r: BaseResult<HotspotLocationDistanceSearchResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<HotspotLocationDistanceSearchResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }
@@ -108,7 +108,7 @@ class HeliumHotspotsManager: BaseManager {
             URLQueryItem(name: "swlat", value: String(format: "%f", swlat)),
             URLQueryItem(name: "swlon", value: String(format: "%f", swlon)),
             URLQueryItem(name: "nelat", value: String(format: "%f", nelat)),
-            URLQueryItem(name: "nelon", value: String(format: "%f", nelon))
+            URLQueryItem(name: "nelon", value: String(format: "%f", nelon)),
         ]
 
         if let cursor = cursor {
@@ -117,11 +117,11 @@ class HeliumHotspotsManager: BaseManager {
 
         endpoint.queryItems = queryItems
 
-        self.request(to: endpoint) { (r: BaseResult<HotspotLocationBoxSearchResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<HotspotLocationBoxSearchResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }
@@ -130,11 +130,11 @@ class HeliumHotspotsManager: BaseManager {
     public func hotspotsForH3Index(h3_index: String, onSuccess: BlockchainCallbacks.HotspotsForH3Index, onError: GenericCallbacks.ErrorCallback) {
         let endpoint = HotspotsRoutes.hotspotsForH3Index.endpoint(h3_index)
 
-        self.request(to: endpoint) { (r: BaseResult<HotspotsForH3IndexResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<HotspotsForH3IndexResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }
@@ -159,18 +159,18 @@ class HeliumHotspotsManager: BaseManager {
         }
 
         if let limit = limit {
-            queryItems.append(URLQueryItem(name: "limit", value: String(format: "%d",limit)))
+            queryItems.append(URLQueryItem(name: "limit", value: String(format: "%d", limit)))
         }
 
         if queryItems.count > 0 {
             endpoint.queryItems = queryItems
         }
 
-        self.request(to: endpoint) { (r: BaseResult<HotspotActivityResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<HotspotActivityResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }
@@ -194,18 +194,18 @@ class HeliumHotspotsManager: BaseManager {
         }
 
         if let limit = limit {
-            queryItems.append(URLQueryItem(name: "limit", value: String(format: "%d",limit)))
+            queryItems.append(URLQueryItem(name: "limit", value: String(format: "%d", limit)))
         }
 
         if queryItems.count > 0 {
             endpoint.queryItems = queryItems
         }
 
-        self.request(to: endpoint) { (r: BaseResult<HotspotRolesResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<HotspotRolesResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }
@@ -218,11 +218,11 @@ class HeliumHotspotsManager: BaseManager {
             endpoint.queryItems = [URLQueryItem(name: "filter_types", value: filter_types)]
         }
 
-        self.request(to: endpoint) { (r: BaseResult<HotspotRolesCountsResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<HotspotRolesCountsResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }
@@ -246,18 +246,18 @@ class HeliumHotspotsManager: BaseManager {
         }
 
         if let limit = limit {
-            queryItems.append(URLQueryItem(name: "limit", value: String(format: "%d",limit)))
+            queryItems.append(URLQueryItem(name: "limit", value: String(format: "%d", limit)))
         }
 
         if queryItems.count > 0 {
             endpoint.queryItems = queryItems
         }
 
-        self.request(to: endpoint) { (r: BaseResult<HotspotElectionsResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<HotspotElectionsResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }
@@ -266,11 +266,11 @@ class HeliumHotspotsManager: BaseManager {
     public func currentlyElectedHotspots(onSuccess: BlockchainCallbacks.CurrentlyElectedHotspots, onError: GenericCallbacks.ErrorCallback) {
         let endpoint = HotspotsRoutes.currentlyElectedHotspots.endpoint()
 
-        self.request(to: endpoint) { (r: BaseResult<CurrentlyElectedHotspotsResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<CurrentlyElectedHotspotsResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }
@@ -294,18 +294,18 @@ class HeliumHotspotsManager: BaseManager {
         }
 
         if let limit = limit {
-            queryItems.append(URLQueryItem(name: "limit", value: String(format: "%d",limit)))
+            queryItems.append(URLQueryItem(name: "limit", value: String(format: "%d", limit)))
         }
 
         if queryItems.count > 0 {
             endpoint.queryItems = queryItems
         }
 
-        self.request(to: endpoint) { (r: BaseResult<HotspotChallengesResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<HotspotChallengesResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }
@@ -332,11 +332,11 @@ class HeliumHotspotsManager: BaseManager {
             endpoint.queryItems = queryItems
         }
 
-        self.request(to: endpoint) { (r: BaseResult<RewardsForAHotspotResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<RewardsForAHotspotResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }
@@ -367,11 +367,11 @@ class HeliumHotspotsManager: BaseManager {
             endpoint.queryItems = queryItems
         }
 
-        self.request(to: endpoint) { (r: BaseResult<RewardsInARewardsBlockForAHotspotResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<RewardsInARewardsBlockForAHotspotResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }
@@ -398,11 +398,11 @@ class HeliumHotspotsManager: BaseManager {
             endpoint.queryItems = queryItems
         }
 
-        self.request(to: endpoint) { (r: BaseResult<RewardTotalForAHotspotResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<RewardTotalForAHotspotResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }
@@ -411,11 +411,11 @@ class HeliumHotspotsManager: BaseManager {
     public func witnessesForAHotspot(address: String, onSuccess: BlockchainCallbacks.WitnessesForAHotspot, onError: GenericCallbacks.ErrorCallback) {
         let endpoint = HotspotsRoutes.witnessesForAHotspot.endpoint(address)
 
-        self.request(to: endpoint) { (r: BaseResult<WitnessesForAHotspotResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<WitnessesForAHotspotResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }
@@ -424,11 +424,11 @@ class HeliumHotspotsManager: BaseManager {
     public func witnessedForAHotspot(address: String, onSuccess: BlockchainCallbacks.WitnessedForAHotspot, onError: GenericCallbacks.ErrorCallback) {
         let endpoint = HotspotsRoutes.witnessedForAHotspot.endpoint(address)
 
-        self.request(to: endpoint) { (r: BaseResult<WitnessedForAHotspotResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<WitnessedForAHotspotResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }

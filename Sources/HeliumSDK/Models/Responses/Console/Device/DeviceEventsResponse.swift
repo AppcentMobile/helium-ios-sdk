@@ -1,33 +1,33 @@
 //
 //  DeviceEventsResponse.swift
-//  
+//
 //
 //  Created by Burak Colak on 23.10.2022.
 //
 
 public struct DeviceEventsResponse: Codable {
-    public let category : String?
-    public let data : DeviceEventsDataResponse?
-    public let description : String?
-    public let device_id : String?
-    public let frame_down : String?
-    public let frame_up : Int?
-    public let organization_id : String?
-    public let reported_at : String?
-    public let router_uuid : String?
-    public let sub_category : String?
+    public let category: String?
+    public let data: DeviceEventsDataResponse?
+    public let description: String?
+    public let device_id: String?
+    public let frame_down: String?
+    public let frame_up: Int?
+    public let organization_id: String?
+    public let reported_at: String?
+    public let router_uuid: String?
+    public let sub_category: String?
 
     enum CodingKeys: String, CodingKey {
-        case category = "category"
-        case data = "data"
-        case description = "description"
-        case device_id = "device_id"
-        case frame_down = "frame_down"
-        case frame_up = "frame_up"
-        case organization_id = "organization_id"
-        case reported_at = "reported_at"
-        case router_uuid = "router_uuid"
-        case sub_category = "sub_category"
+        case category
+        case data
+        case description
+        case device_id
+        case frame_down
+        case frame_up
+        case organization_id
+        case reported_at
+        case router_uuid
+        case sub_category
     }
 
     public init(from decoder: Decoder) throws {
@@ -45,27 +45,27 @@ public struct DeviceEventsResponse: Codable {
     }
 }
 
-public struct DeviceEventsDataResponse : Codable {
-    public let dc : DeviceEventsDcResponse?
-    public let devaddr : String?
-    public let fcnt : Int?
-    public let hold_time : Int?
-    public let hotspot : DeviceEventsHotspotResponse?
-    public let mac : [String]?
-    public let payload : String?
-    public let payload_size : Int?
-    public let port : Int?
+public struct DeviceEventsDataResponse: Codable {
+    public let dc: DeviceEventsDcResponse?
+    public let devaddr: String?
+    public let fcnt: Int?
+    public let hold_time: Int?
+    public let hotspot: DeviceEventsHotspotResponse?
+    public let mac: [String]?
+    public let payload: String?
+    public let payload_size: Int?
+    public let port: Int?
 
     enum CodingKeys: String, CodingKey {
-        case dc = "dc"
-        case devaddr = "devaddr"
-        case fcnt = "fcnt"
-        case hold_time = "hold_time"
-        case hotspot = "hotspot"
-        case mac = "mac"
-        case payload = "payload"
-        case payload_size = "payload_size"
-        case port = "port"
+        case dc
+        case devaddr
+        case fcnt
+        case hold_time
+        case hotspot
+        case mac
+        case payload
+        case payload_size
+        case port
     }
 
     public init(from decoder: Decoder) throws {
@@ -82,15 +82,15 @@ public struct DeviceEventsDataResponse : Codable {
     }
 }
 
-public struct DeviceEventsDcResponse : Codable {
-    public let balance : Int?
-    public let nonce : Int?
-    public let used : Int?
+public struct DeviceEventsDcResponse: Codable {
+    public let balance: Int?
+    public let nonce: Int?
+    public let used: Int?
 
     enum CodingKeys: String, CodingKey {
-        case balance = "balance"
-        case nonce = "nonce"
-        case used = "used"
+        case balance
+        case nonce
+        case used
     }
 
     public init(from decoder: Decoder) throws {
@@ -101,27 +101,27 @@ public struct DeviceEventsDcResponse : Codable {
     }
 }
 
-public struct DeviceEventsHotspotResponse : Codable {
-    public let channel : Int?
-    public let frequency : Double?
-    public let id : String?
-    public let lat : Double?
-    public let long : Double?
-    public let name : String?
-    public let rssi : Double?
-    public let snr : Double?
-    public let spreading : String?
+public struct DeviceEventsHotspotResponse: Codable {
+    public let channel: Int?
+    public let frequency: Double?
+    public let id: String?
+    public let lat: Double?
+    public let long: Double?
+    public let name: String?
+    public let rssi: Double?
+    public let snr: Double?
+    public let spreading: String?
 
     enum CodingKeys: String, CodingKey {
-        case channel = "channel"
-        case frequency = "frequency"
-        case id = "id"
-        case lat = "lat"
-        case long = "long"
-        case name = "name"
-        case rssi = "rssi"
-        case snr = "snr"
-        case spreading = "spreading"
+        case channel
+        case frequency
+        case id
+        case lat
+        case long
+        case name
+        case rssi
+        case snr
+        case spreading
     }
 
     public init(from decoder: Decoder) throws {

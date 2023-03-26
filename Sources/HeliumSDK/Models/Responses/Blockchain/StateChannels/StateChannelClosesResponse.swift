@@ -1,17 +1,17 @@
 //
 //  StateChannelClosesResponse.swift
-//  
+//
 //
 //  Created by Burak Colak on 20.10.2022.
 //
 
-public struct StateChannelClosesResponse : Codable {
-    public let data : [StateChannelClosesDataResponse]?
-    public let cursor : String?
+public struct StateChannelClosesResponse: Codable {
+    public let data: [StateChannelClosesDataResponse]?
+    public let cursor: String?
 
     enum CodingKeys: String, CodingKey {
-        case data = "data"
-        case cursor = "cursor"
+        case data
+        case cursor
     }
 
     public init(from decoder: Decoder) throws {
@@ -21,23 +21,23 @@ public struct StateChannelClosesResponse : Codable {
     }
 }
 
-public struct StateChannelClosesDataResponse : Codable {
-    public let type : String?
-    public let time : Int?
-    public let state_channel : StateChannelClosesStateChannelResponse?
-    public let height : Int?
-    public let hash : String?
-    public let conflicts_with : String?
-    public let closer : String?
+public struct StateChannelClosesDataResponse: Codable {
+    public let type: String?
+    public let time: Int?
+    public let state_channel: StateChannelClosesStateChannelResponse?
+    public let height: Int?
+    public let hash: String?
+    public let conflicts_with: String?
+    public let closer: String?
 
     enum CodingKeys: String, CodingKey {
-        case type = "type"
-        case time = "time"
-        case state_channel = "state_channel"
-        case height = "height"
-        case hash = "hash"
-        case conflicts_with = "conflicts_with"
-        case closer = "closer"
+        case type
+        case time
+        case state_channel
+        case height
+        case hash
+        case conflicts_with
+        case closer
     }
 
     public init(from decoder: Decoder) throws {
@@ -52,23 +52,23 @@ public struct StateChannelClosesDataResponse : Codable {
     }
 }
 
-public struct StateChannelClosesStateChannelResponse : Codable {
-    public let summaries : [StateChannelClosesSummariesResponse]?
-    public let state : String?
-    public let root_hash : String?
-    public let owner : String?
-    public let nonce : Int?
-    public let id : String?
-    public let expire_at_block : Int?
+public struct StateChannelClosesStateChannelResponse: Codable {
+    public let summaries: [StateChannelClosesSummariesResponse]?
+    public let state: String?
+    public let root_hash: String?
+    public let owner: String?
+    public let nonce: Int?
+    public let id: String?
+    public let expire_at_block: Int?
 
     enum CodingKeys: String, CodingKey {
-        case summaries = "summaries"
-        case state = "state"
-        case root_hash = "root_hash"
-        case owner = "owner"
-        case nonce = "nonce"
-        case id = "id"
-        case expire_at_block = "expire_at_block"
+        case summaries
+        case state
+        case root_hash
+        case owner
+        case nonce
+        case id
+        case expire_at_block
     }
 
     public init(from decoder: Decoder) throws {
@@ -83,19 +83,19 @@ public struct StateChannelClosesStateChannelResponse : Codable {
     }
 }
 
-public struct StateChannelClosesSummariesResponse : Codable {
-    public let owner : String?
-    public let num_packets : Int?
-    public let num_dcs : Int?
-    public let location : String?
-    public let client : String?
+public struct StateChannelClosesSummariesResponse: Codable {
+    public let owner: String?
+    public let num_packets: Int?
+    public let num_dcs: Int?
+    public let location: String?
+    public let client: String?
 
     enum CodingKeys: String, CodingKey {
-        case owner = "owner"
-        case num_packets = "num_packets"
-        case num_dcs = "num_dcs"
-        case location = "location"
-        case client = "client"
+        case owner
+        case num_packets
+        case num_dcs
+        case location
+        case client
     }
 
     public init(from decoder: Decoder) throws {

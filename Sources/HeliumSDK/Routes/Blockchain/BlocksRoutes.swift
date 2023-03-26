@@ -1,11 +1,11 @@
 //
 //  BlocksRoutes.swift
-//  
+//
 //
 //  Created by Burak Colak on 13.10.2022.
 //
 
-struct BlocksRoutes {
+enum BlocksRoutes {
     static let blocksHeight = BaseRoute(method: .get, path: "v1/blocks/height")
     static let blocksStats = BaseRoute(method: .get, path: "v1/blocks/stats")
     static let blocksDescription = BaseRoute(method: .get, path: "v1/blocks")

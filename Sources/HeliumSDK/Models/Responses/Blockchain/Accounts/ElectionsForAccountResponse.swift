@@ -1,15 +1,15 @@
 //
 //  ElectionsForAccountResponse.swift
-//  
+//
 //
 //  Created by Burak Colak on 17.10.2022.
 //
 
 public struct ElectionsForAccountResponse: Codable {
-    public let data : [ElectionsForAccountDataResponse]?
+    public let data: [ElectionsForAccountDataResponse]?
 
     enum CodingKeys: String, CodingKey {
-        case data = "data"
+        case data
     }
 
     public init(from decoder: Decoder) throws {
@@ -19,22 +19,22 @@ public struct ElectionsForAccountResponse: Codable {
 }
 
 public struct ElectionsForAccountDataResponse: Codable {
-    public let type : String?
-    public let time : Int?
-    public let proof : String?
-    public let members : [String]?
-    public let height : Int?
-    public let hash : String?
-    public let delay : Int?
+    public let type: String?
+    public let time: Int?
+    public let proof: String?
+    public let members: [String]?
+    public let height: Int?
+    public let hash: String?
+    public let delay: Int?
 
     enum CodingKeys: String, CodingKey {
-        case type = "type"
-        case time = "time"
-        case proof = "proof"
-        case members = "members"
-        case height = "height"
-        case hash = "hash"
-        case delay = "delay"
+        case type
+        case time
+        case proof
+        case members
+        case height
+        case hash
+        case delay
     }
 
     public init(from decoder: Decoder) throws {

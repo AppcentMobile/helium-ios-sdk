@@ -1,15 +1,15 @@
 //
 //  ListHotspotsForACityResponse.swift
-//  
+//
 //
 //  Created by Burak Colak on 19.10.2022.
 //
 
-public struct ListHotspotsForACityResponse : Codable {
-    public let data : [ListHotspotsForACityDataResponse]?
+public struct ListHotspotsForACityResponse: Codable {
+    public let data: [ListHotspotsForACityDataResponse]?
 
     enum CodingKeys: String, CodingKey {
-        case data = "data"
+        case data
     }
 
     public init(from decoder: Decoder) throws {
@@ -19,34 +19,34 @@ public struct ListHotspotsForACityResponse : Codable {
 }
 
 public struct ListHotspotsForACityDataResponse: Codable {
-    public let address : String?
-    public let block : Int?
-    public let block_added : Int?
-    public let geocode : ListHotspotsForACityGeocodeResponse?
-    public let lat : Double?
-    public let lng : Double?
-    public let location : String?
-    public let name : String?
-    public let nonce : Int?
-    public let owner : String?
-    public let score : Double?
-    public let score_update_height : Int?
-    public let status : ListHotspotsForACityStatusResponse?
+    public let address: String?
+    public let block: Int?
+    public let block_added: Int?
+    public let geocode: ListHotspotsForACityGeocodeResponse?
+    public let lat: Double?
+    public let lng: Double?
+    public let location: String?
+    public let name: String?
+    public let nonce: Int?
+    public let owner: String?
+    public let score: Double?
+    public let score_update_height: Int?
+    public let status: ListHotspotsForACityStatusResponse?
 
     enum CodingKeys: String, CodingKey {
-        case address = "address"
-        case block = "block"
-        case block_added = "block_added"
-        case geocode = "geocode"
-        case lat = "lat"
-        case lng = "lng"
-        case location = "location"
-        case name = "name"
-        case nonce = "nonce"
-        case owner = "owner"
-        case score = "score"
-        case score_update_height = "score_update_height"
-        case status = "status"
+        case address
+        case block
+        case block_added
+        case geocode
+        case lat
+        case lng
+        case location
+        case name
+        case nonce
+        case owner
+        case score
+        case score_update_height
+        case status
     }
 
     public init(from decoder: Decoder) throws {
@@ -68,26 +68,26 @@ public struct ListHotspotsForACityDataResponse: Codable {
 }
 
 public struct ListHotspotsForACityGeocodeResponse: Codable {
-    public let long_city : String?
-    public let long_country : String?
-    public let long_state : String?
-    public let long_street : String?
-    public let short_city : String?
-    public let short_country : String?
-    public let short_state : String?
-    public let short_street : String?
-    public let city_id : String?
+    public let long_city: String?
+    public let long_country: String?
+    public let long_state: String?
+    public let long_street: String?
+    public let short_city: String?
+    public let short_country: String?
+    public let short_state: String?
+    public let short_street: String?
+    public let city_id: String?
 
     enum CodingKeys: String, CodingKey {
-        case long_city = "long_city"
-        case long_country = "long_country"
-        case long_state = "long_state"
-        case long_street = "long_street"
-        case short_city = "short_city"
-        case short_country = "short_country"
-        case short_state = "short_state"
-        case short_street = "short_street"
-        case city_id = "city_id"
+        case long_city
+        case long_country
+        case long_state
+        case long_street
+        case short_city
+        case short_country
+        case short_state
+        case short_street
+        case city_id
     }
 
     public init(from decoder: Decoder) throws {
@@ -104,15 +104,15 @@ public struct ListHotspotsForACityGeocodeResponse: Codable {
     }
 }
 
-public struct ListHotspotsForACityStatusResponse : Codable {
-    public let gps : String?
-    public let height : Int?
-    public let online : String?
+public struct ListHotspotsForACityStatusResponse: Codable {
+    public let gps: String?
+    public let height: Int?
+    public let online: String?
 
     enum CodingKeys: String, CodingKey {
-        case gps = "gps"
-        case height = "height"
-        case online = "online"
+        case gps
+        case height
+        case online
     }
 
     public init(from decoder: Decoder) throws {

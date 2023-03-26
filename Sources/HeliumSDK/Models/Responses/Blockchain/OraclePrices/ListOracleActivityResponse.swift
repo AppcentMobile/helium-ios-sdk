@@ -1,17 +1,17 @@
 //
 //  ListOracleActivityResponse.swift
-//  
+//
 //
 //  Created by Burak Colak on 20.10.2022.
 //
 
-public struct ListOracleActivityResponse : Codable {
-    public let cursor : String?
-    public let data : [ListOracleActivityDataResponse]?
+public struct ListOracleActivityResponse: Codable {
+    public let cursor: String?
+    public let data: [ListOracleActivityDataResponse]?
 
     enum CodingKeys: String, CodingKey {
-        case cursor = "cursor"
-        case data = "data"
+        case cursor
+        case data
     }
 
     public init(from decoder: Decoder) throws {
@@ -21,25 +21,25 @@ public struct ListOracleActivityResponse : Codable {
     }
 }
 
-public struct ListOracleActivityDataResponse : Codable {
-    public let block_height : Int?
-    public let fee : Int?
-    public let hash : String?
-    public let height : Int?
-    public let price : Int?
-    public let public_key : String?
-    public let time : Int?
-    public let type : String?
+public struct ListOracleActivityDataResponse: Codable {
+    public let block_height: Int?
+    public let fee: Int?
+    public let hash: String?
+    public let height: Int?
+    public let price: Int?
+    public let public_key: String?
+    public let time: Int?
+    public let type: String?
 
     enum CodingKeys: String, CodingKey {
-        case block_height = "block_height"
-        case fee = "fee"
-        case hash = "hash"
-        case height = "height"
-        case price = "price"
-        case public_key = "public_key"
-        case time = "time"
-        case type = "type"
+        case block_height
+        case fee
+        case hash
+        case height
+        case price
+        case public_key
+        case time
+        case type
     }
 
     public init(from decoder: Decoder) throws {

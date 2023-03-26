@@ -1,5 +1,5 @@
-import XCTest
 @testable import HeliumSDK
+import XCTest
 
 final class HeliumSDKTests: XCTestCase {
     func testExample() throws {

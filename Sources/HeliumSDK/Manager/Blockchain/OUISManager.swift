@@ -1,6 +1,6 @@
 //
 //  OUISManager.swift
-//  
+//
 //
 //  Created by Burak Colak on 20.10.2022.
 //
@@ -21,11 +21,11 @@ class HeliumOUISManager: BaseManager {
             endpoint.queryItems = queryItems
         }
 
-        self.request(to: endpoint) { (r: BaseResult<ListOUIsResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<ListOUIsResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }
@@ -34,24 +34,24 @@ class HeliumOUISManager: BaseManager {
     public func getAnOUI(oui: String, onSuccess: BlockchainCallbacks.GetAnOUI, onError: GenericCallbacks.ErrorCallback) {
         let endpoint = OUISRoutes.getAnOUI.endpoint(oui)
 
-        self.request(to: endpoint) { (r: BaseResult<GetAnOUIResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<GetAnOUIResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }
     }
 
-    public func getLastAssignedOUI(min_time: String, max_time: String, onSuccess: BlockchainCallbacks.GetLastAssignedOUI, onError: GenericCallbacks.ErrorCallback) {
+    public func getLastAssignedOUI(min_time _: String, max_time _: String, onSuccess: BlockchainCallbacks.GetLastAssignedOUI, onError: GenericCallbacks.ErrorCallback) {
         let endpoint = OUISRoutes.getLastAssignedOUI.endpoint()
 
-        self.request(to: endpoint) { (r: BaseResult<GetLastAssignedOUIResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<GetLastAssignedOUIResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }
@@ -60,11 +60,11 @@ class HeliumOUISManager: BaseManager {
     public func getOUIStats(block: String, onSuccess: BlockchainCallbacks.OraclePriceAtASpecificBlock, onError: GenericCallbacks.ErrorCallback) {
         let endpoint = OUISRoutes.getOUIStats.endpoint(block)
 
-        self.request(to: endpoint) { (r: BaseResult<OraclePriceAtASpecificBlockResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<OraclePriceAtASpecificBlockResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }

@@ -1,15 +1,15 @@
 //
 //  WitnessesForAHotspotResponse.swift
-//  
+//
 //
 //  Created by Burak Colak on 20.10.2022.
 //
 
-public struct WitnessesForAHotspotResponse : Codable {
-    public let data : [WitnessesForAHotspotDataResponse]?
+public struct WitnessesForAHotspotResponse: Codable {
+    public let data: [WitnessesForAHotspotDataResponse]?
 
     enum CodingKeys: String, CodingKey {
-        case data = "data"
+        case data
     }
 
     public init(from decoder: Decoder) throws {
@@ -18,47 +18,47 @@ public struct WitnessesForAHotspotResponse : Codable {
     }
 }
 
-public struct WitnessesForAHotspotDataResponse : Codable {
-    public let lng : Double?
-    public let lat : Double?
-    public let timestamp_added : String?
-    public let status : WitnessesForAHotspotStatusResponse?
-    public let reward_scale : Double?
-    public let owner : String?
-    public let nonce : Int?
-    public let name : String?
-    public let mode : String?
-    public let location_hex : String?
-    public let location : String?
-    public let last_poc_challenge : Int?
-    public let last_change_block : Int?
-    public let geocode : WitnessesForAHotspotGeocodeResponse?
-    public let gain : Int?
-    public let elevation : Int?
-    public let block_added : Int?
-    public let block : Int?
-    public let address : String?
+public struct WitnessesForAHotspotDataResponse: Codable {
+    public let lng: Double?
+    public let lat: Double?
+    public let timestamp_added: String?
+    public let status: WitnessesForAHotspotStatusResponse?
+    public let reward_scale: Double?
+    public let owner: String?
+    public let nonce: Int?
+    public let name: String?
+    public let mode: String?
+    public let location_hex: String?
+    public let location: String?
+    public let last_poc_challenge: Int?
+    public let last_change_block: Int?
+    public let geocode: WitnessesForAHotspotGeocodeResponse?
+    public let gain: Int?
+    public let elevation: Int?
+    public let block_added: Int?
+    public let block: Int?
+    public let address: String?
 
     enum CodingKeys: String, CodingKey {
-        case lng = "lng"
-        case lat = "lat"
-        case timestamp_added = "timestamp_added"
-        case status = "status"
-        case reward_scale = "reward_scale"
-        case owner = "owner"
-        case nonce = "nonce"
-        case name = "name"
-        case mode = "mode"
-        case location_hex = "location_hex"
-        case location = "location"
-        case last_poc_challenge = "last_poc_challenge"
-        case last_change_block = "last_change_block"
-        case geocode = "geocode"
-        case gain = "gain"
-        case elevation = "elevation"
-        case block_added = "block_added"
-        case block = "block"
-        case address = "address"
+        case lng
+        case lat
+        case timestamp_added
+        case status
+        case reward_scale
+        case owner
+        case nonce
+        case name
+        case mode
+        case location_hex
+        case location
+        case last_poc_challenge
+        case last_change_block
+        case geocode
+        case gain
+        case elevation
+        case block_added
+        case block
+        case address
     }
 
     public init(from decoder: Decoder) throws {
@@ -85,27 +85,27 @@ public struct WitnessesForAHotspotDataResponse : Codable {
     }
 }
 
-public struct WitnessesForAHotspotGeocodeResponse : Codable {
-    public let short_street : String?
-    public let short_state : String?
-    public let short_country : String?
-    public let short_city : String?
-    public let long_street : String?
-    public let long_state : String?
-    public let long_country : String?
-    public let long_city : String?
-    public let city_id : String?
+public struct WitnessesForAHotspotGeocodeResponse: Codable {
+    public let short_street: String?
+    public let short_state: String?
+    public let short_country: String?
+    public let short_city: String?
+    public let long_street: String?
+    public let long_state: String?
+    public let long_country: String?
+    public let long_city: String?
+    public let city_id: String?
 
     enum CodingKeys: String, CodingKey {
-        case short_street = "short_street"
-        case short_state = "short_state"
-        case short_country = "short_country"
-        case short_city = "short_city"
-        case long_street = "long_street"
-        case long_state = "long_state"
-        case long_country = "long_country"
-        case long_city = "long_city"
-        case city_id = "city_id"
+        case short_street
+        case short_state
+        case short_country
+        case short_city
+        case long_street
+        case long_state
+        case long_country
+        case long_city
+        case city_id
     }
 
     public init(from decoder: Decoder) throws {
@@ -122,15 +122,15 @@ public struct WitnessesForAHotspotGeocodeResponse : Codable {
     }
 }
 
-public struct WitnessesForAHotspotStatusResponse : Codable {
-    public let online : String?
-    public let listen_addrs : [String]?
-    public let height : Int?
+public struct WitnessesForAHotspotStatusResponse: Codable {
+    public let online: String?
+    public let listen_addrs: [String]?
+    public let height: Int?
 
     enum CodingKeys: String, CodingKey {
-        case online = "online"
-        case listen_addrs = "listen_addrs"
-        case height = "height"
+        case online
+        case listen_addrs
+        case height
     }
 
     public init(from decoder: Decoder) throws {

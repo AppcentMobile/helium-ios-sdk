@@ -1,17 +1,17 @@
 //
 //  DCBurnStatsResponse.swift
-//  
+//
 //
 //  Created by Burak Colak on 19.10.2022.
 //
 
 public struct DCBurnStatsResponse: Codable {
-    public let data : DCBurnStatsDataResponse?
-    public let meta : DCBurnStatsMetaResponse?
+    public let data: DCBurnStatsDataResponse?
+    public let meta: DCBurnStatsMetaResponse?
 
     enum CodingKeys: String, CodingKey {
-        case data = "data"
-        case meta = "meta"
+        case data
+        case meta
     }
 
     public init(from decoder: Decoder) throws {
@@ -22,14 +22,14 @@ public struct DCBurnStatsResponse: Codable {
 }
 
 public struct DCBurnStatsDataResponse: Codable {
-    public let last_day : DCBurnStatsFilterDateResponse?
-    public let last_month : DCBurnStatsFilterDateResponse?
-    public let last_week : DCBurnStatsFilterDateResponse?
+    public let last_day: DCBurnStatsFilterDateResponse?
+    public let last_month: DCBurnStatsFilterDateResponse?
+    public let last_week: DCBurnStatsFilterDateResponse?
 
     enum CodingKeys: String, CodingKey {
-        case last_day = "last_day"
-        case last_month = "last_month"
-        case last_week = "last_week"
+        case last_day
+        case last_month
+        case last_week
     }
 
     public init(from decoder: Decoder) throws {
@@ -40,19 +40,19 @@ public struct DCBurnStatsDataResponse: Codable {
     }
 }
 
-public struct DCBurnStatsFilterDateResponse : Codable {
-    public let add_gateway : Int?
-    public let assert_location : Int?
-    public let fee : Int?
-    public let state_channel : Int?
-    public let total : Int?
+public struct DCBurnStatsFilterDateResponse: Codable {
+    public let add_gateway: Int?
+    public let assert_location: Int?
+    public let fee: Int?
+    public let state_channel: Int?
+    public let total: Int?
 
     enum CodingKeys: String, CodingKey {
-        case add_gateway = "add_gateway"
-        case assert_location = "assert_location"
-        case fee = "fee"
-        case state_channel = "state_channel"
-        case total = "total"
+        case add_gateway
+        case assert_location
+        case fee
+        case state_channel
+        case total
     }
 
     public init(from decoder: Decoder) throws {
@@ -65,11 +65,11 @@ public struct DCBurnStatsFilterDateResponse : Codable {
     }
 }
 
-public struct DCBurnStatsMetaResponse : Codable {
-    public let timestamp : String?
+public struct DCBurnStatsMetaResponse: Codable {
+    public let timestamp: String?
 
     enum CodingKeys: String, CodingKey {
-        case timestamp = "timestamp"
+        case timestamp
     }
 
     public init(from decoder: Decoder) throws {

@@ -1,15 +1,15 @@
 //
 //  RolesForAccountResponse.swift
-//  
+//
 //
 //  Created by Burak Colak on 17.10.2022.
 //
 
-public struct RolesForAccountResponse : Codable {
-    public let data : [RolesForAccountDataResponse]?
+public struct RolesForAccountResponse: Codable {
+    public let data: [RolesForAccountDataResponse]?
 
     enum CodingKeys: String, CodingKey {
-        case data = "data"
+        case data
     }
 
     public init(from decoder: Decoder) throws {
@@ -19,18 +19,18 @@ public struct RolesForAccountResponse : Codable {
 }
 
 public struct RolesForAccountDataResponse: Codable {
-    public let type : String?
-    public let time : Int?
-    public let role : String?
-    public let height : Int?
-    public let hash : String?
+    public let type: String?
+    public let time: Int?
+    public let role: String?
+    public let height: Int?
+    public let hash: String?
 
     enum CodingKeys: String, CodingKey {
-        case type = "type"
-        case time = "time"
-        case role = "role"
-        case height = "height"
-        case hash = "hash"
+        case type
+        case time
+        case role
+        case height
+        case hash
     }
 
     public init(from decoder: Decoder) throws {

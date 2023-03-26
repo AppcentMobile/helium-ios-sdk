@@ -1,15 +1,15 @@
 //
 //  GetTheValueOfAchainVariableResponse.swift
-//  
+//
 //
 //  Created by Burak Colak on 18.10.2022.
 //
 
-public struct GetTheValueOfAchainVariableResponse : Codable {
-    public let data : Int?
+public struct GetTheValueOfAchainVariableResponse: Codable {
+    public let data: Int?
 
     enum CodingKeys: String, CodingKey {
-        case data = "data"
+        case data
     }
 
     public init(from decoder: Decoder) throws {

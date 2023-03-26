@@ -1,15 +1,15 @@
 //
 //  TransactionForHashResponse.swift
-//  
+//
 //
 //  Created by Burak Colak on 20.10.2022.
 //
 
-public struct TransactionForHashResponse : Codable {
-    public let data : TransactionForHashDataResponse?
+public struct TransactionForHashResponse: Codable {
+    public let data: TransactionForHashDataResponse?
 
     enum CodingKeys: String, CodingKey {
-        case data = "data"
+        case data
     }
 
     public init(from decoder: Decoder) throws {
@@ -18,25 +18,25 @@ public struct TransactionForHashResponse : Codable {
     }
 }
 
-public struct TransactionForHashDataResponse : Codable {
-    public let type : String?
-    public let time : Int?
-    public let payments : [TransactionForHashPaymentsResponse]?
-    public let payer : String?
-    public let nonce : Int?
-    public let height : Int?
-    public let hash : String?
-    public let fee : Int?
+public struct TransactionForHashDataResponse: Codable {
+    public let type: String?
+    public let time: Int?
+    public let payments: [TransactionForHashPaymentsResponse]?
+    public let payer: String?
+    public let nonce: Int?
+    public let height: Int?
+    public let hash: String?
+    public let fee: Int?
 
     enum CodingKeys: String, CodingKey {
-        case type = "type"
-        case time = "time"
-        case payments = "payments"
-        case payer = "payer"
-        case nonce = "nonce"
-        case height = "height"
-        case hash = "hash"
-        case fee = "fee"
+        case type
+        case time
+        case payments
+        case payer
+        case nonce
+        case height
+        case hash
+        case fee
     }
 
     public init(from decoder: Decoder) throws {
@@ -52,13 +52,13 @@ public struct TransactionForHashDataResponse : Codable {
     }
 }
 
-public struct TransactionForHashPaymentsResponse : Codable {
-    public let payee : String?
-    public let amount : Int?
+public struct TransactionForHashPaymentsResponse: Codable {
+    public let payee: String?
+    public let amount: Int?
 
     enum CodingKeys: String, CodingKey {
-        case payee = "payee"
-        case amount = "amount"
+        case payee
+        case amount
     }
 
     public init(from decoder: Decoder) throws {

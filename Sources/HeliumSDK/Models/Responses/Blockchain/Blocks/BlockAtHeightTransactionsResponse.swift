@@ -1,15 +1,15 @@
 //
 //  BlockAtHashTransactionsResponse.swift
-//  
+//
 //
 //  Created by Burak Colak on 18.10.2022.
 //
 
-public struct BlockAtHeightTransactionsResponse : Codable {
-    public let data : [BlockAtHeightTransactionsDataResponse]?
+public struct BlockAtHeightTransactionsResponse: Codable {
+    public let data: [BlockAtHeightTransactionsDataResponse]?
 
     enum CodingKeys: String, CodingKey {
-        case data = "data"
+        case data
     }
 
     public init(from decoder: Decoder) throws {
@@ -18,39 +18,39 @@ public struct BlockAtHeightTransactionsResponse : Codable {
     }
 }
 
-public struct BlockAtHeightTransactionsDataResponse : Codable {
-    public let version : Int?
-    public let type : String?
-    public let time : Int?
-    public let signature : String?
-    public let secret_hash : String?
-    public let owner : String?
-    public let onion_key_hash : String?
-    public let location : String?
-    public let lng : Double?
-    public let lat : Double?
-    public let height : Int?
-    public let hash : String?
-    public let fee : Int?
-    public let challenger : String?
-    public let block_hash : String?
+public struct BlockAtHeightTransactionsDataResponse: Codable {
+    public let version: Int?
+    public let type: String?
+    public let time: Int?
+    public let signature: String?
+    public let secret_hash: String?
+    public let owner: String?
+    public let onion_key_hash: String?
+    public let location: String?
+    public let lng: Double?
+    public let lat: Double?
+    public let height: Int?
+    public let hash: String?
+    public let fee: Int?
+    public let challenger: String?
+    public let block_hash: String?
 
     enum CodingKeys: String, CodingKey {
-        case version = "version"
-        case type = "type"
-        case time = "time"
-        case signature = "signature"
-        case secret_hash = "secret_hash"
-        case owner = "owner"
-        case onion_key_hash = "onion_key_hash"
-        case location = "location"
-        case lng = "lng"
-        case lat = "lat"
-        case height = "height"
-        case hash = "hash"
-        case fee = "fee"
-        case challenger = "challenger"
-        case block_hash = "block_hash"
+        case version
+        case type
+        case time
+        case signature
+        case secret_hash
+        case owner
+        case onion_key_hash
+        case location
+        case lng
+        case lat
+        case height
+        case hash
+        case fee
+        case challenger
+        case block_hash
     }
 
     public init(from decoder: Decoder) throws {

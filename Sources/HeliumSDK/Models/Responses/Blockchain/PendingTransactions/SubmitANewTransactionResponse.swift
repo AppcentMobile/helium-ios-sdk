@@ -1,15 +1,15 @@
 //
 //  SubmitANewTransactionResponse.swift
-//  
+//
 //
 //  Created by Burak Colak on 20.10.2022.
 //
 
-public struct SubmitANewTransactionResponse : Codable {
-    public let data : SubmitANewTransactionDataResponse?
+public struct SubmitANewTransactionResponse: Codable {
+    public let data: SubmitANewTransactionDataResponse?
 
     enum CodingKeys: String, CodingKey {
-        case data = "data"
+        case data
     }
 
     public init(from decoder: Decoder) throws {
@@ -18,11 +18,11 @@ public struct SubmitANewTransactionResponse : Codable {
     }
 }
 
-public struct SubmitANewTransactionDataResponse : Codable {
-    public let hash : String?
+public struct SubmitANewTransactionDataResponse: Codable {
+    public let hash: String?
 
     enum CodingKeys: String, CodingKey {
-        case hash = "hash"
+        case hash
     }
 
     public init(from decoder: Decoder) throws {

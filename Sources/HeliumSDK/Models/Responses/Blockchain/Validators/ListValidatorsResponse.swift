@@ -1,17 +1,17 @@
 //
 //  ListValidatorsResponse.swift
-//  
+//
 //
 //  Created by Burak Colak on 20.10.2022.
 //
 
 public struct ListValidatorsResponse: Codable {
-    public let data : [ListValidatorsDataResponse]?
-    public let cursor : String?
+    public let data: [ListValidatorsDataResponse]?
+    public let cursor: String?
 
     enum CodingKeys: String, CodingKey {
-        case data = "data"
-        case cursor = "cursor"
+        case data
+        case cursor
     }
 
     public init(from decoder: Decoder) throws {
@@ -22,32 +22,32 @@ public struct ListValidatorsResponse: Codable {
 }
 
 public struct ListValidatorsDataResponse: Codable {
-    public let version_heartbeat : Int?
-    public let status : ListValidatorsStatusResponse?
-    public let stake_status : String?
-    public let stake : Int?
-    public let penalty : Int?
-    public let penalties : [String]?
-    public let owner : String?
-    public let name : String?
-    public let last_heartbeat : Int?
-    public let block_added : Int?
-    public let block : Int?
-    public let address : String?
+    public let version_heartbeat: Int?
+    public let status: ListValidatorsStatusResponse?
+    public let stake_status: String?
+    public let stake: Int?
+    public let penalty: Int?
+    public let penalties: [String]?
+    public let owner: String?
+    public let name: String?
+    public let last_heartbeat: Int?
+    public let block_added: Int?
+    public let block: Int?
+    public let address: String?
 
     enum CodingKeys: String, CodingKey {
-        case version_heartbeat = "version_heartbeat"
-        case status = "status"
-        case stake_status = "stake_status"
-        case stake = "stake"
-        case penalty = "penalty"
-        case penalties = "penalties"
-        case owner = "owner"
-        case name = "name"
-        case last_heartbeat = "last_heartbeat"
-        case block_added = "block_added"
-        case block = "block"
-        case address = "address"
+        case version_heartbeat
+        case status
+        case stake_status
+        case stake
+        case penalty
+        case penalties
+        case owner
+        case name
+        case last_heartbeat
+        case block_added
+        case block
+        case address
     }
 
     public init(from decoder: Decoder) throws {
@@ -67,15 +67,15 @@ public struct ListValidatorsDataResponse: Codable {
     }
 }
 
-public struct ListValidatorsStatusResponse : Codable {
-    public let online : String?
-    public let listen_addrs : [String]?
-    public let height : Int?
+public struct ListValidatorsStatusResponse: Codable {
+    public let online: String?
+    public let listen_addrs: [String]?
+    public let height: Int?
 
     enum CodingKeys: String, CodingKey {
-        case online = "online"
-        case listen_addrs = "listen_addrs"
-        case height = "height"
+        case online
+        case listen_addrs
+        case height
     }
 
     public init(from decoder: Decoder) throws {

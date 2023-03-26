@@ -1,15 +1,15 @@
 //
 //  TokenSupplyResponse.swift
-//  
+//
 //
 //  Created by Burak Colak on 20.10.2022.
 //
 
-public struct TokenSupplyResponse : Codable {
-    public let data : TokenSupplyDataResponse?
+public struct TokenSupplyResponse: Codable {
+    public let data: TokenSupplyDataResponse?
 
     enum CodingKeys: String, CodingKey {
-        case data = "data"
+        case data
     }
 
     public init(from decoder: Decoder) throws {
@@ -18,11 +18,11 @@ public struct TokenSupplyResponse : Codable {
     }
 }
 
-public struct TokenSupplyDataResponse : Codable {
-    public let token_supply : Double?
+public struct TokenSupplyDataResponse: Codable {
+    public let token_supply: Double?
 
     enum CodingKeys: String, CodingKey {
-        case token_supply = "token_supply"
+        case token_supply
     }
 
     public init(from decoder: Decoder) throws {

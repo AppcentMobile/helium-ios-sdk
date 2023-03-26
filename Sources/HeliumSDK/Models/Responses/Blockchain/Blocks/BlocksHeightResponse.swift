@@ -1,15 +1,15 @@
 //
 //  BlocksHeightResponse.swift
-//  
+//
 //
 //  Created by Burak Colak on 18.10.2022.
 //
 
-public struct BlocksHeightResponse : Codable {
-    public let data : [BlocksHeightDataResponse]?
+public struct BlocksHeightResponse: Codable {
+    public let data: [BlocksHeightDataResponse]?
 
     enum CodingKeys: String, CodingKey {
-        case data = "data"
+        case data
     }
 
     public init(from decoder: Decoder) throws {
@@ -19,10 +19,10 @@ public struct BlocksHeightResponse : Codable {
 }
 
 public struct BlocksHeightDataResponse: Codable {
-    public let height : Int?
+    public let height: Int?
 
     enum CodingKeys: String, CodingKey {
-        case height = "height"
+        case height
     }
 
     public init(from decoder: Decoder) throws {

@@ -1,166 +1,184 @@
 //
 //  BlockchainCallbacks.swift
-//  
+//
 //
 //  Created by Burak Colak on 16.10.2022.
 //
 
 public struct BlockchainCallbacks {}
 
-extension BlockchainCallbacks {
-    //MARK: Accounts
-    public typealias ListAccounts = ((ListAccountsResponse?) -> ())?
-    public typealias ListRichestAccounts = ((ListRichestAccountsResponse?) -> ())?
-    public typealias AccountForAddress = ((AccountForAddressResponse?) -> ())?
-    public typealias HotspotsForAccount = ((HotspotsForAccountResponse?) -> ())?
-    public typealias ValidatorsForAccount = ((ValidatorsForAccountResponse?) -> ())?
-    public typealias OUISForAccount = ((OUISForAccountResponse?) -> ())?
-    public typealias ActivityForAccount = ((ActivityForAccountResponse?) -> ())?
-    public typealias RolesForAccount = ((RolesForAccountResponse?) -> ())?
-    public typealias RolesCountsForAccount = ((RolesCountsForAccountResponse?) -> ())?
-    public typealias ElectionsForAccount = ((ElectionsForAccountResponse?) -> ())?
-    public typealias ChallengesForAccount = ((ChallengesForAccountResponse?) -> ())?
-    public typealias PendingTransactionsForAccount = ((PendingTransactionsForAccountResponse?) -> ())?
-    public typealias RewardsForAnAccount = ((RewardsForAnAccountResponse?) -> ())?
-    public typealias RewardsInARewardsBlockForAnAccount = ((RewardsInARewardsBlockForAnAccountResponse?) -> ())?
-    public typealias RewardTotalsForAnAccount = ((RewardTotalsForAnAccountResponse?) -> ())?
-    public typealias StatsForAccount = ((StatsForAccountResponse?) -> ())?
+public extension BlockchainCallbacks {
+    // MARK: Accounts
+
+    typealias ListAccounts = ((ListAccountsResponse?) -> Void)?
+    typealias ListRichestAccounts = ((ListRichestAccountsResponse?) -> Void)?
+    typealias AccountForAddress = ((AccountForAddressResponse?) -> Void)?
+    typealias HotspotsForAccount = ((HotspotsForAccountResponse?) -> Void)?
+    typealias ValidatorsForAccount = ((ValidatorsForAccountResponse?) -> Void)?
+    typealias OUISForAccount = ((OUISForAccountResponse?) -> Void)?
+    typealias ActivityForAccount = ((ActivityForAccountResponse?) -> Void)?
+    typealias RolesForAccount = ((RolesForAccountResponse?) -> Void)?
+    typealias RolesCountsForAccount = ((RolesCountsForAccountResponse?) -> Void)?
+    typealias ElectionsForAccount = ((ElectionsForAccountResponse?) -> Void)?
+    typealias ChallengesForAccount = ((ChallengesForAccountResponse?) -> Void)?
+    typealias PendingTransactionsForAccount = ((PendingTransactionsForAccountResponse?) -> Void)?
+    typealias RewardsForAnAccount = ((RewardsForAnAccountResponse?) -> Void)?
+    typealias RewardsInARewardsBlockForAnAccount = ((RewardsInARewardsBlockForAnAccountResponse?) -> Void)?
+    typealias RewardTotalsForAnAccount = ((RewardTotalsForAnAccountResponse?) -> Void)?
+    typealias StatsForAccount = ((StatsForAccountResponse?) -> Void)?
 }
 
-extension BlockchainCallbacks {
-    //MARK: Assert Locations
-    public typealias ListAssertLocations = ((ListAssertLocationsResponse?) -> ())?
+public extension BlockchainCallbacks {
+    // MARK: Assert Locations
+
+    typealias ListAssertLocations = ((ListAssertLocationsResponse?) -> Void)?
 }
 
-extension BlockchainCallbacks {
-    //MARK: Blocks
-    public typealias BlocksHeight = ((BlocksHeightResponse?) -> ())?
-    public typealias BlocksStats = ((BlocksStatsResponse?) -> ())?
-    public typealias BlocksDescription = ((BlocksDescriptionResponse?) -> ())?
-    public typealias BlockAtHeight = ((BlockAtHeightResponse?) -> ())?
-    public typealias BlockAtHeightTransactions = ((BlockAtHeightTransactionsResponse?) -> ())?
-    public typealias BlockAtHash = ((BlockAtHashResponse?) -> ())?
-    public typealias BlockAtHashTransactions = ((BlockAtHashTransactionsResponse?) -> ())?
+public extension BlockchainCallbacks {
+    // MARK: Blocks
+
+    typealias BlocksHeight = ((BlocksHeightResponse?) -> Void)?
+    typealias BlocksStats = ((BlocksStatsResponse?) -> Void)?
+    typealias BlocksDescription = ((BlocksDescriptionResponse?) -> Void)?
+    typealias BlockAtHeight = ((BlockAtHeightResponse?) -> Void)?
+    typealias BlockAtHeightTransactions = ((BlockAtHeightTransactionsResponse?) -> Void)?
+    typealias BlockAtHash = ((BlockAtHashResponse?) -> Void)?
+    typealias BlockAtHashTransactions = ((BlockAtHashTransactionsResponse?) -> Void)?
 }
 
-extension BlockchainCallbacks {
-    //MARK: Chain Variables
-    public typealias GetChainVariables = ((GetChainVariablesResponse?) -> ())?
-    public typealias GetTheValueOfAchainVariable = ((GetTheValueOfAchainVariableResponse?) -> ())?
-    public typealias ListChainVariableActivity = ((ListChainVariableActivityResponse?) -> ())?
+public extension BlockchainCallbacks {
+    // MARK: Chain Variables
+
+    typealias GetChainVariables = ((GetChainVariablesResponse?) -> Void)?
+    typealias GetTheValueOfAchainVariable = ((GetTheValueOfAchainVariableResponse?) -> Void)?
+    typealias ListChainVariableActivity = ((ListChainVariableActivityResponse?) -> Void)?
 }
 
-extension BlockchainCallbacks {
-    //MARK: Challenges
-    public typealias ListChallengeReceipts = ((ListChallengeReceiptsResponse?) -> ())?
+public extension BlockchainCallbacks {
+    // MARK: Challenges
+
+    typealias ListChallengeReceipts = ((ListChallengeReceiptsResponse?) -> Void)?
 }
 
-extension BlockchainCallbacks {
-    //MARK: Cities
-    public typealias ListHotspotCities = ((ListHotspotCitiesResponse?) -> ())?
-    public typealias CityForCityID = ((CityForCityIDResponse?) -> ())?
-    public typealias ListHotspotsForACity = ((ListHotspotsForACityResponse?) -> ())?
+public extension BlockchainCallbacks {
+    // MARK: Cities
+
+    typealias ListHotspotCities = ((ListHotspotCitiesResponse?) -> Void)?
+    typealias CityForCityID = ((CityForCityIDResponse?) -> Void)?
+    typealias ListHotspotsForACity = ((ListHotspotsForACityResponse?) -> Void)?
 }
 
-extension BlockchainCallbacks {
-    //MARK: DCBurns
-    public typealias DCBurnTotals = ((DCBurnTotalsResponse?) -> ())?
-    public typealias DCBurnStats = ((DCBurnStatsResponse?) -> ())?
-    public typealias DCBurnEvents = ((DCBurnEventsResponse?) -> ())?
+public extension BlockchainCallbacks {
+    // MARK: DCBurns
+
+    typealias DCBurnTotals = ((DCBurnTotalsResponse?) -> Void)?
+    typealias DCBurnStats = ((DCBurnStatsResponse?) -> Void)?
+    typealias DCBurnEvents = ((DCBurnEventsResponse?) -> Void)?
 }
 
-extension BlockchainCallbacks {
-    //MARK: Elections
-    public typealias ListElections = ((ListElectionsResponse?) -> ())?
+public extension BlockchainCallbacks {
+    // MARK: Elections
+
+    typealias ListElections = ((ListElectionsResponse?) -> Void)?
 }
 
-extension BlockchainCallbacks {
-    //MARK: Hotspots
-    public typealias ListHotspots = ((ListHotspotsResponse?) -> ())?
-    public typealias HotspotForAddress = ((HotspotForAddressResponse?) -> ())?
-    public typealias HotspotsForName = ((HotspotsForNameResponse?) -> ())?
-    public typealias HotspotNameSearch = ((HotspotNameSearchResponse?) -> ())?
-    public typealias HotspotLocationDistanceSearch = ((HotspotLocationDistanceSearchResponse?) -> ())?
-    public typealias HotspotLocationBoxSearch = ((HotspotLocationBoxSearchResponse?) -> ())?
-    public typealias HotspotsForH3Index = ((HotspotsForH3IndexResponse?) -> ())?
-    public typealias HotspotActivity = ((HotspotActivityResponse?) -> ())?
-    public typealias HotspotRoles = ((HotspotRolesResponse?) -> ())?
-    public typealias HotspotRolesCounts = ((HotspotRolesCountsResponse?) -> ())?
-    public typealias HotspotElections = ((HotspotElectionsResponse?) -> ())?
-    public typealias CurrentlyElectedHotspots = ((CurrentlyElectedHotspotsResponse?) -> ())?
-    public typealias HotspotChallenges = ((HotspotChallengesResponse?) -> ())?
-    public typealias RewardsForAHotspot = ((RewardsForAHotspotResponse?) -> ())?
-    public typealias RewardsInARewardsBlockForAHotspot = ((RewardsInARewardsBlockForAHotspotResponse?) -> ())?
-    public typealias RewardTotalForAHotspot = ((RewardTotalForAHotspotResponse?) -> ())?
-    public typealias WitnessesForAHotspot = ((WitnessesForAHotspotResponse?) -> ())?
-    public typealias WitnessedForAHotspot = ((WitnessedForAHotspotResponse?) -> ())?
+public extension BlockchainCallbacks {
+    // MARK: Hotspots
+
+    typealias ListHotspots = ((ListHotspotsResponse?) -> Void)?
+    typealias HotspotForAddress = ((HotspotForAddressResponse?) -> Void)?
+    typealias HotspotsForName = ((HotspotsForNameResponse?) -> Void)?
+    typealias HotspotNameSearch = ((HotspotNameSearchResponse?) -> Void)?
+    typealias HotspotLocationDistanceSearch = ((HotspotLocationDistanceSearchResponse?) -> Void)?
+    typealias HotspotLocationBoxSearch = ((HotspotLocationBoxSearchResponse?) -> Void)?
+    typealias HotspotsForH3Index = ((HotspotsForH3IndexResponse?) -> Void)?
+    typealias HotspotActivity = ((HotspotActivityResponse?) -> Void)?
+    typealias HotspotRoles = ((HotspotRolesResponse?) -> Void)?
+    typealias HotspotRolesCounts = ((HotspotRolesCountsResponse?) -> Void)?
+    typealias HotspotElections = ((HotspotElectionsResponse?) -> Void)?
+    typealias CurrentlyElectedHotspots = ((CurrentlyElectedHotspotsResponse?) -> Void)?
+    typealias HotspotChallenges = ((HotspotChallengesResponse?) -> Void)?
+    typealias RewardsForAHotspot = ((RewardsForAHotspotResponse?) -> Void)?
+    typealias RewardsInARewardsBlockForAHotspot = ((RewardsInARewardsBlockForAHotspotResponse?) -> Void)?
+    typealias RewardTotalForAHotspot = ((RewardTotalForAHotspotResponse?) -> Void)?
+    typealias WitnessesForAHotspot = ((WitnessesForAHotspotResponse?) -> Void)?
+    typealias WitnessedForAHotspot = ((WitnessedForAHotspotResponse?) -> Void)?
 }
 
-extension BlockchainCallbacks {
-    //MARK: Elections
-    public typealias GetLocation = ((GetLocationResponse?) -> ())?
+public extension BlockchainCallbacks {
+    // MARK: Elections
+
+    typealias GetLocation = ((GetLocationResponse?) -> Void)?
 }
 
-extension BlockchainCallbacks {
-    //MARK: OraclePrices
-    public typealias CurrentOraclePrice = ((CurrentOraclePriceResponse?) -> ())?
-    public typealias CurrentAndHistoricalOraclePrices = ((CurrentAndHistoricalOraclePricesResponse?) -> ())?
-    public typealias OraclePriceStats = ((OraclePriceStatsResponse?) -> ())?
-    public typealias OraclePriceAtASpecificBlock = ((OraclePriceAtASpecificBlockResponse?) -> ())?
-    public typealias ListOracleActivity = ((ListOracleActivityResponse?) -> ())?
-    public typealias ListActivityForASpecificOracle = ((ListActivityForASpecificOracleResponse?) -> ())?
-    public typealias GetPredictedHNTOraclePrices = ((GetPredictedHNTOraclePricesResponse?) -> ())?
+public extension BlockchainCallbacks {
+    // MARK: OraclePrices
+
+    typealias CurrentOraclePrice = ((CurrentOraclePriceResponse?) -> Void)?
+    typealias CurrentAndHistoricalOraclePrices = ((CurrentAndHistoricalOraclePricesResponse?) -> Void)?
+    typealias OraclePriceStats = ((OraclePriceStatsResponse?) -> Void)?
+    typealias OraclePriceAtASpecificBlock = ((OraclePriceAtASpecificBlockResponse?) -> Void)?
+    typealias ListOracleActivity = ((ListOracleActivityResponse?) -> Void)?
+    typealias ListActivityForASpecificOracle = ((ListActivityForASpecificOracleResponse?) -> Void)?
+    typealias GetPredictedHNTOraclePrices = ((GetPredictedHNTOraclePricesResponse?) -> Void)?
 }
 
-extension BlockchainCallbacks {
-    //MARK: OOUIs
-    public typealias ListOUIs = ((ListOUIsResponse?) -> ())?
-    public typealias GetAnOUI = ((GetAnOUIResponse?) -> ())?
-    public typealias GetLastAssignedOUI = ((GetLastAssignedOUIResponse?) -> ())?
-    public typealias GetOUIStats = ((GetOUIStatsResponse?) -> ())?
+public extension BlockchainCallbacks {
+    // MARK: OOUIs
+
+    typealias ListOUIs = ((ListOUIsResponse?) -> Void)?
+    typealias GetAnOUI = ((GetAnOUIResponse?) -> Void)?
+    typealias GetLastAssignedOUI = ((GetLastAssignedOUIResponse?) -> Void)?
+    typealias GetOUIStats = ((GetOUIStatsResponse?) -> Void)?
 }
 
-extension BlockchainCallbacks {
-    //MARK: PendingTransactions
-    public typealias PendingTransactionStatus = ((PendingTransactionStatusResponse?) -> ())?
-    public typealias SubmitANewTransaction = ((SubmitANewTransactionResponse?) -> ())?
+public extension BlockchainCallbacks {
+    // MARK: PendingTransactions
+
+    typealias PendingTransactionStatus = ((PendingTransactionStatusResponse?) -> Void)?
+    typealias SubmitANewTransaction = ((SubmitANewTransactionResponse?) -> Void)?
 }
 
-extension BlockchainCallbacks {
-    //MARK: Rewards
-    public typealias RewardTotals = ((RewardTotalsResponse?) -> ())?
+public extension BlockchainCallbacks {
+    // MARK: Rewards
+
+    typealias RewardTotals = ((RewardTotalsResponse?) -> Void)?
 }
 
-extension BlockchainCallbacks {
-    //MARK: Statechannels
-    public typealias StateChannelsCloses = ((StateChannelClosesResponse?) -> ())?
+public extension BlockchainCallbacks {
+    // MARK: Statechannels
+
+    typealias StateChannelsCloses = ((StateChannelClosesResponse?) -> Void)?
 }
 
-extension BlockchainCallbacks {
-    //MARK: Stats
-    public typealias Stats = ((StatsResponse?) -> ())?
-    public typealias TokenSupply = ((TokenSupplyResponse?) -> ())?
+public extension BlockchainCallbacks {
+    // MARK: Stats
+
+    typealias Stats = ((StatsResponse?) -> Void)?
+    typealias TokenSupply = ((TokenSupplyResponse?) -> Void)?
 }
 
-extension BlockchainCallbacks {
-    //MARK: Transactions
-    public typealias TransactionForHash = ((TransactionForHashResponse?) -> ())?
+public extension BlockchainCallbacks {
+    // MARK: Transactions
+
+    typealias TransactionForHash = ((TransactionForHashResponse?) -> Void)?
 }
 
-extension BlockchainCallbacks {
-    //MARK: Validators
-    public typealias ListValidators = ((ListValidatorsResponse?) -> ())?
-    public typealias ValidatorForAddress = ((ValidatorForAddressResponse?) -> ())?
-    public typealias ValidatorsForName = ((ValidatorsForNameResponse?) -> ())?
-    public typealias ValidatorNameSearch = ((ValidatorNameSearchResponse?) -> ())?
-    public typealias ValidatorActivity = ((ValidatorActivityResponse?) -> ())?
-    public typealias ValidatorRoles = ((ValidatorRolesResponse?) -> ())?
-    public typealias ValidatorRolesCounts = ((ValidatorRolesCountsResponse?) -> ())?
-    public typealias StatsForValidators = ((StatsForValidatorsResponse?) -> ())?
-    public typealias CurrentlyElectedValidators = ((CurrentlyElectedValidatorsResponse?) -> ())?
-    public typealias ElectedValidatorsAtABlock = ((ElectedValidatorsAtABlockResponse?) -> ())?
-    public typealias ElectedValidatorsInAnElection = ((ElectedValidatorsInAnElectionResponse?) -> ())?
-    public typealias RewardsForAValidator = ((RewardsForAValidatorResponse?) -> ())?
-    public typealias RewardTotalForAValidator = ((RewardTotalForAValidatorResponse?) -> ())?
-    public typealias RewardTotalForAllValidators = ((RewardTotalForAllValidatorsResponse?) -> ())?
+public extension BlockchainCallbacks {
+    // MARK: Validators
+
+    typealias ListValidators = ((ListValidatorsResponse?) -> Void)?
+    typealias ValidatorForAddress = ((ValidatorForAddressResponse?) -> Void)?
+    typealias ValidatorsForName = ((ValidatorsForNameResponse?) -> Void)?
+    typealias ValidatorNameSearch = ((ValidatorNameSearchResponse?) -> Void)?
+    typealias ValidatorActivity = ((ValidatorActivityResponse?) -> Void)?
+    typealias ValidatorRoles = ((ValidatorRolesResponse?) -> Void)?
+    typealias ValidatorRolesCounts = ((ValidatorRolesCountsResponse?) -> Void)?
+    typealias StatsForValidators = ((StatsForValidatorsResponse?) -> Void)?
+    typealias CurrentlyElectedValidators = ((CurrentlyElectedValidatorsResponse?) -> Void)?
+    typealias ElectedValidatorsAtABlock = ((ElectedValidatorsAtABlockResponse?) -> Void)?
+    typealias ElectedValidatorsInAnElection = ((ElectedValidatorsInAnElectionResponse?) -> Void)?
+    typealias RewardsForAValidator = ((RewardsForAValidatorResponse?) -> Void)?
+    typealias RewardTotalForAValidator = ((RewardTotalForAValidatorResponse?) -> Void)?
+    typealias RewardTotalForAllValidators = ((RewardTotalForAllValidatorsResponse?) -> Void)?
 }

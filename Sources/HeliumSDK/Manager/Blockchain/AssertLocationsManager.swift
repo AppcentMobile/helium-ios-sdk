@@ -1,6 +1,6 @@
 //
 //  AssertLocationsManager.swift
-//  
+//
 //
 //  Created by Burak Colak on 17.10.2022.
 //
@@ -33,11 +33,11 @@ public class HeliumAssertLocationsManager: BaseManager {
             endpoint.queryItems = queryItems
         }
 
-        self.request(to: endpoint) { (r: BaseResult<ListAssertLocationsResponse?, Error>) in
+        request(to: endpoint) { (r: BaseResult<ListAssertLocationsResponse?, Error>) in
             switch r {
-            case .success(let r):
+            case let .success(r):
                 onSuccess?(r)
-            case .failure(let e):
+            case let .failure(e):
                 onError?(e)
             }
         }
