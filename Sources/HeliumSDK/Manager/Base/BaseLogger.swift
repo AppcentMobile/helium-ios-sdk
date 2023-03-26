@@ -1,6 +1,6 @@
 //
 //  BaseLogger.swift
-//  
+//
 //
 //  Created by Burak Colak on 16.10.2022.
 //
@@ -9,11 +9,10 @@ import Foundation
 import os.log
 
 class BaseLogger {
-
     /// shared instance
     static var shared = BaseLogger()
 
-    private init(){}
+    private init() {}
 
     /// is BaseLoggerging enable
     var isEnabled: Bool {

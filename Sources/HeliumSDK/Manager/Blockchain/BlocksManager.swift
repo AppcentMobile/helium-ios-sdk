@@ -6,35 +6,30 @@
 //
 
 import Foundation
+import ACMNetworking
 
 public class HeliumBlocksManager: BaseManager {
     public func blocksHeight(max_time: String? = nil, onSuccess: BlockchainCallbacks.BlocksHeight, onError: GenericCallbacks.ErrorCallback) {
         var endpoint = BlocksRoutes.blocksHeight.endpoint()
 
         if let max_time = max_time {
-            endpoint.queryItems = [URLQueryItem(name: "max_time", value: max_time)]
+            endpoint = endpoint.add(queryItem: ACMQueryModel(name: "max_time", value: max_time))
         }
 
-        request(to: endpoint) { (r: BaseResult<BlocksHeightResponse?, Error>) in
-            switch r {
-            case let .success(r):
-                onSuccess?(r)
-            case let .failure(e):
-                onError?(e)
-            }
+        network.request(to: endpoint.build()) { (r: BlocksHeightResponse) in
+            onSuccess?(r)
+        } onError: { e in
+            onError?(e)
         }
     }
 
     public func blocksStats(onSuccess: BlockchainCallbacks.BlocksStats, onError: GenericCallbacks.ErrorCallback) {
         let endpoint = BlocksRoutes.blocksStats.endpoint()
 
-        request(to: endpoint) { (r: BaseResult<BlocksStatsResponse?, Error>) in
-            switch r {
-            case let .success(r):
-                onSuccess?(r)
-            case let .failure(e):
-                onError?(e)
-            }
+        network.request(to: endpoint.build()) { (r: BlocksStatsResponse) in
+            onSuccess?(r)
+        } onError: { e in
+            onError?(e)
         }
     }
 
