@@ -5,7 +5,7 @@
 import ACMNetworking
 import Foundation
 
-class HeliumOUISManager: BaseManager {
+class HeliumOUISManager: BaseBlockChainManager {
     public func listOUIs(cursor: String? = nil, onSuccess: BlockchainCallbacks.ListOUIs, onError: GenericCallbacks.ErrorCallback) {
         var endpoint = OUISRoutes.listOUIs.endpoint()
 

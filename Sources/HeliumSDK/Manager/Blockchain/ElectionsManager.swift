@@ -5,7 +5,7 @@
 import ACMNetworking
 import Foundation
 
-class HeliumElectionsManager: BaseManager {
+class HeliumElectionsManager: BaseBlockChainManager {
     public func listElections(cursor: String? = nil, min_time: String? = nil, max_time: String? = nil, limit: String? = nil, onSuccess: BlockchainCallbacks.ListElections, onError: GenericCallbacks.ErrorCallback) {
         var endpoint = ElectionsRoutes.listElections.endpoint()
 

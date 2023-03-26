@@ -4,7 +4,7 @@
 
 import ACMNetworking
 
-class HeliumStatsManager: BaseManager {
+class HeliumStatsManager: BaseBlockChainManager {
     public func stats(onSuccess: BlockchainCallbacks.Stats, onError: GenericCallbacks.ErrorCallback) {
         let endpoint = StatsRoutes.stats.endpoint()
 

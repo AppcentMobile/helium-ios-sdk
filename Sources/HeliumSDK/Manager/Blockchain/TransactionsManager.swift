@@ -4,7 +4,7 @@
 
 import ACMNetworking
 
-class HeliumTransactionsManager: BaseManager {
+class HeliumTransactionsManager: BaseBlockChainManager {
     public func transactionForHash(hash: String, onSuccess: BlockchainCallbacks.TransactionForHash, onError: GenericCallbacks.ErrorCallback) {
         let endpoint = TransactionsRoutes.transactionForHash.endpoint(hash)
 

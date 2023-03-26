@@ -2,4 +2,4 @@
 //  ConsoleManager.swift
 //
 
-public class HeliumConsoleManager: BaseManager {}
+public class HeliumConsoleManager: BaseConsoleManager {}

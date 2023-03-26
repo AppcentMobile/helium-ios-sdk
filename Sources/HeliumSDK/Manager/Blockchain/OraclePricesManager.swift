@@ -5,7 +5,7 @@
 import ACMNetworking
 import Foundation
 
-class HeliumOraclePricesManager: BaseManager {
+class HeliumOraclePricesManager: BaseBlockChainManager {
     public func currentOraclePrice(onSuccess: BlockchainCallbacks.CurrentOraclePrice, onError: GenericCallbacks.ErrorCallback) {
         let endpoint = OraclePricesRoutes.currentOraclePrice.endpoint()
 

@@ -4,7 +4,7 @@
 
 import ACMNetworking
 
-class HeliumRewardsManager: BaseManager {
+class HeliumRewardsManager: BaseBlockChainManager {
     public func rewardTotals(min_time: String, max_time: String, bucket: String? = nil, onSuccess: BlockchainCallbacks.RewardTotals, onError: GenericCallbacks.ErrorCallback) {
         var endpoint = RewardsRoutes.rewardTotals.endpoint()
             .add(queryItem: ACMQueryModel(name: "min_time", value: min_time))

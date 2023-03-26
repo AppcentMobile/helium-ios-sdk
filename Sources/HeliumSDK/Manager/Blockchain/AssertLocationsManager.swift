@@ -5,7 +5,7 @@
 import ACMNetworking
 import Foundation
 
-public class HeliumAssertLocationsManager: BaseManager {
+public class HeliumAssertLocationsManager: BaseBlockChainManager {
     public func listAssertLocations(cursor: String? = nil, min_time: String? = nil, max_time: String? = nil, limit: Int? = nil, onSuccess: BlockchainCallbacks.ListAssertLocations, onError: GenericCallbacks.ErrorCallback) {
         var endpoint = AssertLocationsRoutes.listAssertLocations.endpoint()
 

@@ -4,7 +4,7 @@
 
 import ACMNetworking
 
-class HeliumPendingTransactionsManager: BaseManager {
+class HeliumPendingTransactionsManager: BaseBlockChainManager {
     public func pendingTransactionStatus(hash _: String, cursor _: String? = nil, onSuccess: BlockchainCallbacks.PendingTransactionStatus, onError: GenericCallbacks.ErrorCallback) {
         let endpoint = PendingTransactionsRoutes.pendingTransactionStatus.endpoint()
 

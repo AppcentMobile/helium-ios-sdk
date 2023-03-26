@@ -5,7 +5,7 @@
 import ACMNetworking
 import Foundation
 
-public class HeliumDCBurnsManager: BaseManager {
+public class HeliumDCBurnsManager: BaseBlockChainManager {
     public func dCBurnTotals(min_time: String? = nil, max_time: String? = nil, bucket: String? = nil, onSuccess: BlockchainCallbacks.DCBurnTotals, onError: GenericCallbacks.ErrorCallback) {
         var endpoint = DCBurnsRoutes.dCBurnTotals.endpoint()
 

@@ -5,7 +5,7 @@
 import ACMNetworking
 import Foundation
 
-public class HeliumBlocksManager: BaseManager {
+public class HeliumBlocksManager: BaseBlockChainManager {
     public func blocksHeight(max_time: String? = nil, onSuccess: BlockchainCallbacks.BlocksHeight, onError: GenericCallbacks.ErrorCallback) {
         var endpoint = BlocksRoutes.blocksHeight.endpoint()
 

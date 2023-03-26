@@ -5,7 +5,7 @@
 import ACMNetworking
 import Foundation
 
-public class HeliumAccountsManager: BaseManager {
+public class HeliumAccountsManager: BaseBlockChainManager {
     public func listAccounts(cursor: String? = nil, onSuccess: BlockchainCallbacks.ListAccounts, onError: GenericCallbacks.ErrorCallback) {
         var endpoint = AccountsRoutes.listAccounts.endpoint()
 
