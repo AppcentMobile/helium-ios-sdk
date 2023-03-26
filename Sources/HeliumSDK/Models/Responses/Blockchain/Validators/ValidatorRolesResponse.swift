@@ -1,9 +1,7 @@
 //
 //  ValidatorRolesResponse.swift
 //
-//
-//  Created by Burak Colak on 20.10.2022.
-//
+
 
 public struct ValidatorRolesResponse: Codable {
     public let data: [ValidatorRolesDataResponse]?

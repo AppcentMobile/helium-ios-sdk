@@ -28,11 +28,20 @@ struct BaseRoute {
 }
 
 extension BaseRoute {
-    func consoleEndpoint(_ value: String? = nil, params: [String: Any]? = nil) -> BaseEndpoint {
+    func consoleEndpoint(_ value: String? = nil, params: [String: Any]? = nil) -> ACMEndpoint {
+        var endpoint = ACMEndpoint()
+            .set(host: Constants.CONSOLE_ENVIRONMENT.rawValue)
+            .set(method: method.toACM)
+
+        if let params = params {
+            let bodyModelList = params.map { ACMBodyModel(key: $0.key, value: $0.value) }
+            endpoint = endpoint.add(params: bodyModelList)
+        }
+
         if let value = value {
-            return BaseEndpoint(path: String(format: path, value), method: method, params: params, provider: .CONSOLE)
+            return endpoint.set(path: String(format: path, value))
         } else {
-            return BaseEndpoint(path: path, method: method, params: params, provider: .CONSOLE)
+            return endpoint.set(path: path)
         }
     }
 }

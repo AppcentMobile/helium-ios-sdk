@@ -1,9 +1,7 @@
 //
 //  ListActivityForASpecificOracleResponse.swift
 //
-//
-//  Created by Burak Colak on 20.10.2022.
-//
+
 
 public struct ListActivityForASpecificOracleResponse: Codable {
     public let cursor: String?

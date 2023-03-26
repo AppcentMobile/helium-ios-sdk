@@ -1,9 +1,7 @@
 //
 //  ListValidatorsResponse.swift
 //
-//
-//  Created by Burak Colak on 20.10.2022.
-//
+
 
 public struct ListValidatorsResponse: Codable {
     public let data: [ListValidatorsDataResponse]?

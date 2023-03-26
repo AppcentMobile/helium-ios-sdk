@@ -1,9 +1,7 @@
 //
 //  CurrentlyElectedValidatorsResponse.swift
 //
-//
-//  Created by Burak Colak on 20.10.2022.
-//
+
 
 public struct CurrentlyElectedValidatorsResponse: Codable {
     public let data: [CurrentlyElectedValidatorsDataResponse]?

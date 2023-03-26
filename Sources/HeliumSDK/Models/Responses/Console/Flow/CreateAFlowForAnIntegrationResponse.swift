@@ -1,9 +1,6 @@
 //
 //  CreateAFlowForAnIntegrationResponse.swift
 //
-//
-//  Created by Burak Colak on 24.10.2022.
-//
 
 public struct CreateAFlowForAnIntegrationResponse: Codable {
     public let id: String?

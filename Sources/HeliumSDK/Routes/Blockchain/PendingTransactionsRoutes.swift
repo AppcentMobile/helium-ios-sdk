@@ -1,9 +1,7 @@
 //
 //  PendingTransactionsRoutes.swift
 //
-//
-//  Created by Burak Colak on 14.10.2022.
-//
+
 
 enum PendingTransactionsRoutes {
     static let pendingTransactionStatus = BaseRoute(method: .get, path: "v1/pending_transactions/%@")

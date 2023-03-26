@@ -1,9 +1,7 @@
 //
 //  OUISRoutes.swift
 //
-//
-//  Created by Burak Colak on 14.10.2022.
-//
+
 
 enum OUISRoutes {
     static let listOUIs = BaseRoute(method: .get, path: "v1/ouis")

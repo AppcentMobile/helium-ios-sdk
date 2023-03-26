@@ -1,9 +1,7 @@
 //
 //  RewardTotalForAHotspotResponse.swift
 //
-//
-//  Created by Burak Colak on 20.10.2022.
-//
+
 
 public struct RewardTotalForAHotspotResponse: Codable {
     public let data: RewardTotalForAHotspotDataResponse?

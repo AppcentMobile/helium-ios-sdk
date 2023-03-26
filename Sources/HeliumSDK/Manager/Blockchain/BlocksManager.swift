@@ -1,12 +1,9 @@
 //
 //  BlocksManager.swift
 //
-//
-//  Created by Burak Colak on 18.10.2022.
-//
 
-import Foundation
 import ACMNetworking
+import Foundation
 
 public class HeliumBlocksManager: BaseManager {
     public func blocksHeight(max_time: String? = nil, onSuccess: BlockchainCallbacks.BlocksHeight, onError: GenericCallbacks.ErrorCallback) {
@@ -37,29 +34,23 @@ public class HeliumBlocksManager: BaseManager {
         var endpoint = BlocksRoutes.blocksDescription.endpoint()
 
         if let cursor = cursor {
-            endpoint.queryItems = [URLQueryItem(name: "cursor", value: cursor)]
+            endpoint = endpoint.add(queryItem: ACMQueryModel(name: "cursor", value: cursor))
         }
 
-        request(to: endpoint) { (r: BaseResult<BlocksDescriptionResponse?, Error>) in
-            switch r {
-            case let .success(r):
-                onSuccess?(r)
-            case let .failure(e):
-                onError?(e)
-            }
+        network.request(to: endpoint.build()) { (r: BlocksDescriptionResponse) in
+            onSuccess?(r)
+        } onError: { e in
+            onError?(e)
         }
     }
 
     public func blockAtHeight(height: String, onSuccess: BlockchainCallbacks.BlockAtHeight, onError: GenericCallbacks.ErrorCallback) {
         let endpoint = BlocksRoutes.blockAtHeight.endpoint(height)
 
-        request(to: endpoint) { (r: BaseResult<BlockAtHeightResponse?, Error>) in
-            switch r {
-            case let .success(r):
-                onSuccess?(r)
-            case let .failure(e):
-                onError?(e)
-            }
+        network.request(to: endpoint.build()) { (r: BlockAtHeightResponse) in
+            onSuccess?(r)
+        } onError: { e in
+            onError?(e)
         }
     }
 
@@ -67,29 +58,23 @@ public class HeliumBlocksManager: BaseManager {
         var endpoint = BlocksRoutes.blockAtHeightTransactions.endpoint(height)
 
         if let cursor = cursor {
-            endpoint.queryItems = [URLQueryItem(name: "cursor", value: cursor)]
+            endpoint = endpoint.add(queryItem: ACMQueryModel(name: "cursor", value: cursor))
         }
 
-        request(to: endpoint) { (r: BaseResult<BlockAtHeightTransactionsResponse?, Error>) in
-            switch r {
-            case let .success(r):
-                onSuccess?(r)
-            case let .failure(e):
-                onError?(e)
-            }
+        network.request(to: endpoint.build()) { (r: BlockAtHeightTransactionsResponse) in
+            onSuccess?(r)
+        } onError: { e in
+            onError?(e)
         }
     }
 
     public func blockAtHash(hash: String, onSuccess: BlockchainCallbacks.BlockAtHash, onError: GenericCallbacks.ErrorCallback) {
         let endpoint = BlocksRoutes.blockAtHash.endpoint(hash)
 
-        request(to: endpoint) { (r: BaseResult<BlockAtHashResponse?, Error>) in
-            switch r {
-            case let .success(r):
-                onSuccess?(r)
-            case let .failure(e):
-                onError?(e)
-            }
+        network.request(to: endpoint.build()) { (r: BlockAtHashResponse) in
+            onSuccess?(r)
+        } onError: { e in
+            onError?(e)
         }
     }
 
@@ -97,16 +82,13 @@ public class HeliumBlocksManager: BaseManager {
         var endpoint = BlocksRoutes.blockAtHashTransactions.endpoint(hash)
 
         if let cursor = cursor {
-            endpoint.queryItems = [URLQueryItem(name: "cursor", value: cursor)]
+            endpoint = endpoint.add(queryItem: ACMQueryModel(name: "cursor", value: cursor))
         }
 
-        request(to: endpoint) { (r: BaseResult<BlockAtHashTransactionsResponse?, Error>) in
-            switch r {
-            case let .success(r):
-                onSuccess?(r)
-            case let .failure(e):
-                onError?(e)
-            }
+        network.request(to: endpoint.build()) { (r: BlockAtHashTransactionsResponse) in
+            onSuccess?(r)
+        } onError: { e in
+            onError?(e)
         }
     }
 }

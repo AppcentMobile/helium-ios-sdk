@@ -1,34 +1,24 @@
 //
 //  RewardsManager.swift
 //
-//
-//  Created by Burak Colak on 20.10.2022.
-//
 
-import Foundation
+
+import ACMNetworking
 
 class HeliumRewardsManager: BaseManager {
     public func rewardTotals(min_time: String, max_time: String, bucket: String? = nil, onSuccess: BlockchainCallbacks.RewardTotals, onError: GenericCallbacks.ErrorCallback) {
         var endpoint = RewardsRoutes.rewardTotals.endpoint()
-
-        var queryItems = [URLQueryItem]()
-
-        queryItems.append(URLQueryItem(name: "min_time", value: min_time))
-        queryItems.append(URLQueryItem(name: "max_time", value: max_time))
+            .add(queryItem: ACMQueryModel(name: "min_time", value: min_time))
+            .add(queryItem: ACMQueryModel(name: "max_time", value: max_time))
 
         if let bucket = bucket {
-            queryItems.append(URLQueryItem(name: "bucket", value: bucket))
+            endpoint = endpoint.add(queryItem: ACMQueryModel(name: "bucket", value: bucket))
         }
 
-        endpoint.queryItems = queryItems
-
-        request(to: endpoint) { (r: BaseResult<RewardTotalsResponse?, Error>) in
-            switch r {
-            case let .success(r):
-                onSuccess?(r)
-            case let .failure(e):
-                onError?(e)
-            }
+        network.request(to: endpoint.build()) { (r: RewardTotalsResponse) in
+            onSuccess?(r)
+        } onError: { e in
+            onError?(e)
         }
     }
 }

@@ -1,9 +1,7 @@
 //
 //  DeviceEventsResponse.swift
 //
-//
-//  Created by Burak Colak on 23.10.2022.
-//
+
 
 public struct DeviceEventsResponse: Codable {
     public let category: String?

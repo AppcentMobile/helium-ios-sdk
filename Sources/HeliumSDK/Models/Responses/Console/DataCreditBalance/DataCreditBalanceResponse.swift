@@ -1,9 +1,7 @@
 //
 //  DataCreditBalanceResponse.swift
 //
-//
-//  Created by Burak Colak on 23.10.2022.
-//
+
 
 public struct DataCreditBalanceResponse: Codable {
     public let dc_balance: Int?

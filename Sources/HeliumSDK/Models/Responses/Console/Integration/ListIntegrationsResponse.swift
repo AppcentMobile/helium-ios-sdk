@@ -1,9 +1,6 @@
 //
 //  ListIntegrationsResponse.swift
 //
-//
-//  Created by Burak Colak on 24.10.2022.
-//
 
 public struct ListIntegrationsResponse: Codable {
     public let id: String?

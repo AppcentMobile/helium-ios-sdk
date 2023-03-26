@@ -1,9 +1,7 @@
 //
 //  AccountsRoutes.swift
 //
-//
-//  Created by Burak Colak on 13.10.2022.
-//
+
 
 enum AccountsRoutes {
     static let listAccounts = BaseRoute(method: .get, path: "v1/accounts")

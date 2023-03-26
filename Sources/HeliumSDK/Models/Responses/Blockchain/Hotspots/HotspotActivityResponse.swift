@@ -1,9 +1,7 @@
 //
 //  HotspotActivityResponse.swift
 //
-//
-//  Created by Burak Colak on 19.10.2022.
-//
+
 
 public struct HotspotActivityResponse: Codable {
     public let data: [HotspotActivityDataResponse]?

@@ -1,9 +1,6 @@
 //
 //  ChallengesForAccountResponse.swift
 //
-//
-//  Created by Burak Colak on 17.10.2022.
-//
 
 public struct ChallengesForAccountResponse: Codable {
     public let data: [ChallengesForAccountDataResponse]?

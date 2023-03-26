@@ -1,9 +1,6 @@
 //
 //  BlockAtHeightResponse.swift
 //
-//
-//  Created by Burak Colak on 18.10.2022.
-//
 
 public struct BlockAtHeightResponse: Codable {
     public let data: BlockAtHeightDataResponse?

@@ -1,9 +1,6 @@
 //
 //  CreateACustomAzureIoTHubIntegrationRequest.swift
 //
-//
-//  Created by Burak Colak on 24.10.2022.
-//
 
 struct CreateACustomAzureIoTHubIntegrationRequest: Encodable {
     var name: String

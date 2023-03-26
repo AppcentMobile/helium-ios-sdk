@@ -1,9 +1,7 @@
 //
 //  HotspotsForAccountResponse.swift
 //
-//
-//  Created by Burak Colak on 17.10.2022.
-//
+
 
 public struct HotspotsForAccountResponse: Codable {
     public let data: [HotspotsForAccountDataResponse]?

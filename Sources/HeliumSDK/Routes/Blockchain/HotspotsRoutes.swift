@@ -1,9 +1,7 @@
 //
 //  HotspotsRoutes.swift
 //
-//
-//  Created by Burak Colak on 13.10.2022.
-//
+
 
 enum HotspotsRoutes {
     static let listHotspots = BaseRoute(method: .get, path: "v1/hotspots")

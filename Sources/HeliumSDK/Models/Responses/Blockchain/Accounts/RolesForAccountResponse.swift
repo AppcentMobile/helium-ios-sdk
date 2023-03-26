@@ -1,9 +1,7 @@
 //
 //  RolesForAccountResponse.swift
 //
-//
-//  Created by Burak Colak on 17.10.2022.
-//
+
 
 public struct RolesForAccountResponse: Codable {
     public let data: [RolesForAccountDataResponse]?

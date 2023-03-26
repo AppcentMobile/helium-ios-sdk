@@ -1,9 +1,6 @@
 //
 //  Codable+Extensions.swift
 //
-//
-//  Created by Burak Colak on 23.10.2022.
-//
 
 import Foundation
 

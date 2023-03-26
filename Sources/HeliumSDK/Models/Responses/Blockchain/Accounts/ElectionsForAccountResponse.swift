@@ -1,9 +1,7 @@
 //
 //  ElectionsForAccountResponse.swift
 //
-//
-//  Created by Burak Colak on 17.10.2022.
-//
+
 
 public struct ElectionsForAccountResponse: Codable {
     public let data: [ElectionsForAccountDataResponse]?

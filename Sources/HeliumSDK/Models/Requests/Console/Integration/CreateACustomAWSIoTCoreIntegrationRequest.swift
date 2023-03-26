@@ -1,9 +1,6 @@
 //
 //  CreateACustomAWSIoTCoreIntegrationRequest.swift
 //
-//
-//  Created by Burak Colak on 24.10.2022.
-//
 
 struct CreateACustomAWSIoTCoreIntegrationRequest: Encodable {
     var name: String

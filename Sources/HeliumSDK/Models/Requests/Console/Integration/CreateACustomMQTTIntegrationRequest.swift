@@ -1,9 +1,6 @@
 //
 //  CreateACustomMQTTIntegrationRequest.swift
 //
-//
-//  Created by Burak Colak on 24.10.2022.
-//
 
 struct CreateACustomMQTTIntegrationRequest: Encodable {
     var name: String

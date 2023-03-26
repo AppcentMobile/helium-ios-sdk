@@ -1,9 +1,7 @@
 //
 //  ListOUIsResponse.swift
 //
-//
-//  Created by Burak Colak on 20.10.2022.
-//
+
 
 public struct ListOUIsResponse: Codable {
     public let data: [ListOUIsDataResponse]?

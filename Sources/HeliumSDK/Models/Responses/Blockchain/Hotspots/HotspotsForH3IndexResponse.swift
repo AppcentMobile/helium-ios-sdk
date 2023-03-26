@@ -1,9 +1,7 @@
 //
 //  HotspotsForH3IndexResponse.swift
 //
-//
-//  Created by Burak Colak on 19.10.2022.
-//
+
 
 public struct HotspotsForH3IndexResponse: Codable {
     public let data: [HotspotsForH3IndexDataResponse]?

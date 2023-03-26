@@ -1,12 +1,10 @@
 //
 //  AssertLocationsManager.swift
 //
-//
-//  Created by Burak Colak on 17.10.2022.
-//
 
-import Foundation
+
 import ACMNetworking
+import Foundation
 
 public class HeliumAssertLocationsManager: BaseManager {
     public func listAssertLocations(cursor: String? = nil, min_time: String? = nil, max_time: String? = nil, limit: Int? = nil, onSuccess: BlockchainCallbacks.ListAssertLocations, onError: GenericCallbacks.ErrorCallback) {

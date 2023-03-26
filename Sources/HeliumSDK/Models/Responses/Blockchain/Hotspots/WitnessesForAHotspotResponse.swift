@@ -1,9 +1,7 @@
 //
 //  WitnessesForAHotspotResponse.swift
 //
-//
-//  Created by Burak Colak on 20.10.2022.
-//
+
 
 public struct WitnessesForAHotspotResponse: Codable {
     public let data: [WitnessesForAHotspotDataResponse]?

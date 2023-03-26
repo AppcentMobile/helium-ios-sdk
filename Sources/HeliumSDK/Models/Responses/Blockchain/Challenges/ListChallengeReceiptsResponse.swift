@@ -1,9 +1,7 @@
 //
 //  ListChallengeReceipts.swift
 //
-//
-//  Created by Burak Colak on 19.10.2022.
-//
+
 
 public struct ListChallengeReceiptsResponse: Codable {
     public let data: [ListChallengeReceiptsDataResponse]?

@@ -1,9 +1,7 @@
 //
 //  OraclePriceStatsResponse.swift
 //
-//
-//  Created by Burak Colak on 20.10.2022.
-//
+
 
 public struct OraclePriceStatsResponse: Codable {
     public let data: OraclePriceStatsDataResponse?

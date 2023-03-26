@@ -1,9 +1,7 @@
 //
 //  RewardTotalsForAnAccountResponse.swift
 //
-//
-//  Created by Burak Colak on 17.10.2022.
-//
+
 
 public struct RewardTotalsForAnAccountResponse: Codable {
     public let data: RewardTotalsForAnAccountDataResponse?

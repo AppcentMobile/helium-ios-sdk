@@ -1,9 +1,6 @@
 //
 //  BlocksStatsResponse.swift
 //
-//
-//  Created by Burak Colak on 18.10.2022.
-//
 
 public struct BlocksStatsResponse: Codable {
     public let data: BlocksStatsDataResponse?

@@ -1,9 +1,7 @@
 //
 //  ValidatorsRoutes.swift
 //
-//
-//  Created by Burak Colak on 13.10.2022.
-//
+
 
 enum ValidatorsRoutes {
     static let listValidators = BaseRoute(method: .get, path: "v1/validators")

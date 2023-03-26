@@ -1,9 +1,7 @@
 //
 //  HotspotRolesCountsResponse.swift
 //
-//
-//  Created by Burak Colak on 19.10.2022.
-//
+
 
 public struct HotspotRolesCountsResponse: Codable {
     public let data: HotspotRolesCountsDataResponse?

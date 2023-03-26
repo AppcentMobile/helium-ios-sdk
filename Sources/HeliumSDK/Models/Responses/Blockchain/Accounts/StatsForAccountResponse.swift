@@ -1,9 +1,7 @@
 //
 //  StatsForAccountResponse.swift
 //
-//
-//  Created by Burak Colak on 17.10.2022.
-//
+
 
 public struct StatsForAccountResponse: Codable {
     public let data: [StatsForAccountDataResponse]?

@@ -1,9 +1,7 @@
 //
 //  DCBurnStatsResponse.swift
 //
-//
-//  Created by Burak Colak on 19.10.2022.
-//
+
 
 public struct DCBurnStatsResponse: Codable {
     public let data: DCBurnStatsDataResponse?

@@ -1,9 +1,6 @@
 //
 //  BlockAtHashTransactionsResponse.swift
 //
-//
-//  Created by Burak Colak on 18.10.2022.
-//
 
 public struct BlockAtHashTransactionsResponse: Codable {
     public let data: [BlockAtHashTransactionsDataResponse]?

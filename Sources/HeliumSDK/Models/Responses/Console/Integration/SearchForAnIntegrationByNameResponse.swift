@@ -1,9 +1,6 @@
 //
 //  SearchForAnIntegrationByNameResponse.swift
 //
-//
-//  Created by Burak Colak on 24.10.2022.
-//
 
 public struct SearchForAnIntegrationByNameResponse: Codable {
     public let id: String?

@@ -1,9 +1,7 @@
 //
 //  ListElectionsResponse.swift
 //
-//
-//  Created by Burak Colak on 19.10.2022.
-//
+
 
 public struct ListElectionsResponse: Codable {
     public let data: [ListElectionsDataResponse]?

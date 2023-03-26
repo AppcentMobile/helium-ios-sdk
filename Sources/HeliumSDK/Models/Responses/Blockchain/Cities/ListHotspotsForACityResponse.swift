@@ -1,9 +1,7 @@
 //
 //  ListHotspotsForACityResponse.swift
 //
-//
-//  Created by Burak Colak on 19.10.2022.
-//
+
 
 public struct ListHotspotsForACityResponse: Codable {
     public let data: [ListHotspotsForACityDataResponse]?

@@ -1,54 +1,40 @@
 //
 //  ChainVariablesManager.swift
 //
-//
-//  Created by Burak Colak on 18.10.2022.
-//
 
+import ACMNetworking
 import Foundation
 
 public class HeliumChainVariablesManager: BaseManager {
     public func getChainVariables(min_time: String? = nil, max_time: String? = nil, limit: Int? = nil, onSuccess: BlockchainCallbacks.BlocksHeight, onError: GenericCallbacks.ErrorCallback) {
         var endpoint = ChainVariablesRoutes.getChainVariables.endpoint()
 
-        var queryItems = [URLQueryItem]()
-
         if let min_time = min_time {
-            queryItems.append(URLQueryItem(name: "min_time", value: min_time))
+            endpoint = endpoint.add(queryItem: ACMQueryModel(name: "min_time", value: min_time))
         }
 
         if let max_time = max_time {
-            queryItems.append(URLQueryItem(name: "max_time", value: max_time))
+            endpoint = endpoint.add(queryItem: ACMQueryModel(name: "max_time", value: max_time))
         }
 
         if let limit = limit {
-            queryItems.append(URLQueryItem(name: "limit", value: String(format: "%d", limit)))
+            endpoint = endpoint.add(queryItem: ACMQueryModel(name: "limit", value: String(format: "%d", limit)))
         }
 
-        if queryItems.count > 0 {
-            endpoint.queryItems = queryItems
-        }
-
-        request(to: endpoint) { (r: BaseResult<BlocksHeightResponse?, Error>) in
-            switch r {
-            case let .success(r):
-                onSuccess?(r)
-            case let .failure(e):
-                onError?(e)
-            }
+        network.request(to: endpoint.build()) { (r: BlocksHeightResponse) in
+            onSuccess?(r)
+        } onError: { e in
+            onError?(e)
         }
     }
 
     public func getTheValueOfAchainVariable(name: String, onSuccess: BlockchainCallbacks.GetTheValueOfAchainVariable, onError: GenericCallbacks.ErrorCallback) {
         let endpoint = ChainVariablesRoutes.getTheValueOfAChainVariable.endpoint(name)
 
-        request(to: endpoint) { (r: BaseResult<GetTheValueOfAchainVariableResponse?, Error>) in
-            switch r {
-            case let .success(r):
-                onSuccess?(r)
-            case let .failure(e):
-                onError?(e)
-            }
+        network.request(to: endpoint.build()) { (r: GetTheValueOfAchainVariableResponse) in
+            onSuccess?(r)
+        } onError: { e in
+            onError?(e)
         }
     }
 
@@ -56,16 +42,13 @@ public class HeliumChainVariablesManager: BaseManager {
         var endpoint = ChainVariablesRoutes.listChainVariableActivity.endpoint()
 
         if let cursor = cursor {
-            endpoint.queryItems = [URLQueryItem(name: "cursor", value: cursor)]
+            endpoint = endpoint.add(queryItem: ACMQueryModel(name: "cursor", value: cursor))
         }
 
-        request(to: endpoint) { (r: BaseResult<ListChainVariableActivityResponse?, Error>) in
-            switch r {
-            case let .success(r):
-                onSuccess?(r)
-            case let .failure(e):
-                onError?(e)
-            }
+        network.request(to: endpoint.build()) { (r: ListChainVariableActivityResponse) in
+            onSuccess?(r)
+        } onError: { e in
+            onError?(e)
         }
     }
 }

@@ -1,9 +1,7 @@
 //
 //  ValidatorRolesCountsResponse.swift
 //
-//
-//  Created by Burak Colak on 20.10.2022.
-//
+
 
 public struct ValidatorRolesCountsResponse: Codable {
     public let data: ValidatorRolesCountsDataResponse?

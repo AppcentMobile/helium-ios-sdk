@@ -1,9 +1,6 @@
 //
 //  SearchForLabelResponse.swift
 //
-//
-//  Created by Burak Colak on 24.10.2022.
-//
 
 public struct SearchForLabelResponse: Codable {
     public let id: String?

@@ -1,9 +1,6 @@
 //
 //  CreateACustomHTTPIntegrationResponse.swift
 //
-//
-//  Created by Burak Colak on 24.10.2022.
-//
 
 public struct CreateACustomHTTPIntegrationResponse: Codable {
     public let devices: [String]?

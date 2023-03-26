@@ -1,10 +1,8 @@
 //
 //  ConsoleManager+Status.swift
 //
-//
-//  Created by Burak Colak on 24.10.2022.
-//
 
+import ACMNetworking
 import Foundation
 
 public extension HeliumConsoleManager {
@@ -12,31 +10,24 @@ public extension HeliumConsoleManager {
         let request = UpdateDeviceActiveStatusRequest(active: active)
         let endpoint = ConsoleRoutes.updateDeviceActiveStatus.consoleEndpoint(device_id, params: request.dictionary)
 
-        self.request(to: endpoint) { success, error in
-            if let error = error {
-                onError?(error)
-            } else {
-                onSuccess?(success)
-            }
+        network.request(to: endpoint.build()) { (r: Bool) in
+            onSuccess?(r)
+        } onError: { e in
+            onError?(e)
         }
     }
 
     func updateDevicesActiveStatus(dev_eui: String, app_eui: String, app_key: String, active: String, onSuccess: ConsoleCallbacks.DeleteDeviceByUUID, onError: GenericCallbacks.ErrorCallback) {
         let request = UpdateDeviceActiveStatusRequest(active: active)
-        var endpoint = ConsoleRoutes.updateDevicesActiveStatus.consoleEndpoint(params: request.dictionary)
+        let endpoint = ConsoleRoutes.updateDevicesActiveStatus.consoleEndpoint(params: request.dictionary)
+            .add(queryItem: ACMQueryModel(name: "dev_eui", value: dev_eui))
+            .add(queryItem: ACMQueryModel(name: "app_eui", value: app_eui))
+            .add(queryItem: ACMQueryModel(name: "app_key", value: app_key))
 
-        endpoint.queryItems = [
-            URLQueryItem(name: "dev_eui", value: dev_eui),
-            URLQueryItem(name: "app_eui", value: app_eui),
-            URLQueryItem(name: "app_key", value: app_key),
-        ]
-
-        self.request(to: endpoint) { success, error in
-            if let error = error {
-                onError?(error)
-            } else {
-                onSuccess?(success)
-            }
+        network.request(to: endpoint.build()) { (r: Bool) in
+            onSuccess?(r)
+        } onError: { e in
+            onError?(e)
         }
     }
 
@@ -44,12 +35,10 @@ public extension HeliumConsoleManager {
         let request = UpdateDevicesAttachedToLabelActiveStatusRequest(active: active)
         let endpoint = ConsoleRoutes.updateDevicesAttachedToLabelActiveStatus.consoleEndpoint(label_id, params: request.dictionary)
 
-        self.request(to: endpoint) { success, error in
-            if let error = error {
-                onError?(error)
-            } else {
-                onSuccess?(success)
-            }
+        network.request(to: endpoint.build()) { (r: Bool) in
+            onSuccess?(r)
+        } onError: { e in
+            onError?(e)
         }
     }
 }
