@@ -2,7 +2,6 @@
 //  RewardsManager.swift
 //
 
-
 import ACMNetworking
 
 class HeliumRewardsManager: BaseManager {

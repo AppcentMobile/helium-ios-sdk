@@ -2,7 +2,6 @@
 //  ValidatorForAddressResponse.swift
 //
 
-
 public struct ValidatorForAddressResponse: Codable {
     public let data: ValidatorForAddressDataResponse?
 

@@ -2,7 +2,6 @@
 //  DevicesByAppEuiAppKeyDevEuiResponse.swift
 //
 
-
 public struct DevicesByAppEuiAppKeyDevEuiResponse: Codable {
     public let app_eui: String?
     public let app_key: String?

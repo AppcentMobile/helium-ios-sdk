@@ -2,7 +2,6 @@
 //  ValidatorActivityResponse.swift
 //
 
-
 public struct ValidatorActivityResponse: Codable {
     public let cursor: String?
     public let data: [ValidatorActivityDataResponse]?

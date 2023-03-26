@@ -2,7 +2,6 @@
 //  HotspotsRoutes.swift
 //
 
-
 enum HotspotsRoutes {
     static let listHotspots = BaseRoute(method: .get, path: "v1/hotspots")
     static let hotspotForAddress = BaseRoute(method: .get, path: "v1/hotspots/%@")

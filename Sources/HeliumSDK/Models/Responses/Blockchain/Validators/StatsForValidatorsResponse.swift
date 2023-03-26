@@ -2,7 +2,6 @@
 //  StatsForValidatorsResponse.swift
 //
 
-
 public struct StatsForValidatorsResponse: Codable {
     public let data: StatsForValidatorsDataResponse?
 

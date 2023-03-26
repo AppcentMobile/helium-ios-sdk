@@ -2,7 +2,6 @@
 //  CurrentlyElectedValidatorsResponse.swift
 //
 
-
 public struct CurrentlyElectedValidatorsResponse: Codable {
     public let data: [CurrentlyElectedValidatorsDataResponse]?
 

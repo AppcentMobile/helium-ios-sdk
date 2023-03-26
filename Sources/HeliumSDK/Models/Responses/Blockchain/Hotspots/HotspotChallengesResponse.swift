@@ -2,7 +2,6 @@
 //  HotspotChallengesResponse.swift
 //
 
-
 import Foundation
 
 public struct HotspotChallengesResponse: Codable {

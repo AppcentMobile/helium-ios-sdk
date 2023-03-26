@@ -2,7 +2,6 @@
 //  ElectedValidatorsAtABlockResponse.swift
 //
 
-
 public struct ElectedValidatorsAtABlockResponse: Codable {
     public let data: [ElectedValidatorsAtABlockDataResponse]?
 

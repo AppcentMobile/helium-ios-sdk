@@ -2,7 +2,6 @@
 //  HotspotsForH3IndexResponse.swift
 //
 
-
 public struct HotspotsForH3IndexResponse: Codable {
     public let data: [HotspotsForH3IndexDataResponse]?
 

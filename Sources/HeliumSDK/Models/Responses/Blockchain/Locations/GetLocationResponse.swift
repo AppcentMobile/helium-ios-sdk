@@ -2,7 +2,6 @@
 //  GetLocationResponse.swift
 //
 
-
 public struct GetLocationResponse: Codable {
     public let data: GetLocationDataResponse?
 

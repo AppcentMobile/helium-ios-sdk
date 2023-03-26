@@ -2,7 +2,6 @@
 //  ConsoleManager+Device.swift
 //
 
-
 import ACMNetworking
 import Foundation
 

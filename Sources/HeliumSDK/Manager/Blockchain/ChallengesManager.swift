@@ -2,7 +2,6 @@
 //  ChallengesManager.swift
 //
 
-
 import ACMNetworking
 import Foundation
 

@@ -2,7 +2,6 @@
 //  AccountForAddressResponse.swift
 //
 
-
 public struct AccountForAddressResponse: Codable {
     public let data: ListAccountsDataResponse?
 

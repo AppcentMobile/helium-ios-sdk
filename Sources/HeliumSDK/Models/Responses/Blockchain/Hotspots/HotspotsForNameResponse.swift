@@ -2,7 +2,6 @@
 //  HotspotsForNameResponse.swift
 //
 
-
 public struct HotspotsForNameResponse: Codable {
     public let data: [HotspotsForNameDataResponse]?
 

@@ -2,7 +2,6 @@
 //  CitiesManager.swift
 //
 
-
 import ACMNetworking
 import Foundation
 

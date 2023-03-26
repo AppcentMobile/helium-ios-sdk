@@ -2,7 +2,6 @@
 //  DCBurnEventsResponse.swift
 //
 
-
 public struct DCBurnEventsResponse: Codable {
     public let cursor: String?
     public let data: [DCBurnEventsDataResponse]?

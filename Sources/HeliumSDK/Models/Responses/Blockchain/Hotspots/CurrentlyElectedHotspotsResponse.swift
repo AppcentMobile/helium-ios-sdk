@@ -2,7 +2,6 @@
 //  CurrentlyElectedHotspotsResponse.swift
 //
 
-
 public struct CurrentlyElectedHotspotsResponse: Codable {
     public let data: [CurrentlyElectedHotspotsDataResponse]?
 

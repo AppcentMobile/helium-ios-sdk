@@ -2,7 +2,6 @@
 //  OraclePricesManager.swift
 //
 
-
 import ACMNetworking
 import Foundation
 

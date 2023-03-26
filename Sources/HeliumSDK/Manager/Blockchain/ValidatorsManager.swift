@@ -2,7 +2,6 @@
 //  ValidatorsManager.swift
 //
 
-
 import ACMNetworking
 
 class HeliumValidatorsManager: BaseManager {

@@ -2,7 +2,6 @@
 //  HotspotRolesResponse.swift
 //
 
-
 public struct HotspotRolesResponse: Codable {
     public let data: [HotspotRolesDataResponse]?
 

@@ -2,7 +2,6 @@
 //  ListHotspotsResponse.swift
 //
 
-
 public struct ListHotspotsResponse: Codable {
     public let data: [ListHotspotsDataResponse]?
     public let cursor: String?

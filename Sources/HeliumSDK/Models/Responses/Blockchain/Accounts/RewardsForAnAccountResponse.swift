@@ -2,7 +2,6 @@
 //  RewardsForAnAccountResponse.swift
 //
 
-
 public struct RewardsForAnAccountResponse: Codable {
     public let data: RewardsForAnAccountDataResponse?
     public let cursor: String?

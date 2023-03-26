@@ -2,7 +2,6 @@
 //  ListChallengeReceipts.swift
 //
 
-
 public struct ListChallengeReceiptsResponse: Codable {
     public let data: [ListChallengeReceiptsDataResponse]?
 

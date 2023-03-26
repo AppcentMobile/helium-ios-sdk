@@ -2,7 +2,6 @@
 //  StatsResponse.swift
 //
 
-
 public struct StatsResponse: Codable {
     public let data: StatsDataResponse?
 

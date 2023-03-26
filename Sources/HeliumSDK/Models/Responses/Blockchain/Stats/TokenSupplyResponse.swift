@@ -2,7 +2,6 @@
 //  TokenSupplyResponse.swift
 //
 
-
 public struct TokenSupplyResponse: Codable {
     public let data: TokenSupplyDataResponse?
 

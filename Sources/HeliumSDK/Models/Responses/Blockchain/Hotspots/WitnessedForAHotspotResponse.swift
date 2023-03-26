@@ -2,7 +2,6 @@
 //  WitnessedForAHotspotResponse.swift
 //
 
-
 public struct WitnessedForAHotspotResponse: Codable {
     public let data: [WitnessedForAHotspotDataResponse]?
 

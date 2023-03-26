@@ -2,7 +2,6 @@
 //  ValidatorRolesCountsResponse.swift
 //
 
-
 public struct ValidatorRolesCountsResponse: Codable {
     public let data: ValidatorRolesCountsDataResponse?
 

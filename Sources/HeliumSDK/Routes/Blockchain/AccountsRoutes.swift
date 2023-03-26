@@ -2,7 +2,6 @@
 //  AccountsRoutes.swift
 //
 
-
 enum AccountsRoutes {
     static let listAccounts = BaseRoute(method: .get, path: "v1/accounts")
     static let listRichestAccounts = BaseRoute(method: .get, path: "v1/accounts/rich")

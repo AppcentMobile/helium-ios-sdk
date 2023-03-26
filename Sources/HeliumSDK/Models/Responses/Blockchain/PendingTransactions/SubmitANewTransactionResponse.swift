@@ -2,7 +2,6 @@
 //  SubmitANewTransactionResponse.swift
 //
 
-
 public struct SubmitANewTransactionResponse: Codable {
     public let data: SubmitANewTransactionDataResponse?
 

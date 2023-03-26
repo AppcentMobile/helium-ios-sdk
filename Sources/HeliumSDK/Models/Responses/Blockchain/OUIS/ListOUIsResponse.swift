@@ -2,7 +2,6 @@
 //  ListOUIsResponse.swift
 //
 
-
 public struct ListOUIsResponse: Codable {
     public let data: [ListOUIsDataResponse]?
 

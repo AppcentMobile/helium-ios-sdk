@@ -2,7 +2,6 @@
 //  OUISForAccountResponse.swift
 //
 
-
 public struct OUISForAccountResponse: Codable {
     public let data: [OUISForAccountDataResponse]?
 

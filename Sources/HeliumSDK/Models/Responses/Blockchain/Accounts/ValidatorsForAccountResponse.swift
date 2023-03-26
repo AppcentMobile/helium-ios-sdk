@@ -2,7 +2,6 @@
 //  ValidatorsForAccountResponse.swift
 //
 
-
 public struct ValidatorsForAccountResponse: Codable {
     public let data: [ValidatorsForAccountDataResponse]?
     public let cursor: String?

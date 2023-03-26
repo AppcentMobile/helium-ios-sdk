@@ -2,7 +2,6 @@
 //  ListRichestAccountsResponse.swift
 //
 
-
 public struct ListRichestAccountsResponse: Codable {
     public let data: [ListAccountsDataResponse]?
 

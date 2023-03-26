@@ -2,7 +2,6 @@
 //  GetPredictedHNTOraclePricesResponse.swift
 //
 
-
 public struct GetPredictedHNTOraclePricesResponse: Codable {
     public let data: GetPredictedHNTOraclePricesDataResponse?
 

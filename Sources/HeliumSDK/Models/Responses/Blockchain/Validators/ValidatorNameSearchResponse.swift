@@ -2,7 +2,6 @@
 //  ValidatorNameSearchResponse.swift
 //
 
-
 public struct ValidatorNameSearchResponse: Codable {
     public let data: [ValidatorNameSearchDataResponse]?
 

@@ -2,7 +2,6 @@
 //  HotspotForAddressResponse.swift
 //
 
-
 public struct HotspotForAddressResponse: Codable {
     public let data: HotspotForAddressDataResponse?
 

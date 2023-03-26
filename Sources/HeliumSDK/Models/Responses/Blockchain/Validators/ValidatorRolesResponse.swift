@@ -2,7 +2,6 @@
 //  ValidatorRolesResponse.swift
 //
 
-
 public struct ValidatorRolesResponse: Codable {
     public let data: [ValidatorRolesDataResponse]?
 

@@ -2,7 +2,6 @@
 //  BaseEndpoint.swift
 //
 
-
 import Foundation
 
 struct BaseEndpoint {

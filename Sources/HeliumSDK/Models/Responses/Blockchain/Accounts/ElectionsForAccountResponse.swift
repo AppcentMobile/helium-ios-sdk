@@ -2,7 +2,6 @@
 //  ElectionsForAccountResponse.swift
 //
 
-
 public struct ElectionsForAccountResponse: Codable {
     public let data: [ElectionsForAccountDataResponse]?
 

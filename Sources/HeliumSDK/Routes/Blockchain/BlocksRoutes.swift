@@ -2,7 +2,6 @@
 //  BlocksRoutes.swift
 //
 
-
 enum BlocksRoutes {
     static let blocksHeight = BaseRoute(method: .get, path: "v1/blocks/height")
     static let blocksStats = BaseRoute(method: .get, path: "v1/blocks/stats")

@@ -2,7 +2,6 @@
 //  DeviceByUUIDResponse.swift
 //
 
-
 public struct DeviceByUUIDResponse: Codable {
     public let id: String?
     public let adr_allowed: String?

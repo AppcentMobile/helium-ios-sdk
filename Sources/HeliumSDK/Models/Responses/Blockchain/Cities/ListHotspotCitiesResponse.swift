@@ -2,7 +2,6 @@
 //  ListHotspotCitiesResponse.swift
 //
 
-
 public struct ListHotspotCitiesResponse: Codable {
     public let data: [ListHotspotCitiesDataResponse]?
 

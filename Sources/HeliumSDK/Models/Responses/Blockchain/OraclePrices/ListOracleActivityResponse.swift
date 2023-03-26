@@ -2,7 +2,6 @@
 //  ListOracleActivityResponse.swift
 //
 
-
 public struct ListOracleActivityResponse: Codable {
     public let cursor: String?
     public let data: [ListOracleActivityDataResponse]?

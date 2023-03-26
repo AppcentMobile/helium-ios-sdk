@@ -2,7 +2,6 @@
 //  LocationsManager.swift
 //
 
-
 import ACMNetworking
 
 class HeliumLocationsManager: BaseManager {

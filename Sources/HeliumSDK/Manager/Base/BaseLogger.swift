@@ -2,7 +2,6 @@
 //  BaseLogger.swift
 //
 
-
 import Foundation
 import os.log
 

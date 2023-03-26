@@ -2,7 +2,6 @@
 //  RewardTotalsResponse.swift
 //
 
-
 public struct RewardTotalsResponse: Codable {
     public let meta: RewardTotalsMetaResponse?
     public let data: [RewardTotalsDataResponse]?

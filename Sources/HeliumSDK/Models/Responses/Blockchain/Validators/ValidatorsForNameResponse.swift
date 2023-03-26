@@ -2,7 +2,6 @@
 //  ValidatorsForNameResponse.swift
 //
 
-
 public struct ValidatorsForNameResponse: Codable {
     public let data: [ValidatorsForNameDataResponse]?
 

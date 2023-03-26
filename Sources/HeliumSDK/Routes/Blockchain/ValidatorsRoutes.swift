@@ -2,7 +2,6 @@
 //  ValidatorsRoutes.swift
 //
 
-
 enum ValidatorsRoutes {
     static let listValidators = BaseRoute(method: .get, path: "v1/validators")
     static let validatorForAddress = BaseRoute(method: .get, path: "v1/validators/%@")

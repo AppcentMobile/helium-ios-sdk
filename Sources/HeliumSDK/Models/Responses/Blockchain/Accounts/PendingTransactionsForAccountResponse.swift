@@ -2,7 +2,6 @@
 //  PendingTransactionsForAccountResponse.swift
 //
 
-
 public struct PendingTransactionsForAccountResponse: Codable {
     public let data: [PendingTransactionsForAccountDataResponse]?
 

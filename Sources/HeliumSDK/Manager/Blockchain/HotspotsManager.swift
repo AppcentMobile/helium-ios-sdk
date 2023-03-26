@@ -2,7 +2,6 @@
 //  HotspotsManager.swift
 //
 
-
 import ACMNetworking
 import Foundation
 

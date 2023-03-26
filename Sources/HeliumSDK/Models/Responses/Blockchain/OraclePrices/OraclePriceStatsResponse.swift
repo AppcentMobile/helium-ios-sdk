@@ -2,7 +2,6 @@
 //  OraclePriceStatsResponse.swift
 //
 
-
 public struct OraclePriceStatsResponse: Codable {
     public let data: OraclePriceStatsDataResponse?
     public let meta: OraclePriceStatsMetaResponse?

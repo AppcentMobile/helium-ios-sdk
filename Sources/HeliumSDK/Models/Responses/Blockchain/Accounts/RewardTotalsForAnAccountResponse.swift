@@ -2,7 +2,6 @@
 //  RewardTotalsForAnAccountResponse.swift
 //
 
-
 public struct RewardTotalsForAnAccountResponse: Codable {
     public let data: RewardTotalsForAnAccountDataResponse?
 

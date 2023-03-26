@@ -2,7 +2,6 @@
 //  GetOUIStatsResponse.swift
 //
 
-
 public struct GetOUIStatsResponse: Codable {
     public let data: GetOUIStatsDataResponse?
 

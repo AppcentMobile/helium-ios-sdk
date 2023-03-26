@@ -2,7 +2,6 @@
 //  RewardTotalForAValidatorResponse.swift
 //
 
-
 public struct RewardTotalForAValidatorResponse: Codable {
     public let data: RewardTotalForAValidatorDataResponse?
     public let meta: RewardTotalForAValidatorMetaResponse?

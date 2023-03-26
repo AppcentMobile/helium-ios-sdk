@@ -2,7 +2,6 @@
 //  ElectionsManager.swift
 //
 
-
 import ACMNetworking
 import Foundation
 

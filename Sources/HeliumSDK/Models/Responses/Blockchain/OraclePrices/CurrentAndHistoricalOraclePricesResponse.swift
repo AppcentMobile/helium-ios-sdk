@@ -2,7 +2,6 @@
 //  CurrentAndHistoricalOraclePricesResponse.swift
 //
 
-
 public struct CurrentAndHistoricalOraclePricesResponse: Codable {
     public let data: [CurrentAndHistoricalOraclePricesDataResponse]?
     public let cursor: String?

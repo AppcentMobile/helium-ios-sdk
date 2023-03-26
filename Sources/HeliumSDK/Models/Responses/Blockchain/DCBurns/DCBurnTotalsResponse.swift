@@ -2,7 +2,6 @@
 //  DCBurnTotalsResponse.swift
 //
 
-
 public struct DCBurnTotalsResponse: Codable {
     public let data: [DCBurnTotalsDataResponse]?
     public let meta: DCBurnTotalsMetaResponse?

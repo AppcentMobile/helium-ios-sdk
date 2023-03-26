@@ -2,7 +2,6 @@
 //  DeviceEventsResponse.swift
 //
 
-
 public struct DeviceEventsResponse: Codable {
     public let category: String?
     public let data: DeviceEventsDataResponse?

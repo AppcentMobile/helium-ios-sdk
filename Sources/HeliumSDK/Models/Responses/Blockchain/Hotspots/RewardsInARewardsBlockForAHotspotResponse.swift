@@ -2,7 +2,6 @@
 //  RewardsInARewardsBlockForAHotspotResponse.swift
 //
 
-
 public struct RewardsInARewardsBlockForAHotspotResponse: Codable {
     public let data: [RewardsInARewardsBlockForAHotspotDataResponse]?
 

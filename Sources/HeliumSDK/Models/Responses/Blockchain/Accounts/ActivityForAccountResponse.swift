@@ -2,7 +2,6 @@
 //  ActivityForAccountResponse.swift
 //
 
-
 public struct ActivityForAccountResponse: Codable {
     public let data: [ActivityForAccountDataResponse]?
 

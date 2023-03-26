@@ -2,7 +2,6 @@
 //  GetLastAssignedOUIResponse.swift
 //
 
-
 public struct GetLastAssignedOUIResponse: Codable {
     public let data: GetLastAssignedOUIDataResponse?
 

@@ -2,7 +2,6 @@
 //  StateChannelsManager.swift
 //
 
-
 import ACMNetworking
 
 class HeliumStateChannelsManager: BaseManager {

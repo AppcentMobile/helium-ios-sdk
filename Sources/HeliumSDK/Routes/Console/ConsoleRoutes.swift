@@ -2,7 +2,6 @@
 //  ConsoleRoutes.swift
 //
 
-
 enum ConsoleRoutes {
     static let dataCreditBalance = BaseRoute(method: .get, path: "api/v1/organization")
     static let devicesList = BaseRoute(method: .get, path: "api/v1/devices")

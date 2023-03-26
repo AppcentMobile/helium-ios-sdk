@@ -2,7 +2,6 @@
 //  HotspotLocationDistanceSearchResponse.swift
 //
 
-
 public struct HotspotLocationDistanceSearchResponse: Codable {
     public let data: [HotspotLocationDistanceSearchDataResponse]?
 

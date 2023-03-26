@@ -2,7 +2,6 @@
 //  ListAccountsResponse.swift
 //
 
-
 public struct ListAccountsResponse: Codable {
     public let data: [ListAccountsDataResponse]?
     public let cursor: String?

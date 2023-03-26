@@ -2,7 +2,6 @@
 //  AssertLocationsManager.swift
 //
 
-
 import ACMNetworking
 import Foundation
 

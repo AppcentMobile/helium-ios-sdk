@@ -2,7 +2,6 @@
 //  DevicesListResponse.swift
 //
 
-
 public struct DevicesListResponse: Codable {
     public let active: Bool?
     public let adr_allowed: String?

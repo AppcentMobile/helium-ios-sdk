@@ -2,7 +2,6 @@
 //  StateChannelClosesResponse.swift
 //
 
-
 public struct StateChannelClosesResponse: Codable {
     public let data: [StateChannelClosesDataResponse]?
     public let cursor: String?

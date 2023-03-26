@@ -2,7 +2,6 @@
 //  RewardsForAValidatorResponse.swift
 //
 
-
 public struct RewardsForAValidatorResponse: Codable {
     public let data: [RewardsForAValidatorDataResponse]?
 

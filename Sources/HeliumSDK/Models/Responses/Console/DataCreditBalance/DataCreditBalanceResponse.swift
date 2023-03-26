@@ -2,7 +2,6 @@
 //  DataCreditBalanceResponse.swift
 //
 
-
 public struct DataCreditBalanceResponse: Codable {
     public let dc_balance: Int?
     public let id: String?

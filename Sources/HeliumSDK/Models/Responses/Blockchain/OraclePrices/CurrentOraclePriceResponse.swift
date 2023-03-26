@@ -2,7 +2,6 @@
 //  CurrentOraclePriceResponse.swift
 //
 
-
 public struct CurrentOraclePriceResponse: Codable {
     public let data: CurrentOraclePriceDataResponse?
 

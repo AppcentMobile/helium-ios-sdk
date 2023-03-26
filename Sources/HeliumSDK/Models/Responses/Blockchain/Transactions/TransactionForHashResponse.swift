@@ -2,7 +2,6 @@
 //  TransactionForHashResponse.swift
 //
 
-
 public struct TransactionForHashResponse: Codable {
     public let data: TransactionForHashDataResponse?
 

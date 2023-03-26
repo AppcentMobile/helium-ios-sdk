@@ -2,7 +2,6 @@
 //  RolesForAccountResponse.swift
 //
 
-
 public struct RolesForAccountResponse: Codable {
     public let data: [RolesForAccountDataResponse]?
 

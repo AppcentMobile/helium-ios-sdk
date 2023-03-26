@@ -2,7 +2,6 @@
 //  OraclePriceAtASpecificBlockResponse.swift
 //
 
-
 public struct OraclePriceAtASpecificBlockResponse: Codable {
     public let data: OraclePriceAtASpecificBlockDataResponse?
 

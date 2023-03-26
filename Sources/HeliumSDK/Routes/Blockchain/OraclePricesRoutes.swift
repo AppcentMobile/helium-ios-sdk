@@ -2,7 +2,6 @@
 //  OraclePricesRoutes.swift
 //
 
-
 enum OraclePricesRoutes {
     static let currentOraclePrice = BaseRoute(method: .get, path: "v1/oracle/prices/current")
     static let currentAndHistoricalOraclePrices = BaseRoute(method: .get, path: "v1/oracle/prices")

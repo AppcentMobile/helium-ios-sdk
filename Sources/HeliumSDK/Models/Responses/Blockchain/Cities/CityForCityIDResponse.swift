@@ -2,7 +2,6 @@
 //  CityForCityIDResponse.swift
 //
 
-
 public struct CityForCityIDResponse: Codable {
     public let data: CityForCityIDDataResponse?
 
