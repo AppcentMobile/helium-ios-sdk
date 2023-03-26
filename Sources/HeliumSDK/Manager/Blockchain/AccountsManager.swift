@@ -244,7 +244,7 @@ public class HeliumAccountsManager: BaseManager {
         let route = AccountsRoutes.rewardsInARewardsBlockForAnAccount
 
         var endpoint = ACMEndpoint()
-            .set(method: route.method.toACM)
+            .set(method: route.method)
 
         if let block = block {
             endpoint = endpoint

@@ -254,7 +254,7 @@ class HeliumHotspotsManager: BaseManager {
     public func rewardsInARewardsBlockForAHotspot(address: String, block: String? = nil, cursor: String? = nil, min_time: String? = nil, max_time: String? = nil, onSuccess: BlockchainCallbacks.RewardsInARewardsBlockForAHotspot, onError: GenericCallbacks.ErrorCallback) {
         let route = HotspotsRoutes.rewardsInARewardsBlockForAHotspot
         var endpoint = ACMEndpoint()
-            .set(method: route.method.toACM)
+            .set(method: route.method)
 
         if let block = block {
             endpoint = endpoint.set(path: String(format: route.path, address, block))

@@ -61,7 +61,7 @@ public extension HeliumConsoleManager {
         let route = ConsoleRoutes.removeDeviceLabel
 
         let endpoint = ACMEndpoint()
-            .set(method: route.method.toACM)
+            .set(method: route.method)
             .set(path: String(format: route.path, device_id, label_id))
 
         network.request(to: endpoint.build()) { (r: Bool) in
