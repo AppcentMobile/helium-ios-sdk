@@ -1,17 +1,14 @@
 //
 //  ValidatorActivityResponse.swift
-//  
-//
-//  Created by Burak Colak on 20.10.2022.
 //
 
 public struct ValidatorActivityResponse: Codable {
-    public let cursor : String?
-    public let data : [ValidatorActivityDataResponse]?
+    public let cursor: String?
+    public let data: [ValidatorActivityDataResponse]?
 
     enum CodingKeys: String, CodingKey {
-        case cursor = "cursor"
-        case data = "data"
+        case cursor
+        case data
     }
 
     public init(from decoder: Decoder) throws {
@@ -21,23 +18,23 @@ public struct ValidatorActivityResponse: Codable {
     }
 }
 
-public struct ValidatorActivityDataResponse : Codable {
-    public let address : String?
-    public let hash : String?
-    public let height : Int?
-    public let signature : String?
-    public let time : Int?
-    public let type : String?
-    public let version : Int?
+public struct ValidatorActivityDataResponse: Codable {
+    public let address: String?
+    public let hash: String?
+    public let height: Int?
+    public let signature: String?
+    public let time: Int?
+    public let type: String?
+    public let version: Int?
 
     enum CodingKeys: String, CodingKey {
-        case address = "address"
-        case hash = "hash"
-        case height = "height"
-        case signature = "signature"
-        case time = "time"
-        case type = "type"
-        case version = "version"
+        case address
+        case hash
+        case height
+        case signature
+        case time
+        case type
+        case version
     }
 
     public init(from decoder: Decoder) throws {

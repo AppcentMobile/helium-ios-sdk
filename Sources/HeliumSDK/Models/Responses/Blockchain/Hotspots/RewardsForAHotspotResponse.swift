@@ -1,15 +1,12 @@
 //
 //  RewardsForAHotspotResponse.swift
-//  
-//
-//  Created by Burak Colak on 20.10.2022.
 //
 
-public struct RewardsForAHotspotResponse : Codable {
-    public let data : [RewardsForAHotspotDataResponse]?
+public struct RewardsForAHotspotResponse: Codable {
+    public let data: [RewardsForAHotspotDataResponse]?
 
     enum CodingKeys: String, CodingKey {
-        case data = "data"
+        case data
     }
 
     public init(from decoder: Decoder) throws {
@@ -18,21 +15,21 @@ public struct RewardsForAHotspotResponse : Codable {
     }
 }
 
-public struct RewardsForAHotspotDataResponse : Codable {
-    public let account : String?
-    public let amount : Int?
-    public let block : Int?
-    public let gateway : String?
-    public let hash : String?
-    public let timestamp : String?
+public struct RewardsForAHotspotDataResponse: Codable {
+    public let account: String?
+    public let amount: Int?
+    public let block: Int?
+    public let gateway: String?
+    public let hash: String?
+    public let timestamp: String?
 
     enum CodingKeys: String, CodingKey {
-        case account = "account"
-        case amount = "amount"
-        case block = "block"
-        case gateway = "gateway"
-        case hash = "hash"
-        case timestamp = "timestamp"
+        case account
+        case amount
+        case block
+        case gateway
+        case hash
+        case timestamp
     }
 
     public init(from decoder: Decoder) throws {

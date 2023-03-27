@@ -1,15 +1,12 @@
 //
 //  RewardTotalForAHotspotResponse.swift
-//  
-//
-//  Created by Burak Colak on 20.10.2022.
 //
 
-public struct RewardTotalForAHotspotResponse : Codable {
-    public let data : RewardTotalForAHotspotDataResponse?
+public struct RewardTotalForAHotspotResponse: Codable {
+    public let data: RewardTotalForAHotspotDataResponse?
 
     enum CodingKeys: String, CodingKey {
-        case data = "data"
+        case data
     }
 
     public init(from decoder: Decoder) throws {
@@ -18,15 +15,15 @@ public struct RewardTotalForAHotspotResponse : Codable {
     }
 }
 
-public struct RewardTotalForAHotspotDataResponse : Codable {
-    public let max_time : String?
-    public let min_time : String?
-    public let sum : String?
+public struct RewardTotalForAHotspotDataResponse: Codable {
+    public let max_time: String?
+    public let min_time: String?
+    public let sum: String?
 
     enum CodingKeys: String, CodingKey {
-        case max_time = "max_time"
-        case min_time = "min_time"
-        case sum = "sum"
+        case max_time
+        case min_time
+        case sum
     }
 
     public init(from decoder: Decoder) throws {

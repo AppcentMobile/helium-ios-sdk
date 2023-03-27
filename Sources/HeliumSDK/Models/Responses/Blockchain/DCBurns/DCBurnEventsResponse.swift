@@ -1,17 +1,14 @@
 //
 //  DCBurnEventsResponse.swift
-//  
-//
-//  Created by Burak Colak on 19.10.2022.
 //
 
-public struct DCBurnEventsResponse : Codable {
-    public let cursor : String?
-    public let data : [DCBurnEventsDataResponse]?
+public struct DCBurnEventsResponse: Codable {
+    public let cursor: String?
+    public let data: [DCBurnEventsDataResponse]?
 
     enum CodingKeys: String, CodingKey {
-        case cursor = "cursor"
-        case data = "data"
+        case cursor
+        case data
     }
 
     public init(from decoder: Decoder) throws {
@@ -21,19 +18,19 @@ public struct DCBurnEventsResponse : Codable {
     }
 }
 
-public struct DCBurnEventsDataResponse : Codable {
-    public let address : String?
-    public let amount : Int?
-    public let block : Int?
-    public let oracle_price : Int?
-    public let type : String?
+public struct DCBurnEventsDataResponse: Codable {
+    public let address: String?
+    public let amount: Int?
+    public let block: Int?
+    public let oracle_price: Int?
+    public let type: String?
 
     enum CodingKeys: String, CodingKey {
-        case address = "address"
-        case amount = "amount"
-        case block = "block"
-        case oracle_price = "oracle_price"
-        case type = "type"
+        case address
+        case amount
+        case block
+        case oracle_price
+        case type
     }
 
     public init(from decoder: Decoder) throws {

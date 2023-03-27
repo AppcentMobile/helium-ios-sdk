@@ -1,15 +1,12 @@
 //
 //  HotspotRolesResponse.swift
-//  
-//
-//  Created by Burak Colak on 19.10.2022.
 //
 
 public struct HotspotRolesResponse: Codable {
-    public let data : [HotspotRolesDataResponse]?
+    public let data: [HotspotRolesDataResponse]?
 
     enum CodingKeys: String, CodingKey {
-        case data = "data"
+        case data
     }
 
     public init(from decoder: Decoder) throws {
@@ -19,18 +16,18 @@ public struct HotspotRolesResponse: Codable {
 }
 
 public struct HotspotRolesDataResponse: Codable {
-    public let type : String?
-    public let time : Int?
-    public let role : String?
-    public let height : Int?
-    public let hash : String?
+    public let type: String?
+    public let time: Int?
+    public let role: String?
+    public let height: Int?
+    public let hash: String?
 
     enum CodingKeys: String, CodingKey {
-        case type = "type"
-        case time = "time"
-        case role = "role"
-        case height = "height"
-        case hash = "hash"
+        case type
+        case time
+        case role
+        case height
+        case hash
     }
 
     public init(from decoder: Decoder) throws {

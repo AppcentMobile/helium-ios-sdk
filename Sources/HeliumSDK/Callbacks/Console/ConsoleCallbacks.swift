@@ -1,60 +1,63 @@
 //
 //  ConsoleCallbacks.swift
-//  
-//
-//  Created by Burak Colak on 21.10.2022.
 //
 
 public struct ConsoleCallbacks {}
 
-extension ConsoleCallbacks {
-    //MARK: Data credit balance
-    public typealias DataCreditBalance = ((DataCreditBalanceResponse?) -> ())?
+public extension ConsoleCallbacks {
+    // MARK: Data credit balance
+
+    typealias DataCreditBalance = ((DataCreditBalanceResponse?) -> Void)?
 }
 
-extension ConsoleCallbacks {
-    //MARK: Devices
-    public typealias DevicesList = ((DevicesListResponse?) -> ())?
-    public typealias DevicesByAppEuiAppKeyDevEui = ((DevicesByAppEuiAppKeyDevEuiResponse?) -> ())?
-    public typealias DeviceByUUID = ((DeviceByUUIDResponse?) -> ())?
-    public typealias DeviceEvents = ((DeviceEventsResponse?) -> ())?
-    public typealias DeviceIntegrationEvents = ((DeviceIntegrationEventsResponse?) -> ())?
-    public typealias CreateDevice = ((Bool?) -> ())?
-    public typealias DeleteDeviceByUUID = ((Bool?) -> ())?
+public extension ConsoleCallbacks {
+    // MARK: Devices
+
+    typealias DevicesList = ((DevicesListResponse?) -> Void)?
+    typealias DevicesByAppEuiAppKeyDevEui = ((DevicesByAppEuiAppKeyDevEuiResponse?) -> Void)?
+    typealias DeviceByUUID = ((DeviceByUUIDResponse?) -> Void)?
+    typealias DeviceEvents = ((DeviceEventsResponse?) -> Void)?
+    typealias DeviceIntegrationEvents = ((DeviceIntegrationEventsResponse?) -> Void)?
+    typealias CreateDevice = ((Bool?) -> Void)?
+    typealias DeleteDeviceByUUID = ((Bool?) -> Void)?
 }
 
-extension ConsoleCallbacks {
-    //MARK: Labels
-    public typealias Labels = ((LabelsResponse?) -> ())?
-    public typealias CreateLabel = ((Bool?) -> ())?
-    public typealias DeleteLabel = ((Bool?) -> ())?
-    public typealias SearchForLabel = ((SearchForLabelResponse?) -> ())?
-    public typealias AddDeviceLabel = ((Bool?) -> ())?
-    public typealias RemoveDeviceLabel = ((Bool?) -> ())?
+public extension ConsoleCallbacks {
+    // MARK: Labels
+
+    typealias Labels = ((LabelsResponse?) -> Void)?
+    typealias CreateLabel = ((Bool?) -> Void)?
+    typealias DeleteLabel = ((Bool?) -> Void)?
+    typealias SearchForLabel = ((SearchForLabelResponse?) -> Void)?
+    typealias AddDeviceLabel = ((Bool?) -> Void)?
+    typealias RemoveDeviceLabel = ((Bool?) -> Void)?
 }
 
-extension ConsoleCallbacks {
-    //MARK: Integration
-    public typealias CreateAPrebuiltIntegration = ((CreateAPrebuiltIntegrationResponse?) -> ())?
-    public typealias CreateACustomHTTPIntegration = ((CreateACustomHTTPIntegrationResponse?) -> ())?
-    public typealias CreateACustomMQTTIntegration = ((CreateACustomMQTTIntegrationResponse?) -> ())?
-    public typealias CreateACustomAzureIoTHubIntegration = ((CreateACustomAzureIoTHubIntegrationResponse?) -> ())?
-    public typealias CreateACustomAWSIoTCoreIntegration = ((CreateACustomAWSIoTCoreIntegrationResponse?) -> ())?
-    public typealias DeleteAnIntegration = ((Bool?) -> ())?
-    public typealias ListIntegrations = ((ListIntegrationsResponse?) -> ())?
-    public typealias SearchForAnIntegrationByUUID = ((SearchForAnIntegrationByUUIDResponse?) -> ())?
-    public typealias SearchForAnIntegrationByName = ((SearchForAnIntegrationByNameResponse?) -> ())?
+public extension ConsoleCallbacks {
+    // MARK: Integration
+
+    typealias CreateAPrebuiltIntegration = ((CreateAPrebuiltIntegrationResponse?) -> Void)?
+    typealias CreateACustomHTTPIntegration = ((CreateACustomHTTPIntegrationResponse?) -> Void)?
+    typealias CreateACustomMQTTIntegration = ((CreateACustomMQTTIntegrationResponse?) -> Void)?
+    typealias CreateACustomAzureIoTHubIntegration = ((CreateACustomAzureIoTHubIntegrationResponse?) -> Void)?
+    typealias CreateACustomAWSIoTCoreIntegration = ((CreateACustomAWSIoTCoreIntegrationResponse?) -> Void)?
+    typealias DeleteAnIntegration = ((Bool?) -> Void)?
+    typealias ListIntegrations = ((ListIntegrationsResponse?) -> Void)?
+    typealias SearchForAnIntegrationByUUID = ((SearchForAnIntegrationByUUIDResponse?) -> Void)?
+    typealias SearchForAnIntegrationByName = ((SearchForAnIntegrationByNameResponse?) -> Void)?
 }
 
-extension ConsoleCallbacks {
-    //MARK: Flow
-    public typealias ViewAllFlowsForAnIntegration = ((ViewAllFlowsForAnIntegrationResponse?) -> ())?
-    public typealias CreateAFlowForAnIntegration = ((CreateAFlowForAnIntegrationResponse?) -> ())?
-    public typealias DeleteFlow = ((Bool?) -> ())?
+public extension ConsoleCallbacks {
+    // MARK: Flow
+
+    typealias ViewAllFlowsForAnIntegration = ((ViewAllFlowsForAnIntegrationResponse?) -> Void)?
+    typealias CreateAFlowForAnIntegration = ((CreateAFlowForAnIntegrationResponse?) -> Void)?
+    typealias DeleteFlow = ((Bool?) -> Void)?
 }
 
-extension ConsoleCallbacks {
-    //MARK: Config
-    public typealias UpdateDeviceConfigProfile = ((Bool?) -> ())?
-    public typealias UpdateLabelConfigProfile = ((Bool?) -> ())?
+public extension ConsoleCallbacks {
+    // MARK: Config
+
+    typealias UpdateDeviceConfigProfile = ((Bool?) -> Void)?
+    typealias UpdateLabelConfigProfile = ((Bool?) -> Void)?
 }

@@ -1,45 +1,34 @@
 //
 //  ElectionsManager.swift
-//  
-//
-//  Created by Burak Colak on 19.10.2022.
 //
 
+import ACMNetworking
 import Foundation
 
-class HeliumElectionsManager: BaseManager {
+class HeliumElectionsManager: BaseBlockChainManager {
     public func listElections(cursor: String? = nil, min_time: String? = nil, max_time: String? = nil, limit: String? = nil, onSuccess: BlockchainCallbacks.ListElections, onError: GenericCallbacks.ErrorCallback) {
-        var endpoint = ElectionsRoutes.listElections.endpoint()
-
-        var queryItems = [URLQueryItem]()
+        var endpoint = ElectionsRoutes.listElections.endpoint(with: acmEndpoint)
 
         if let cursor = cursor {
-            queryItems.append(URLQueryItem(name: "cursor", value: cursor))
+            endpoint = endpoint.add(queryItem: ACMQueryModel(name: "cursor", value: cursor))
         }
 
         if let min_time = min_time {
-            queryItems.append(URLQueryItem(name: "min_time", value: min_time))
+            endpoint = endpoint.add(queryItem: ACMQueryModel(name: "min_time", value: min_time))
         }
 
         if let max_time = max_time {
-            queryItems.append(URLQueryItem(name: "max_time", value: max_time))
+            endpoint = endpoint.add(queryItem: ACMQueryModel(name: "max_time", value: max_time))
         }
 
         if let limit = limit {
-            queryItems.append(URLQueryItem(name: "limit", value: limit))
+            endpoint = endpoint.add(queryItem: ACMQueryModel(name: "limit", value: limit))
         }
 
-        if queryItems.count > 0 {
-            endpoint.queryItems = queryItems
-        }
-
-        self.request(to: endpoint) { (r: BaseResult<ListElectionsResponse?, Error>) in
-            switch r {
-            case .success(let r):
-                onSuccess?(r)
-            case .failure(let e):
-                onError?(e)
-            }
+        network.request(to: endpoint.build()) { (r: ListElectionsResponse) in
+            onSuccess?(r)
+        } onError: { e in
+            onError?(e)
         }
     }
 }

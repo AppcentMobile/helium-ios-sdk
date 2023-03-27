@@ -1,15 +1,12 @@
 //
 //  ValidatorRolesResponse.swift
-//  
-//
-//  Created by Burak Colak on 20.10.2022.
 //
 
-public struct ValidatorRolesResponse : Codable {
-    public let data : [ValidatorRolesDataResponse]?
+public struct ValidatorRolesResponse: Codable {
+    public let data: [ValidatorRolesDataResponse]?
 
     enum CodingKeys: String, CodingKey {
-        case data = "data"
+        case data
     }
 
     public init(from decoder: Decoder) throws {
@@ -18,19 +15,19 @@ public struct ValidatorRolesResponse : Codable {
     }
 }
 
-public struct ValidatorRolesDataResponse : Codable {
-    public let type : String?
-    public let time : Int?
-    public let role : String?
-    public let height : Int?
-    public let hash : String?
+public struct ValidatorRolesDataResponse: Codable {
+    public let type: String?
+    public let time: Int?
+    public let role: String?
+    public let height: Int?
+    public let hash: String?
 
     enum CodingKeys: String, CodingKey {
-        case type = "type"
-        case time = "time"
-        case role = "role"
-        case height = "height"
-        case hash = "hash"
+        case type
+        case time
+        case role
+        case height
+        case hash
     }
 
     public init(from decoder: Decoder) throws {

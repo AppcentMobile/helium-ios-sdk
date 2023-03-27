@@ -1,15 +1,12 @@
 //
 //  ActivityForAccountResponse.swift
-//  
-//
-//  Created by Burak Colak on 17.10.2022.
 //
 
 public struct ActivityForAccountResponse: Codable {
-    public let data : [ActivityForAccountDataResponse]?
+    public let data: [ActivityForAccountDataResponse]?
 
     enum CodingKeys: String, CodingKey {
-        case data = "data"
+        case data
     }
 
     public init(from decoder: Decoder) throws {
@@ -19,22 +16,22 @@ public struct ActivityForAccountResponse: Codable {
 }
 
 public struct ActivityForAccountDataResponse: Codable {
-    public let type : String?
-    public let time : Int?
-    public let start_epoch : Int?
-    public let rewards : [ActivityForAccountRewardsResponse]?
-    public let height : Int?
-    public let hash : String?
-    public let end_epoch : Int?
+    public let type: String?
+    public let time: Int?
+    public let start_epoch: Int?
+    public let rewards: [ActivityForAccountRewardsResponse]?
+    public let height: Int?
+    public let hash: String?
+    public let end_epoch: Int?
 
     enum CodingKeys: String, CodingKey {
-        case type = "type"
-        case time = "time"
-        case start_epoch = "start_epoch"
-        case rewards = "rewards"
-        case height = "height"
-        case hash = "hash"
-        case end_epoch = "end_epoch"
+        case type
+        case time
+        case start_epoch
+        case rewards
+        case height
+        case hash
+        case end_epoch
     }
 
     public init(from decoder: Decoder) throws {
@@ -50,16 +47,16 @@ public struct ActivityForAccountDataResponse: Codable {
 }
 
 public struct ActivityForAccountRewardsResponse: Codable {
-    public let type : String?
-    public let gateway : String?
-    public let amount : Int?
-    public let account : String?
+    public let type: String?
+    public let gateway: String?
+    public let amount: Int?
+    public let account: String?
 
     enum CodingKeys: String, CodingKey {
-        case type = "type"
-        case gateway = "gateway"
-        case amount = "amount"
-        case account = "account"
+        case type
+        case gateway
+        case amount
+        case account
     }
 
     public init(from decoder: Decoder) throws {

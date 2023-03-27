@@ -1,34 +1,27 @@
 //
 //  PendingTransactionsManager.swift
-//  
-//
-//  Created by Burak Colak on 20.10.2022.
 //
 
-class HeliumPendingTransactionsManager: BaseManager {
-    public func pendingTransactionStatus(hash: String, cursor: String? = nil, onSuccess: BlockchainCallbacks.PendingTransactionStatus, onError: GenericCallbacks.ErrorCallback) {
-        let endpoint = PendingTransactionsRoutes.pendingTransactionStatus.endpoint()
+import ACMNetworking
 
-        self.request(to: endpoint) { (r: BaseResult<PendingTransactionStatusResponse?, Error>) in
-            switch r {
-            case .success(let r):
-                onSuccess?(r)
-            case .failure(let e):
-                onError?(e)
-            }
+class HeliumPendingTransactionsManager: BaseBlockChainManager {
+    public func pendingTransactionStatus(hash _: String, cursor _: String? = nil, onSuccess: BlockchainCallbacks.PendingTransactionStatus, onError: GenericCallbacks.ErrorCallback) {
+        let endpoint = PendingTransactionsRoutes.pendingTransactionStatus.endpoint(with: acmEndpoint)
+
+        network.request(to: endpoint.build()) { (r: PendingTransactionStatusResponse) in
+            onSuccess?(r)
+        } onError: { e in
+            onError?(e)
         }
     }
 
     public func submitANewTransaction(hash: String, onSuccess: BlockchainCallbacks.SubmitANewTransaction, onError: GenericCallbacks.ErrorCallback) {
-        let endpoint = PendingTransactionsRoutes.submitANewTransaction.endpoint(hash)
+        let endpoint = PendingTransactionsRoutes.submitANewTransaction.endpoint(with: acmEndpoint, value: hash)
 
-        self.request(to: endpoint) { (r: BaseResult<SubmitANewTransactionResponse?, Error>) in
-            switch r {
-            case .success(let r):
-                onSuccess?(r)
-            case .failure(let e):
-                onError?(e)
-            }
+        network.request(to: endpoint.build()) { (r: SubmitANewTransactionResponse) in
+            onSuccess?(r)
+        } onError: { e in
+            onError?(e)
         }
     }
 }

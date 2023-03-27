@@ -1,15 +1,12 @@
 //
 //  StatsResponse.swift
-//  
-//
-//  Created by Burak Colak on 20.10.2022.
 //
 
 public struct StatsResponse: Codable {
-    public let data : StatsDataResponse?
+    public let data: StatsDataResponse?
 
     enum CodingKeys: String, CodingKey {
-        case data = "data"
+        case data
     }
 
     public init(from decoder: Decoder) throws {
@@ -19,18 +16,18 @@ public struct StatsResponse: Codable {
 }
 
 public struct StatsDataResponse: Codable {
-    public let block_times : StatsBlockTimesResponse?
-    public let challenge_counts : StatsChallengeCountsResponse?
-    public let counts : StatsCountsResponse?
-    public let election_times : StatsElectionTimesResponse?
-    public let token_supply : Double?
+    public let block_times: StatsBlockTimesResponse?
+    public let challenge_counts: StatsChallengeCountsResponse?
+    public let counts: StatsCountsResponse?
+    public let election_times: StatsElectionTimesResponse?
+    public let token_supply: Double?
 
     enum CodingKeys: String, CodingKey {
-        case block_times = "block_times"
-        case challenge_counts = "challenge_counts"
-        case counts = "counts"
-        case election_times = "election_times"
-        case token_supply = "token_supply"
+        case block_times
+        case challenge_counts
+        case counts
+        case election_times
+        case token_supply
     }
 
     public init(from decoder: Decoder) throws {
@@ -43,17 +40,17 @@ public struct StatsDataResponse: Codable {
     }
 }
 
-public struct StatsBlockTimesResponse : Codable {
-    public let last_day : StatsFilterDateResponse?
-    public let last_hour : StatsFilterDateResponse?
-    public let last_month : StatsFilterDateResponse?
-    public let last_week : StatsFilterDateResponse?
+public struct StatsBlockTimesResponse: Codable {
+    public let last_day: StatsFilterDateResponse?
+    public let last_hour: StatsFilterDateResponse?
+    public let last_month: StatsFilterDateResponse?
+    public let last_week: StatsFilterDateResponse?
 
     enum CodingKeys: String, CodingKey {
-        case last_day = "last_day"
-        case last_hour = "last_hour"
-        case last_month = "last_month"
-        case last_week = "last_week"
+        case last_day
+        case last_hour
+        case last_month
+        case last_week
     }
 
     public init(from decoder: Decoder) throws {
@@ -65,13 +62,13 @@ public struct StatsBlockTimesResponse : Codable {
     }
 }
 
-public struct StatsChallengeCountsResponse : Codable {
-    public let active : Int?
-    public let last_day : Int?
+public struct StatsChallengeCountsResponse: Codable {
+    public let active: Int?
+    public let last_day: Int?
 
     enum CodingKeys: String, CodingKey {
-        case active = "active"
-        case last_day = "last_day"
+        case active
+        case last_day
     }
 
     public init(from decoder: Decoder) throws {
@@ -81,29 +78,29 @@ public struct StatsChallengeCountsResponse : Codable {
     }
 }
 
-public struct StatsCountsResponse : Codable {
-    public let validators : Int?
-    public let ouis : Int?
-    public let hotspots_dataonly : Int?
-    public let blocks : Int?
-    public let challenges : Int?
-    public let cities : Int?
-    public let consensus_groups : Int?
-    public let countries : Int?
-    public let hotspots : Int?
-    public let transactions : Int?
+public struct StatsCountsResponse: Codable {
+    public let validators: Int?
+    public let ouis: Int?
+    public let hotspots_dataonly: Int?
+    public let blocks: Int?
+    public let challenges: Int?
+    public let cities: Int?
+    public let consensus_groups: Int?
+    public let countries: Int?
+    public let hotspots: Int?
+    public let transactions: Int?
 
     enum CodingKeys: String, CodingKey {
-        case validators = "validators"
-        case ouis = "ouis"
-        case hotspots_dataonly = "hotspots_dataonly"
-        case blocks = "blocks"
-        case challenges = "challenges"
-        case cities = "cities"
-        case consensus_groups = "consensus_groups"
-        case countries = "countries"
-        case hotspots = "hotspots"
-        case transactions = "transactions"
+        case validators
+        case ouis
+        case hotspots_dataonly
+        case blocks
+        case challenges
+        case cities
+        case consensus_groups
+        case countries
+        case hotspots
+        case transactions
     }
 
     public init(from decoder: Decoder) throws {
@@ -121,13 +118,13 @@ public struct StatsCountsResponse : Codable {
     }
 }
 
-public struct StatsFilterDateResponse : Codable {
-    public let avg : Double?
-    public let stddev : Double?
+public struct StatsFilterDateResponse: Codable {
+    public let avg: Double?
+    public let stddev: Double?
 
     enum CodingKeys: String, CodingKey {
-        case avg = "avg"
-        case stddev = "stddev"
+        case avg
+        case stddev
     }
 
     public init(from decoder: Decoder) throws {
@@ -137,17 +134,17 @@ public struct StatsFilterDateResponse : Codable {
     }
 }
 
-public struct StatsElectionTimesResponse : Codable {
-    public let last_day : StatsFilterDateResponse?
-    public let last_hour : StatsFilterDateResponse?
-    public let last_month : StatsFilterDateResponse?
-    public let last_week : StatsFilterDateResponse?
+public struct StatsElectionTimesResponse: Codable {
+    public let last_day: StatsFilterDateResponse?
+    public let last_hour: StatsFilterDateResponse?
+    public let last_month: StatsFilterDateResponse?
+    public let last_week: StatsFilterDateResponse?
 
     enum CodingKeys: String, CodingKey {
-        case last_day = "last_day"
-        case last_hour = "last_hour"
-        case last_month = "last_month"
-        case last_week = "last_week"
+        case last_day
+        case last_hour
+        case last_month
+        case last_week
     }
 
     public init(from decoder: Decoder) throws {

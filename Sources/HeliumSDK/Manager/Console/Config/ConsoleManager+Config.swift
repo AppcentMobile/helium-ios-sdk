@@ -1,34 +1,29 @@
 //
 //  ConsoleManager+Config.swift
-//  
-//
-//  Created by Burak Colak on 24.10.2022.
 //
 
-extension HeliumConsoleManager {
-    public func updateDeviceConfigProfile(device_id: String, config_profile_id: String, onSuccess: ConsoleCallbacks.UpdateDeviceConfigProfile, onError: GenericCallbacks.ErrorCallback) {
+import ACMNetworking
+
+public extension HeliumConsoleManager {
+    func updateDeviceConfigProfile(device_id: String, config_profile_id: String, onSuccess: ConsoleCallbacks.UpdateDeviceConfigProfile, onError: GenericCallbacks.ErrorCallback) {
         let request = UpdateDeviceConfigProfileRequest(config_profile_id: config_profile_id)
-        let endpoint = ConsoleRoutes.updateDeviceConfigProfile.consoleEndpoint(device_id, params: request.dictionary)
+        let endpoint = ConsoleRoutes.updateDeviceConfigProfile.consoleEndpoint(with: acmEndpoint, value: device_id, params: request.dictionary)
 
-        self.request(to: endpoint) { success, error in
-            if let error = error {
-                onError?(error)
-            }else {
-                onSuccess?(success)
-            }
+        network.request(to: endpoint.build()) { (r: Bool) in
+            onSuccess?(r)
+        } onError: { e in
+            onError?(e)
         }
     }
 
-    public func updateLabelConfigProfile(label_id: String, config_profile_id: String, onSuccess: ConsoleCallbacks.UpdateLabelConfigProfile, onError: GenericCallbacks.ErrorCallback) {
+    func updateLabelConfigProfile(label_id: String, config_profile_id: String, onSuccess: ConsoleCallbacks.UpdateLabelConfigProfile, onError: GenericCallbacks.ErrorCallback) {
         let request = UpdateDeviceConfigProfileRequest(config_profile_id: config_profile_id)
-        let endpoint = ConsoleRoutes.updateLabelConfigProfile.consoleEndpoint(label_id, params: request.dictionary)
+        let endpoint = ConsoleRoutes.updateLabelConfigProfile.consoleEndpoint(with: acmEndpoint, value: label_id, params: request.dictionary)
 
-        self.request(to: endpoint) { success, error in
-            if let error = error {
-                onError?(error)
-            }else {
-                onSuccess?(success)
-            }
+        network.request(to: endpoint.build()) { (r: Bool) in
+            onSuccess?(r)
+        } onError: { e in
+            onError?(e)
         }
     }
 }

@@ -1,15 +1,12 @@
 //
 //  GetOUIStatsResponse.swift
-//  
-//
-//  Created by Burak Colak on 20.10.2022.
 //
 
-public struct GetOUIStatsResponse : Codable {
-    public let data : GetOUIStatsDataResponse?
+public struct GetOUIStatsResponse: Codable {
+    public let data: GetOUIStatsDataResponse?
 
     enum CodingKeys: String, CodingKey {
-        case data = "data"
+        case data
     }
 
     public init(from decoder: Decoder) throws {
@@ -18,11 +15,11 @@ public struct GetOUIStatsResponse : Codable {
     }
 }
 
-public struct GetOUIStatsDataResponse : Codable {
-    public let count : Int?
+public struct GetOUIStatsDataResponse: Codable {
+    public let count: Int?
 
     enum CodingKeys: String, CodingKey {
-        case count = "count"
+        case count
     }
 
     public init(from decoder: Decoder) throws {

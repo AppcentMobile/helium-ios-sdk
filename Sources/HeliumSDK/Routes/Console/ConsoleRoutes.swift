@@ -1,11 +1,8 @@
 //
 //  ConsoleRoutes.swift
-//  
-//
-//  Created by Burak Colak on 14.10.2022.
 //
 
-struct ConsoleRoutes {
+enum ConsoleRoutes {
     static let dataCreditBalance = BaseRoute(method: .get, path: "api/v1/organization")
     static let devicesList = BaseRoute(method: .get, path: "api/v1/devices")
     static let devicesByAppEuiAppKeyDevEui = BaseRoute(method: .get, path: "api/v1/devices")

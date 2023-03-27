@@ -1,15 +1,12 @@
 //
 //  BlocksStatsResponse.swift
-//  
-//
-//  Created by Burak Colak on 18.10.2022.
 //
 
-public struct BlocksStatsResponse : Codable {
-    public let data : BlocksStatsDataResponse?
+public struct BlocksStatsResponse: Codable {
+    public let data: BlocksStatsDataResponse?
 
     enum CodingKeys: String, CodingKey {
-        case data = "data"
+        case data
     }
 
     public init(from decoder: Decoder) throws {
@@ -18,17 +15,17 @@ public struct BlocksStatsResponse : Codable {
     }
 }
 
-public struct BlocksStatsDataResponse : Codable {
-    public let last_day : BlocksStatsDateFilterResponse?
-    public let last_hour : BlocksStatsDateFilterResponse?
-    public let last_month : BlocksStatsDateFilterResponse?
-    public let last_week : BlocksStatsDateFilterResponse?
+public struct BlocksStatsDataResponse: Codable {
+    public let last_day: BlocksStatsDateFilterResponse?
+    public let last_hour: BlocksStatsDateFilterResponse?
+    public let last_month: BlocksStatsDateFilterResponse?
+    public let last_week: BlocksStatsDateFilterResponse?
 
     enum CodingKeys: String, CodingKey {
-        case last_day = "last_day"
-        case last_hour = "last_hour"
-        case last_month = "last_month"
-        case last_week = "last_week"
+        case last_day
+        case last_hour
+        case last_month
+        case last_week
     }
 
     public init(from decoder: Decoder) throws {
@@ -40,13 +37,13 @@ public struct BlocksStatsDataResponse : Codable {
     }
 }
 
-public struct BlocksStatsDateFilterResponse : Codable {
-    public let avg : Double?
-    public let stddev : Double?
+public struct BlocksStatsDateFilterResponse: Codable {
+    public let avg: Double?
+    public let stddev: Double?
 
     enum CodingKeys: String, CodingKey {
-        case avg = "avg"
-        case stddev = "stddev"
+        case avg
+        case stddev
     }
 
     public init(from decoder: Decoder) throws {

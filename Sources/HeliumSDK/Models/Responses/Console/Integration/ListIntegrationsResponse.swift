@@ -1,17 +1,14 @@
 //
 //  ListIntegrationsResponse.swift
-//  
-//
-//  Created by Burak Colak on 24.10.2022.
 //
 
 public struct ListIntegrationsResponse: Codable {
-    public let id : String?
-    public let name : String?
+    public let id: String?
+    public let name: String?
 
     enum CodingKeys: String, CodingKey {
-        case id = "id"
-        case name = "name"
+        case id
+        case name
     }
 
     public init(from decoder: Decoder) throws {

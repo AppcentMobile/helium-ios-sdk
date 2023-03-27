@@ -1,15 +1,12 @@
 //
 //  GetLastAssignedOUIResponse.swift
-//  
-//
-//  Created by Burak Colak on 20.10.2022.
 //
 
-public struct GetLastAssignedOUIResponse : Codable {
-    public let data : GetLastAssignedOUIDataResponse?
+public struct GetLastAssignedOUIResponse: Codable {
+    public let data: GetLastAssignedOUIDataResponse?
 
     enum CodingKeys: String, CodingKey {
-        case data = "data"
+        case data
     }
 
     public init(from decoder: Decoder) throws {
@@ -18,21 +15,21 @@ public struct GetLastAssignedOUIResponse : Codable {
     }
 }
 
-public struct GetLastAssignedOUIDataResponse : Codable {
-    public let subnets : [GetLastAssignedOUISubnetsResponse]?
-    public let owner : String?
-    public let oui : Int?
-    public let nonce : Int?
-    public let block : Int?
-    public let addresses : [String]?
+public struct GetLastAssignedOUIDataResponse: Codable {
+    public let subnets: [GetLastAssignedOUISubnetsResponse]?
+    public let owner: String?
+    public let oui: Int?
+    public let nonce: Int?
+    public let block: Int?
+    public let addresses: [String]?
 
     enum CodingKeys: String, CodingKey {
-        case subnets = "subnets"
-        case owner = "owner"
-        case oui = "oui"
-        case nonce = "nonce"
-        case block = "block"
-        case addresses = "addresses"
+        case subnets
+        case owner
+        case oui
+        case nonce
+        case block
+        case addresses
     }
 
     public init(from decoder: Decoder) throws {
@@ -46,13 +43,13 @@ public struct GetLastAssignedOUIDataResponse : Codable {
     }
 }
 
-public struct GetLastAssignedOUISubnetsResponse : Codable {
-    public let mask : Int?
-    public let base : Int?
+public struct GetLastAssignedOUISubnetsResponse: Codable {
+    public let mask: Int?
+    public let base: Int?
 
     enum CodingKeys: String, CodingKey {
-        case mask = "mask"
-        case base = "base"
+        case mask
+        case base
     }
 
     public init(from decoder: Decoder) throws {

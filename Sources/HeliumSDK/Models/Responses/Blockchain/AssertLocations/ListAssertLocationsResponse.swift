@@ -1,17 +1,14 @@
 //
 //  ListAssertLocationsResponse.swift
-//  
-//
-//  Created by Burak Colak on 18.10.2022.
 //
 
-public struct ListAssertLocationsResponse : Codable {
-    public let data : [ListAssertLocationsDataResponse]?
-    public let cursor : String?
+public struct ListAssertLocationsResponse: Codable {
+    public let data: [ListAssertLocationsDataResponse]?
+    public let cursor: String?
 
     enum CodingKeys: String, CodingKey {
-        case data = "data"
-        case cursor = "cursor"
+        case data
+        case cursor
     }
 
     public init(from decoder: Decoder) throws {
@@ -22,38 +19,38 @@ public struct ListAssertLocationsResponse : Codable {
 }
 
 public struct ListAssertLocationsDataResponse: Codable {
-    public let elevation : Int?
-    public let fee : Int?
-    public let gain : Int?
-    public let gateway : String?
-    public let hash : String?
-    public let height : Int?
-    public let lat : Double?
-    public let lng : Double?
-    public let location : String?
-    public let nonce : Int?
-    public let owner : String?
-    public let payer : String?
-    public let staking_fee : Int?
-    public let time : Int?
-    public let type : String?
+    public let elevation: Int?
+    public let fee: Int?
+    public let gain: Int?
+    public let gateway: String?
+    public let hash: String?
+    public let height: Int?
+    public let lat: Double?
+    public let lng: Double?
+    public let location: String?
+    public let nonce: Int?
+    public let owner: String?
+    public let payer: String?
+    public let staking_fee: Int?
+    public let time: Int?
+    public let type: String?
 
     enum CodingKeys: String, CodingKey {
-        case elevation = "elevation"
-        case fee = "fee"
-        case gain = "gain"
-        case gateway = "gateway"
-        case hash = "hash"
-        case height = "height"
-        case lat = "lat"
-        case lng = "lng"
-        case location = "location"
-        case nonce = "nonce"
-        case owner = "owner"
-        case payer = "payer"
-        case staking_fee = "staking_fee"
-        case time = "time"
-        case type = "type"
+        case elevation
+        case fee
+        case gain
+        case gateway
+        case hash
+        case height
+        case lat
+        case lng
+        case location
+        case nonce
+        case owner
+        case payer
+        case staking_fee
+        case time
+        case type
     }
 
     public init(from decoder: Decoder) throws {

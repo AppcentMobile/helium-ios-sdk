@@ -1,15 +1,12 @@
 //
 //  GetPredictedHNTOraclePricesResponse.swift
-//  
-//
-//  Created by Burak Colak on 20.10.2022.
 //
 
-public struct GetPredictedHNTOraclePricesResponse : Codable {
-    public let data : GetPredictedHNTOraclePricesDataResponse?
+public struct GetPredictedHNTOraclePricesResponse: Codable {
+    public let data: GetPredictedHNTOraclePricesDataResponse?
 
     enum CodingKeys: String, CodingKey {
-        case data = "data"
+        case data
     }
 
     public init(from decoder: Decoder) throws {
@@ -18,13 +15,13 @@ public struct GetPredictedHNTOraclePricesResponse : Codable {
     }
 }
 
-public struct GetPredictedHNTOraclePricesDataResponse : Codable {
-    public let price : Int?
-    public let time : Int?
+public struct GetPredictedHNTOraclePricesDataResponse: Codable {
+    public let price: Int?
+    public let time: Int?
 
     enum CodingKeys: String, CodingKey {
-        case price = "price"
-        case time = "time"
+        case price
+        case time
     }
 
     public init(from decoder: Decoder) throws {

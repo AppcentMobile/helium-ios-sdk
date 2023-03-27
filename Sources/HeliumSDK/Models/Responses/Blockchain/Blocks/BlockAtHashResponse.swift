@@ -1,15 +1,12 @@
 //
 //  BlockAtHashResponse.swift
-//  
-//
-//  Created by Burak Colak on 18.10.2022.
 //
 
-public struct BlockAtHashResponse : Codable {
-    public let data : BlockAtHashDataResponse?
+public struct BlockAtHashResponse: Codable {
+    public let data: BlockAtHashDataResponse?
 
     enum CodingKeys: String, CodingKey {
-        case data = "data"
+        case data
     }
 
     public init(from decoder: Decoder) throws {
@@ -18,21 +15,21 @@ public struct BlockAtHashResponse : Codable {
     }
 }
 
-public struct BlockAtHashDataResponse : Codable {
-    public let transaction_count : Int?
-    public let time : Int?
-    public let snapshot_hash : String?
-    public let prev_hash : String?
-    public let height : Int?
-    public let hash : String?
+public struct BlockAtHashDataResponse: Codable {
+    public let transaction_count: Int?
+    public let time: Int?
+    public let snapshot_hash: String?
+    public let prev_hash: String?
+    public let height: Int?
+    public let hash: String?
 
     enum CodingKeys: String, CodingKey {
-        case transaction_count = "transaction_count"
-        case time = "time"
-        case snapshot_hash = "snapshot_hash"
-        case prev_hash = "prev_hash"
-        case height = "height"
-        case hash = "hash"
+        case transaction_count
+        case time
+        case snapshot_hash
+        case prev_hash
+        case height
+        case hash
     }
 
     public init(from decoder: Decoder) throws {

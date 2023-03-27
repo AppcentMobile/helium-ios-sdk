@@ -1,15 +1,12 @@
 //
 //  RewardTotalsForAnAccountResponse.swift
-//  
-//
-//  Created by Burak Colak on 17.10.2022.
 //
 
 public struct RewardTotalsForAnAccountResponse: Codable {
-    public let data : RewardTotalsForAnAccountDataResponse?
+    public let data: RewardTotalsForAnAccountDataResponse?
 
     enum CodingKeys: String, CodingKey {
-        case data = "data"
+        case data
     }
 
     public init(from decoder: Decoder) throws {
@@ -18,15 +15,15 @@ public struct RewardTotalsForAnAccountResponse: Codable {
     }
 }
 
-public struct RewardTotalsForAnAccountDataResponse : Codable {
-    public let max_time : String?
-    public let min_time : String?
-    public let sum : String?
+public struct RewardTotalsForAnAccountDataResponse: Codable {
+    public let max_time: String?
+    public let min_time: String?
+    public let sum: String?
 
     enum CodingKeys: String, CodingKey {
-        case max_time = "max_time"
-        case min_time = "min_time"
-        case sum = "sum"
+        case max_time
+        case min_time
+        case sum
     }
 
     public init(from decoder: Decoder) throws {

@@ -1,45 +1,34 @@
 //
 //  ChallengesManager.swift
-//  
-//
-//  Created by Burak Colak on 19.10.2022.
 //
 
+import ACMNetworking
 import Foundation
 
-public class HeliumChallengesManager: BaseManager {
+public class HeliumChallengesManager: BaseBlockChainManager {
     public func listChallengeReceipts(cursor: String? = nil, min_time: String? = nil, max_time: String? = nil, limit: Int? = nil, onSuccess: BlockchainCallbacks.ListChallengeReceipts, onError: GenericCallbacks.ErrorCallback) {
-        var endpoint = ChallengesRoutes.listChallengereceipts.endpoint()
-
-        var queryItems = [URLQueryItem]()
+        var endpoint = ChallengesRoutes.listChallengereceipts.endpoint(with: acmEndpoint)
 
         if let cursor = cursor {
-            queryItems.append(URLQueryItem(name: "cursor", value: cursor))
+            endpoint = endpoint.add(queryItem: ACMQueryModel(name: "cursor", value: cursor))
         }
 
         if let min_time = min_time {
-            queryItems.append(URLQueryItem(name: "min_time", value: min_time))
+            endpoint = endpoint.add(queryItem: ACMQueryModel(name: "min_time", value: min_time))
         }
 
         if let max_time = max_time {
-            queryItems.append(URLQueryItem(name: "max_time", value: max_time))
+            endpoint = endpoint.add(queryItem: ACMQueryModel(name: "max_time", value: max_time))
         }
 
         if let limit = limit {
-            queryItems.append(URLQueryItem(name: "limit", value: String(format: "%d", limit)))
+            endpoint = endpoint.add(queryItem: ACMQueryModel(name: "limit", value: String(format: "%d", limit)))
         }
 
-        if queryItems.count > 0 {
-            endpoint.queryItems = queryItems
-        }
-
-        self.request(to: endpoint) { (r: BaseResult<ListChallengeReceiptsResponse?, Error>) in
-            switch r {
-            case .success(let r):
-                onSuccess?(r)
-            case .failure(let e):
-                onError?(e)
-            }
+        network.request(to: endpoint.build()) { (r: ListChallengeReceiptsResponse) in
+            onSuccess?(r)
+        } onError: { e in
+            onError?(e)
         }
     }
 }

@@ -1,17 +1,14 @@
 //
 //  RewardTotalForAllValidatorsResponse.swift
-//  
-//
-//  Created by Burak Colak on 20.10.2022.
 //
 
-public struct RewardTotalForAllValidatorsResponse : Codable {
-    public let data : RewardTotalForAllValidatorsDataResponse?
-    public let meta : RewardTotalForAllValidatorsMetaResponse?
+public struct RewardTotalForAllValidatorsResponse: Codable {
+    public let data: RewardTotalForAllValidatorsDataResponse?
+    public let meta: RewardTotalForAllValidatorsMetaResponse?
 
     enum CodingKeys: String, CodingKey {
-        case data = "data"
-        case meta = "meta"
+        case data
+        case meta
     }
 
     public init(from decoder: Decoder) throws {
@@ -21,23 +18,23 @@ public struct RewardTotalForAllValidatorsResponse : Codable {
     }
 }
 
-public struct RewardTotalForAllValidatorsDataResponse : Codable {
-    public let avg : Double?
-    public let max : Double?
-    public let median : Double?
-    public let min : Double?
-    public let stddev : Double?
-    public let sum : Int?
-    public let total : Double?
+public struct RewardTotalForAllValidatorsDataResponse: Codable {
+    public let avg: Double?
+    public let max: Double?
+    public let median: Double?
+    public let min: Double?
+    public let stddev: Double?
+    public let sum: Int?
+    public let total: Double?
 
     enum CodingKeys: String, CodingKey {
-        case avg = "avg"
-        case max = "max"
-        case median = "median"
-        case min = "min"
-        case stddev = "stddev"
-        case sum = "sum"
-        case total = "total"
+        case avg
+        case max
+        case median
+        case min
+        case stddev
+        case sum
+        case total
     }
 
     public init(from decoder: Decoder) throws {
@@ -52,13 +49,13 @@ public struct RewardTotalForAllValidatorsDataResponse : Codable {
     }
 }
 
-public struct RewardTotalForAllValidatorsMetaResponse : Codable {
-    public let max_time : String?
-    public let min_time : String?
+public struct RewardTotalForAllValidatorsMetaResponse: Codable {
+    public let max_time: String?
+    public let min_time: String?
 
     enum CodingKeys: String, CodingKey {
-        case max_time = "max_time"
-        case min_time = "min_time"
+        case max_time
+        case min_time
     }
 
     public init(from decoder: Decoder) throws {

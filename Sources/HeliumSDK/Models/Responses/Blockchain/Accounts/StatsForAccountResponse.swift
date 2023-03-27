@@ -1,15 +1,12 @@
 //
 //  StatsForAccountResponse.swift
-//  
-//
-//  Created by Burak Colak on 17.10.2022.
 //
 
-public struct StatsForAccountResponse : Codable {
-    public let data : [StatsForAccountDataResponse]?
+public struct StatsForAccountResponse: Codable {
+    public let data: [StatsForAccountDataResponse]?
 
     enum CodingKeys: String, CodingKey {
-        case data = "data"
+        case data
     }
 
     public init(from decoder: Decoder) throws {
@@ -18,15 +15,15 @@ public struct StatsForAccountResponse : Codable {
     }
 }
 
-public struct StatsForAccountDataResponse : Codable {
-    public let last_week : [StatsForAccountLastFilterResponse]?
-    public let last_month : [StatsForAccountLastFilterResponse]?
-    public let last_day : [StatsForAccountLastFilterResponse]?
+public struct StatsForAccountDataResponse: Codable {
+    public let last_week: [StatsForAccountLastFilterResponse]?
+    public let last_month: [StatsForAccountLastFilterResponse]?
+    public let last_day: [StatsForAccountLastFilterResponse]?
 
     enum CodingKeys: String, CodingKey {
-        case last_week = "last_week"
-        case last_month = "last_month"
-        case last_day = "last_day"
+        case last_week
+        case last_month
+        case last_day
     }
 
     public init(from decoder: Decoder) throws {
@@ -38,12 +35,12 @@ public struct StatsForAccountDataResponse : Codable {
 }
 
 public struct StatsForAccountLastFilterResponse: Codable {
-    public let timestamp : String?
-    public let balance : Int?
+    public let timestamp: String?
+    public let balance: Int?
 
     enum CodingKeys: String, CodingKey {
-        case timestamp = "timestamp"
-        case balance = "balance"
+        case timestamp
+        case balance
     }
 
     public init(from decoder: Decoder) throws {

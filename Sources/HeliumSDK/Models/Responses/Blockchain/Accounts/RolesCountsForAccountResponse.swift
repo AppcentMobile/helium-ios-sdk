@@ -1,15 +1,12 @@
 //
 //  RolesCountsForAccountResponse.swift
-//  
-//
-//  Created by Burak Colak on 17.10.2022.
 //
 
-public struct RolesCountsForAccountResponse : Codable {
-    public let data : RolesCountsForAccountDataResponse?
+public struct RolesCountsForAccountResponse: Codable {
+    public let data: RolesCountsForAccountDataResponse?
 
     enum CodingKeys: String, CodingKey {
-        case data = "data"
+        case data
     }
 
     public init(from decoder: Decoder) throws {
@@ -19,12 +16,12 @@ public struct RolesCountsForAccountResponse : Codable {
 }
 
 public struct RolesCountsForAccountDataResponse: Codable {
-    public let add_gateway_v1 : Int?
-    public let assert_location_v1 : Int?
+    public let add_gateway_v1: Int?
+    public let assert_location_v1: Int?
 
     enum CodingKeys: String, CodingKey {
-        case add_gateway_v1 = "add_gateway_v1"
-        case assert_location_v1 = "assert_location_v1"
+        case add_gateway_v1
+        case assert_location_v1
     }
 
     public init(from decoder: Decoder) throws {

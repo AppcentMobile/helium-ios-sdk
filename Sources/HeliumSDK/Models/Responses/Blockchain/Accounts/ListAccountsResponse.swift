@@ -1,17 +1,14 @@
 //
 //  ListAccountsResponse.swift
-//  
-//
-//  Created by Burak Colak on 16.10.2022.
 //
 
-public struct ListAccountsResponse : Codable {
-    public let data : [ListAccountsDataResponse]?
-    public let cursor : String?
+public struct ListAccountsResponse: Codable {
+    public let data: [ListAccountsDataResponse]?
+    public let cursor: String?
 
     enum CodingKeys: String, CodingKey {
-        case data = "data"
-        case cursor = "cursor"
+        case data
+        case cursor
     }
 
     public init(from decoder: Decoder) throws {
@@ -21,25 +18,25 @@ public struct ListAccountsResponse : Codable {
     }
 }
 
-public struct ListAccountsDataResponse : Codable {
-    public let sec_nonce : Int?
-    public let sec_balance : Int?
-    public let nonce : Int?
-    public let dc_nonce : Int?
-    public let dc_balance : Int?
-    public let block : Int?
-    public let balance : Int?
-    public let address : String?
+public struct ListAccountsDataResponse: Codable {
+    public let sec_nonce: Int?
+    public let sec_balance: Int?
+    public let nonce: Int?
+    public let dc_nonce: Int?
+    public let dc_balance: Int?
+    public let block: Int?
+    public let balance: Int?
+    public let address: String?
 
     enum CodingKeys: String, CodingKey {
-        case sec_nonce = "sec_nonce"
-        case sec_balance = "sec_balance"
-        case nonce = "nonce"
-        case dc_nonce = "dc_nonce"
-        case dc_balance = "dc_balance"
-        case block = "block"
-        case balance = "balance"
-        case address = "address"
+        case sec_nonce
+        case sec_balance
+        case nonce
+        case dc_nonce
+        case dc_balance
+        case block
+        case balance
+        case address
     }
 
     public init(from decoder: Decoder) throws {

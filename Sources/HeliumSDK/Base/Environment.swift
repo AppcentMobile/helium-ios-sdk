@@ -1,8 +1,5 @@
 //
 //  Environment.swift
-//  
-//
-//  Created by Burak Colak on 13.10.2022.
 //
 
 public enum HeliumEnvironment {

@@ -1,17 +1,14 @@
 //
 //  CurrentAndHistoricalOraclePricesResponse.swift
-//  
-//
-//  Created by Burak Colak on 20.10.2022.
 //
 
 public struct CurrentAndHistoricalOraclePricesResponse: Codable {
-    public let data : [CurrentAndHistoricalOraclePricesDataResponse]?
-    public let cursor : String?
+    public let data: [CurrentAndHistoricalOraclePricesDataResponse]?
+    public let cursor: String?
 
     enum CodingKeys: String, CodingKey {
-        case data = "data"
-        case cursor = "cursor"
+        case data
+        case cursor
     }
 
     public init(from decoder: Decoder) throws {
@@ -22,12 +19,12 @@ public struct CurrentAndHistoricalOraclePricesResponse: Codable {
 }
 
 public struct CurrentAndHistoricalOraclePricesDataResponse: Codable {
-    public let price : Int?
-    public let block : Int?
+    public let price: Int?
+    public let block: Int?
 
     enum CodingKeys: String, CodingKey {
-        case price = "price"
-        case block = "block"
+        case price
+        case block
     }
 
     public init(from decoder: Decoder) throws {

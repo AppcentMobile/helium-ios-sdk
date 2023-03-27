@@ -1,15 +1,12 @@
 //
 //  GetLocationResponse.swift
-//  
-//
-//  Created by Burak Colak on 20.10.2022.
 //
 
-public struct GetLocationResponse : Codable {
+public struct GetLocationResponse: Codable {
     public let data: GetLocationDataResponse?
 
     enum CodingKeys: String, CodingKey {
-        case data = "data"
+        case data
     }
 
     public init(from decoder: Decoder) throws {
@@ -18,29 +15,29 @@ public struct GetLocationResponse : Codable {
     }
 }
 
-public struct GetLocationDataResponse : Codable {
-    public let city_id : String?
-    public let location : String?
-    public let long_city : String?
-    public let long_country : String?
-    public let long_state : String?
-    public let long_street : String?
-    public let short_city : String?
-    public let short_country : String?
-    public let short_state : String?
-    public let short_street : String?
+public struct GetLocationDataResponse: Codable {
+    public let city_id: String?
+    public let location: String?
+    public let long_city: String?
+    public let long_country: String?
+    public let long_state: String?
+    public let long_street: String?
+    public let short_city: String?
+    public let short_country: String?
+    public let short_state: String?
+    public let short_street: String?
 
     enum CodingKeys: String, CodingKey {
-        case city_id = "city_id"
-        case location = "location"
-        case long_city = "long_city"
-        case long_country = "long_country"
-        case long_state = "long_state"
-        case long_street = "long_street"
-        case short_city = "short_city"
-        case short_country = "short_country"
-        case short_state = "short_state"
-        case short_street = "short_street"
+        case city_id
+        case location
+        case long_city
+        case long_country
+        case long_state
+        case long_street
+        case short_city
+        case short_country
+        case short_state
+        case short_street
     }
 
     public init(from decoder: Decoder) throws {

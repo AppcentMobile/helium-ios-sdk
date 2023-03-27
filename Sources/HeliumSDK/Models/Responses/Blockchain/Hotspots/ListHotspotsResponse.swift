@@ -1,17 +1,14 @@
 //
 //  ListHotspotsResponse.swift
-//  
-//
-//  Created by Burak Colak on 19.10.2022.
 //
 
 public struct ListHotspotsResponse: Codable {
-    public let data : [ListHotspotsDataResponse]?
-    public let cursor : String?
+    public let data: [ListHotspotsDataResponse]?
+    public let cursor: String?
 
     enum CodingKeys: String, CodingKey {
-        case data = "data"
-        case cursor = "cursor"
+        case data
+        case cursor
     }
 
     public init(from decoder: Decoder) throws {
@@ -22,34 +19,34 @@ public struct ListHotspotsResponse: Codable {
 }
 
 public struct ListHotspotsDataResponse: Codable {
-    public let lng : Double?
-    public let lat : Double?
-    public let status : ListHotspotsStatusResponse?
-    public let score_update_height : Int?
-    public let score : Double?
-    public let owner : String?
-    public let nonce : Int?
-    public let name : String?
-    public let location : String?
-    public let geocode : ListHotspotsGeocodeResponse?
-    public let block_added : Int?
-    public let block : Int?
-    public let address : String?
+    public let lng: Double?
+    public let lat: Double?
+    public let status: ListHotspotsStatusResponse?
+    public let score_update_height: Int?
+    public let score: Double?
+    public let owner: String?
+    public let nonce: Int?
+    public let name: String?
+    public let location: String?
+    public let geocode: ListHotspotsGeocodeResponse?
+    public let block_added: Int?
+    public let block: Int?
+    public let address: String?
 
     enum CodingKeys: String, CodingKey {
-        case lng = "lng"
-        case lat = "lat"
-        case status = "status"
-        case score_update_height = "score_update_height"
-        case score = "score"
-        case owner = "owner"
-        case nonce = "nonce"
-        case name = "name"
-        case location = "location"
-        case geocode = "geocode"
-        case block_added = "block_added"
-        case block = "block"
-        case address = "address"
+        case lng
+        case lat
+        case status
+        case score_update_height
+        case score
+        case owner
+        case nonce
+        case name
+        case location
+        case geocode
+        case block_added
+        case block
+        case address
     }
 
     public init(from decoder: Decoder) throws {
@@ -71,12 +68,12 @@ public struct ListHotspotsDataResponse: Codable {
 }
 
 public struct ListHotspotsStatusResponse: Codable {
-    public let online : String?
-    public let height : Int?
+    public let online: String?
+    public let height: Int?
 
     enum CodingKeys: String, CodingKey {
-        case online = "online"
-        case height = "height"
+        case online
+        case height
     }
 
     public init(from decoder: Decoder) throws {
@@ -87,26 +84,26 @@ public struct ListHotspotsStatusResponse: Codable {
 }
 
 public struct ListHotspotsGeocodeResponse: Codable {
-    public let short_street : String?
-    public let short_state : String?
-    public let short_country : String?
-    public let short_city : String?
-    public let long_street : String?
-    public let long_state : String?
-    public let long_country : String?
-    public let long_city : String?
-    public let city_id : String?
+    public let short_street: String?
+    public let short_state: String?
+    public let short_country: String?
+    public let short_city: String?
+    public let long_street: String?
+    public let long_state: String?
+    public let long_country: String?
+    public let long_city: String?
+    public let city_id: String?
 
     enum CodingKeys: String, CodingKey {
-        case short_street = "short_street"
-        case short_state = "short_state"
-        case short_country = "short_country"
-        case short_city = "short_city"
-        case long_street = "long_street"
-        case long_state = "long_state"
-        case long_country = "long_country"
-        case long_city = "long_city"
-        case city_id = "city_id"
+        case short_street
+        case short_state
+        case short_country
+        case short_city
+        case long_street
+        case long_state
+        case long_country
+        case long_city
+        case city_id
     }
 
     public init(from decoder: Decoder) throws {

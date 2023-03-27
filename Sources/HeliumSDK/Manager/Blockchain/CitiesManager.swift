@@ -1,77 +1,54 @@
 //
 //  CitiesManager.swift
-//  
-//
-//  Created by Burak Colak on 19.10.2022.
 //
 
+import ACMNetworking
 import Foundation
 
-public class HeliumCitiesManager: BaseManager {
+public class HeliumCitiesManager: BaseBlockChainManager {
     public func listHotspotCities(search: String? = nil, cursor: String? = nil, onSuccess: BlockchainCallbacks.ListChallengeReceipts, onError: GenericCallbacks.ErrorCallback) {
-        var endpoint = CitiesRoutes.listHotspotCities.endpoint()
-
-        var queryItems = [URLQueryItem]()
+        var endpoint = CitiesRoutes.listHotspotCities.endpoint(with: acmEndpoint)
 
         if let search = search {
-            queryItems.append(URLQueryItem(name: "search", value: search))
+            endpoint = endpoint.add(queryItem: ACMQueryModel(name: "search", value: search))
         }
 
         if let cursor = cursor {
-            queryItems.append(URLQueryItem(name: "cursor", value: cursor))
+            endpoint = endpoint.add(queryItem: ACMQueryModel(name: "cursor", value: cursor))
         }
 
-        if queryItems.count > 0 {
-            endpoint.queryItems = queryItems
-        }
-
-        self.request(to: endpoint) { (r: BaseResult<ListChallengeReceiptsResponse?, Error>) in
-            switch r {
-            case .success(let r):
-                onSuccess?(r)
-            case .failure(let e):
-                onError?(e)
-            }
+        network.request(to: endpoint.build()) { (r: ListChallengeReceiptsResponse) in
+            onSuccess?(r)
+        } onError: { e in
+            onError?(e)
         }
     }
 
     public func cityForCityID(city_id: String, onSuccess: BlockchainCallbacks.CityForCityID, onError: GenericCallbacks.ErrorCallback) {
-        let endpoint = CitiesRoutes.cityForCityID.endpoint(city_id)
+        let endpoint = CitiesRoutes.cityForCityID.endpoint(with: acmEndpoint, value: city_id)
 
-        self.request(to: endpoint) { (r: BaseResult<CityForCityIDResponse?, Error>) in
-            switch r {
-            case .success(let r):
-                onSuccess?(r)
-            case .failure(let e):
-                onError?(e)
-            }
+        network.request(to: endpoint.build()) { (r: CityForCityIDResponse) in
+            onSuccess?(r)
+        } onError: { e in
+            onError?(e)
         }
     }
 
     public func listHotspotsForACity(city_id: String, cursor: String? = nil, filter_modes: String? = nil, onSuccess: BlockchainCallbacks.ListHotspotsForACity, onError: GenericCallbacks.ErrorCallback) {
-        var endpoint = CitiesRoutes.listHotspotsForACity.endpoint(city_id)
-
-        var queryItems = [URLQueryItem]()
+        var endpoint = CitiesRoutes.listHotspotsForACity.endpoint(with: acmEndpoint, value: city_id)
 
         if let cursor = cursor {
-            queryItems.append(URLQueryItem(name: "cursor", value: cursor))
+            endpoint = endpoint.add(queryItem: ACMQueryModel(name: "cursor", value: cursor))
         }
 
         if let filter_modes = filter_modes {
-            queryItems.append(URLQueryItem(name: "filter_modes", value: filter_modes))
+            endpoint = endpoint.add(queryItem: ACMQueryModel(name: "filter_modes", value: filter_modes))
         }
 
-        if queryItems.count > 0 {
-            endpoint.queryItems = queryItems
-        }
-
-        self.request(to: endpoint) { (r: BaseResult<ListHotspotsForACityResponse?, Error>) in
-            switch r {
-            case .success(let r):
-                onSuccess?(r)
-            case .failure(let e):
-                onError?(e)
-            }
+        network.request(to: endpoint.build()) { (r: ListHotspotsForACityResponse) in
+            onSuccess?(r)
+        } onError: { e in
+            onError?(e)
         }
     }
 }

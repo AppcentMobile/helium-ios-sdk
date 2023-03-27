@@ -1,15 +1,12 @@
 //
 //  StatsForValidatorsResponse.swift
-//  
-//
-//  Created by Burak Colak on 20.10.2022.
 //
 
-public struct StatsForValidatorsResponse : Codable {
-    public let data : StatsForValidatorsDataResponse?
+public struct StatsForValidatorsResponse: Codable {
+    public let data: StatsForValidatorsDataResponse?
 
     enum CodingKeys: String, CodingKey {
-        case data = "data"
+        case data
     }
 
     public init(from decoder: Decoder) throws {
@@ -18,17 +15,17 @@ public struct StatsForValidatorsResponse : Codable {
     }
 }
 
-public struct StatsForValidatorsDataResponse : Codable {
-    public let active : Int?
-    public let cooldown : StatsForValidatorsCooldownResponse?
-    public let staked : StatsForValidatorsStakeResponse?
-    public let unstaked : StatsForValidatorsStakeResponse?
+public struct StatsForValidatorsDataResponse: Codable {
+    public let active: Int?
+    public let cooldown: StatsForValidatorsCooldownResponse?
+    public let staked: StatsForValidatorsStakeResponse?
+    public let unstaked: StatsForValidatorsStakeResponse?
 
     enum CodingKeys: String, CodingKey {
-        case active = "active"
-        case cooldown = "cooldown"
-        case staked = "staked"
-        case unstaked = "unstaked"
+        case active
+        case cooldown
+        case staked
+        case unstaked
     }
 
     public init(from decoder: Decoder) throws {
@@ -40,13 +37,13 @@ public struct StatsForValidatorsDataResponse : Codable {
     }
 }
 
-public struct StatsForValidatorsCooldownResponse : Codable {
-    public let amount : Int?
-    public let count : Int?
+public struct StatsForValidatorsCooldownResponse: Codable {
+    public let amount: Int?
+    public let count: Int?
 
     enum CodingKeys: String, CodingKey {
-        case amount = "amount"
-        case count = "count"
+        case amount
+        case count
     }
 
     public init(from decoder: Decoder) throws {
@@ -56,13 +53,13 @@ public struct StatsForValidatorsCooldownResponse : Codable {
     }
 }
 
-public struct StatsForValidatorsStakeResponse : Codable {
-    public let amount : Double?
-    public let count : Int?
+public struct StatsForValidatorsStakeResponse: Codable {
+    public let amount: Double?
+    public let count: Int?
 
     enum CodingKeys: String, CodingKey {
-        case amount = "amount"
-        case count = "count"
+        case amount
+        case count
     }
 
     public init(from decoder: Decoder) throws {

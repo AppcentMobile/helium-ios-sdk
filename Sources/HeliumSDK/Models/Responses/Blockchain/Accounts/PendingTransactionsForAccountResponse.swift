@@ -1,15 +1,12 @@
 //
 //  PendingTransactionsForAccountResponse.swift
-//  
-//
-//  Created by Burak Colak on 17.10.2022.
 //
 
-public struct PendingTransactionsForAccountResponse : Codable {
-    public let data : [PendingTransactionsForAccountDataResponse]?
+public struct PendingTransactionsForAccountResponse: Codable {
+    public let data: [PendingTransactionsForAccountDataResponse]?
 
     enum CodingKeys: String, CodingKey {
-        case data = "data"
+        case data
     }
 
     public init(from decoder: Decoder) throws {
@@ -19,22 +16,22 @@ public struct PendingTransactionsForAccountResponse : Codable {
 }
 
 public struct PendingTransactionsForAccountDataResponse: Codable {
-    public let created_at : String?
-    public let failed_reason : String?
-    public let hash : String?
-    public let status : String?
-    public let txn : PendingTransactionsForAccountTxnResponse?
-    public let type : String?
-    public let updated_at : String?
+    public let created_at: String?
+    public let failed_reason: String?
+    public let hash: String?
+    public let status: String?
+    public let txn: PendingTransactionsForAccountTxnResponse?
+    public let type: String?
+    public let updated_at: String?
 
     enum CodingKeys: String, CodingKey {
-        case created_at = "created_at"
-        case failed_reason = "failed_reason"
-        case hash = "hash"
-        case status = "status"
-        case txn = "txn"
-        case type = "type"
-        case updated_at = "updated_at"
+        case created_at
+        case failed_reason
+        case hash
+        case status
+        case txn
+        case type
+        case updated_at
     }
 
     public init(from decoder: Decoder) throws {
@@ -49,19 +46,19 @@ public struct PendingTransactionsForAccountDataResponse: Codable {
     }
 }
 
-public struct PendingTransactionsForAccountTxnResponse : Codable {
-    public let fee : Int?
-    public let nonce : Int?
-    public let payer : String?
-    public let payments : [PendingTransactionsForAccountPaymentsResponse]?
-    public let signature : String?
+public struct PendingTransactionsForAccountTxnResponse: Codable {
+    public let fee: Int?
+    public let nonce: Int?
+    public let payer: String?
+    public let payments: [PendingTransactionsForAccountPaymentsResponse]?
+    public let signature: String?
 
     enum CodingKeys: String, CodingKey {
-        case fee = "fee"
-        case nonce = "nonce"
-        case payer = "payer"
-        case payments = "payments"
-        case signature = "signature"
+        case fee
+        case nonce
+        case payer
+        case payments
+        case signature
     }
 
     public init(from decoder: Decoder) throws {
@@ -74,13 +71,13 @@ public struct PendingTransactionsForAccountTxnResponse : Codable {
     }
 }
 
-public struct PendingTransactionsForAccountPaymentsResponse : Codable {
-    public let amount : Int?
-    public let payee : String?
+public struct PendingTransactionsForAccountPaymentsResponse: Codable {
+    public let amount: Int?
+    public let payee: String?
 
     enum CodingKeys: String, CodingKey {
-        case amount = "amount"
-        case payee = "payee"
+        case amount
+        case payee
     }
 
     public init(from decoder: Decoder) throws {

@@ -1,15 +1,12 @@
 //
 //  CityForCityIDResponse.swift
-//  
-//
-//  Created by Burak Colak on 19.10.2022.
 //
 
 public struct CityForCityIDResponse: Codable {
     public let data: CityForCityIDDataResponse?
 
     enum CodingKeys: String, CodingKey {
-        case data = "data"
+        case data
     }
 
     public init(from decoder: Decoder) throws {
@@ -19,28 +16,28 @@ public struct CityForCityIDResponse: Codable {
 }
 
 public struct CityForCityIDDataResponse: Codable {
-    public let short_state : String?
-    public let short_country : String?
-    public let short_city : String?
-    public let online_count : Int?
-    public let offline_count : Int?
-    public let long_state : String?
-    public let long_country : String?
-    public let long_city : String?
-    public let hotspot_count : Int?
-    public let city_id : String?
+    public let short_state: String?
+    public let short_country: String?
+    public let short_city: String?
+    public let online_count: Int?
+    public let offline_count: Int?
+    public let long_state: String?
+    public let long_country: String?
+    public let long_city: String?
+    public let hotspot_count: Int?
+    public let city_id: String?
 
     enum CodingKeys: String, CodingKey {
-        case short_state = "short_state"
-        case short_country = "short_country"
-        case short_city = "short_city"
-        case online_count = "online_count"
-        case offline_count = "offline_count"
-        case long_state = "long_state"
-        case long_country = "long_country"
-        case long_city = "long_city"
-        case hotspot_count = "hotspot_count"
-        case city_id = "city_id"
+        case short_state
+        case short_country
+        case short_city
+        case online_count
+        case offline_count
+        case long_state
+        case long_country
+        case long_city
+        case hotspot_count
+        case city_id
     }
 
     public init(from decoder: Decoder) throws {

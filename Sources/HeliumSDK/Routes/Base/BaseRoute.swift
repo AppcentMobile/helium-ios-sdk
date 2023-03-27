@@ -1,29 +1,43 @@
 //
 //  BaseRoute.swift
-//  
 //
-//  Created by Burak Colak on 15.10.2022.
-//
+
+import ACMNetworking
 
 struct BaseRoute {
-    var method: BaseMethod
+    var method: ACMBaseMethod
     var path: String
 
-    func endpoint(_ value: String? = nil) -> BaseEndpoint {
+    func endpoint(with endpoint: ACMEndpoint,
+                  value: String? = nil) -> ACMEndpoint
+    {
         if let value = value {
-            return BaseEndpoint(path: String(format: path, value), method: method)
-        }else {
-            return BaseEndpoint(path: path, method: method)
+            return endpoint
+                .set(method: method)
+                .set(path: String(format: path, value))
+        } else {
+            return endpoint
+                .set(method: method)
+                .set(path: path)
         }
     }
 }
 
 extension BaseRoute {
-    func consoleEndpoint(_ value: String? = nil, params: [String: Any]? = nil) -> BaseEndpoint {
+    func consoleEndpoint(with endpoint: ACMEndpoint, value: String? = nil, params: [String: Any]? = nil) -> ACMEndpoint {
+        var acmEndpoint = endpoint
+            .set(host: Constants.CONSOLE_ENVIRONMENT.rawValue)
+            .set(method: method)
+
+        if let params = params {
+            let bodyModelList = params.map { ACMBodyModel(key: $0.key, value: $0.value) }
+            acmEndpoint = acmEndpoint.add(params: bodyModelList)
+        }
+
         if let value = value {
-            return BaseEndpoint(path: String(format: path, value), method: method, params: params, provider: .CONSOLE)
-        }else {
-            return BaseEndpoint(path: path, method: method, params: params, provider: .CONSOLE)
+            return acmEndpoint.set(path: String(format: path, value))
+        } else {
+            return acmEndpoint.set(path: path)
         }
     }
 }
