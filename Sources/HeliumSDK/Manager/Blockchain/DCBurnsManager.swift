@@ -7,7 +7,7 @@ import Foundation
 
 public class HeliumDCBurnsManager: BaseBlockChainManager {
     public func dCBurnTotals(min_time: String? = nil, max_time: String? = nil, bucket: String? = nil, onSuccess: BlockchainCallbacks.DCBurnTotals, onError: GenericCallbacks.ErrorCallback) {
-        var endpoint = DCBurnsRoutes.dCBurnTotals.endpoint()
+        var endpoint = DCBurnsRoutes.dCBurnTotals.endpoint(with: acmEndpoint)
 
         if let min_time = min_time {
             endpoint = endpoint.add(queryItem: ACMQueryModel(name: "min_time", value: min_time))
@@ -29,7 +29,7 @@ public class HeliumDCBurnsManager: BaseBlockChainManager {
     }
 
     public func dCBurnStats(onSuccess: BlockchainCallbacks.DCBurnStats, onError: GenericCallbacks.ErrorCallback) {
-        let endpoint = DCBurnsRoutes.dCBurnStats.endpoint()
+        let endpoint = DCBurnsRoutes.dCBurnStats.endpoint(with: acmEndpoint)
 
         network.request(to: endpoint.build()) { (r: DCBurnStatsResponse) in
             onSuccess?(r)
@@ -39,7 +39,7 @@ public class HeliumDCBurnsManager: BaseBlockChainManager {
     }
 
     public func dCBurnEvents(cursor: String? = nil, onSuccess: BlockchainCallbacks.DCBurnEvents, onError: GenericCallbacks.ErrorCallback) {
-        var endpoint = DCBurnsRoutes.dCBurnEvents.endpoint()
+        var endpoint = DCBurnsRoutes.dCBurnEvents.endpoint(with: acmEndpoint)
 
         if let cursor = cursor {
             endpoint = endpoint.add(queryItem: ACMQueryModel(name: "cursor", value: cursor))

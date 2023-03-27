@@ -7,7 +7,7 @@ import Foundation
 
 public class HeliumCitiesManager: BaseBlockChainManager {
     public func listHotspotCities(search: String? = nil, cursor: String? = nil, onSuccess: BlockchainCallbacks.ListChallengeReceipts, onError: GenericCallbacks.ErrorCallback) {
-        var endpoint = CitiesRoutes.listHotspotCities.endpoint()
+        var endpoint = CitiesRoutes.listHotspotCities.endpoint(with: acmEndpoint)
 
         if let search = search {
             endpoint = endpoint.add(queryItem: ACMQueryModel(name: "search", value: search))
@@ -25,7 +25,7 @@ public class HeliumCitiesManager: BaseBlockChainManager {
     }
 
     public func cityForCityID(city_id: String, onSuccess: BlockchainCallbacks.CityForCityID, onError: GenericCallbacks.ErrorCallback) {
-        let endpoint = CitiesRoutes.cityForCityID.endpoint(city_id)
+        let endpoint = CitiesRoutes.cityForCityID.endpoint(with: acmEndpoint, value: city_id)
 
         network.request(to: endpoint.build()) { (r: CityForCityIDResponse) in
             onSuccess?(r)
@@ -35,7 +35,7 @@ public class HeliumCitiesManager: BaseBlockChainManager {
     }
 
     public func listHotspotsForACity(city_id: String, cursor: String? = nil, filter_modes: String? = nil, onSuccess: BlockchainCallbacks.ListHotspotsForACity, onError: GenericCallbacks.ErrorCallback) {
-        var endpoint = CitiesRoutes.listHotspotsForACity.endpoint(city_id)
+        var endpoint = CitiesRoutes.listHotspotsForACity.endpoint(with: acmEndpoint, value: city_id)
 
         if let cursor = cursor {
             endpoint = endpoint.add(queryItem: ACMQueryModel(name: "cursor", value: cursor))

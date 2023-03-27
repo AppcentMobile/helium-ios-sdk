@@ -7,7 +7,7 @@ import Foundation
 
 class HeliumElectionsManager: BaseBlockChainManager {
     public func listElections(cursor: String? = nil, min_time: String? = nil, max_time: String? = nil, limit: String? = nil, onSuccess: BlockchainCallbacks.ListElections, onError: GenericCallbacks.ErrorCallback) {
-        var endpoint = ElectionsRoutes.listElections.endpoint()
+        var endpoint = ElectionsRoutes.listElections.endpoint(with: acmEndpoint)
 
         if let cursor = cursor {
             endpoint = endpoint.add(queryItem: ACMQueryModel(name: "cursor", value: cursor))

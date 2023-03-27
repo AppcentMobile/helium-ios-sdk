@@ -7,7 +7,7 @@ import Foundation
 
 public class HeliumChainVariablesManager: BaseBlockChainManager {
     public func getChainVariables(min_time: String? = nil, max_time: String? = nil, limit: Int? = nil, onSuccess: BlockchainCallbacks.BlocksHeight, onError: GenericCallbacks.ErrorCallback) {
-        var endpoint = ChainVariablesRoutes.getChainVariables.endpoint()
+        var endpoint = ChainVariablesRoutes.getChainVariables.endpoint(with: acmEndpoint)
 
         if let min_time = min_time {
             endpoint = endpoint.add(queryItem: ACMQueryModel(name: "min_time", value: min_time))
@@ -29,7 +29,7 @@ public class HeliumChainVariablesManager: BaseBlockChainManager {
     }
 
     public func getTheValueOfAchainVariable(name: String, onSuccess: BlockchainCallbacks.GetTheValueOfAchainVariable, onError: GenericCallbacks.ErrorCallback) {
-        let endpoint = ChainVariablesRoutes.getTheValueOfAChainVariable.endpoint(name)
+        let endpoint = ChainVariablesRoutes.getTheValueOfAChainVariable.endpoint(with: acmEndpoint, value: name)
 
         network.request(to: endpoint.build()) { (r: GetTheValueOfAchainVariableResponse) in
             onSuccess?(r)
@@ -39,7 +39,7 @@ public class HeliumChainVariablesManager: BaseBlockChainManager {
     }
 
     public func listChainVariableActivity(cursor: String? = nil, onSuccess: BlockchainCallbacks.ListChainVariableActivity, onError: GenericCallbacks.ErrorCallback) {
-        var endpoint = ChainVariablesRoutes.listChainVariableActivity.endpoint()
+        var endpoint = ChainVariablesRoutes.listChainVariableActivity.endpoint(with: acmEndpoint)
 
         if let cursor = cursor {
             endpoint = endpoint.add(queryItem: ACMQueryModel(name: "cursor", value: cursor))

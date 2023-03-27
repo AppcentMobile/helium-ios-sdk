@@ -7,7 +7,7 @@ import Foundation
 
 public class HeliumChallengesManager: BaseBlockChainManager {
     public func listChallengeReceipts(cursor: String? = nil, min_time: String? = nil, max_time: String? = nil, limit: Int? = nil, onSuccess: BlockchainCallbacks.ListChallengeReceipts, onError: GenericCallbacks.ErrorCallback) {
-        var endpoint = ChallengesRoutes.listChallengereceipts.endpoint()
+        var endpoint = ChallengesRoutes.listChallengereceipts.endpoint(with: acmEndpoint)
 
         if let cursor = cursor {
             endpoint = endpoint.add(queryItem: ACMQueryModel(name: "cursor", value: cursor))

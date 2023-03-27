@@ -7,7 +7,7 @@ import Foundation
 
 public extension HeliumConsoleManager {
     func devicesList(onSuccess: ConsoleCallbacks.DevicesList, onError: GenericCallbacks.ErrorCallback) {
-        let endpoint = ConsoleRoutes.devicesList.consoleEndpoint()
+        let endpoint = ConsoleRoutes.devicesList.consoleEndpoint(with: acmEndpoint)
 
         network.request(to: endpoint.build()) { (r: DevicesListResponse) in
             onSuccess?(r)
@@ -17,7 +17,7 @@ public extension HeliumConsoleManager {
     }
 
     func devicesByAppEuiAppKeyDevEui(dev_eui: String, app_eui: String, app_key: String, onSuccess: ConsoleCallbacks.DevicesByAppEuiAppKeyDevEui, onError: GenericCallbacks.ErrorCallback) {
-        let endpoint = ConsoleRoutes.devicesByAppEuiAppKeyDevEui.consoleEndpoint()
+        let endpoint = ConsoleRoutes.devicesByAppEuiAppKeyDevEui.consoleEndpoint(with: acmEndpoint)
             .add(queryItems: [
                 ACMQueryModel(name: "dev_eui", value: dev_eui),
                 ACMQueryModel(name: "app_eui", value: app_eui),
@@ -32,7 +32,7 @@ public extension HeliumConsoleManager {
     }
 
     func deviceByUUID(device_id: String, onSuccess: ConsoleCallbacks.DeviceByUUID, onError: GenericCallbacks.ErrorCallback) {
-        let endpoint = ConsoleRoutes.deviceByUUID.consoleEndpoint(device_id)
+        let endpoint = ConsoleRoutes.deviceByUUID.consoleEndpoint(with: acmEndpoint, value: device_id)
 
         network.request(to: endpoint.build()) { (r: DeviceByUUIDResponse) in
             onSuccess?(r)
@@ -42,7 +42,7 @@ public extension HeliumConsoleManager {
     }
 
     func deviceEvents(device_id: String, onSuccess: ConsoleCallbacks.DeviceEvents, onError: GenericCallbacks.ErrorCallback) {
-        let endpoint = ConsoleRoutes.deviceEvents.consoleEndpoint(device_id)
+        let endpoint = ConsoleRoutes.deviceEvents.consoleEndpoint(with: acmEndpoint, value: device_id)
 
         network.request(to: endpoint.build()) { (r: DeviceEventsResponse) in
             onSuccess?(r)
@@ -52,7 +52,7 @@ public extension HeliumConsoleManager {
     }
 
     func deviceIntegrationEvents(device_id: String, onSuccess: ConsoleCallbacks.DeviceIntegrationEvents, onError: GenericCallbacks.ErrorCallback) {
-        let endpoint = ConsoleRoutes.deviceIntegrationEvents.consoleEndpoint(device_id)
+        let endpoint = ConsoleRoutes.deviceIntegrationEvents.consoleEndpoint(with: acmEndpoint, value: device_id)
 
         network.request(to: endpoint.build()) { (r: DeviceIntegrationEventsResponse) in
             onSuccess?(r)
@@ -64,7 +64,7 @@ public extension HeliumConsoleManager {
     @available(*, deprecated, message: "This endpoint is disabled for Helium Foundation Console.")
     func createDevice(name: String, app_eui: String, app_key: String, dev_eui: String, config_profile_id: String? = nil, label_ids: [String]? = nil, onSuccess: ConsoleCallbacks.CreateDevice, onError: GenericCallbacks.ErrorCallback) {
         let request = CreateDeviceRequest(name: name, app_eui: app_eui, app_key: app_key, dev_eui: dev_eui, config_profile_id: config_profile_id, label_ids: label_ids)
-        let endpoint = ConsoleRoutes.createDevice.consoleEndpoint(params: request.dictionary)
+        let endpoint = ConsoleRoutes.createDevice.consoleEndpoint(with: acmEndpoint, params: request.dictionary)
 
         network.request(to: endpoint.build()) { (r: Bool) in
             onSuccess?(r)
@@ -74,7 +74,7 @@ public extension HeliumConsoleManager {
     }
 
     func deleteDeviceByUUID(id: String, onSuccess: ConsoleCallbacks.DeleteDeviceByUUID, onError: GenericCallbacks.ErrorCallback) {
-        let endpoint = ConsoleRoutes.deleteDeviceByUUID.consoleEndpoint(id)
+        let endpoint = ConsoleRoutes.deleteDeviceByUUID.consoleEndpoint(with: acmEndpoint, value: id)
 
         network.request(to: endpoint.build()) { (r: Bool) in
             onSuccess?(r)

@@ -6,7 +6,7 @@ import ACMNetworking
 
 class HeliumValidatorsManager: BaseBlockChainManager {
     public func listValidators(cursor: String? = nil, onSuccess: BlockchainCallbacks.ListValidators, onError: GenericCallbacks.ErrorCallback) {
-        var endpoint = ValidatorsRoutes.listValidators.endpoint()
+        var endpoint = ValidatorsRoutes.listValidators.endpoint(with: acmEndpoint)
 
         if let cursor = cursor {
             endpoint = endpoint.add(queryItem: ACMQueryModel(name: "cursor", value: cursor))
@@ -20,7 +20,7 @@ class HeliumValidatorsManager: BaseBlockChainManager {
     }
 
     public func validatorForAddress(address: String, onSuccess: BlockchainCallbacks.ValidatorForAddress, onError: GenericCallbacks.ErrorCallback) {
-        let endpoint = ValidatorsRoutes.validatorForAddress.endpoint(address)
+        let endpoint = ValidatorsRoutes.validatorForAddress.endpoint(with: acmEndpoint, value: address)
 
         network.request(to: endpoint.build()) { (r: ValidatorForAddressResponse) in
             onSuccess?(r)
@@ -30,7 +30,7 @@ class HeliumValidatorsManager: BaseBlockChainManager {
     }
 
     public func validatorsForName(name: String, onSuccess: BlockchainCallbacks.ValidatorsForName, onError: GenericCallbacks.ErrorCallback) {
-        let endpoint = ValidatorsRoutes.validatorsForName.endpoint(name)
+        let endpoint = ValidatorsRoutes.validatorsForName.endpoint(with: acmEndpoint, value: name)
 
         network.request(to: endpoint.build()) { (r: ValidatorsForNameResponse) in
             onSuccess?(r)
@@ -40,7 +40,7 @@ class HeliumValidatorsManager: BaseBlockChainManager {
     }
 
     public func validatorNameSearch(search: String, onSuccess: BlockchainCallbacks.ValidatorNameSearch, onError: GenericCallbacks.ErrorCallback) {
-        let endpoint = ValidatorsRoutes.validatorNameSearch.endpoint()
+        let endpoint = ValidatorsRoutes.validatorNameSearch.endpoint(with: acmEndpoint)
             .add(queryItem: ACMQueryModel(name: "search", value: search))
 
         network.request(to: endpoint.build()) { (r: ValidatorNameSearchResponse) in
@@ -52,7 +52,7 @@ class HeliumValidatorsManager: BaseBlockChainManager {
 
     @available(*, deprecated, message: "The /activity route will be deprecated on May 1, 2022 and will be replaced by /roles")
     public func validatorActivity(address: String, cursor: String? = nil, filter_types: String? = nil, min_time: String? = nil, max_time: String? = nil, limit: Int? = nil, onSuccess: BlockchainCallbacks.ValidatorActivity, onError: GenericCallbacks.ErrorCallback) {
-        var endpoint = ValidatorsRoutes.validatorActivity.endpoint(address)
+        var endpoint = ValidatorsRoutes.validatorActivity.endpoint(with: acmEndpoint, value: address)
 
         if let cursor = cursor {
             endpoint = endpoint.add(queryItem: ACMQueryModel(name: "cursor", value: cursor))
@@ -82,7 +82,7 @@ class HeliumValidatorsManager: BaseBlockChainManager {
     }
 
     public func validatorRoles(address: String, cursor: String? = nil, filter_types: String? = nil, min_time: String? = nil, max_time: String? = nil, limit: Int? = nil, onSuccess: BlockchainCallbacks.ValidatorRoles, onError: GenericCallbacks.ErrorCallback) {
-        var endpoint = ValidatorsRoutes.validatorRoles.endpoint(address)
+        var endpoint = ValidatorsRoutes.validatorRoles.endpoint(with: acmEndpoint, value: address)
 
         if let cursor = cursor {
             endpoint = endpoint.add(queryItem: ACMQueryModel(name: "cursor", value: cursor))
@@ -112,7 +112,7 @@ class HeliumValidatorsManager: BaseBlockChainManager {
     }
 
     public func validatorRolesCounts(address: String, filter_types: String, onSuccess: BlockchainCallbacks.ValidatorRolesCounts, onError: GenericCallbacks.ErrorCallback) {
-        let endpoint = ValidatorsRoutes.validatorRolesCounts.endpoint(address)
+        let endpoint = ValidatorsRoutes.validatorRolesCounts.endpoint(with: acmEndpoint, value: address)
             .add(queryItem: ACMQueryModel(name: "filter_types", value: filter_types))
 
         network.request(to: endpoint.build()) { (r: ValidatorRolesCountsResponse) in
@@ -123,7 +123,7 @@ class HeliumValidatorsManager: BaseBlockChainManager {
     }
 
     public func statsForValidators(onSuccess: BlockchainCallbacks.StatsForValidators, onError: GenericCallbacks.ErrorCallback) {
-        let endpoint = ValidatorsRoutes.statsForValidators.endpoint()
+        let endpoint = ValidatorsRoutes.statsForValidators.endpoint(with: acmEndpoint)
 
         network.request(to: endpoint.build()) { (r: StatsForValidatorsResponse) in
             onSuccess?(r)
@@ -133,7 +133,7 @@ class HeliumValidatorsManager: BaseBlockChainManager {
     }
 
     public func currentlyElectedValidators(onSuccess: BlockchainCallbacks.CurrentlyElectedValidators, onError: GenericCallbacks.ErrorCallback) {
-        let endpoint = ValidatorsRoutes.currentlyElectedValidators.endpoint()
+        let endpoint = ValidatorsRoutes.currentlyElectedValidators.endpoint(with: acmEndpoint)
 
         network.request(to: endpoint.build()) { (r: CurrentlyElectedValidatorsResponse) in
             onSuccess?(r)
@@ -143,7 +143,7 @@ class HeliumValidatorsManager: BaseBlockChainManager {
     }
 
     public func electedValidatorsAtABlock(height: String, onSuccess: BlockchainCallbacks.ElectedValidatorsAtABlock, onError: GenericCallbacks.ErrorCallback) {
-        let endpoint = ValidatorsRoutes.electedValidatorsAtABlock.endpoint(height)
+        let endpoint = ValidatorsRoutes.electedValidatorsAtABlock.endpoint(with: acmEndpoint, value: height)
 
         network.request(to: endpoint.build()) { (r: ElectedValidatorsAtABlockResponse) in
             onSuccess?(r)
@@ -153,7 +153,7 @@ class HeliumValidatorsManager: BaseBlockChainManager {
     }
 
     public func electedValidatorsInAnElection(hash: String, onSuccess: BlockchainCallbacks.ElectedValidatorsInAnElection, onError: GenericCallbacks.ErrorCallback) {
-        let endpoint = ValidatorsRoutes.electedValidatorsInAnElection.endpoint(hash)
+        let endpoint = ValidatorsRoutes.electedValidatorsInAnElection.endpoint(with: acmEndpoint, value: hash)
 
         network.request(to: endpoint.build()) { (r: ElectedValidatorsInAnElectionResponse) in
             onSuccess?(r)
@@ -163,7 +163,7 @@ class HeliumValidatorsManager: BaseBlockChainManager {
     }
 
     public func rewardsForAValidator(address: String, min_time: String, max_time: String, cursor: String? = nil, onSuccess: BlockchainCallbacks.RewardsForAValidator, onError: GenericCallbacks.ErrorCallback) {
-        var endpoint = ValidatorsRoutes.rewardsForAValidator.endpoint(address)
+        var endpoint = ValidatorsRoutes.rewardsForAValidator.endpoint(with: acmEndpoint, value: address)
             .add(queryItem: ACMQueryModel(name: "min_time", value: min_time))
             .add(queryItem: ACMQueryModel(name: "max_time", value: max_time))
 
@@ -179,7 +179,7 @@ class HeliumValidatorsManager: BaseBlockChainManager {
     }
 
     public func rewardTotalForAValidator(address: String, min_time: String, max_time: String, bucket: String? = nil, onSuccess: BlockchainCallbacks.RewardTotalForAValidator, onError: GenericCallbacks.ErrorCallback) {
-        var endpoint = ValidatorsRoutes.rewardTotalForAValidator.endpoint(address)
+        var endpoint = ValidatorsRoutes.rewardTotalForAValidator.endpoint(with: acmEndpoint, value: address)
             .add(queryItem: ACMQueryModel(name: "min_time", value: min_time))
             .add(queryItem: ACMQueryModel(name: "max_time", value: max_time))
 
@@ -195,7 +195,7 @@ class HeliumValidatorsManager: BaseBlockChainManager {
     }
 
     public func rewardTotalForAllValidators(address: String, min_time: String, max_time: String, onSuccess: BlockchainCallbacks.RewardTotalForAllValidators, onError: GenericCallbacks.ErrorCallback) {
-        let endpoint = ValidatorsRoutes.rewardTotalForAllValidators.endpoint(address)
+        let endpoint = ValidatorsRoutes.rewardTotalForAllValidators.endpoint(with: acmEndpoint, value: address)
             .add(queryItem: ACMQueryModel(name: "min_time", value: min_time))
             .add(queryItem: ACMQueryModel(name: "max_time", value: max_time))
 

@@ -8,13 +8,15 @@ struct BaseRoute {
     var method: ACMBaseMethod
     var path: String
 
-    func endpoint(_ value: String? = nil) -> ACMEndpoint {
+    func endpoint(with endpoint: ACMEndpoint,
+                  value: String? = nil) -> ACMEndpoint
+    {
         if let value = value {
-            return ACMEndpoint()
+            return endpoint
                 .set(method: method)
                 .set(path: String(format: path, value))
         } else {
-            return ACMEndpoint()
+            return endpoint
                 .set(method: method)
                 .set(path: path)
         }
@@ -22,20 +24,20 @@ struct BaseRoute {
 }
 
 extension BaseRoute {
-    func consoleEndpoint(_ value: String? = nil, params: [String: Any]? = nil) -> ACMEndpoint {
-        var endpoint = ACMEndpoint()
+    func consoleEndpoint(with endpoint: ACMEndpoint, value: String? = nil, params: [String: Any]? = nil) -> ACMEndpoint {
+        var acmEndpoint = endpoint
             .set(host: Constants.CONSOLE_ENVIRONMENT.rawValue)
             .set(method: method)
 
         if let params = params {
             let bodyModelList = params.map { ACMBodyModel(key: $0.key, value: $0.value) }
-            endpoint = endpoint.add(params: bodyModelList)
+            acmEndpoint = acmEndpoint.add(params: bodyModelList)
         }
 
         if let value = value {
-            return endpoint.set(path: String(format: path, value))
+            return acmEndpoint.set(path: String(format: path, value))
         } else {
-            return endpoint.set(path: path)
+            return acmEndpoint.set(path: path)
         }
     }
 }

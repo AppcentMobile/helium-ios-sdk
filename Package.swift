@@ -12,7 +12,7 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(url: "https://github.com/AppcentMobile/ACMNetworking", from: "1.0.0"),
+        .package(url: "https://github.com/AppcentMobile/ACMNetworking", branch: "main"),
     ],
     targets: [
         .target(

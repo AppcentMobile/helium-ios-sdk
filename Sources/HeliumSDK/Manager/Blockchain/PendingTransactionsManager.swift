@@ -6,7 +6,7 @@ import ACMNetworking
 
 class HeliumPendingTransactionsManager: BaseBlockChainManager {
     public func pendingTransactionStatus(hash _: String, cursor _: String? = nil, onSuccess: BlockchainCallbacks.PendingTransactionStatus, onError: GenericCallbacks.ErrorCallback) {
-        let endpoint = PendingTransactionsRoutes.pendingTransactionStatus.endpoint()
+        let endpoint = PendingTransactionsRoutes.pendingTransactionStatus.endpoint(with: acmEndpoint)
 
         network.request(to: endpoint.build()) { (r: PendingTransactionStatusResponse) in
             onSuccess?(r)
@@ -16,7 +16,7 @@ class HeliumPendingTransactionsManager: BaseBlockChainManager {
     }
 
     public func submitANewTransaction(hash: String, onSuccess: BlockchainCallbacks.SubmitANewTransaction, onError: GenericCallbacks.ErrorCallback) {
-        let endpoint = PendingTransactionsRoutes.submitANewTransaction.endpoint(hash)
+        let endpoint = PendingTransactionsRoutes.submitANewTransaction.endpoint(with: acmEndpoint, value: hash)
 
         network.request(to: endpoint.build()) { (r: SubmitANewTransactionResponse) in
             onSuccess?(r)

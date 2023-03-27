@@ -7,7 +7,7 @@ import Foundation
 
 class HeliumHotspotsManager: BaseBlockChainManager {
     public func listHotspots(cursor: String? = nil, filter_modes: String? = nil, onSuccess: BlockchainCallbacks.ListHotspots, onError: GenericCallbacks.ErrorCallback) {
-        var endpoint = ElectionsRoutes.listElections.endpoint()
+        var endpoint = ElectionsRoutes.listElections.endpoint(with: acmEndpoint)
 
         if let cursor = cursor {
             endpoint = endpoint.add(queryItem: ACMQueryModel(name: "cursor", value: cursor))
@@ -25,7 +25,7 @@ class HeliumHotspotsManager: BaseBlockChainManager {
     }
 
     public func hotspotForAddress(address: String? = nil, onSuccess: BlockchainCallbacks.HotspotForAddress, onError: GenericCallbacks.ErrorCallback) {
-        let endpoint = ElectionsRoutes.listElections.endpoint(address)
+        let endpoint = ElectionsRoutes.listElections.endpoint(with: acmEndpoint, value: address)
 
         network.request(to: endpoint.build()) { (r: HotspotForAddressResponse) in
             onSuccess?(r)
@@ -35,7 +35,7 @@ class HeliumHotspotsManager: BaseBlockChainManager {
     }
 
     public func hotspotsForName(name: String?, onSuccess: BlockchainCallbacks.HotspotsForName, onError: GenericCallbacks.ErrorCallback) {
-        let endpoint = ElectionsRoutes.listElections.endpoint(name)
+        let endpoint = ElectionsRoutes.listElections.endpoint(with: acmEndpoint, value: name)
 
         network.request(to: endpoint.build()) { (r: HotspotsForNameResponse) in
             onSuccess?(r)
@@ -45,7 +45,7 @@ class HeliumHotspotsManager: BaseBlockChainManager {
     }
 
     public func hotspotNameSearch(search: String, onSuccess: BlockchainCallbacks.HotspotNameSearch, onError: GenericCallbacks.ErrorCallback) {
-        let endpoint = HotspotsRoutes.hotspotNameSearch.endpoint()
+        let endpoint = HotspotsRoutes.hotspotNameSearch.endpoint(with: acmEndpoint)
             .add(queryItem: ACMQueryModel(name: "search", value: search))
 
         network.request(to: endpoint.build()) { (r: HotspotNameSearchResponse) in
@@ -56,7 +56,7 @@ class HeliumHotspotsManager: BaseBlockChainManager {
     }
 
     public func hotspotLocationDistanceSearch(lat: CGFloat, lon: CGFloat, distance: Int, cursor: String? = nil, onSuccess: BlockchainCallbacks.HotspotLocationDistanceSearch, onError: GenericCallbacks.ErrorCallback) {
-        var endpoint = HotspotsRoutes.hotspotLocationDistanceSearch.endpoint()
+        var endpoint = HotspotsRoutes.hotspotLocationDistanceSearch.endpoint(with: acmEndpoint)
             .add(queryItem: ACMQueryModel(name: "lat", value: String(format: "%f", lat)))
             .add(queryItem: ACMQueryModel(name: "lon", value: String(format: "%f", lon)))
             .add(queryItem: ACMQueryModel(name: "distance", value: String(format: "%d", distance)))
@@ -73,7 +73,7 @@ class HeliumHotspotsManager: BaseBlockChainManager {
     }
 
     public func hotspotLocationBoxSearch(swlat: CGFloat, swlon: CGFloat, nelat: CGFloat, nelon: CGFloat, cursor: String? = nil, onSuccess: BlockchainCallbacks.HotspotLocationBoxSearch, onError: GenericCallbacks.ErrorCallback) {
-        var endpoint = HotspotsRoutes.hotspotLocationDistanceSearch.endpoint()
+        var endpoint = HotspotsRoutes.hotspotLocationDistanceSearch.endpoint(with: acmEndpoint)
             .add(queryItem: ACMQueryModel(name: "swlat", value: String(format: "%f", swlat)))
             .add(queryItem: ACMQueryModel(name: "swlon", value: String(format: "%f", swlon)))
             .add(queryItem: ACMQueryModel(name: "nelat", value: String(format: "%f", nelat)))
@@ -91,7 +91,7 @@ class HeliumHotspotsManager: BaseBlockChainManager {
     }
 
     public func hotspotsForH3Index(h3_index: String, onSuccess: BlockchainCallbacks.HotspotsForH3Index, onError: GenericCallbacks.ErrorCallback) {
-        let endpoint = HotspotsRoutes.hotspotsForH3Index.endpoint(h3_index)
+        let endpoint = HotspotsRoutes.hotspotsForH3Index.endpoint(with: acmEndpoint, value: h3_index)
 
         network.request(to: endpoint.build()) { (r: HotspotsForH3IndexResponse) in
             onSuccess?(r)
@@ -102,7 +102,7 @@ class HeliumHotspotsManager: BaseBlockChainManager {
 
     @available(*, deprecated, message: "The /activity route will be deprecated on May 1, 2022 and will be replaced by /roles")
     public func hotspotActivity(address: String? = nil, filter_types: String? = nil, min_time: String? = nil, max_time: String? = nil, limit: Int? = nil, onSuccess: BlockchainCallbacks.HotspotActivity, onError: GenericCallbacks.ErrorCallback) {
-        var endpoint = HotspotsRoutes.hotspotActivity.endpoint(address)
+        var endpoint = HotspotsRoutes.hotspotActivity.endpoint(with: acmEndpoint, value: address)
 
         if let filter_types = filter_types {
             endpoint = endpoint.add(queryItem: ACMQueryModel(name: "filter_types", value: filter_types))
@@ -128,7 +128,7 @@ class HeliumHotspotsManager: BaseBlockChainManager {
     }
 
     public func hotspotRoles(address: String? = nil, filter_types: String? = nil, min_time: String? = nil, max_time: String? = nil, limit: Int? = nil, onSuccess: BlockchainCallbacks.HotspotRoles, onError: GenericCallbacks.ErrorCallback) {
-        var endpoint = HotspotsRoutes.hotspotRoles.endpoint(address)
+        var endpoint = HotspotsRoutes.hotspotRoles.endpoint(with: acmEndpoint, value: address)
 
         if let filter_types = filter_types {
             endpoint = endpoint.add(queryItem: ACMQueryModel(name: "filter_types", value: filter_types))
@@ -154,7 +154,7 @@ class HeliumHotspotsManager: BaseBlockChainManager {
     }
 
     public func hotspotRolesCounts(address: String, filter_types: String? = nil, onSuccess: BlockchainCallbacks.HotspotRolesCounts, onError: GenericCallbacks.ErrorCallback) {
-        var endpoint = HotspotsRoutes.hotspotRoles.endpoint(address)
+        var endpoint = HotspotsRoutes.hotspotRoles.endpoint(with: acmEndpoint, value: address)
 
         if let filter_types = filter_types {
             endpoint = endpoint.add(queryItem: ACMQueryModel(name: "filter_types", value: filter_types))
@@ -168,7 +168,7 @@ class HeliumHotspotsManager: BaseBlockChainManager {
     }
 
     public func hotspotElections(address: String, cursor: String? = nil, min_time: String? = nil, max_time: String? = nil, limit: Int? = nil, onSuccess: BlockchainCallbacks.HotspotElections, onError: GenericCallbacks.ErrorCallback) {
-        var endpoint = HotspotsRoutes.hotspotElections.endpoint(address)
+        var endpoint = HotspotsRoutes.hotspotElections.endpoint(with: acmEndpoint, value: address)
 
         if let cursor = cursor {
             endpoint = endpoint.add(queryItem: ACMQueryModel(name: "cursor", value: cursor))
@@ -194,7 +194,7 @@ class HeliumHotspotsManager: BaseBlockChainManager {
     }
 
     public func currentlyElectedHotspots(onSuccess: BlockchainCallbacks.CurrentlyElectedHotspots, onError: GenericCallbacks.ErrorCallback) {
-        let endpoint = HotspotsRoutes.currentlyElectedHotspots.endpoint()
+        let endpoint = HotspotsRoutes.currentlyElectedHotspots.endpoint(with: acmEndpoint)
 
         network.request(to: endpoint.build()) { (r: CurrentlyElectedHotspotsResponse) in
             onSuccess?(r)
@@ -204,7 +204,7 @@ class HeliumHotspotsManager: BaseBlockChainManager {
     }
 
     public func hotspotChallenges(address: String? = nil, cursor: String? = nil, min_time: String? = nil, max_time: String? = nil, limit: Int? = nil, onSuccess: BlockchainCallbacks.HotspotChallenges, onError: GenericCallbacks.ErrorCallback) {
-        var endpoint = HotspotsRoutes.hotspotChallenges.endpoint(address)
+        var endpoint = HotspotsRoutes.hotspotChallenges.endpoint(with: acmEndpoint, value: address)
 
         if let cursor = cursor {
             endpoint = endpoint.add(queryItem: ACMQueryModel(name: "cursor", value: cursor))
@@ -230,7 +230,7 @@ class HeliumHotspotsManager: BaseBlockChainManager {
     }
 
     public func rewardsForAHotspot(address: String? = nil, cursor: String? = nil, min_time: String? = nil, max_time: String? = nil, onSuccess: BlockchainCallbacks.RewardsForAHotspot, onError: GenericCallbacks.ErrorCallback) {
-        var endpoint = HotspotsRoutes.rewardsForAHotspot.endpoint(address)
+        var endpoint = HotspotsRoutes.rewardsForAHotspot.endpoint(with: acmEndpoint, value: address)
 
         if let cursor = cursor {
             endpoint = endpoint.add(queryItem: ACMQueryModel(name: "cursor", value: cursor))
@@ -253,7 +253,7 @@ class HeliumHotspotsManager: BaseBlockChainManager {
 
     public func rewardsInARewardsBlockForAHotspot(address: String, block: String? = nil, cursor: String? = nil, min_time: String? = nil, max_time: String? = nil, onSuccess: BlockchainCallbacks.RewardsInARewardsBlockForAHotspot, onError: GenericCallbacks.ErrorCallback) {
         let route = HotspotsRoutes.rewardsInARewardsBlockForAHotspot
-        var endpoint = ACMEndpoint()
+        var endpoint = acmEndpoint
             .set(method: route.method)
 
         if let block = block {
@@ -282,7 +282,7 @@ class HeliumHotspotsManager: BaseBlockChainManager {
     }
 
     public func rewardTotalForAHotspot(address: String, min_time: String? = nil, max_time: String? = nil, bucket: String? = nil, onSuccess: BlockchainCallbacks.RewardTotalForAHotspot, onError: GenericCallbacks.ErrorCallback) {
-        var endpoint = HotspotsRoutes.rewardTotalForAHotspot.endpoint(address)
+        var endpoint = HotspotsRoutes.rewardTotalForAHotspot.endpoint(with: acmEndpoint, value: address)
 
         if let min_time = min_time {
             endpoint = endpoint.add(queryItem: ACMQueryModel(name: "min_time", value: min_time))
@@ -304,7 +304,7 @@ class HeliumHotspotsManager: BaseBlockChainManager {
     }
 
     public func witnessesForAHotspot(address: String, onSuccess: BlockchainCallbacks.WitnessesForAHotspot, onError: GenericCallbacks.ErrorCallback) {
-        let endpoint = HotspotsRoutes.witnessesForAHotspot.endpoint(address)
+        let endpoint = HotspotsRoutes.witnessesForAHotspot.endpoint(with: acmEndpoint, value: address)
 
         network.request(to: endpoint.build()) { (r: WitnessesForAHotspotResponse) in
             onSuccess?(r)
@@ -314,7 +314,7 @@ class HeliumHotspotsManager: BaseBlockChainManager {
     }
 
     public func witnessedForAHotspot(address: String, onSuccess: BlockchainCallbacks.WitnessedForAHotspot, onError: GenericCallbacks.ErrorCallback) {
-        let endpoint = HotspotsRoutes.witnessedForAHotspot.endpoint(address)
+        let endpoint = HotspotsRoutes.witnessedForAHotspot.endpoint(with: acmEndpoint, value: address)
 
         network.request(to: endpoint.build()) { (r: WitnessedForAHotspotResponse) in
             onSuccess?(r)
